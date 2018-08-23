@@ -1,6 +1,8 @@
 
 public class ClaseNueva {
-
-	
-	int g=9;
+public static void main (String a[]) {
+	//cambiando
+	System.out.print("probando conflicto");
 }
+}
+
