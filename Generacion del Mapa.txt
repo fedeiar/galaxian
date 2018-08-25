@@ -1,0 +1,8 @@
+Algoritmo Generación de Mapa:
+
+Se inicializa una ventana de MxN pixeles con fondo negro.
+La nave del jugador aparece en la parte inferior de la pantalla, en la mitad.
+Se generan X naves enemigas de FxY pixeles.
+Se inicializa un contador de puntaje del jugador, en 0.
+
+
