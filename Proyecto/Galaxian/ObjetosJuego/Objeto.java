@@ -1,11 +1,13 @@
+package ObjetosJuego;
 
 public abstract class Objeto {
 	
 	//atributos
-	final static int MAX_X = 800;
-	final static int MAX_Y = 600;
-	int HP;
-	Posicion P;
+	protected	final static int MAX_X = 800;
+	protected	final static int MAX_Y = 600;
+	
+	protected	int HP;
+	protected Posicion P;
 	
 	//metodos
 	

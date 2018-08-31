@@ -1,10 +1,25 @@
+package ObjetosJuego;
 
 public abstract class Personajes extends Objeto {
 	
 	//atributos
 	
+	protected int velocidad;
+	
 	
 	//metodos
+	
+	public int getVelocidad() {
+		return velocidad;
+	}
+	/**
+	 * a la velocidad actual le añade (o resta) el entero pasado por parametro.
+	 * @param v
+	 */
+	public void modificarVelocidad(int v) {
+		velocidad += v;
+	}
+	
 	/**
 	 * Desplaza al personaje X posiciones en horizontal e Y posiciones en vertical 
 	 * @param x
