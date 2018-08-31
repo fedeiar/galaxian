@@ -32,5 +32,22 @@ public abstract class Personajes extends Objeto {
 			P.setx(P.getx() + x);
 			P.sety(P.gety() + y);
 		}
+		else {
+			if (!(P.getx() + x <0))
+				P.setx(0);
+			else {
+				if(!(P.getx() + x > MAX_X))
+					P.setx(MAX_X);
+				else {
+					if(!(P.gety() + y < 0))
+						P.sety(0);
+					else {
+						if(!(P.gety() + y > MAX_Y))
+							P.sety(MAX_Y);
+					}
+				}
+			}
+		}
+		
 	}
 }
