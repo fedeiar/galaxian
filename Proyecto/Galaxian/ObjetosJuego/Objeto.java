@@ -9,6 +9,9 @@ public abstract class Objeto {
 	protected	int HP;
 	protected Posicion P;
 	
+	//VER!!
+	protected int ancho;
+	protected int alto;
 	//metodos
 	
 	public int obtenerHP() {
