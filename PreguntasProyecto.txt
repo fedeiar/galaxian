@@ -1,0 +1,18 @@
+//preguntar
+
+-  
+
+- ¿Qué cosas maneja la logica, que cosas maneja el mapa, y que cosas manejan
+   el jugador y los enemigos? (por ejemplo el movimiento en el mapa, y
+   la fuerza y velocidad del disparo)
+
+
+//agregar
+
+- sacar mapa  y manejarse con niveles.
+
+- Agregar un atributo Escudo al jugador. Osea crear una clase abstracta Escudo
+
+- Inteligencia mapa, colisiones  (o visitor). 
+
+- Minuta fin de sprint : Carolina Rapetti.
