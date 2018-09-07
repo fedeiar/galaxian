@@ -1,4 +1,6 @@
-package ObjetosJuego;
+package ClasesGeneralesEnArbolHerencia;
+
+import ClasesGeneralesFueraDeArbolH.Posicion;
 
 public abstract class Objeto {
 	
@@ -9,11 +11,12 @@ public abstract class Objeto {
 	protected	final static int MAX_Y = 600;
 	
 	protected	int HP;
+	
 	protected Posicion P;
 	
-	//VER DIMENSIONES DE LOS OBJETOS!!
 	protected int ancho;
 	protected int alto;
+	
 	//metodos
 	
 	public int obtenerHP() {
@@ -30,7 +33,6 @@ public abstract class Objeto {
 			HP -= hp;
 		else
 			HP=0;
-		
 	}
 	
 	public Posicion getPosicion() {

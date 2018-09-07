@@ -1,4 +1,4 @@
-package ObjetosJuego;
+package ClasesGeneralesFueraDeArbolH;
 
 public class Posicion {
 
