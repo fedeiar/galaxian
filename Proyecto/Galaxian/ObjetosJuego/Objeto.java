@@ -3,13 +3,15 @@ package ObjetosJuego;
 public abstract class Objeto {
 	
 	//atributos
+	
+	//mudar estos atributos a la GUI
 	protected	final static int MAX_X = 800;
 	protected	final static int MAX_Y = 600;
 	
 	protected	int HP;
 	protected Posicion P;
 	
-	//VER!!
+	//VER DIMENSIONES DE LOS OBJETOS!!
 	protected int ancho;
 	protected int alto;
 	//metodos
@@ -45,4 +47,6 @@ public abstract class Objeto {
 		P.setx(x);
 		P.sety(y);
 	}
+	
+	//agregar metodos colisionar() y serVisitado()
 }
