@@ -1,4 +1,4 @@
-package ObjetosJuego;
+package ClasesMasGenerales;
 
 public class Posicion {
 

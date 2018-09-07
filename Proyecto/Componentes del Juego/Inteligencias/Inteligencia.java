@@ -1,4 +1,4 @@
-package ObjetosJuego;
+package Inteligencias;
 
 public interface Inteligencia {
 

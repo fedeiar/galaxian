@@ -1,4 +1,9 @@
-package ObjetosJuego;
+package EnemigosYJugador;
+
+import ClasesMasGenerales.Personajes;
+import ClasesMasGenerales.Posicion;
+import ObjetosJuego.Disparo;
+import ObjetosJuego.DisparoP;
 
 public class Jugador extends Personajes {
 	
