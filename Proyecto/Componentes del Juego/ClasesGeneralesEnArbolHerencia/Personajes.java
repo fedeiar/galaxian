@@ -1,4 +1,4 @@
-package ClasesMasGenerales;
+package ClasesGeneralesEnArbolHerencia;
 
 public abstract class Personajes extends Objeto {
 	

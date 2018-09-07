@@ -1,4 +1,4 @@
-package ObjetosJuego;
+package Disparo;
 
 public class DisparoP implements Disparo {
 

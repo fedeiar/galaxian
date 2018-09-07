@@ -1,9 +1,9 @@
 package EnemigosYJugador;
 
-import ClasesMasGenerales.Personajes;
-import ClasesMasGenerales.Posicion;
-import ObjetosJuego.Disparo;
-import ObjetosJuego.DisparoP;
+import ClasesGeneralesEnArbolHerencia.Personajes;
+import ClasesGeneralesFueraDeArbolH.Posicion;
+import Disparo.Disparo;
+import Disparo.DisparoP;
 
 public class Jugador extends Personajes {
 	
@@ -16,8 +16,8 @@ public class Jugador extends Personajes {
 	
 	//constructor
 	/**
-	 * inicializa a un jugador con una determinada velocidad de movimiento, velocidad de disparo , fuerza del disparo,
-	 * puntos de vida, y posicion.
+	 * inicializa a un jugador con una determinada velocidad de movimiento, velocidad de disparo y fuerza del disparo pasados por parametro.
+	 * Luego, se le asigna una cantidad de puntos de vida, posicion, y tamaño que ocupa (en pixeles).
 	 * @param v
 	 * @param vd
 	 */
@@ -26,6 +26,8 @@ public class Jugador extends Personajes {
 		D = new DisparoP(vd,fd);
 		HP = MAX_HP;
 		P = new Posicion(20,400);
+		ancho = 5;
+		alto = 5;
 	}
 	
 	//metodos

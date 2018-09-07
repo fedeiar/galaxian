@@ -1,7 +1,5 @@
 //preguntar
 
--  
-
 - ¿Qué cosas maneja la logica, que cosas maneja el mapa, y que cosas manejan
    el jugador y los enemigos? (por ejemplo el movimiento en el mapa, y
    la fuerza y velocidad del disparo)
@@ -17,3 +15,5 @@
 - Inteligencia mapa, colisiones  (o visitor). (FALTARIA LO DE COLISIONES O VISITOR)
 
 - Minuta fin de sprint : Carolina Rapetti.
+
+- En la clase personaje, revisar el método desplazar, tratar de ponerlo en logica.

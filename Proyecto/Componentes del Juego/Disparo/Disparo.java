@@ -1,4 +1,4 @@
-package ObjetosJuego;
+package Disparo;
 
 public interface Disparo {
 	

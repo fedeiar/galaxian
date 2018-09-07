@@ -1,6 +1,6 @@
 package EnemigosYJugador;
 
-import ClasesMasGenerales.Personajes;
+import ClasesGeneralesEnArbolHerencia.Personajes;
 import Inteligencias.Inteligencia;
 
 public abstract class Enemigo extends Personajes {
