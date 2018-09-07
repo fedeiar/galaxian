@@ -26,6 +26,8 @@ public abstract class Personajes extends Objeto {
 	 * @param y
 	 */
 	
+	
+	/*
 	public void desplazar(int x , int y) {
 		//es decir, si no se salio de los limites
 		if(!(P.getx() + x <0) && !(P.getx() + x > MAX_X) && !(P.gety() + y < 0) && !(P.gety() + y > MAX_Y)) {
@@ -50,4 +52,5 @@ public abstract class Personajes extends Objeto {
 		}
 		
 	}
+	*/
 }

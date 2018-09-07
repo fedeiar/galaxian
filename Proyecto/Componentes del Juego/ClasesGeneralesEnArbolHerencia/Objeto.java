@@ -7,8 +7,7 @@ public abstract class Objeto {
 	//atributos
 	
 	//mudar estos atributos a la GUI
-	protected	final static int MAX_X = 800;
-	protected	final static int MAX_Y = 600;
+	
 	
 	protected	int HP;
 	
