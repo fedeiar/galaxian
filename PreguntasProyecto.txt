@@ -9,10 +9,11 @@
 
 //agregar
 
-- sacar mapa  y manejarse con niveles.
+- sacar mapa  y manejarse con niveles.(Ya lo cambiamos por la inteligencia map)
 
-- Agregar un atributo Escudo al jugador. Osea crear una clase abstracta Escudo
 
-- Inteligencia mapa, colisiones  (o visitor). 
+- Agregar un atributo Escudo al jugador. Osea crear una clase abstracta Escudo(Esto lo usariamos para los poderes?)
+
+- Inteligencia mapa, colisiones  (o visitor). (FALTARIA LO DE COLISIONES O VISITOR)
 
 - Minuta fin de sprint : Carolina Rapetti.
