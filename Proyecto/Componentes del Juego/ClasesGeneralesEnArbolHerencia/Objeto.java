@@ -1,6 +1,6 @@
 package ClasesGeneralesEnArbolHerencia;
 
-import ClasesGeneralesFueraDeArbolH.Posicion;
+import ClasesGeneralesFueraDeArbolH.*;
 
 public abstract class Objeto {
 	
@@ -13,8 +13,7 @@ public abstract class Objeto {
 	
 	protected Posicion P;
 	
-	protected int ancho;
-	protected int alto;
+	protected Dimension dim;
 	
 	//metodos
 	
@@ -38,15 +37,23 @@ public abstract class Objeto {
 		return P;
 	}
 	
-	
 	/**
 	 * ubica al jugador en la posicion (x,y) pasada por parametro
 	 * @param x
 	 * @param y
 	 */
-	public void ubicarObjeto (int x , int y) {
+	public void setPosicion (int x , int y) {
 		P.setx(x);
 		P.sety(y);
+	}
+	
+	public Dimension getDimension() {
+		return dim;
+	}
+	
+	public void setDimension(int ancho , int alto) {
+		dim.setAncho(ancho);
+		dim.setAlto(alto);
 	}
 	
 	//agregar metodos colisionar() y serVisitado()

@@ -1,7 +1,7 @@
 package EnemigosYJugador;
 
 import ClasesGeneralesEnArbolHerencia.Personajes;
-import ClasesGeneralesFueraDeArbolH.Posicion;
+import ClasesGeneralesFueraDeArbolH.*;
 import Disparo.Disparo;
 import Disparo.DisparoP;
 
@@ -11,7 +11,7 @@ public class Jugador extends Personajes {
 	
 	private final static int MAX_HP=100;
 
-	protected DisparoP D;
+	protected DisparoP dis;
 	
 	
 	//constructor
@@ -23,11 +23,10 @@ public class Jugador extends Personajes {
 	 */
 	public Jugador (int v , int vd , int fd) {
 		velocidad = v;
-		D = new DisparoP(vd,fd);
+		dis = new DisparoP(vd,fd);
 		HP = MAX_HP;
-		P = new Posicion(20,400);
-		ancho = 5;
-		alto = 5;
+		P = new Posicion(400,530);
+		dim = new Dimension(50,20);
 	}
 	
 	//metodos
@@ -36,11 +35,11 @@ public class Jugador extends Personajes {
 	 * @return
 	 */
 	public Disparo getDisparo() {
-		return D;
+		return dis;
 	}
 	
 	public void modificarDisparo(int vd,int fd) {
-		D.modificarFuerza(fd);
-		D.modificarVelocidad(vd);
+		dis.modificarFuerza(fd);
+		dis.modificarVelocidad(vd);
 	}
 }
