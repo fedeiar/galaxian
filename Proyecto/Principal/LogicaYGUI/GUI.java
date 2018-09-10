@@ -83,11 +83,7 @@ import javax.swing.SwingConstants.*;
 		label_5.setBounds(639, 86, 95, 20);
 		this.getContentPane().add(label_5);
 		
-		label_disparo = new JLabel();
-		label_disparo.setOpaque(true);
-		label_disparo.setBackground(Color.YELLOW);
-		label_disparo.setBounds(0,0,5,20);
-		this.getContentPane().add(label_disparo);
+		
 		
 		
 		OyenteTeclado OT = new OyenteTeclado();
@@ -128,12 +124,20 @@ import javax.swing.SwingConstants.*;
 			}
 			
 			if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+				label_disparo = new JLabel();
+				label_disparo.setOpaque(true);
+				label_disparo.setBackground(Color.YELLOW);
+				label_disparo.setBounds(0,0,5,20);
+				getContentPane().add(label_disparo);
+				
 				int Pos_X = Player.getX() + Player.getWidth()/2;
 				int Pos_Y = Player.getY() - Player.getHeight();
 				label_disparo.setBounds(Pos_X , Pos_Y , label_disparo.getWidth(), label_disparo.getHeight());
+				/*
 				while(label_disparo.getY() > 0) {
 					label_disparo.setBounds(label_disparo.getX(), -5, label_disparo.getWidth(), label_disparo.getHeight());
 				}
+				*/
 			}
 			
 		}
