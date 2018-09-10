@@ -1,4 +1,4 @@
-package LogicaYGUI;
+package Grafica;
 
 import java.awt.EventQueue;
 

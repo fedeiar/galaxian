@@ -1,10 +1,13 @@
-package LogicaYGUI;
+package Grafica;
 
 import java.awt.*;
 
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.border.*;
+
+import Logica.Logica;
+
 import javax.swing.SwingConstants.*;
 
  public class GUI extends JFrame {

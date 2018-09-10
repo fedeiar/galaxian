@@ -1,15 +1,19 @@
-package EnemigosYJugador;
+package Personajes;
 
-import ClasesGeneralesEnArbolHerencia.Personajes;
-import Inteligencias.Inteligencia;
+import Logica.*;
 
 public abstract class Enemigo extends Personajes {
 
 	//atributos
 	
-	protected int puntos;
+	protected int puntosQueDa;
 	protected Inteligencia inteligencia;
-
+	
+	//constructor
+	
+	public Enemigo(int x, int y, Logica l) {
+		super(x,y,l);
+	}
 	
 	//metodos
 	
@@ -18,7 +22,7 @@ public abstract class Enemigo extends Personajes {
 	 * @return
 	 */
 	public int getPuntos() {
-		return puntos;
+		return puntosQueDa;
 	}
 	
 	public Inteligencia getInteligencia() {
@@ -30,7 +34,7 @@ public abstract class Enemigo extends Personajes {
 	 * @param p
 	 */
 	public void setPuntos(int p) {
-		puntos = p;
+		puntosQueDa = p;
 	}
 	
 	public void setInteligencia(Inteligencia i) {
