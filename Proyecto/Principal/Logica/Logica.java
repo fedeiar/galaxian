@@ -2,7 +2,7 @@ package Logica;
 import TDALista.*;
 import ObjetosDelJuego.*;
 import Personajes.*;
-import Disparo.*;
+
 import Mapas.*;
 import Grafica.*;
 
@@ -43,5 +43,14 @@ public class Logica {
 	public void mover (int n) {
 		jugador.mover(n , mapa.getAncho() );
 	}
+	
+	public void crearEnemigosConArma(int n) {
+		for(int i = 0 ; i<n ; i++) {
+			Enemigo ene = new EnemigoConArma(i*100 , 100 , this ,1);
+			gui.getContentPane().add(ene.getLabel());
+			listaEnemigo.addLast(ene);
+		}
+	}
+	
 	
 }

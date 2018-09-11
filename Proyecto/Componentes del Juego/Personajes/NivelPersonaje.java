@@ -3,11 +3,11 @@ import java.awt.*;
 
 import javax.swing.ImageIcon;
 
-public abstract class Nivel {
+public abstract class NivelPersonaje {
 	
 	//atributos
 	
-	protected Nivel siguiente;
+	protected NivelPersonaje siguiente;
 	protected int velocidadMovimiento;
 	protected int HP;
 	protected int velocidadDisparo;
@@ -15,7 +15,7 @@ public abstract class Nivel {
 	
 	//constructor
 	
-	public Nivel() {
+	public NivelPersonaje() {
 		
 	}
 	
@@ -37,7 +37,7 @@ public abstract class Nivel {
 		HP -= n;
 	}
 	
-	public Nivel getSiguiente() {
+	public NivelPersonaje getSiguiente() {
 		return siguiente;
 	}
 	

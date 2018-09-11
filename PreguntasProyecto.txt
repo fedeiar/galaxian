@@ -6,6 +6,13 @@
 
 - Clase Logica, preguntar por el alto y ancho al inicializar jugador.
 
+- Tenemos pensado que desde la GUI, nosotros elegimos que nivel usar.
+  una vez seleccionado el nivel, se instancia a mapa con nivel_1,2, etc.
+  luego se llama al metodo crear nivel definido en cada clase-
+  como mapa no tiene un atributo de logica, pero si de GUI, 
+  definimos un metodo que sea inicializar enemigos en GUI, que lo que hace
+  es llamar al inicializar enemigos de logica para que los vuelque en el mapa.
+  ¿como podemos hacer esto de forma mas organizada?
 //agregar
 
 

@@ -18,7 +18,7 @@ public class Jugador extends Personajes {
 		super(x,y,l);
 		//inicializar vulnerable cuando este el atributo
 		
-		miNivel = new Nivel_1();
+		miNivel = new NivelJugador_1();
 		
 		velocidadMovimiento = miNivel.getVelocidadMovimiento();
 		HP = miNivel.GetHP();
@@ -30,14 +30,13 @@ public class Jugador extends Personajes {
 		etiqueta.setOpaque(true);
 		etiqueta.setBackground(Color.red);
 	
-		
 	}
 	
 	//----------------METODOS----------------
 	
 	public void setNivel(int n) {
 		if(n==1)
-			miNivel = new Nivel_1();
+			miNivel = new NivelJugador_1();
 		else {
 			//mas adelante agregar proximos niveles
 		}

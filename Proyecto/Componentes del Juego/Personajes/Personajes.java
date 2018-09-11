@@ -11,7 +11,7 @@ public abstract class Personajes extends Objeto {
 	protected final static int ANCHO = 50;
 	protected final static int ALTO = 20;
 	
-	protected Nivel miNivel;
+	protected NivelPersonaje miNivel;
 	
 	protected int velocidadMovimiento;
 	protected int HP; //puntos de vida
@@ -33,4 +33,4 @@ public abstract class Personajes extends Objeto {
 		return velocidadMovimiento;
 	}
 	
-	}
+}
