@@ -1,26 +1,18 @@
 //preguntar
 
-- ¿Qué cosas maneja la logica, que cosas maneja el mapa, y que cosas manejan
-   el jugador y los enemigos? (por ejemplo el movimiento en el mapa, y
-   la fuerza y velocidad del disparo)
-
-- Podemos enviarle a GUI a jugador? o debemos enviarle la interfaz de jugador?
-  (es decir, para que la GUI no pueda modificar los atributos del jugador).
-
 - Como y de qué manera comunicar la logica con la GUI?
+
+- Clase Jugador metodo moverIzquierda : porque width es un double?
+
+- Clase Logica, preguntar por el alto y ancho al inicializar jugador.
+
 //agregar
 
-- sacar mapa  y manejarse con niveles.(Ya lo cambiamos por la inteligencia map)
+
+- Agregar un boolean escudo para ver si es vulnerable o no
+
+- colisiones  (o visitor). (FALTARIA LO DE COLISIONES O VISITOR)
 
 
-- Agregar un atributo Escudo al jugador. Osea crear una clase abstracta Escudo(Esto lo usariamos para los poderes?)
 
-- Inteligencia mapa, colisiones  (o visitor). (FALTARIA LO DE COLISIONES O VISITOR)
 
-- Minuta fin de sprint : Carolina Rapetti.
-
-- En la clase personaje, revisar el método desplazar, tratar de ponerlo en logica.
-
-- eliminar clase mapa y que inteligencia mapa vaya a logica, preguntar.
-
--para el pull de semi

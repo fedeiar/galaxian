@@ -8,6 +8,10 @@ import java.awt.Rectangle;
 public abstract class Personajes extends Objeto {
 	
 	//atributos
+	protected final static int ANCHO = 50;
+	protected final static int ALTO = 20;
+	
+	protected Nivel miNivel;
 	
 	protected int velocidadMovimiento;
 	protected int HP; //puntos de vida
@@ -19,7 +23,7 @@ public abstract class Personajes extends Objeto {
 	//constructor
 	
 	public Personajes(int x , int y , Logica l ) {
-		rec = new Rectangle(x,y,40,20);
+		rec = new Rectangle(x,y,ANCHO,ALTO);
 		log = l;
 		
 	}

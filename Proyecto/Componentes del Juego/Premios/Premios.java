@@ -1,5 +1,6 @@
 package Premios;
+import ObjetosDelJuego.*;
 
-public abstract class Premios {
+public abstract class Premios extends Objeto {
 
 }

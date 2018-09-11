@@ -1,8 +1,9 @@
 package ObjetosDelJuego;
 
-import ClasesGeneralesFueraDeArbolH.*;
+
 import java.awt.Rectangle;
 import javax.swing.*;
+
 public abstract class Objeto {
 	
 	//atributos
@@ -17,12 +18,12 @@ public abstract class Objeto {
 		return rec;
 	}
 	
-	public JLabel getLabel() {
-		return etiqueta;
+	public int getX() {
+		return rec.x;
 	}
 	
-	public ImageIcon getImagen() {
-		return imagen;
+	public int getY() {
+		return rec.y;
 	}
 	
 	public void setX(int i) {
@@ -34,6 +35,17 @@ public abstract class Objeto {
 		rec.y = i;
 		etiqueta.setBounds(rec);
 	}
+	
+	
+	public JLabel getLabel() {
+		return etiqueta;
+	}
+	
+	public ImageIcon getImagen() {
+		return imagen;
+	}
+	
+	
 	
 		
 	//agregar metodos colisionar() y serVisitado()
