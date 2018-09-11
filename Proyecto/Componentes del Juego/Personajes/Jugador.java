@@ -21,7 +21,7 @@ public class Jugador extends Personajes {
 		miNivel = new NivelJugador_1();
 		
 		velocidadMovimiento = miNivel.getVelocidadMovimiento();
-		HP = miNivel.GetHP();
+		HP = miNivel.getHP();
 		velocidadDisparo = miNivel.getVelocidadDisparo();
 		
 		etiqueta = new JLabel();

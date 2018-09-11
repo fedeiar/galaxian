@@ -25,7 +25,7 @@ public abstract class NivelPersonaje {
 		return velocidadMovimiento;
 	}
 	
-	public int GetHP() {
+	public int getHP() {
 		return HP;
 	}
 	
