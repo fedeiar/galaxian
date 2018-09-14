@@ -14,7 +14,7 @@ public class Logica {
 	protected PositionList<Disparo> listaDisparo;
 	
 	protected Mapa mapa;
-	protected GUI gui; // considerar sacar la GUI , para eso pasarlapor parametro para cuando la necesite
+	protected GUI gui; // considerar sacar la GUI , para eso pasar la por parametro para cuando la necesite
 	
 	protected int puntaje , enemigosActuales , vidasJugador ;
 	protected Jugador jugador;
