@@ -10,7 +10,7 @@ public class NivelEnemigo_1 extends NivelPersonaje {
 	
 	public NivelEnemigo_1() {
 		siguiente = null ; //cuando implementemos nivelEnemigo_2, ira eso en lugar de null
-		velocidadMovimiento = 10;
+		velocidadMovimiento = 3;
 		HP = 1;
 		velocidadDisparo = 10;
 		

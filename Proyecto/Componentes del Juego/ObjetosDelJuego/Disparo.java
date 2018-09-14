@@ -11,12 +11,13 @@ public class Disparo extends Objeto {
 	private final static int LARGO = 5;
 	
 	private int velocidadMovimiento;
-	
+	private int fuerzaDeImpacto;
 	//constuctor
 	
-	public Disparo (int v , int x , int y) {
+	public Disparo (int v ,int f, int x , int y) {
 		rec = new Rectangle(x,y,ANCHO,LARGO);
 		velocidadMovimiento = v;
+		fuerzaDeImpacto = f;
 		
 		etiqueta = new JLabel();
 		//hacerle un seticon si hace falta
@@ -31,6 +32,8 @@ public class Disparo extends Objeto {
 		return velocidadMovimiento;
 	}
 	
-	
+	public int getFuerzaImpacto() {
+		return fuerzaDeImpacto;
+	}
 	
 }
