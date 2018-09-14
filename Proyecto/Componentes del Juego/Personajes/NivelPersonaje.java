@@ -44,4 +44,6 @@ public abstract class NivelPersonaje {
 	public ImageIcon getImagen() {
 		return foto;
 	}
+	
+	
 }

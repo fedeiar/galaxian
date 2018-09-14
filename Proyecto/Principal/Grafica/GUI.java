@@ -15,7 +15,9 @@ import javax.swing.SwingConstants.*;
  	
  	//ATRIBUTOS
 	 
-	 private JLabel label_disparo;
+	 private JLabel lblHp , lblPuntaje , lblVidas , numVidas , numPuntaje;
+	 private JProgressBar BarraVida;
+	 
 	 
 	 private Logica log;
 	 private Mapa mapa;
@@ -30,17 +32,19 @@ import javax.swing.SwingConstants.*;
 	private void initialize() {
 		
 		
-		mapa = new Mapa_1(this);
+		mapa = new Mapa();
 		log = new Logica(mapa, this);
 		
-		//CREA EL FRAME EN EL NIVEL 1
 		
-		mapa.crearNivel();
+		//CREA EL FRAME
+		crearFrame();
+		crearPanelSuperior();
 		
-		//LABELS
 		
 		//crea al jugador
 		this.getContentPane().add(log.getJugador().getLabel());
+		
+		
 		
 		//crea a los enemigos
 		log.crearEnemigosConArma(10);
@@ -48,10 +52,64 @@ import javax.swing.SwingConstants.*;
 		
 		
 		
-		
-		
 		OyenteTeclado OT = new OyenteTeclado();
 		this.addKeyListener(OT);
+	}
+	
+	private void crearFrame() {
+		this.setResizable(false);
+		this.getContentPane().setBackground(Color.LIGHT_GRAY);
+		this.getContentPane().setLayout(null);
+		this.setBounds(250, 50, mapa.getAncho(), mapa.getAlto());
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	private void crearPanelSuperior() {
+		
+		//lbl HP:
+		
+		lblHp = new JLabel("HP:");
+		lblHp.setFont(new Font("Sylfaen", Font.PLAIN, 16));
+		lblHp.setBounds(6, 11, 32, 14);
+		getContentPane().add(lblHp);
+				
+		//crea la barra de vida
+		
+		BarraVida = new JProgressBar();
+		BarraVida.setForeground(Color.GREEN);
+		BarraVida.setBackground(Color.WHITE);
+		
+		BarraVida.setMaximum(10);
+		BarraVida.setMinimum(0);
+		BarraVida.setValue(10);
+		
+		BarraVida.setBounds(43, 11, 85, 14);
+		getContentPane().add(BarraVida);
+		
+		//arma el puntaje
+		
+		lblPuntaje = new JLabel("Puntaje:");
+		lblPuntaje.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblPuntaje.setBounds(264, 6, 65, 20);
+		getContentPane().add(lblPuntaje);
+		
+		numPuntaje = new JLabel("0");
+		numPuntaje.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		numPuntaje.setBounds(332, 9, 46, 14);
+		getContentPane().add(numPuntaje);
+		
+		
+		//arma las vidas
+		
+		lblVidas = new JLabel("Vidas:");
+		lblVidas.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblVidas.setBounds(758, 11, 46, 14);
+		getContentPane().add(lblVidas);
+		
+		numVidas = new JLabel("3");
+		numVidas.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		numVidas.setBounds(818, 11, 46, 14);
+		getContentPane().add(numVidas);
 	}
 	
 	//-------------------------------------------
@@ -69,30 +127,11 @@ import javax.swing.SwingConstants.*;
 			if (e.getKeyCode() == KeyEvent.VK_LEFT){
 				log.mover(0);
 				
-				
-				/*
-				Rectangle r = Player.getBounds();
-				int newX = r.x-=10;
-				Rectangle newR = new Rectangle(newX,r.y,r.width,r.height);
-				Player.setBounds(newR);
-				
-				if (Player.getX() < 0){
-					Player.setBounds(MAX_X - log.getJugador().getDimension().getAncho(), r.y, r.width, r.height);
-				 */
 			}
 			else {
 				if (e.getKeyCode() == KeyEvent.VK_RIGHT){
 					log.mover(1);
 					
-					/*
-					Rectangle r = Player.getBounds();
-					int newX= r.x+=10;
-					Rectangle newR = new Rectangle(newX,r.y,r.width,r.height);
-					Player.setBounds(newR);
-					if (Player.getX() + log.getJugador().getDimension().getAncho() > MAX_X  ){
-						Player.setBounds(0,r.y,r.width,r.height);
-					}
-					*/
 				}
 				else {
 					
@@ -122,7 +161,4 @@ import javax.swing.SwingConstants.*;
 
 		
 	}
-	
-	
-	
 }

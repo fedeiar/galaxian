@@ -21,6 +21,8 @@ public class EnemigoConArma extends Enemigo {
 		etiqueta.setIcon(null); // cuando tengamos la imagen, cambiamos null por la direccion del .gif
 		etiqueta.setOpaque(true);
 		etiqueta.setBackground(Color.blue);
+		
+		//habria que inicializar al inteligencia
 	}
 	
 	

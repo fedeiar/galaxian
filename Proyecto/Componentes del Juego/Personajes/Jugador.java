@@ -9,6 +9,8 @@ public class Jugador extends Personajes {
 	
 	//--------------ATRIBUTOS----------------
 	
+	private int vidas; //al perder toda su HP, el jugador pierde una vida
+	
 	
 	//considerar un atributo booleano de vulnerabilidad
 	
@@ -23,6 +25,8 @@ public class Jugador extends Personajes {
 		velocidadMovimiento = miNivel.getVelocidadMovimiento();
 		HP = miNivel.getHP();
 		velocidadDisparo = miNivel.getVelocidadDisparo();
+		vidas = 3;
+		
 		
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
@@ -71,10 +75,29 @@ public class Jugador extends Personajes {
 			long aux = Math.round(rec.getWidth());
 			setX(ancho - (int)aux); //si bien un long es un int pero mas largo, hace falta casting
 			
-			//SI LA GUI CRAHSEA REVISAR ACA!!!!!
+			//SI CRAHSEA REVISAR ACA!!!!!
 		}
 	}
 	
+	//Vidas y HP
+	public int getHP() {
+		return HP;
+	}
 	
+	public int getVidas() {
+		return vidas;
+	}
+	
+	public void quitarHP(int n) {
+		if ( HP - n > 0)
+			HP -= n;
+		else
+			vidas--;
+		
+		if(vidas<0) {
+			//habria que ver como destruir al jugador, es decir game over.
+		}
+		
+	}
 	
 }

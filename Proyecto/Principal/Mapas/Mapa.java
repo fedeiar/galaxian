@@ -1,17 +1,17 @@
 package Mapas;
 import Grafica.*;
-public abstract class Mapa  {
+public class Mapa  {
 
 	 //atributos
 	
 	 private final static int  MAX_X=900; //ancho del frame
 	 private final static int MAX_Y=600;  //alto del frame
 	 
-	 protected GUI gui;
+	 
 	 //constructor
 	 
-	 public Mapa(GUI g) {
-		 gui = g;
+	 public Mapa() {
+		 
 	 }
 	 
 	 //metodos
@@ -24,5 +24,5 @@ public abstract class Mapa  {
 		 return MAX_Y;
 	 }
 	 
-	public abstract void crearNivel();
+	
 }

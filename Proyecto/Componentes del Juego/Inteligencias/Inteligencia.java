@@ -1,4 +1,4 @@
-package Logica;
+package Inteligencias;
 
 public interface Inteligencia {
 

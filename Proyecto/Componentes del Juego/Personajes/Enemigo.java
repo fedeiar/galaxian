@@ -1,5 +1,6 @@
 package Personajes;
 
+import Inteligencias.*;
 import Logica.*;
 
 public abstract class Enemigo extends Personajes {
@@ -8,6 +9,7 @@ public abstract class Enemigo extends Personajes {
 	
 	
 	protected Inteligencia inteligencia;
+	protected NivelEnemigo_1 miNivel; // redefine el atributo de personaje
 	
 	//constructor
 	
@@ -39,5 +41,15 @@ public abstract class Enemigo extends Personajes {
 		inteligencia = i;
 	}
 	
+	public void quitarHP(int n) {
+		if( HP - n > 0)
+			HP -= n;
+		else {
+			//habria que destruir al enemigo
+		}
+	}
 	
+	public int getPuntaje() {
+		return miNivel.getPuntaje();
+	}
 }
