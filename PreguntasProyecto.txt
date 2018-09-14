@@ -1,13 +1,8 @@
 //preguntar
 
-- Como y de qué manera comunicar la logica con la GUI?
-
 - Clase Jugador metodo moverIzquierda : porque width es un double?
 
 - Clase Logica, preguntar por el alto y ancho al inicializar jugador.
-
-- Estaría mal dejar el atributo de GUI en logica? si esta mal, ¿Cómo lo cambio
-  para no afectar a los metodos que la usan?
 
 - Como diseñar el movimiento del enemigo?
 
@@ -17,7 +12,8 @@
 - De JFrame: ¿Para que sirve repaint()?
 - De Thread: ¿Que hacen sleep, start, run? ¿Por qué si usamos run no se abre la GUI?
 
-- ¿Esta bien Thread ahi o debería manejarlo la logica?
+- ¿Esta bien Thread ahi o debería manejarlo la logica? ¿Cómo cortar un poco
+  la excesiva dependencia que hay entre GUI, Logica, Mapa y Tiempo ?
 
 - para agregar el disparo, que hacemos, creamos un thread mas nuevo y le damos
   start a ese, o siempre usamos el mismo thread? (el declarado arriba)
