@@ -69,9 +69,6 @@ public class Logica {
 		}
 	}
 	
-	
-	
-	
 	public void EmpezarJuego() {
 		crearEnemigos();
 		//podría ir un crear obstaculos

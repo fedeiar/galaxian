@@ -11,12 +11,17 @@
 
 - Como diseñar el movimiento del enemigo?
 
-- Como hacer con los visitor? y el disparo?
+- Como hacer con los visitor?
 
 - atributos de mapa constantes, esta mal si son publicos?
 - De JFrame: ¿Para que sirve repaint()?
 - De Thread: ¿Que hacen sleep, start, run? ¿Por qué si usamos run no se abre la GUI?
 
+- ¿Esta bien Thread ahi o debería manejarlo la logica?
+
+- para agregar el disparo, que hacemos, creamos un thread mas nuevo y le damos
+  start a ese, o siempre usamos el mismo thread? (el declarado arriba)
+  si es asi, como hacemos para manejar todo con un mismo thread?
 //agregar
 
 
