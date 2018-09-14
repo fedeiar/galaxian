@@ -1,9 +1,10 @@
-package Personajes;
+package EnemigosConcretos;
 import java.awt.Color;
 
 import javax.swing.*;
 
 import Logica.*;
+import Personajes.Enemigo;
 
 public class EnemigoConArma extends Enemigo {
 
@@ -13,8 +14,8 @@ public class EnemigoConArma extends Enemigo {
 	
 	//constructor
 	
-	public EnemigoConArma(int x, int y , Logica l , int nivel) {
-		super(x,y,l,nivel);
+	public EnemigoConArma(int x, int y , int nivel) { //parametro logica removido para probar
+		super(x,y,nivel);
 		
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
@@ -22,8 +23,9 @@ public class EnemigoConArma extends Enemigo {
 		etiqueta.setOpaque(true);
 		etiqueta.setBackground(Color.blue);
 		
-		//habria que inicializar al inteligencia
+		//habria que inicializar la inteligencia
 	}
+	
 	
 	
 }

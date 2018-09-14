@@ -1,8 +1,12 @@
-package Personajes;
+package NivelPersonajes;
 import java.awt.*;
 
 import javax.swing.ImageIcon;
-
+/**
+ * Esta clase solo se encargara de inicializar los atributos del personaje(enemigo o jugador) acorde al nivel que posee.
+ * @author Fede iar
+ *
+ */
 public abstract class NivelPersonaje {
 	
 	//atributos
@@ -33,9 +37,6 @@ public abstract class NivelPersonaje {
 		return velocidadDisparo;
 	}
 	
-	public void restarVida(int n) {
-		HP -= n;
-	}
 	
 	public NivelPersonaje getSiguiente() {
 		return siguiente;

@@ -3,6 +3,7 @@ import Mapas.*;
 
 import java.awt.*;
 
+import javax.net.ssl.ManagerFactoryParameters;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.border.*;
@@ -20,7 +21,7 @@ import javax.swing.SwingConstants.*;
 	 
 	 
 	 private Logica log;
-	 private Mapa mapa;
+	 private Tiempo tiempoLog;
 	 
 	//CONSTRUCTOR
 	 
@@ -31,43 +32,39 @@ import javax.swing.SwingConstants.*;
  	
 	private void initialize() {
 		
-		
-		mapa = new Mapa();
-		log = new Logica(mapa, this);
-		
-		
 		//CREA EL FRAME
 		crearFrame();
 		crearPanelSuperior();
 		
-		
-		//crea al jugador
-		this.getContentPane().add(log.getJugador().getLabel());
-		
-		
-		
-		//crea a los enemigos
-		log.crearEnemigosConArma(10);
+		//SE CREA LA PARTE LOGICA
+		log = new Logica(this);
+		tiempoLog = new Tiempo(log);
 		
 		
+		
+		//empieza el juego
+		log.EmpezarJuego();
+		tiempoLog.start(); 
 		
 		
 		OyenteTeclado OT = new OyenteTeclado();
 		this.addKeyListener(OT);
+		
+		
 	}
 	
 	private void crearFrame() {
 		this.setResizable(false);
 		this.getContentPane().setBackground(Color.LIGHT_GRAY);
 		this.getContentPane().setLayout(null);
-		this.setBounds(250, 50, mapa.getAncho(), mapa.getAlto());
+		this.setBounds(250, 50, Mapa.MAX_X, Mapa.MAX_Y);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	private void crearPanelSuperior() {
 		
 		//lbl HP:
-		
+			
 		lblHp = new JLabel("HP:");
 		lblHp.setFont(new Font("Sylfaen", Font.PLAIN, 16));
 		lblHp.setBounds(6, 11, 32, 14);
@@ -125,29 +122,16 @@ import javax.swing.SwingConstants.*;
 		
 		public void keyPressed(KeyEvent e) {
 			if (e.getKeyCode() == KeyEvent.VK_LEFT){
-				log.mover(0);
+				mover(0);
 				
 			}
 			else {
 				if (e.getKeyCode() == KeyEvent.VK_RIGHT){
-					log.mover(1);
+					mover(1);
 					
 				}
 				else {
-					
-					
-					/*
-					if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-						label_disparo = new JLabel();
-						label_disparo.setOpaque(true);
-						label_disparo.setBackground(Color.YELLOW);
-						label_disparo.setBounds(0,0,5,20);
-						getContentPane().add(label_disparo);
-						
-						int Pos_X = Player.getX() + Player.getWidth()/2;
-						int Pos_Y = Player.getY() - Player.getHeight();
-						label_disparo.setBounds(Pos_X , Pos_Y , label_disparo.getWidth(), label_disparo.getHeight());
-					*/
+					//aqui planear el disparo
 					}
 				}
 				
@@ -156,7 +140,11 @@ import javax.swing.SwingConstants.*;
 		public void keyReleased(KeyEvent e) {
 			
 		}
-			
+		
+		private void mover(int n) {
+			log.moverJugador(n);
+			repaint();
+		}
 		
 
 		

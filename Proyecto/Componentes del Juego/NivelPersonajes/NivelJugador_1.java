@@ -1,4 +1,4 @@
-package Personajes;
+package NivelPersonajes;
 
 public class NivelJugador_1 extends NivelPersonaje {
 

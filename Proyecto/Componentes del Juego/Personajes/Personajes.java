@@ -1,6 +1,7 @@
 package Personajes;
 
 import Logica.*;
+import NivelPersonajes.NivelPersonaje;
 import ObjetosDelJuego.Objeto;
 
 import java.awt.Rectangle;
@@ -13,26 +14,30 @@ public abstract class Personajes extends Objeto {
 	
 	protected NivelPersonaje miNivel;
 	
-	protected int velocidadMovimiento;
-	protected int HP; //puntos de vida
-	protected int velocidadDisparo;
+	protected int HP; // puntos de vida
 	
-	
-	protected Logica log;
+	//protected Logica log;
 	
 	//constructor
 	
-	public Personajes(int x , int y , Logica l ) {
+	public Personajes(int x , int y) {
 		rec = new Rectangle(x,y,ANCHO,ALTO);
-		log = l;
+		//log = l;
 		
 	}
 	//metodos
 	
-	public int getVelocidadMovimiento() {
-		return velocidadMovimiento;
-	}
+	public abstract int getVelocidadDisparo();
 	
-	abstract public void quitarHP(int n); 
+	public abstract int getVelocidadMovimiento();
+	
+	public abstract int getHP();
+	
+	public abstract void quitarHP(int n); 
 		
+	//todos los personajes se tienen que poder mover
+	
+	public abstract void mover(int n ,int ancho);
+	
+	
 }
