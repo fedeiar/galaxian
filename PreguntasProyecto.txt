@@ -10,12 +10,14 @@
   para no afectar a los metodos que la usan?
 
 - Como diseñar el movimiento del enemigo?
+
+- Como hacer con los visitor? y el disparo?
 //agregar
 
 
 - Agregar un boolean escudo para ver si es vulnerable o no
 
-- colisiones  (o visitor). (FALTARIA LO DE COLISIONES O VISITOR)
+
 
 
 
