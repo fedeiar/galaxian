@@ -8,6 +8,8 @@
 
 - Estaría mal dejar el atributo de GUI en logica? si esta mal, ¿Cómo lo cambio
   para no afectar a los metodos que la usan?
+
+- Como diseñar el movimiento del enemigo?
 //agregar
 
 
