@@ -92,9 +92,10 @@ public class Jugador extends Personajes {
 	public void quitarHP(int n) {
 		if ( HP - n > 0)
 			HP -= n;
-		else
+		else {
 			vidas--;
-		
+			HP = miNivel.getHP();
+		}
 		if(vidas<0) {
 			//habria que ver como destruir al jugador, es decir game over.
 		}

@@ -20,7 +20,7 @@ public class Tiempo extends Thread{
 	public void run() {
 		while(log.hayEnemigos()) {
 			try {
-				Thread.sleep(100);
+				Thread.sleep(300);
 				log.moverBloqueEne();
 			}
 			catch (InterruptedException | EmptyListException e) {
