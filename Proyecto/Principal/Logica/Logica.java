@@ -19,6 +19,7 @@ public class Logica {
 	
 	protected Mapa mapa;
 	protected GUI gui; // considerar sacar la GUI , para eso pasar la por parametro para cuando la necesite
+	protected Tiempo tiempoLog;
 	
 	protected int puntaje  , vidasJugador ; //enemigos actuales removida, se puede saber con listaEnemigo.size()
 	protected Jugador jugador;
@@ -52,6 +53,25 @@ public class Logica {
 		return !listaEnemigo.isEmpty();
 	}
 	
+	
+	public void empezarJuego() {
+		tiempoLog = new Tiempo(this);
+		tiempoLog.start(); 
+	}
+	
+	public void crearComponentes() {
+		crearEnemigos();
+		//podría ir un crear obstaculos
+	}
+	
+	public void crearEnemigos() {
+		listaEnemigo = mapa.obtenerEnemigos();
+		for( Enemigo e : listaEnemigo) {
+			gui.add(e.getLabel());
+		}
+	}
+	
+	
 	public void moverJugador (int n) {
 		jugador.mover(n , mapa.getAncho() );
 	}
@@ -66,19 +86,6 @@ public class Logica {
 		}
 		else {
 			throw new EmptyListException("se intento mover enemigos cuando no quedaba ninguno");
-		}
-	}
-	
-	public void EmpezarJuego() {
-		crearEnemigos();
-		//podría ir un crear obstaculos
-	}
-	
-	
-	public void crearEnemigos() {
-		listaEnemigo = mapa.obtenerEnemigos();
-		for( Enemigo e : listaEnemigo) {
-			gui.add(e.getLabel());
 		}
 	}
 	

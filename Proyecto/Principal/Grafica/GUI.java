@@ -21,7 +21,7 @@ import javax.swing.SwingConstants.*;
 	 
 	 
 	 private Logica log;
-	 private Tiempo tiempoLog;
+	
 	 
 	//CONSTRUCTOR
 	 
@@ -38,13 +38,13 @@ import javax.swing.SwingConstants.*;
 		
 		//SE CREA LA PARTE LOGICA
 		log = new Logica(this);
-		tiempoLog = new Tiempo(log);
 		
 		
+		//SE CREAN LOS COMPONENTES
+		log.crearComponentes();
 		
 		//empieza el juego
-		log.EmpezarJuego();
-		tiempoLog.start(); 
+		log.empezarJuego();
 		
 		
 		OyenteTeclado OT = new OyenteTeclado();
@@ -147,6 +147,8 @@ import javax.swing.SwingConstants.*;
 		}
 		
 
-		
 	}
+	
+	
+	
 }
