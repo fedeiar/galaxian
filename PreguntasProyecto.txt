@@ -8,6 +8,8 @@
 
 - Como hacer con los visitor?
 
+- Accionar (int n) en enemigo no tenemos que usar esa variable porque eso se define en InteligenciaEnemigo.
+
 - atributos de mapa constantes, esta mal si son publicos?
 - De JFrame: ¿Para que sirve repaint()?
 - De Thread: ¿Que hacen sleep, start, run? ¿Por qué si usamos run no se abre la GUI?

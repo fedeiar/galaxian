@@ -2,6 +2,7 @@ package ObjetosDelJuego;
 
 
 import java.awt.Rectangle;
+import Mapas.*;
 import javax.swing.*;
 
 public abstract class Objeto {
@@ -11,6 +12,8 @@ public abstract class Objeto {
 	protected Rectangle rec;
 	protected JLabel etiqueta;
 	protected ImageIcon imagen;
+	public int AnchoMapa=Mapa.MAX_X;
+	public int AltoMapa=Mapa.MAX_Y;
 	
 	//metodos
 	
@@ -49,7 +52,7 @@ public abstract class Objeto {
 	/**
 	 * método que será redefinido acorde al comportamiento de la clase que lo implemente
 	 */
-	public abstract void accionar(int anchoDelMapa) ;
+	public abstract void accionar(int entero) ;
 	
 	
 	

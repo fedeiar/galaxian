@@ -104,8 +104,8 @@ public class Jugador extends Personajes {
 	
 	//MOVIMIENTO ( ver los labels, si usar setX o solo mover el rectangulo )*
 	
-	public void accionar(int getAnchoDelMapa) {
-		
+	public void accionar(int lado) {
+		mover(lado, AnchoMapa);
 	}
 	
 	public void mover(int n , int ancho) {

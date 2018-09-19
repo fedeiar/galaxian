@@ -71,8 +71,9 @@ public abstract class Enemigo extends Personajes {
 	
 	//movimiento comun a todos los enemigos
 	
-	public void accionar(int anchoDelMapa) {
-		inteligencia.mover(anchoDelMapa);
+	public void accionar(int entero) {
+		//La variable entero no al usamos aca, En Jugador la usamos para ver a donde se deberia mover, pero aca de eso se encarga Inteligencia con un Random.
+		inteligencia.mover(AnchoMapa);
 	}
 	
 	

@@ -74,8 +74,8 @@ public class Logica {
 	}
 	
 	
-	public void moverJugador (int n) {
-		jugador.mover(n , mapa.getAncho() );
+	public void moverJugador (int lado) {
+		jugador.accionar(lado);
 	}
 	
 	public void accionarObjetos() throws EmptyListException{
