@@ -3,6 +3,7 @@ import Grafica.*;
 import TDALista.*;
 import Personajes.*;
 import EnemigosConcretos.*;
+import ObjetosDelJuego.*;
 public class Mapa  {
 
 	 //atributos
@@ -29,12 +30,15 @@ public class Mapa  {
 	 
 	//metodo a probar, si queda bien. podrian hacerse mapa abstracto y distintos mapas que implementen este metodo.
 	 
-	 public PositionList<Enemigo> obtenerEnemigos(){
-		 PositionList<Enemigo> L = new ListaDE<Enemigo>();
+	 public PositionList<Objeto> obtenerObjetosIniciales(){
+		 PositionList<Objeto> L = new ListaDE<Objeto>();
 		 for(int i = 0 ; i<5 ; i++) {
 				Enemigo ene = new EnemigoConArma( 200 + i*100 , 100  ,1);
 				L.addLast(ene);
 		}
+		 
+		 //aqui podrían agregarse los obstaculos.
+		 
 		 return L;
 	 }
 }

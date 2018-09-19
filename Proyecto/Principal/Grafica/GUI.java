@@ -41,7 +41,7 @@ import javax.swing.SwingConstants.*;
 		
 		
 		//SE CREAN LOS COMPONENTES
-		log.crearComponentes();
+		log.crearObjetos();
 		
 		//empieza el juego
 		log.empezarJuego();

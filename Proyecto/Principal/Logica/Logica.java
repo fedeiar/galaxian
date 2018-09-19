@@ -14,14 +14,16 @@ public class Logica {
 
 	//atributos
 	
-	protected PositionList<Enemigo> listaEnemigo;
-	protected PositionList<Disparo> listaDisparo;
+	
+	protected PositionList<Objeto>  listaObjetos;
 	
 	protected Mapa mapa;
 	protected GUI gui; // considerar sacar la GUI , para eso pasar la por parametro para cuando la necesite
 	protected Tiempo tiempoLog;
 	
-	protected int puntaje  , vidasJugador ; //enemigos actuales removida, se puede saber con listaEnemigo.size()
+	protected int puntaje  , vidasJugador , cantEnemigos; // como hago para saber la cantidad de enemigos si son todos objetos?
+														  // como aumento cantEnemigos cada vez que agrego un enemigo, si nose
+														  // que tipo de objeto estoy agregando ?
 	protected Jugador jugador;
 	
 	//agregar listas de premios y obstaculos
@@ -30,12 +32,13 @@ public class Logica {
 	
 	public Logica( GUI g) {
 		
-		listaEnemigo = new ListaDE<Enemigo>();
-		listaDisparo = new ListaDE<Disparo>();
+		listaObjetos = new ListaDE<Objeto>();
 	    puntaje = 0;
+	    cantEnemigos = 0;
 	    
 	    mapa = new Mapa();
 	    gui = g;
+	    tiempoLog = new Tiempo(this);
 	    
 	    jugador = new Jugador(mapa.getAncho()/2 , mapa.getAlto() - 60 ); // ver alto y ancho ¿porque si pongo -49 queda al borde?
 	    vidasJugador = jugador.getVidas();
@@ -49,25 +52,24 @@ public class Logica {
 		return puntaje;
 	}
 	
+	public int cantEnemigos() {
+		return cantEnemigos;
+	}
+	
 	public boolean hayEnemigos() {
-		return !listaEnemigo.isEmpty();
+		return cantEnemigos == 0;
 	}
 	
 	
 	public void empezarJuego() {
-		tiempoLog = new Tiempo(this);
 		tiempoLog.start(); 
 	}
 	
-	public void crearComponentes() {
-		crearEnemigos();
-		//podría ir un crear obstaculos
-	}
-	
-	public void crearEnemigos() {
-		listaEnemigo = mapa.obtenerEnemigos();
-		for( Enemigo e : listaEnemigo) {
-			gui.add(e.getLabel());
+	public void crearObjetos() {
+		listaObjetos = mapa.obtenerObjetosIniciales();
+		for( Objeto o : listaObjetos) {
+			
+			gui.add(o.getLabel());
 		}
 	}
 	
@@ -76,12 +78,11 @@ public class Logica {
 		jugador.mover(n , mapa.getAncho() );
 	}
 	
-	public void moverBloqueEne() throws EmptyListException{
-		if(!listaEnemigo.isEmpty()) {
-			Random ran = new Random();
-			int mov = ran.nextInt(2);
-			for(Enemigo e : listaEnemigo) {
-				e.mover(mov, mapa.getAncho());
+	public void accionarObjetos() throws EmptyListException{
+		if(!listaObjetos.isEmpty()) {
+			
+			for(Objeto o : listaObjetos) {
+				o.accionar(mapa.getAncho());
 			}
 		}
 		else {

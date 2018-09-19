@@ -46,7 +46,13 @@ public abstract class Objeto {
 	}
 	
 	
+	/**
+	 * método que será redefinido acorde al comportamiento de la clase que lo implemente
+	 */
+	public abstract void accionar(int anchoDelMapa) ;
+	
+	
 	
 		
-	//agregar metodos colisionar() y serVisitado()
+	
 }

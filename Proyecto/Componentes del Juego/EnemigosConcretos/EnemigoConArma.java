@@ -2,9 +2,8 @@ package EnemigosConcretos;
 import java.awt.Color;
 
 import javax.swing.*;
-
-import Logica.*;
 import Personajes.Enemigo;
+import Inteligencias.*;
 
 public class EnemigoConArma extends Enemigo {
 
@@ -16,6 +15,7 @@ public class EnemigoConArma extends Enemigo {
 	
 	public EnemigoConArma(int x, int y , int nivel) { //parametro logica removido para probar
 		super(x,y,nivel);
+		inteligencia = new InteligenciaEnemigoConArma(this);
 		
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);

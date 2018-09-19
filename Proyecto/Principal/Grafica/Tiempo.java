@@ -21,7 +21,7 @@ public class Tiempo extends Thread{
 		while(log.hayEnemigos()) {
 			try {
 				Thread.sleep(300);
-				log.moverBloqueEne();
+				log.accionarObjetos();
 			}
 			catch (InterruptedException | EmptyListException e) {
 				e.printStackTrace();

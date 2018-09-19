@@ -71,28 +71,9 @@ public abstract class Enemigo extends Personajes {
 	
 	//movimiento comun a todos los enemigos
 	
-	public void mover(int n , int ancho) {
-		if(n==0) {
-			moverIzquierda(ancho);
-		}
-		else
-			if(n==1)
-				moverDerecha(ancho);
+	public void accionar(int anchoDelMapa) {
+		inteligencia.mover(anchoDelMapa);
 	}
-	
-	private void moverIzquierda(int ancho) {
-		if(rec.x - miNivel.getVelocidadMovimiento() > 0) { 
-			setX(rec.x - miNivel.getVelocidadMovimiento()); //  y aca *
-		}
-	}
-	
-	private void moverDerecha(int ancho) {
-		if(rec.x + miNivel.getVelocidadMovimiento() < ancho - rec.getWidth()) { //ver rec.getWidth() para ver si entra bien
-			setX(rec.x + miNivel.getVelocidadMovimiento()); // aca *
-		}
-		
-	}
-	
 	
 	
 	

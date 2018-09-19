@@ -1,21 +1,25 @@
 package Inteligencias;
+import Personajes.*;
+import EnemigosConcretos.*;
 import Logica.*;
 import java.awt.Rectangle;
 
 
-public class InteligenciaEnemigoConArma implements Inteligencia{
+
+public class InteligenciaEnemigoConArma extends Inteligencia{
 	
-	Rectangle rec;
 	
-	public InteligenciaEnemigoConArma(Rectangle r) {
-		rec=r; //Seria el rectangulo correspondiete al enemigo. 
+	
+	public InteligenciaEnemigoConArma(EnemigoConArma e) {
+		super(e);  
 		
 	}
 	
 	
-	
 	//Este metodo estapara que compile
-	public void mover(int n, int ancho) {}
+	
+		
+	
 	
 	
 	

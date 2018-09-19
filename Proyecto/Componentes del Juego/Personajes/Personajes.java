@@ -35,9 +35,7 @@ public abstract class Personajes extends Objeto {
 	
 	public abstract void quitarHP(int n); 
 		
-	//todos los personajes se tienen que poder mover
 	
-	public abstract void mover(int n ,int ancho);
 	
 	
 }

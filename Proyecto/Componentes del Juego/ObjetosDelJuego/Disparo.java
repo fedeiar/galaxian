@@ -36,4 +36,6 @@ public class Disparo extends Objeto {
 		return fuerzaDeImpacto;
 	}
 	
+	
+	
 }
