@@ -35,12 +35,12 @@ public class Jugador extends Personajes {
 		vidas = 3;
 		
 		//---parte grafica del jugador---
+		imagen = new ImageIcon("Sprites/Frisk.png");
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
-		etiqueta.setIcon(miNivel.getImagen());
-		etiqueta.setOpaque(true);
-		etiqueta.setBackground(Color.red);
-	
+		etiqueta.setIcon(imagen);
+		
+		
 	}
 	
 	//----------------METODOS----------------
@@ -102,13 +102,13 @@ public class Jugador extends Personajes {
 		
 	}
 	
-	//MOVIMIENTO ( ver los labels, si usar setX o solo mover el rectangulo )*
+	//-----MOVIMIENTO------
 	
-	public void accionar(int lado) {
-		mover(lado, AnchoMapa);
+	public void accionar(int direccion) {
+		mover(direccion, AnchoMapa);
 	}
 	
-	public void mover(int n , int ancho) {
+	private void mover(int n , int ancho) {
 		if(n==0) {
 			moverIzquierda(ancho);
 		}

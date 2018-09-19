@@ -20,8 +20,9 @@ public class Tiempo extends Thread{
 	public void run() {
 		while(log.hayEnemigos()) {
 			try {
-				Thread.sleep(300);
 				log.accionarObjetos();
+				Thread.sleep(300);
+				
 			}
 			catch (InterruptedException | EmptyListException e) {
 				e.printStackTrace();

@@ -9,8 +9,8 @@ import java.awt.Rectangle;
 public abstract class Personajes extends Objeto {
 	
 	//atributos
-	protected final static int ANCHO = 50;
-	protected final static int ALTO = 20;
+	protected final static int ANCHO = 30;
+	protected final static int ALTO = 30;
 	
 	protected NivelPersonaje miNivel;
 	

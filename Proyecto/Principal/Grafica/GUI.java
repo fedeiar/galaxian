@@ -131,11 +131,16 @@ import javax.swing.SwingConstants.*;
 					
 				}
 				else {
-					//aqui planear el disparo
+					
+					if(e.getKeyCode() == KeyEvent.VK_SPACE ) {
+						log.eliminarEnemigo();
+						numPuntaje.setText(""+log.getPuntaje());
 					}
+					
 				}
 				
 			}
+		}
 		
 		public void keyReleased(KeyEvent e) {
 			

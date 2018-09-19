@@ -40,7 +40,7 @@ public class Logica {
 	    gui = g;
 	    tiempoLog = new Tiempo(this);
 	    
-	    jugador = new Jugador(mapa.getAncho()/2 , mapa.getAlto() - 60 ); // ver alto y ancho ¿porque si pongo -49 queda al borde?
+	    jugador = new Jugador(mapa.getAncho()/2 , mapa.getAlto() - 70 ); // ver alto y ancho ¿porque si pongo -49 queda al borde?
 	    vidasJugador = jugador.getVidas();
 	    gui.add(jugador.getLabel());
 	}
@@ -57,7 +57,7 @@ public class Logica {
 	}
 	
 	public boolean hayEnemigos() {
-		return cantEnemigos == 0;
+		return cantEnemigos != 0;
 	}
 	
 	
@@ -69,13 +69,16 @@ public class Logica {
 		listaObjetos = mapa.obtenerObjetosIniciales();
 		for( Objeto o : listaObjetos) {
 			
+			if( o instanceof Enemigo)  //yase que esta mal no me maten pero de que otra forma hago
+				cantEnemigos++;
+			
 			gui.add(o.getLabel());
 		}
 	}
 	
 	
-	public void moverJugador (int lado) {
-		jugador.accionar(lado);
+	public void moverJugador (int direccion) {
+		jugador.accionar(direccion);
 	}
 	
 	public void accionarObjetos() throws EmptyListException{
@@ -90,5 +93,23 @@ public class Logica {
 		}
 	}
 	
+	//YASE QUE ESTA RECONTRA MAL PERO SINO NOSE COMO HACER
 	
+	public void eliminarEnemigo() {
+		try {
+			for(Position<Objeto> po : listaObjetos.positions())
+				if(po.element() instanceof Enemigo) {
+					Enemigo e = (Enemigo) po.element();
+					puntaje+= e.getPuntaje();
+					gui.remove(e.getLabel());
+					gui.repaint();
+					cantEnemigos--;
+					listaObjetos.remove(po);
+					break;
+				}
+		}
+		catch(InvalidPositionException e) {
+			e.printStackTrace();
+		}
+	}
 }
