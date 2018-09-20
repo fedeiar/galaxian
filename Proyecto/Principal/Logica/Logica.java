@@ -1,9 +1,9 @@
 package Logica;
 import TDALista.*;
-import ObjetosDelJuego.*;
 import Personajes.*;
 
 import Mapas.*;
+import ObjetoGeneral.*;
 
 import java.util.Random;
 
@@ -21,9 +21,8 @@ public class Logica {
 	protected GUI gui; // considerar sacar la GUI , para eso pasar la por parametro para cuando la necesite
 	protected Tiempo tiempoLog;
 	
-	protected int puntaje  , vidasJugador , cantEnemigos; // como hago para saber la cantidad de enemigos si son todos objetos?
-														  // como aumento cantEnemigos cada vez que agrego un enemigo, si nose
-														  // que tipo de objeto estoy agregando ?
+	protected int puntaje  , vidasJugador , cantEnemigos; 
+	
 	protected Jugador jugador;
 	
 	//agregar listas de premios y obstaculos
@@ -36,11 +35,11 @@ public class Logica {
 	    puntaje = 0;
 	    cantEnemigos = 0;
 	    
-	    mapa = new Mapa();
+	    mapa = new Mapa(this);
 	    gui = g;
 	    tiempoLog = new Tiempo(this);
 	    
-	    jugador = new Jugador(mapa.getAncho()/2 , mapa.getAlto() - 70 ); // ver alto y ancho ¿porque si pongo -49 queda al borde?
+	    jugador = new Jugador(this, mapa.getAncho()/2 , mapa.getAlto() - 70 ); // ver alto y ancho ¿porque si pongo -49 queda al borde?
 	    vidasJugador = jugador.getVidas();
 	    gui.add(jugador.getLabel());
 	}
@@ -52,8 +51,16 @@ public class Logica {
 		return puntaje;
 	}
 	
+	public void setPuntaje(int p) {
+		puntaje = p;
+	}
+	
 	public int cantEnemigos() {
 		return cantEnemigos;
+	}
+	
+	public void setCantEnemigos(int cant) {
+		cantEnemigos = cant;
 	}
 	
 	public boolean hayEnemigos() {
@@ -67,25 +74,25 @@ public class Logica {
 	
 	public void crearObjetos() {
 		listaObjetos = mapa.obtenerObjetosIniciales();
+		cantEnemigos = mapa.cantEnemigosVivos();
+		
 		for( Objeto o : listaObjetos) {
-			
-			if( o instanceof Enemigo)  //yase que esta mal no me maten pero de que otra forma hago
-				cantEnemigos++;
-			
 			gui.add(o.getLabel());
 		}
+		
+		
 	}
 	
 	
 	public void moverJugador (int direccion) {
-		jugador.accionar(direccion);
+		jugador.mover(direccion);
 	}
 	
 	public void accionarObjetos() throws EmptyListException{
 		if(!listaObjetos.isEmpty()) {
 			
 			for(Objeto o : listaObjetos) {
-				o.accionar(mapa.getAncho());
+				o.accionar();
 			}
 		}
 		else {
@@ -97,19 +104,23 @@ public class Logica {
 	
 	public void eliminarEnemigo() {
 		try {
-			for(Position<Objeto> po : listaObjetos.positions())
-				if(po.element() instanceof Enemigo) {
-					Enemigo e = (Enemigo) po.element();
-					puntaje+= e.getPuntaje();
-					gui.remove(e.getLabel());
-					gui.repaint();
-					cantEnemigos--;
-					listaObjetos.remove(po);
-					break;
-				}
+			if(!listaObjetos.isEmpty()) {
+				Position<Objeto> po = listaObjetos.last();
+				
+				gui.remove(po.element().getLabel());
+				gui.repaint();
+				po.element().morir();
+				
+				listaObjetos.remove(po);
+			}
 		}
-		catch(InvalidPositionException e) {
+		catch(InvalidPositionException | EmptyListException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	//prototipo colisionar
+	
+	
+	
 }

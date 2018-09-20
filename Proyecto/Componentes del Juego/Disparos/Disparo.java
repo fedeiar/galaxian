@@ -1,8 +1,10 @@
-package ObjetosDelJuego;
+package Disparos;
 
 import java.awt.*;
-
+import Logica.*;
 import javax.swing.*;
+
+import ObjetoGeneral.Objeto;
 
 public class Disparo extends Objeto {
 
@@ -12,9 +14,12 @@ public class Disparo extends Objeto {
 	
 	private int velocidadMovimiento;
 	private int fuerzaDeImpacto;
+	
+	
 	//constuctor
 	
-	public Disparo (int v ,int f, int x , int y) {
+	public Disparo (Logica l,int v ,int f, int x , int y) {
+		super(l);
 		rec = new Rectangle(x,y,ANCHO,LARGO);
 		velocidadMovimiento = v;
 		fuerzaDeImpacto = f;
@@ -34,6 +39,20 @@ public class Disparo extends Objeto {
 	
 	public int getFuerzaImpacto() {
 		return fuerzaDeImpacto;
+	}
+	
+	//movimiento
+	
+	public void accionar() {
+		if(this.getY() < 0)
+			this.morir();
+		else
+			this.setY(this.getY() - velocidadMovimiento); 
+		
+	}
+	
+	public void morir() {
+		
 	}
 	
 	

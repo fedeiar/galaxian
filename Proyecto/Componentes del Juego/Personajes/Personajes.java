@@ -2,7 +2,7 @@ package Personajes;
 
 import Logica.*;
 import NivelPersonajes.NivelPersonaje;
-import ObjetosDelJuego.Objeto;
+import ObjetoGeneral.Objeto;
 
 import java.awt.Rectangle;
 
@@ -20,7 +20,8 @@ public abstract class Personajes extends Objeto {
 	
 	//constructor
 	
-	public Personajes(int x , int y) {
+	public Personajes(Logica l ,int x , int y) {
+		super(l);
 		rec = new Rectangle(x,y,ANCHO,ALTO);
 		//log = l;
 		

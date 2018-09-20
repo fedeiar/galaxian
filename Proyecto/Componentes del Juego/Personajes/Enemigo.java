@@ -3,6 +3,7 @@ package Personajes;
 import Inteligencias.*;
 import Logica.*;
 import NivelPersonajes.NivelEnemigo_1;
+import ObjetoGeneral.Objeto;
 
 public abstract class Enemigo extends Personajes {
 
@@ -14,8 +15,8 @@ public abstract class Enemigo extends Personajes {
 	
 	//constructor
 	
-	public Enemigo(int x, int y,  int nivel) { // parametro logica removido para probar
-		super(x,y);
+	public Enemigo(Logica l,int x, int y,  int nivel) { 
+		super(l,x,y);
 		setNivel(nivel);
 		
 		
@@ -71,11 +72,20 @@ public abstract class Enemigo extends Personajes {
 	
 	//movimiento comun a todos los enemigos
 	
-	public void accionar(int direccion) {
-		//La variable direccion no la usamos aca, En Jugador la usamos para ver a donde se deberia mover, pero aca de eso se encarga Inteligencia con un Random.
+	public void accionar() {
 		inteligencia.mover(AnchoMapa);
 	}
 	
+	//forma de morir comun a todos los enemigos
+	public void morir() {
+		int puntaje = miNivel.getPuntaje();
+		log.setPuntaje(log.getPuntaje() + puntaje);
+		log.setCantEnemigos(log.cantEnemigos() - 1);
+	}
 	
+	//colision
 	
+	public void serColisionado(Objeto o) {
+		o.colisionar(this);
+	}
 }

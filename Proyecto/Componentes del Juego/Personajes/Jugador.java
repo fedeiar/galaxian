@@ -18,14 +18,14 @@ public class Jugador extends Personajes {
 	
 	protected NivelJugador_1 miNivel; //redefine el atributo miNivel de Personajes
 	
-	//considerar un atributo booleano de vulnerabilidad
+	
 	
 	//--------------CONSTRUCTOR--------------
 	
-	public Jugador (int x , int y ) { //parametro logica removido para probar
+	public Jugador (Logica l,int x , int y ) { 
 		
 		//---parte logica del jugador---
-		super(x,y);
+		super(l,x,y);
 		
 		miNivel = new NivelJugador_1();
 		
@@ -97,40 +97,39 @@ public class Jugador extends Personajes {
 			HP = miNivel.getHP();
 		}
 		if(vidas<0) {
-			//habria que ver como destruir al jugador, es decir game over.
+			morir();
 		}
 		
 	}
 	
 	//-----MOVIMIENTO------
 	
-	public void accionar(int direccion) {
-		mover(direccion, AnchoMapa);
-	}
+	public void accionar() {}
 	
-	private void mover(int n , int ancho) {
+	
+	public void mover(int n) {
 		if(n==0) {
-			moverIzquierda(ancho);
+			moverIzquierda();
 		}
 		else
 			if(n==1)
-				moverDerecha(ancho);
+				moverDerecha();
 	}
 	
-	private void moverIzquierda(int ancho) {
+	private void moverIzquierda() {
 		if(rec.x - velocidadMovimiento > 0) { 
 			setX(rec.x - velocidadMovimiento); //  y aca *
 		}
 		else {
 			long aux = Math.round(rec.getWidth());
-			setX(ancho - (int)aux); //si bien un long es un int pero mas largo, hace falta casting
+			setX(AnchoMapa - (int)aux); //si bien un long es un int pero mas largo, hace falta casting
 			
 			//SI CRAHSEA REVISAR ACA!!!!!
 		}
 	}
 	
-	private void moverDerecha(int ancho) {
-		if(rec.x + velocidadMovimiento < ancho - rec.getWidth()) { //ver rec.getWidth() para ver si entra bien
+	private void moverDerecha() {
+		if(rec.x + velocidadMovimiento < AnchoMapa - rec.getWidth()) { //ver rec.getWidth() para ver si entra bien
 			setX(rec.x + velocidadMovimiento); // aca *
 		}
 		else

@@ -1,9 +1,10 @@
-package ObjetosDelJuego;
+package ObjetoGeneral;
 
 
 import java.awt.Rectangle;
 import Mapas.*;
 import javax.swing.*;
+import Logica.*;
 
 public abstract class Objeto {
 	
@@ -12,9 +13,16 @@ public abstract class Objeto {
 	protected Rectangle rec;
 	protected JLabel etiqueta;
 	protected ImageIcon imagen;
-	
 	protected final static int AnchoMapa=Mapa.MAX_X;
 	protected final static int AltoMapa=Mapa.MAX_Y;
+	
+	protected Logica log;
+	
+	//constructor
+	
+	public Objeto(Logica l) {
+		log = l;
+	}
 	
 	//metodos
 	
@@ -53,10 +61,19 @@ public abstract class Objeto {
 	/**
 	 * método que será redefinido acorde al comportamiento de la clase que lo implemente
 	 */
-	public abstract void accionar(int direccion) ;
+	public abstract void accionar() ;
 	
-	
-	
+	/**
+	 * método que sera redefinido por cada clase depende como reacciona al ser eliminado
+	 */
+	public abstract void morir();
 		
+	//prototipo colisionar (patron visitor implícito)
+	
+	public abstract void serColisionado(Objeto o);
+	
+	public void colisionar(Objeto o) {
+	}
+	
 	
 }
