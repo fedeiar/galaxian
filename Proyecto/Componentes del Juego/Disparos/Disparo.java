@@ -9,11 +9,11 @@ import ObjetoGeneral.Objeto;
 public abstract class Disparo extends Objeto {
 
 	//atributos
-	private final static int ANCHO = 4;
-	private final static int LARGO = 5;
+	protected final static int ANCHO = 4;
+	protected final static int LARGO = 5;
 	
-	private int velocidadMovimiento;
-	private int fuerzaDeImpacto;
+	protected int velocidadMovimiento;
+	protected int fuerzaDeImpacto;
 	
 	
 	//constuctor

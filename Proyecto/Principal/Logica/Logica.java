@@ -4,7 +4,7 @@ import Personajes.*;
 
 import Mapas.*;
 import ObjetoGeneral.*;
-
+import Disparos.*;
 import java.util.Random;
 
 import EnemigosConcretos.EnemigoConArma;
@@ -18,14 +18,13 @@ public class Logica {
 	protected PositionList<Objeto>  listaObjetos;
 	
 	protected Mapa mapa;
-	protected GUI gui; // considerar sacar la GUI , para eso pasar la por parametro para cuando la necesite
+	protected GUI gui;
 	protected Tiempo tiempoLog;
 	
 	protected int puntaje  , vidasJugador , cantEnemigos; 
 	
 	protected Jugador jugador;
 	
-	//agregar listas de premios y obstaculos
 	
 	//constructor
 	
@@ -79,10 +78,11 @@ public class Logica {
 		for( Objeto o : listaObjetos) {
 			gui.add(o.getLabel());
 		}
-		
-		
 	}
 	
+	public void lanzarDisparoJugador() {
+		
+	}
 	
 	public void moverJugador (int direccion) {
 		jugador.mover(direccion);
@@ -101,6 +101,7 @@ public class Logica {
 	}
 	
 	//este metodo de todas formas será removido mas adelante para ser reemplazado por eliminarObjeto(Objeto o)
+	//solo esta para pasar el sprint
 	
 	public void eliminarEnemigo() {
 		try {
@@ -140,6 +141,29 @@ public class Logica {
 		}
 	}
 	
+	//prototipo para detectar colisiones, funciona en O(n^2), dudoso
 	
+	public void detectarColisiones() {
+		Objeto objs[] = new Objeto[listaObjetos.size()]; //necesito un arreglo de forma de tener un indice para recorrerlo 2 veces sin tener repetidos
+		int i=0;
+		
+		for(Position<Objeto> po : listaObjetos.positions()) {
+			objs[i] = po.element();
+			i++;
+		}
+		
+		for(i=0; i<objs.length ; i++) {
+			for(int j=i+1 ; j<objs.length ; j++) {
+				if(objs[i].getRectangulo().intersects(objs[j].getRectangulo())) { // si true quiere decir que colisionaron
+					objs[i].colisionar(objs[j]);
+					objs[j].colisionar(objs[i]);
+					/*es necesario hacer las 2 colisiones, ya que si por ejemplo un enemigo COLISIONA A un disparo jugador
+					esto no tendrá efecto y no pasa nada, pero sí viceversa.
+					*/
+				}
+			}
+		}
+					
+	}
 	
 }

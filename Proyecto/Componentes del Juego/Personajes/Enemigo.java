@@ -71,22 +71,27 @@ public abstract class Enemigo extends Personajes {
 		}
 	}
 	
-	//movimiento comun a todos los enemigos
+	//----movimiento comun a todos los enemigos----
 	
 	public void accionar() {
 		inteligencia.mover(AnchoMapa);
 	}
 	
-	//forma de morir comun a todos los enemigos
+	//----forma de morir comun a todos los enemigos----
+	
 	public void morir() {
 		int puntaje = miNivel.getPuntaje();
 		log.setPuntaje(log.getPuntaje() + puntaje);
 		log.setCantEnemigos(log.cantEnemigos() - 1);
 	}
 	
-	//colision
+	//----COLISION----
 	
 	public void serColisionado(Objeto o) {
 		o.colisionar(this);
 	}
+	
+	//no todos los enemigos colisionan asi que no se redefine colisionar(Objeto o)
+	
+	
 }

@@ -73,7 +73,10 @@ public abstract class Objeto {
 	public abstract void serColisionado(Objeto o);
 	
 	public void colisionar(Objeto o) {
+		//no posee cuerpo ya que será el metodo por defecto en caso de una colision sin efectos
+		//e.g: un disparo enemigo con un enemigo.
 	}
+	
 	
 	
 }
