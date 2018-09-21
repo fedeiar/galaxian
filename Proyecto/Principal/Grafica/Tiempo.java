@@ -20,11 +20,11 @@ public class Tiempo extends Thread{
 	public void run() {
 		while(log.hayObjetos()) {
 			try {
-				System.out.println(log.cantEnemigos());
+				
 				log.accionarObjetos();
 				log.detectarColisiones();
 				
-				Thread.sleep(300);
+				Thread.sleep(220);
 				
 				
 			}

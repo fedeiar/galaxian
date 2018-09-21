@@ -19,7 +19,4 @@ public class DisparoEnemigo extends Disparo {
 		public void serColisionado(Objeto o) {}
 		
 		
-		public void colisionar(Objeto o) {
-			
-		}
 }

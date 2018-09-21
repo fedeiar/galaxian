@@ -40,7 +40,7 @@ public class Logica {
 	    gui = g;
 	    tiempoLog = new Tiempo(this);
 	    
-	    jugador = new Jugador(this, mapa.getAncho()/2 , mapa.getAlto() - 70 ); // ver alto y ancho ¿porque si pongo -49 queda al borde?
+	    jugador = new Jugador(this, Mapa.MAX_X/2 , Mapa.MAX_Y - 70 ); // ver alto y ancho ¿porque si pongo -49 queda al borde?
 	    vidasJugador = jugador.getVidas();
 	    gui.add(jugador.getLabel());
 	}
@@ -96,12 +96,11 @@ public class Logica {
 	}
 	
 	public void lanzarDisparoJugador() {
-		System.out.println("estoy entrando a lanzardisparo");
 		DisparoJugador disparoJ = new DisparoJugador(this,jugador.getVelocidadDisparo(),jugador.getFuerzaDisparo(),
-													 jugador.getX() + jugador.getAncho()/2 , jugador.getY());
+													 jugador.getX() + jugador.getAncho()/2 , jugador.getY() );
 		listaObjetos.addFirst(disparoJ);
 		gui.add(disparoJ.getLabel());
-		gui.repintar();
+		//gui.repintar();
 	}
 	
 	public void accionarObjetos() throws EmptyListException{
@@ -162,17 +161,19 @@ public class Logica {
 	//prototipo para detectar colisiones, funciona en O(n^2), dudoso
 	
 	public void detectarColisiones() {
-		Objeto objs[] = new Objeto[listaObjetos.size()]; //necesito un arreglo de forma de tener un indice para recorrerlo 2 veces sin tener repetidos
+		Objeto objs[] = new Objeto[listaObjetos.size() + 1]; //necesito un arreglo de forma de tener un indice para recorrerlo 2 veces sin tener repetidos
 		int i=0;
 		
 		for(Position<Objeto> po : listaObjetos.positions()) {
 			objs[i] = po.element();
 			i++;
 		}
+		objs[i] = jugador ; //guardo al jugador en la ultima posicion ya que jugador no pertenece a la lista de objetos
 		
 		for(i=0; i<objs.length ; i++) {
 			for(int j=i+1 ; j<objs.length ; j++) {
 				if(objs[i].getRectangulo().intersects(objs[j].getRectangulo())) { // si true quiere decir que colisionaron
+					System.out.println("hubo colision entre 2 objetos");
 					if( objs[i] instanceof DisparoJugador) {
 						System.out.println("soy un disparo jugador, soy objs[i]");
 					}

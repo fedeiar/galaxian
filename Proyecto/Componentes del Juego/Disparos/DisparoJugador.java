@@ -20,11 +20,8 @@ public class DisparoJugador extends Disparo{
 			//cuerpo vacio ya que no tiene efecto que un disparo seaColisionado por alguien
 		}
 		
-		//ver detectarColisiones() en clase logica (abajo del todo), como hay sobrecarga y no hay redefinicion,
-		//y la lista son todos objetos, entonces el disparo SIEMPRE usara el metodo de objeto, ya
-		//que objeto no tiene definido colisionar con un enemigo.
 		
-		//para solucionar esto volvemos a caer en redefinicion  e instanceOf.
+		
 		public void afectarEnemigo(Enemigo e) {
 			
 			e.quitarHP(fuerzaDeImpacto);
@@ -33,7 +30,5 @@ public class DisparoJugador extends Disparo{
 			System.out.println("Entro a DisparoJugador (yay)");
 		}
 		
-		public void colisionar(Obstaculos o) {
-			
-		}
+		
 }

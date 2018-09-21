@@ -78,18 +78,11 @@ public abstract class Objeto {
 	 */
 	public abstract void morir();
 		
-	//prototipo colisionar (patron visitor implícito)
+	//---prototipo colisionar (patron visitor implícito)---
 	
 	public abstract void serColisionado(Objeto o);
 	
+	
 	public abstract void afectarEnemigo(Enemigo e);
-	
-	public void colisionar(Objeto o) {
-		//no posee cuerpo ya que será el metodo por defecto en caso de una colision sin efectos
-		//e.g: un disparo enemigo con un enemigo.
-		System.out.println("entro a Objeto");
-	}
-	
-	
 	
 }

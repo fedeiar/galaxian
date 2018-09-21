@@ -42,7 +42,6 @@ public abstract class Enemigo extends Personajes {
 		return inteligencia;
 	}
 	
-	
 	public int getPuntaje() {
 		return miNivel.getPuntaje();
 	}
@@ -59,10 +58,11 @@ public abstract class Enemigo extends Personajes {
 		return miNivel.getHP();
 	}
 	
+	
 	public void setInteligencia(Inteligencia i) {
 		inteligencia = i;
 	}
-	
+
 	public void quitarHP(int n) {
 		if( HP - n > 0)
 			HP -= n;
@@ -71,6 +71,7 @@ public abstract class Enemigo extends Personajes {
 			log.eliminarObjeto(this); //probar y preguntar, morir esta dentro de este metodo
 		}
 	}
+	
 	
 	//----movimiento comun a todos los enemigos----
 	
@@ -86,8 +87,8 @@ public abstract class Enemigo extends Personajes {
 		log.setCantEnemigos(log.cantEnemigos() - 1);
 	}
 	
-	//----COLISION----
-	public void afectarEnemigo(Enemigo e) {}
+	
+	//------------COLISION-------------
 	
 	public void serColisionado(Objeto o) {
 		System.out.println("entre a enemigo");
@@ -96,7 +97,7 @@ public abstract class Enemigo extends Personajes {
 		
 	}
 	
-	//no todos los enemigos colisionan asi que no se redefine colisionar(Objeto o)
+	public void afectarEnemigo(Enemigo e) {}
 	
 	
 }

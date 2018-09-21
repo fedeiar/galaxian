@@ -13,7 +13,7 @@ public class EnemigoConArma extends Enemigo {
 	
 	//constructor
 	
-	public EnemigoConArma(Logica l, int x, int y , int nivel) { //parametro logica removido para probar
+	public EnemigoConArma(Logica l, int x, int y , int nivel) {
 		super(l,x,y,nivel);
 		inteligencia = new InteligenciaEnemigoConArma(this);
 		
@@ -23,7 +23,7 @@ public class EnemigoConArma extends Enemigo {
 		etiqueta.setOpaque(true);
 		etiqueta.setBackground(Color.blue);
 		
-		//habria que inicializar la inteligencia
+
 	}
 	
 	

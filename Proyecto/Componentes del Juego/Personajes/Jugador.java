@@ -17,6 +17,7 @@ public class Jugador extends Personajes {
 	protected int velocidadMovimiento;
 	protected int velocidadDisparo;
 	protected int fuerzaDisparo;
+	
 	protected NivelJugador_1 miNivel; //redefine el atributo miNivel de Personajes
 	
 	
@@ -148,8 +149,6 @@ public class Jugador extends Personajes {
 	
 	//colision
 	
-	public void serColisionado(Objeto o) {
-		o.colisionar(this);
-	}
+	
 	
 }

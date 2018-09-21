@@ -10,8 +10,8 @@ public class Mapa  {
 
 	 //atributos
 	
-	 public final static int  MAX_X=900; //ancho del frame , ojo esta en publico, preguntar
-	 public final static int MAX_Y=600;  //alto del frame , ojo esta en publico, preguntar
+	 public final static int  MAX_X =900; //ancho del frame , ojo esta en publico, preguntar
+	 public final static int MAX_Y =600;  //alto del frame , ojo esta en publico, preguntar
 	 
 	 private Logica log;
 	 private int cantEnemigos;
@@ -22,15 +22,7 @@ public class Mapa  {
 		 cantEnemigos = 0;
 	 }
 	 
-	 //metodos
 	 
-	 public int getAncho() {
-		 return MAX_X;
-	 }
-	 
-	 public int getAlto() {
-		 return MAX_Y;
-	 }
 	 
 	//metodo a probar, si queda bien. podrian hacerse mapa abstracto y distintos mapas que implementen este metodo.
 	 

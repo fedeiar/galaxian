@@ -16,7 +16,7 @@ public class InteligenciaEnemigoConArma extends Inteligencia{
 	}
 	
 	
-	//Este metodo estapara que compile
+
 	
 		
 	
