@@ -6,7 +6,7 @@ import javax.swing.*;
 
 import ObjetoGeneral.Objeto;
 
-public class Disparo extends Objeto {
+public abstract class Disparo extends Objeto {
 
 	//atributos
 	private final static int ANCHO = 4;
@@ -45,7 +45,7 @@ public class Disparo extends Objeto {
 	
 	public void accionar() {
 		if(this.getY() < 0)
-			this.morir();
+			log.eliminarObjeto(this);
 		else
 			this.setY(this.getY() - velocidadMovimiento); 
 		

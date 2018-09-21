@@ -2,6 +2,7 @@ package Personajes;
 
 import Logica.*;
 import NivelPersonajes.*;
+import ObjetoGeneral.Objeto;
 
 import java.awt.Color;
 
@@ -124,7 +125,6 @@ public class Jugador extends Personajes {
 			long aux = Math.round(rec.getWidth());
 			setX(AnchoMapa - (int)aux); //si bien un long es un int pero mas largo, hace falta casting
 			
-			//SI CRAHSEA REVISAR ACA!!!!!
 		}
 	}
 	
@@ -136,6 +136,10 @@ public class Jugador extends Personajes {
 			setX(0);
 	}
 	
+	//colision
 	
+	public void serColisionado(Objeto o) {
+		o.colisionar(this);
+	}
 	
 }

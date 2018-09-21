@@ -100,7 +100,7 @@ public class Logica {
 		}
 	}
 	
-	//YASE QUE ESTA RECONTRA MAL PERO SINO NOSE COMO HACER
+	//este metodo de todas formas será removido mas adelante para ser reemplazado por eliminarObjeto(Objeto o)
 	
 	public void eliminarEnemigo() {
 		try {
@@ -119,7 +119,26 @@ public class Logica {
 		}
 	}
 	
-	//prototipo colisionar
+	//metodo agregado a probar (por ahora solo usado por disparo)
+	
+	public void eliminarObjeto(Objeto o) {
+		try {
+			for(Position<Objeto> po : listaObjetos.positions()) {
+				if(po.element() == o) {
+					
+					gui.remove(po.element().getLabel());
+					gui.repaint();
+					po.element().morir();
+					
+					listaObjetos.remove(po);
+					break;
+				}
+			}
+		}
+		catch(InvalidPositionException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	

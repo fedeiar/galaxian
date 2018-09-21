@@ -19,13 +19,14 @@ public abstract class Enemigo extends Personajes {
 		super(l,x,y);
 		setNivel(nivel);
 		
-		
-		//no inicializamos los demas atributos porque estan en miNivel.
-		//y como los enemigos no agarran powerups, van a permanecer constantes.
-		//el nivel de un enemigo determina la dificultad del nivel.
+		/*
+			no inicializamos los demas atributos porque estan en miNivel.
+			y como los enemigos no agarran powerups, van a permanecer constantes.
+			el nivel de un enemigo determina la dificultad del nivel.
+		*/
 	}
 	
-	//es privado ya que un enemigo no subirá de nivel, sino que se instanciara uno con un nivel determinado
+	
 	private void setNivel(int n) {
 		if (n==1)
 			miNivel = new NivelEnemigo_1();
@@ -66,7 +67,7 @@ public abstract class Enemigo extends Personajes {
 		if( HP - n > 0)
 			HP -= n;
 		else {
-			//habria que destruir al enemigo
+			log.eliminarObjeto(this); //probar y preguntar
 		}
 	}
 	
