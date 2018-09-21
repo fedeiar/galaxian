@@ -53,6 +53,13 @@ import javax.swing.SwingConstants.*;
 		
 	}
 	
+	public void repintar() {
+		numPuntaje.setText(""+log.getPuntaje());
+		BarraVida.setValue(log.getHPJugador());
+		numVidas.setText(""+log.getVidasJugador());
+		repaint();
+	}
+	
 	private void crearFrame() {
 		this.setResizable(false);
 		this.getContentPane().setBackground(Color.LIGHT_GRAY);
@@ -134,7 +141,12 @@ import javax.swing.SwingConstants.*;
 					
 					if(e.getKeyCode() == KeyEvent.VK_SPACE ) {
 						log.eliminarEnemigo();
-						numPuntaje.setText(""+log.getPuntaje());
+						
+					}
+					else {
+						if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+							log.lanzarDisparoJugador();
+						}
 					}
 					
 				}
@@ -148,7 +160,6 @@ import javax.swing.SwingConstants.*;
 		
 		private void mover(int n) {
 			log.moverJugador(n);
-			repaint();
 		}
 		
 

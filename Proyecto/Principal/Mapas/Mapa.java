@@ -37,7 +37,7 @@ public class Mapa  {
 	 public PositionList<Objeto> obtenerObjetosIniciales(){
 		 PositionList<Objeto> L = new ListaDE<Objeto>();
 		 for(int i = 0 ; i<5 ; i++) {
-				Enemigo ene = new EnemigoConArma( log, 200 + i*100 , 100  ,1);
+				EnemigoConArma ene = new EnemigoConArma( log, 200 + i*100 , 100  ,1);
 				L.addLast(ene);
 				cantEnemigos++;
 		}

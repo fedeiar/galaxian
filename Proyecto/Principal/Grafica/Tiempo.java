@@ -21,12 +21,15 @@ public class Tiempo extends Thread{
 		while(log.hayEnemigos()) {
 			try {
 				log.accionarObjetos();
-
+				log.detectarColisiones();
+				
 				Thread.sleep(100);
+				
 				
 			}
 			catch (InterruptedException | EmptyListException e) {
 				e.printStackTrace();
+				
 			}
 			
 		}

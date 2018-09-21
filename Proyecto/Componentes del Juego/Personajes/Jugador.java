@@ -16,7 +16,7 @@ public class Jugador extends Personajes {
 	//jugador tiene como atributos estos datos ya que ademas de los provistos por nivel, pueden ser incrementados por algun powerup
 	protected int velocidadMovimiento;
 	protected int velocidadDisparo;
-	
+	protected int fuerzaDisparo;
 	protected NivelJugador_1 miNivel; //redefine el atributo miNivel de Personajes
 	
 	
@@ -30,9 +30,11 @@ public class Jugador extends Personajes {
 		
 		miNivel = new NivelJugador_1();
 		
-		velocidadMovimiento = miNivel.getVelocidadMovimiento();
+		
 		HP = miNivel.getHP();
+		velocidadMovimiento = miNivel.getVelocidadMovimiento();
 		velocidadDisparo = miNivel.getVelocidadDisparo();
+		fuerzaDisparo = miNivel.getFuerzaDisparo();
 		vidas = 3;
 		
 		//---parte grafica del jugador---
@@ -64,12 +66,20 @@ public class Jugador extends Personajes {
 	
 	//VELOCIDAD de movimiento y disparo
 	
+	public int getFuerzaDisparo() {
+		return miNivel.getFuerzaDisparo();
+	}
+	
 	public int getVelocidadDisparo() {
 		return velocidadDisparo;
 	}
 	
 	public int getVelocidadMovimiento() {
 		return velocidadMovimiento;
+	}
+	
+	public void setFuerzaDisparo(int n) {
+		fuerzaDisparo = n;
 	}
 	
 	public void setVelocidadDisparo(int n) {

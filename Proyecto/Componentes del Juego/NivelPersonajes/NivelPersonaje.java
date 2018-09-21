@@ -15,6 +15,7 @@ public abstract class NivelPersonaje {
 	protected int velocidadMovimiento;
 	protected int HP;
 	protected int velocidadDisparo;
+	protected int fuerzaDisparo;
 	protected ImageIcon foto;
 	
 	//constructor
@@ -24,6 +25,10 @@ public abstract class NivelPersonaje {
 	}
 	
 	//metodos
+	
+	public int getFuerzaDisparo() {
+		return fuerzaDisparo;
+	}
 	
 	public int getVelocidadMovimiento() {
 		return velocidadMovimiento;

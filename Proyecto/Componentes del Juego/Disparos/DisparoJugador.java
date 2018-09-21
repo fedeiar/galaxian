@@ -1,4 +1,5 @@
 package Disparos;
+import EnemigosConcretos.EnemigoConArma;
 import Logica.*;
 import ObjetoGeneral.*;
 import Personajes.*;
@@ -15,13 +16,21 @@ public class DisparoJugador extends Disparo{
 		
 	//metodos
 	
-		public void serColisionado(Objeto o) {}
+		public void serColisionado(Objeto o) {
+			//cuerpo vacio ya que no tiene efecto que un disparo seaColisionado por alguien
+		}
 		
-		//aquel que use a colisionar, si pasa un objeto, como sabra java cual metodo utilizar?
-		//Juan si lees esto, hice una modificacion, nose si esto esta bien.
-		public void colisionar(Enemigo e) {
+		//ver detectarColisiones() en clase logica (abajo del todo), como hay sobrecarga y no hay redefinicion,
+		//y la lista son todos objetos, entonces el disparo SIEMPRE usara el metodo de objeto, ya
+		//que objeto no tiene definido colisionar con un enemigo.
+		
+		//para solucionar esto volvemos a caer en redefinicion  e instanceOf.
+		public void afectarEnemigo(Enemigo e) {
+			
 			e.quitarHP(fuerzaDeImpacto);
 			log.eliminarObjeto(this);
+			
+			System.out.println("Entro a DisparoJugador (yay)");
 		}
 		
 		public void colisionar(Obstaculos o) {

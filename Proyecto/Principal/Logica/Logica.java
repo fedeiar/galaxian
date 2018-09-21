@@ -5,9 +5,11 @@ import Personajes.*;
 import Mapas.*;
 import ObjetoGeneral.*;
 import Disparos.*;
+import EnemigosConcretos.EnemigoConArma;
+
 import java.util.Random;
 
-import EnemigosConcretos.EnemigoConArma;
+
 import Grafica.*;
 
 public class Logica {
@@ -45,7 +47,12 @@ public class Logica {
 	
 	//metodos
 	
-	
+	public int getHPJugador() {
+		return jugador.getHP();
+	}
+	public int getVidasJugador() {
+		return jugador.getVidas();
+	}
 	public int getPuntaje() {
 		return puntaje;
 	}
@@ -71,6 +78,7 @@ public class Logica {
 		tiempoLog.start(); 
 	}
 	
+	
 	public void crearObjetos() {
 		listaObjetos = mapa.obtenerObjetosIniciales();
 		cantEnemigos = mapa.cantEnemigosVivos();
@@ -81,7 +89,11 @@ public class Logica {
 	}
 	
 	public void lanzarDisparoJugador() {
-		
+		DisparoJugador disparoJ = new DisparoJugador(this,jugador.getVelocidadDisparo(),jugador.getFuerzaDisparo(),
+													 jugador.getX() + jugador.getAncho()/2 , jugador.getY());
+		listaObjetos.addFirst(disparoJ);
+		gui.add(disparoJ.getLabel());
+		gui.repintar();
 	}
 	
 	public void moverJugador (int direccion) {
@@ -94,6 +106,7 @@ public class Logica {
 			for(Objeto o : listaObjetos) {
 				o.accionar();
 			}
+			gui.repintar();
 		}
 		else {
 			throw new EmptyListException("se intento mover enemigos cuando no quedaba ninguno");
@@ -109,10 +122,11 @@ public class Logica {
 				Position<Objeto> po = listaObjetos.last();
 				
 				gui.remove(po.element().getLabel());
-				gui.repaint();
 				po.element().morir();
 				
 				listaObjetos.remove(po);
+				
+				gui.repintar();
 			}
 		}
 		catch(InvalidPositionException | EmptyListException e) {
@@ -128,13 +142,13 @@ public class Logica {
 				if(po.element() == o) {
 					
 					gui.remove(po.element().getLabel());
-					gui.repaint();
 					po.element().morir();
 					
 					listaObjetos.remove(po);
 					break;
 				}
 			}
+			gui.repintar();
 		}
 		catch(InvalidPositionException e) {
 			e.printStackTrace();
@@ -155,14 +169,21 @@ public class Logica {
 		for(i=0; i<objs.length ; i++) {
 			for(int j=i+1 ; j<objs.length ; j++) {
 				if(objs[i].getRectangulo().intersects(objs[j].getRectangulo())) { // si true quiere decir que colisionaron
-					objs[i].colisionar(objs[j]);
-					objs[j].colisionar(objs[i]);
-					/*es necesario hacer las 2 colisiones, ya que si por ejemplo un enemigo COLISIONA A un disparo jugador
+					if( objs[i] instanceof DisparoJugador) {
+						System.out.println("soy un disparo jugador, soy objs[i]");
+					}
+					if( objs[j] instanceof EnemigoConArma) {
+						System.out.println("soy un enemigoConArma, soy objs[j]");
+					}
+					objs[i].serColisionado(objs[j]);
+					objs[j].serColisionado(objs[i]);
+					/*es necesario hacer las 2 colisiones, ya que si por ejemplo un disparo ES COLISIONADO POR un enemigo
 					esto no tendrá efecto y no pasa nada, pero sí viceversa.
 					*/
 				}
 			}
 		}
+		gui.repintar();
 					
 	}
 	

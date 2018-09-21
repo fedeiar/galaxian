@@ -67,6 +67,7 @@ public abstract class Enemigo extends Personajes {
 		if( HP - n > 0)
 			HP -= n;
 		else {
+			morir();
 			log.eliminarObjeto(this); //probar y preguntar
 		}
 	}
@@ -86,9 +87,13 @@ public abstract class Enemigo extends Personajes {
 	}
 	
 	//----COLISION----
+	public void afectarEnemigo(Enemigo e) {}
 	
 	public void serColisionado(Objeto o) {
-		o.colisionar(this);
+		System.out.println("entre a enemigo");
+		
+		o.afectarEnemigo(this);
+		
 	}
 	
 	//no todos los enemigos colisionan asi que no se redefine colisionar(Objeto o)

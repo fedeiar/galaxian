@@ -3,6 +3,8 @@ package ObjetoGeneral;
 
 import java.awt.Rectangle;
 import Mapas.*;
+import Personajes.Enemigo;
+
 import javax.swing.*;
 import Logica.*;
 
@@ -36,6 +38,14 @@ public abstract class Objeto {
 	
 	public int getY() {
 		return rec.y;
+	}
+	
+	public int getAncho() {
+		return rec.width;
+	}
+	
+	public int getAlto() {
+		return rec.height;
 	}
 	
 	public void setX(int i) {
@@ -72,9 +82,12 @@ public abstract class Objeto {
 	
 	public abstract void serColisionado(Objeto o);
 	
+	public abstract void afectarEnemigo(Enemigo e);
+	
 	public void colisionar(Objeto o) {
 		//no posee cuerpo ya que será el metodo por defecto en caso de una colision sin efectos
 		//e.g: un disparo enemigo con un enemigo.
+		System.out.println("entro a Objeto");
 	}
 	
 	
