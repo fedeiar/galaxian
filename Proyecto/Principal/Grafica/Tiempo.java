@@ -18,12 +18,13 @@ public class Tiempo extends Thread{
 	//Cuando se terminen los enemigos, habría que volver a ejecutar start() cuando se inicializen los nuevos enemigos.
 	
 	public void run() {
-		while(log.hayEnemigos()) {
+		while(log.hayObjetos()) {
 			try {
+				System.out.println(log.cantEnemigos());
 				log.accionarObjetos();
 				log.detectarColisiones();
 				
-				Thread.sleep(100);
+				Thread.sleep(300);
 				
 				
 			}

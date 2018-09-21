@@ -67,8 +67,8 @@ public abstract class Enemigo extends Personajes {
 		if( HP - n > 0)
 			HP -= n;
 		else {
-			morir();
-			log.eliminarObjeto(this); //probar y preguntar
+			
+			log.eliminarObjeto(this); //probar y preguntar, morir esta dentro de este metodo
 		}
 	}
 	

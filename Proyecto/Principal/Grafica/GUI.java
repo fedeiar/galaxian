@@ -129,12 +129,12 @@ import javax.swing.SwingConstants.*;
 		
 		public void keyPressed(KeyEvent e) {
 			if (e.getKeyCode() == KeyEvent.VK_LEFT){
-				mover(0);
+				log.moverJugador(0);
 				
 			}
 			else {
 				if (e.getKeyCode() == KeyEvent.VK_RIGHT){
-					mover(1);
+					log.moverJugador(1);
 					
 				}
 				else {
@@ -158,9 +158,7 @@ import javax.swing.SwingConstants.*;
 			
 		}
 		
-		private void mover(int n) {
-			log.moverJugador(n);
-		}
+		
 		
 
 	}

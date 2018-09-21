@@ -20,14 +20,19 @@ public abstract class Disparo extends Objeto {
 	
 	public Disparo (Logica l,int v ,int f, int x , int y) {
 		super(l);
-		rec = new Rectangle(x,y,ANCHO,LARGO);
+		
 		velocidadMovimiento = v;
 		fuerzaDeImpacto = f;
 		
+		
+		//---parte grafica del disparo---
+		rec = new Rectangle(x,y,ANCHO,LARGO);
+		
 		etiqueta = new JLabel();
 		//hacerle un seticon si hace falta
+		etiqueta.setBounds(rec);
 		etiqueta.setOpaque(true);
-		etiqueta.setBackground(Color.YELLOW);
+		etiqueta.setBackground(Color.RED);
 		
 	}
 	

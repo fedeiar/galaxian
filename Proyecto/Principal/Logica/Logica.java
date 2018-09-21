@@ -73,6 +73,9 @@ public class Logica {
 		return cantEnemigos != 0;
 	}
 	
+	public boolean hayObjetos() {
+		return !listaObjetos.isEmpty();
+	}
 	
 	public void empezarJuego() {
 		tiempoLog.start(); 
@@ -88,16 +91,17 @@ public class Logica {
 		}
 	}
 	
+	public void moverJugador (int direccion) {
+		jugador.mover(direccion);
+	}
+	
 	public void lanzarDisparoJugador() {
+		System.out.println("estoy entrando a lanzardisparo");
 		DisparoJugador disparoJ = new DisparoJugador(this,jugador.getVelocidadDisparo(),jugador.getFuerzaDisparo(),
 													 jugador.getX() + jugador.getAncho()/2 , jugador.getY());
 		listaObjetos.addFirst(disparoJ);
 		gui.add(disparoJ.getLabel());
 		gui.repintar();
-	}
-	
-	public void moverJugador (int direccion) {
-		jugador.mover(direccion);
 	}
 	
 	public void accionarObjetos() throws EmptyListException{
