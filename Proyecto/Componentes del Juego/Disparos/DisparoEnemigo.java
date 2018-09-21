@@ -20,6 +20,6 @@ public class DisparoEnemigo extends Disparo {
 		
 		
 		public void colisionar(Objeto o) {
-			
+			//mismo problema que en disparoJugador
 		}
 }

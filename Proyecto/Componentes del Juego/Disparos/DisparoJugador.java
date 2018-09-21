@@ -2,6 +2,7 @@ package Disparos;
 import Logica.*;
 import ObjetoGeneral.*;
 import Personajes.*;
+import Obstaculos.*;
 public class DisparoJugador extends Disparo{
 	
 	//atributos
@@ -16,10 +17,13 @@ public class DisparoJugador extends Disparo{
 	
 		public void serColisionado(Objeto o) {}
 		
+		//aquel que use a colisionar, si pasa un objeto, como sabra java cual metodo utilizar?
 		
-		public void colisionar(Objeto o) {
-			//debo castear objeto? y si es un enemigo? y si es barricada??
+		public void colisionar(Enemigo e) {
+			
 		}
 		
-		
+		public void colisionar(Obstaculos o) {
+			
+		}
 }
