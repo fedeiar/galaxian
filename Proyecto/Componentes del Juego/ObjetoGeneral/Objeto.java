@@ -1,6 +1,6 @@
 package ObjetoGeneral;
 
-
+import Visitors.*;
 import java.awt.Rectangle;
 import Mapas.*;
 import Personajes.Enemigo;
@@ -19,6 +19,7 @@ public abstract class Objeto {
 	protected final static int AltoMapa=Mapa.MAX_Y;
 	
 	protected Logica log;
+	protected Visitor vis;
 	
 	//constructor
 	
@@ -79,6 +80,11 @@ public abstract class Objeto {
 	public abstract void morir();
 		
 	//---prototipo colisionar (patron visitor implícito)---
+	
+	//la idea de este metodo es poder obtener el visitor de forma dinamica de cada objeto desde logica. preguntar si esta bien.
+	public Visitor getVisitor() {
+		return vis;
+	}
 	
 	public abstract void serColisionado(Objeto o);
 	

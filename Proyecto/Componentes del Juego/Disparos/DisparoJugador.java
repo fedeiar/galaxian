@@ -1,4 +1,5 @@
 package Disparos;
+import Visitors.*;
 import EnemigosConcretos.EnemigoConArma;
 import Logica.*;
 import ObjetoGeneral.*;
@@ -12,6 +13,7 @@ public class DisparoJugador extends Disparo{
 	
 		public DisparoJugador(Logica l , int v , int f , int x , int y) {
 			super(l,v,f,x,y);
+			vis = new VisitorDisparoJugador(l , this);
 		}
 		
 	//metodos
