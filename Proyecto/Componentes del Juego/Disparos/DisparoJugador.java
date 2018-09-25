@@ -18,19 +18,12 @@ public class DisparoJugador extends Disparo{
 		
 	//metodos
 	
-		public void serColisionado(Objeto o) {
+		public void serColisionado(Visitor v) {
 			//cuerpo vacio ya que no tiene efecto que un disparo seaColisionado por alguien
 		}
 		
 		
 		
-		public void afectarEnemigo(Enemigo e) {
-			
-			e.quitarHP(fuerzaDeImpacto);
-			log.eliminarObjeto(this);
-			
-			System.out.println("Entro a DisparoJugador (yay)");
-		}
 		
 		
 }

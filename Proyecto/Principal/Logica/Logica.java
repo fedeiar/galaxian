@@ -175,8 +175,8 @@ public class Logica {
 				if(objs[i].getRectangulo().intersects(objs[j].getRectangulo())) { // si true quiere decir que colisionaron
 					System.out.println("hubo colision entre 2 objetos");
 					
-					objs[i].serColisionado(objs[j]); //sería el "aceptar(objs[j].getVisitor())"
-					objs[j].serColisionado(objs[i]);
+					objs[i].serColisionado(objs[j].getVisitor()); //sería el "aceptar(objs[j].getVisitor())"
+					objs[j].serColisionado(objs[i].getVisitor());
 					/*es necesario hacer las 2 colisiones, ya que si por ejemplo un disparo ES COLISIONADO POR un enemigo
 					esto no tendrá efecto y no pasa nada, pero sí viceversa.
 					*/

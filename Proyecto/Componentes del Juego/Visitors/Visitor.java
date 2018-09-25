@@ -6,7 +6,7 @@ public abstract class Visitor {
 
 	//atributos
 	
-	protected Logica log; //preguntar, no respeta el patron al 100% pero hace falta 
+	protected Logica log; //preguntar, no respeta el patron al 100% pero hace falta para eliminar por ejemplo el disparo.
 	
 	//constructor
 	
@@ -16,5 +16,5 @@ public abstract class Visitor {
 	
 	//metodos
 	
-	public void afectarEnemigo(Enemigo e) { }
+	public void afectarEnemigo(Enemigo e) {}
 }

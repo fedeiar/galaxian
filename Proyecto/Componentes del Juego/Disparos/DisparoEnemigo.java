@@ -1,5 +1,5 @@
 package Disparos;
-
+import Visitors.*;
 import Logica.*;
 import ObjetoGeneral.*;
 import Personajes.*;
@@ -18,7 +18,7 @@ public class DisparoEnemigo extends Disparo {
 		            
 		
 		
-		public void serColisionado(Objeto o) {}
+		public void serColisionado(Visitor v) {}
 		
 		
 }

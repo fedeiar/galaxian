@@ -1,5 +1,5 @@
 package Personajes;
-
+import Visitors.*;
 import Inteligencias.*;
 import Logica.*;
 import NivelPersonajes.NivelEnemigo_1;
@@ -17,6 +17,7 @@ public abstract class Enemigo extends Personajes {
 	
 	public Enemigo(Logica l,int x, int y,  int nivel) { 
 		super(l,x,y);
+		vis = new VisitorEnemigo(l);
 		setNivel(nivel);
 		
 		/*
@@ -90,10 +91,10 @@ public abstract class Enemigo extends Personajes {
 	
 	//------------COLISION-------------
 	
-	public void serColisionado(Objeto o) { // sería el "aceptar(Visitor v)"
+	public void serColisionado(Visitor v) { // sería el "aceptar(Visitor v)"
 		System.out.println("entre a enemigo");
 		
-		o.afectarEnemigo(this);
+		v.afectarEnemigo(this);
 		
 	}
 	

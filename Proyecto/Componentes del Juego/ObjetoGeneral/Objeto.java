@@ -86,9 +86,9 @@ public abstract class Objeto {
 		return vis;
 	}
 	
-	public abstract void serColisionado(Objeto o);
+	public abstract void serColisionado(Visitor v);
 	
 	
-	public void afectarEnemigo(Enemigo e) {}
+	
 	
 }

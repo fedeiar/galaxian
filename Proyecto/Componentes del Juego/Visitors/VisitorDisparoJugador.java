@@ -22,6 +22,6 @@ public class VisitorDisparoJugador extends Visitor {
 		e.quitarHP(dis.getFuerzaImpacto());
 		log.eliminarObjeto(dis);
 		
-		System.out.println("entre al visitorDisparoJugador");
+		System.out.println("entre al visitorDisparoJugador (yay)");
 	}
 }

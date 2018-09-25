@@ -1,5 +1,5 @@
 package Personajes;
-
+import Visitors.*;
 import Logica.*;
 import NivelPersonajes.*;
 import ObjetoGeneral.Objeto;
@@ -28,8 +28,9 @@ public class Jugador extends Personajes {
 		
 		//---parte logica del jugador---
 		super(l,x,y);
-		
+		//vis = new VisitorJugador(l);
 		miNivel = new NivelJugador_1();
+		
 		
 		
 		HP = miNivel.getHP();
@@ -149,7 +150,7 @@ public class Jugador extends Personajes {
 	
 	//colision
 	
-	public void serColisionado(Objeto o) {
+	public void serColisionado(Visitor v) {
 		
 	}
 	
