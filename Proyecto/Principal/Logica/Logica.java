@@ -180,7 +180,7 @@ public class Logica {
 					if( objs[j] instanceof EnemigoConArma) {
 						System.out.println("soy un enemigoConArma, soy objs[j]");
 					}
-					objs[i].serColisionado(objs[j]);
+					objs[i].serColisionado(objs[j]); //con visitor: objs[j].miVisitor, definido en objeto.
 					objs[j].serColisionado(objs[i]);
 					/*es necesario hacer las 2 colisiones, ya que si por ejemplo un disparo ES COLISIONADO POR un enemigo
 					esto no tendrá efecto y no pasa nada, pero sí viceversa.

@@ -90,14 +90,14 @@ public abstract class Enemigo extends Personajes {
 	
 	//------------COLISION-------------
 	
-	public void serColisionado(Objeto o) {
+	public void serColisionado(Objeto o) { // en lugar de objeto, tendre un visitor
 		System.out.println("entre a enemigo");
 		
 		o.afectarEnemigo(this);
 		
 	}
 	
-	public void afectarEnemigo(Enemigo e) {}
+	
 	
 	
 }

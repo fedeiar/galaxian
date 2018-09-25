@@ -1,27 +1,11 @@
 //preguntar
 
-- Clase Jugador metodo moverIzquierda : porque width es un double?
-
-- Clase Logica, preguntar por el alto y ancho al inicializar jugador.
 
 - Como hacer con los visitor?
 
-- Accionar (int n) en enemigo no tenemos que usar esa variable porque eso se define en InteligenciaEnemigo.
-
-- atributos de mapa constantes, esta mal si son publicos?
-
 - De Thread: ¿Que hacen sleep, start, run? ¿Por qué si usamos run no se abre la GUI?
 
-- ¿Esta bien Thread ahi o debería manejarlo la logica? ¿Cómo cortar un poco
-  la excesiva dependencia que hay entre GUI, Logica, Mapa y Tiempo ?
 
-- para agregar el disparo, que hacemos, creamos un thread mas nuevo y le damos
-  start a ese, o siempre usamos el mismo thread? (el declarado arriba)
-  si es asi, como hacemos para manejar todo con un mismo thread?
-//agregar
-
-
-- Agregar un boolean escudo para ver si es vulnerable o no
 
 
 

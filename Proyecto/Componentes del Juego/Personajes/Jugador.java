@@ -149,6 +149,8 @@ public class Jugador extends Personajes {
 	
 	//colision
 	
-	
+	public void serColisionado(Objeto o) {
+		
+	}
 	
 }

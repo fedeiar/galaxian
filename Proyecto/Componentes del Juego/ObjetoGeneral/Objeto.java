@@ -83,6 +83,6 @@ public abstract class Objeto {
 	public abstract void serColisionado(Objeto o);
 	
 	
-	public abstract void afectarEnemigo(Enemigo e);
+	public void afectarEnemigo(Enemigo e) {}
 	
 }

@@ -15,7 +15,9 @@ public class DisparoEnemigo extends Disparo {
 		}
 		
 	//metodos
-		public void afectarEnemigo(Enemigo e) {}
+		            
+		
+		
 		public void serColisionado(Objeto o) {}
 		
 		
