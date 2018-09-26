@@ -150,8 +150,8 @@ public class Jugador extends Personajes {
 	
 	//colision
 	
-	public void serColisionado(Visitor v) {
-		
+	public void serVisitado(Visitor v) {
+		v.afectarJugador(this);
 	}
 	
 }

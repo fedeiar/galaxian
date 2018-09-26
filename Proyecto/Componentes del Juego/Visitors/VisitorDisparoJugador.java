@@ -7,10 +7,10 @@ public class VisitorDisparoJugador extends Visitor {
 
 	//atributos
 	
-	protected Disparo dis;
+	protected DisparoJugador dis;
 	
 	//constructor
-	public VisitorDisparoJugador(Logica l ,Disparo d) {
+	public VisitorDisparoJugador(Logica l ,DisparoJugador d) {
 		super(l);
 		dis = d;
 		
@@ -20,7 +20,7 @@ public class VisitorDisparoJugador extends Visitor {
 	
 	public void afectarEnemigo(Enemigo e) { //seria el visitarEnemigo(this)
 		e.quitarHP(dis.getFuerzaImpacto());
-		log.eliminarObjeto(dis);
+		log.eliminarObjeto(dis); //por esto es necesario la logica
 		
 		System.out.println("entre al visitorDisparoJugador (yay)");
 	}

@@ -17,4 +17,6 @@ public abstract class Visitor {
 	//metodos
 	
 	public void afectarEnemigo(Enemigo e) {}
+	
+	public void afectarJugador(Jugador j) {}
 }

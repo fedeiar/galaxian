@@ -86,7 +86,7 @@ public abstract class Objeto {
 		return vis;
 	}
 	
-	public abstract void serColisionado(Visitor v);
+	public abstract void serVisitado(Visitor v);
 	
 	
 	

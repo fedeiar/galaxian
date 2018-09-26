@@ -15,14 +15,25 @@ public class Mapa  {
 	 
 	 private Logica log;
 	 private int cantEnemigos;
+	 private int lvl_PowerUp;
+	 
 	 //constructor
 	 
 	 public Mapa(Logica l) {
 		 log = l;
 		 cantEnemigos = 0;
+		 lvl_PowerUp = 1;
 	 }
 	 
+	 //metodos
 	 
+	 public int cantEnemigosVivos() {
+		 return cantEnemigos;
+	 }
+	 
+	 public int getLevelMapa() {
+		 return lvl_PowerUp;
+	 }
 	 
 	//metodo a probar, si queda bien. podrian hacerse mapa abstracto y distintos mapas que implementen este metodo.
 	 
@@ -39,7 +50,5 @@ public class Mapa  {
 		 return L;
 	 }
 	 
-	 public int cantEnemigosVivos() {
-		 return cantEnemigos;
-	 }
+	
 }

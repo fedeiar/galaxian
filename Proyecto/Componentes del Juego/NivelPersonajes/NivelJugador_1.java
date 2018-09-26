@@ -13,6 +13,6 @@ public class NivelJugador_1 extends NivelPersonaje {
 		velocidadDisparo = 20;
 		fuerzaDisparo = 1;
 		
-		//considerar cambiar el icono por cada nivel
+	
 	}
 }

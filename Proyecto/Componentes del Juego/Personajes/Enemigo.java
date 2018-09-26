@@ -4,7 +4,7 @@ import Inteligencias.*;
 import Logica.*;
 import NivelPersonajes.NivelEnemigo_1;
 import ObjetoGeneral.Objeto;
-
+import Premios.*;
 public abstract class Enemigo extends Personajes {
 
 	//atributos
@@ -86,14 +86,16 @@ public abstract class Enemigo extends Personajes {
 		int puntaje = miNivel.getPuntaje();
 		log.setPuntaje(log.getPuntaje() + puntaje);
 		log.setCantEnemigos(log.cantEnemigos() - 1);
+		
+		//al morir un enemigo dropea un powerup, ¿que powerup? esto puede verse con PROTOYPE
+		
+		log.lanzarPremio(this.getX(), this.getY());
 	}
 	
 	
 	//------------COLISION-------------
 	
-	public void serColisionado(Visitor v) { // sería el "aceptar(Visitor v)"
-		System.out.println("entre a enemigo");
-		
+	public void serVisitado(Visitor v) { // sería el "aceptar(Visitor v)"
 		v.afectarEnemigo(this);
 		
 	}

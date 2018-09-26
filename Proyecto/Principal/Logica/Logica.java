@@ -1,4 +1,5 @@
 package Logica;
+import Premios.*;
 import TDALista.*;
 import Personajes.*;
 
@@ -95,12 +96,23 @@ public class Logica {
 		jugador.mover(direccion);
 	}
 	
+	public void lanzarPremio(int x,int y) { //aqui deberiamos implementar un prototype
+		Premios P;
+		
+		//por ahora dejarlo asi, despues tratar de cambiarlo.
+		P = new MejoraArma1(x,y,mapa.getLevelMapa() * 10 , this ,jugador.getVelocidadDisparo() * 2);
+		
+		listaObjetos.addLast(P);
+		gui.add(P.getLabel());
+		
+	}
+	
 	public void lanzarDisparoJugador() {
 		DisparoJugador disparoJ = new DisparoJugador(this,jugador.getVelocidadDisparo(),jugador.getFuerzaDisparo(),
 													 jugador.getX() + jugador.getAncho()/2 , jugador.getY() );
 		listaObjetos.addFirst(disparoJ);
 		gui.add(disparoJ.getLabel());
-		//gui.repintar();
+		
 	}
 	
 	public void accionarObjetos() throws EmptyListException{
@@ -137,7 +149,7 @@ public class Logica {
 		}
 	}
 	
-	//metodo agregado a probar (por ahora solo usado por disparo)
+	//metodo agregado a probar 
 	
 	public void eliminarObjeto(Objeto o) {
 		try {
@@ -175,8 +187,8 @@ public class Logica {
 				if(objs[i].getRectangulo().intersects(objs[j].getRectangulo())) { // si true quiere decir que colisionaron
 					System.out.println("hubo colision entre 2 objetos");
 					
-					objs[i].serColisionado(objs[j].getVisitor()); //sería el "aceptar(objs[j].getVisitor())"
-					objs[j].serColisionado(objs[i].getVisitor());
+					objs[i].serVisitado(objs[j].getVisitor()); //sería el "aceptar(objs[j].getVisitor())"
+					objs[j].serVisitado(objs[i].getVisitor());
 					/*es necesario hacer las 2 colisiones, ya que si por ejemplo un disparo ES COLISIONADO POR un enemigo
 					esto no tendrá efecto y no pasa nada, pero sí viceversa.
 					*/

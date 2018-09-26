@@ -56,6 +56,8 @@ public abstract class Disparo extends Objeto {
 		
 	}
 	
+	//---forma de morir---
+	
 	public void morir() {
 		
 	}

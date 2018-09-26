@@ -12,13 +12,14 @@ public class DisparoEnemigo extends Disparo {
 	
 		public DisparoEnemigo(Logica l , int v , int f , int x , int y) {
 			super(l,v,f,x,y);
+			
 		}
 		
 	//metodos
 		            
 		
 		
-		public void serColisionado(Visitor v) {}
+		public void serVisitado(Visitor v) {}
 		
 		
 }
