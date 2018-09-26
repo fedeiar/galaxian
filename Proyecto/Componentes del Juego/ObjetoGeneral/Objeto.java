@@ -81,9 +81,9 @@ public abstract class Objeto {
 		
 	//---prototipo colisionar (patron visitor implícito)---
 	
-	//la idea de este metodo es poder obtener el visitor de forma dinamica de cada objeto desde logica. preguntar si esta bien.
-	public Visitor getVisitor() {
-		return vis;
+	
+	public void chocar(Objeto o) {
+		o.serVisitado(this.vis);  // sería el "aceptar(Visitor v)"
 	}
 	
 	public abstract void serVisitado(Visitor v);

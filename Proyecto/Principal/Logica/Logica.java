@@ -92,9 +92,6 @@ public class Logica {
 		}
 	}
 	
-	public void moverJugador (int direccion) {
-		jugador.mover(direccion);
-	}
 	
 	public void lanzarPremio(int x,int y) { //aqui deberiamos implementar un prototype
 		Premios P;
@@ -113,6 +110,10 @@ public class Logica {
 		listaObjetos.addFirst(disparoJ);
 		gui.add(disparoJ.getLabel());
 		
+	}
+	
+	public void moverJugador (int direccion) {
+		jugador.mover(direccion);
 	}
 	
 	public void accionarObjetos() throws EmptyListException{
@@ -187,9 +188,9 @@ public class Logica {
 				if(objs[i].getRectangulo().intersects(objs[j].getRectangulo())) { // si true quiere decir que colisionaron
 					System.out.println("hubo colision entre 2 objetos");
 					
-					objs[i].serVisitado(objs[j].getVisitor()); //sería el "aceptar(objs[j].getVisitor())"
-					objs[j].serVisitado(objs[i].getVisitor());
-					/*es necesario hacer las 2 colisiones, ya que si por ejemplo un disparo ES COLISIONADO POR un enemigo
+					objs[i].chocar(objs[j]); 
+					objs[j].chocar(objs[i]);
+					/*es necesario hacer las 2 colisiones, ya que si por ejemplo un "enemigo" CHOCA A un "disparo"
 					esto no tendrá efecto y no pasa nada, pero sí viceversa.
 					*/
 				}
