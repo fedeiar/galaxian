@@ -8,8 +8,8 @@ public class VisitorEnemigo extends Visitor {
 	
 	
 	//constructor
-	public VisitorEnemigo(Logica l) {
-		super(l);
+	public VisitorEnemigo() {
+	
 		
 	}
 	

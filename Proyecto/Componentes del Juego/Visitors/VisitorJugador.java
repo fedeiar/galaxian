@@ -9,8 +9,8 @@ public class VisitorJugador extends Visitor {
 	
 	//constructor
 	
-	public VisitorJugador(Logica l) {
-		super(l);
+	public VisitorJugador() {
+		
 	}
 
 	//metodos

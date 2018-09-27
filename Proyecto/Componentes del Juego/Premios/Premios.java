@@ -33,14 +33,16 @@ public abstract class Premios extends Objeto {
 	
 	public void accionar() {
 		if(this.getY() > Mapa.MAX_Y + LARGO) {
-			log.eliminarObjeto(this);
+			morir();
 		}
 		else
 			this.setY(this.getY() + velocidadDeCaida);
 	}
 	
 	//forma de morir comun a todos los premios
-	public void morir() { }
+	public void morir() {
+		log.eliminarObjeto(this);
+	}
 	
 	
 }

@@ -24,7 +24,7 @@ public class Tiempo extends Thread{
 				log.accionarObjetos();
 				log.detectarColisiones();
 				
-				Thread.sleep(220);
+				Thread.sleep(100);
 				
 				
 			}

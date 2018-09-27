@@ -18,6 +18,7 @@ public abstract class Objeto {
 	protected final static int AnchoMapa=Mapa.MAX_X;
 	protected final static int AltoMapa=Mapa.MAX_Y;
 	
+	
 	protected Logica log;
 	protected Visitor vis;
 	

@@ -10,17 +10,16 @@ public class VisitorDisparoJugador extends Visitor {
 	protected DisparoJugador dis;
 	
 	//constructor
-	public VisitorDisparoJugador(Logica l ,DisparoJugador d) {
-		super(l);
+	public VisitorDisparoJugador(DisparoJugador d) {
 		dis = d;
 		
 	}
 	
 	//metodos
-	
+
 	public void afectarEnemigo(Enemigo e) { //seria el visitarEnemigo(this)
 		e.quitarHP(dis.getFuerzaImpacto());
-		log.eliminarObjeto(dis); //por esto es necesario la logica
+		dis.morir(); //por esto es necesario la logica
 		
 		System.out.println("entre al visitorDisparoJugador (yay)");
 	}

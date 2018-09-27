@@ -50,7 +50,7 @@ public abstract class Disparo extends Objeto {
 	
 	public void accionar() {
 		if(this.getY() < 0)
-			log.eliminarObjeto(this);
+			morir();
 		else
 			this.setY(this.getY() - velocidadMovimiento); 
 		
@@ -59,7 +59,7 @@ public abstract class Disparo extends Objeto {
 	//---forma de morir---
 	
 	public void morir() {
-		
+		log.eliminarObjeto(this);
 	}
 	
 	

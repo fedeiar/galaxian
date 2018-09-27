@@ -129,26 +129,7 @@ public class Logica {
 		}
 	}
 	
-	//este metodo de todas formas será removido mas adelante para ser reemplazado por eliminarObjeto(Objeto o)
-	//solo esta para pasar el sprint
 	
-	public void eliminarEnemigo() {
-		try {
-			if(!listaObjetos.isEmpty()) {
-				Position<Objeto> po = listaObjetos.last();
-				
-				gui.remove(po.element().getLabel());
-				po.element().morir();
-				
-				listaObjetos.remove(po);
-				
-				gui.repintar();
-			}
-		}
-		catch(InvalidPositionException | EmptyListException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	//metodo agregado a probar 
 	
@@ -158,7 +139,7 @@ public class Logica {
 				if(po.element() == o) {
 					
 					gui.remove(po.element().getLabel());
-					po.element().morir();
+					
 					
 					listaObjetos.remove(po);
 					break;

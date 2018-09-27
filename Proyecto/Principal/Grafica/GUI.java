@@ -138,15 +138,8 @@ import javax.swing.SwingConstants.*;
 					
 				}
 				else {
-					
-					if(e.getKeyCode() == KeyEvent.VK_SPACE ) {
-						log.eliminarEnemigo();
-						
-					}
-					else {
-						if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-							log.lanzarDisparoJugador();
-						}
+					if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+						log.lanzarDisparoJugador();
 					}
 					
 				}

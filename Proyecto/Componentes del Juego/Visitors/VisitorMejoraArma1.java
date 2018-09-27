@@ -13,8 +13,7 @@ public class VisitorMejoraArma1 extends Visitor{
 	
 	//constructor
 	
-	public VisitorMejoraArma1(Logica l , MejoraArma1 M) {
-		super(l);
+	public VisitorMejoraArma1(MejoraArma1 M) {
 		MJ = M;
 		
 	}
@@ -23,7 +22,7 @@ public class VisitorMejoraArma1 extends Visitor{
 	
 	public void afectarJugador(Jugador j) {
 		j.setVelocidadDisparo(j.getVelocidadDisparo() + MJ.getModificadorVelocidadDisparo());
-		log.eliminarObjeto(MJ);
+		MJ.morir();
 	}
 
 }

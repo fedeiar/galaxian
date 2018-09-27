@@ -17,7 +17,7 @@ public abstract class Enemigo extends Personajes {
 	
 	public Enemigo(Logica l,int x, int y,  int nivel) { 
 		super(l,x,y);
-		vis = new VisitorEnemigo(l);
+		vis = new VisitorEnemigo();
 		setNivel(nivel);
 		
 		/*
@@ -69,7 +69,7 @@ public abstract class Enemigo extends Personajes {
 			HP -= n;
 		else {
 			
-			log.eliminarObjeto(this); //probar y preguntar, morir esta dentro de este metodo
+			morir(); //probar y preguntar, morir esta dentro de este metodo
 		}
 	}
 	
@@ -86,6 +86,7 @@ public abstract class Enemigo extends Personajes {
 		int puntaje = miNivel.getPuntaje();
 		log.setPuntaje(log.getPuntaje() + puntaje);
 		log.setCantEnemigos(log.cantEnemigos() - 1);
+		log.eliminarObjeto(this);
 		
 		//al morir un enemigo dropea un powerup, ¿que powerup? esto puede verse con PROTOYPE
 		
