@@ -850,7 +850,7 @@
 															"top": 47,
 															"width": 213.251953125,
 															"height": 13,
-															"text": "Visitor: VisitorEnemigoKamikaze"
+															"text": ": VisitorEnemigoKamikaze"
 														},
 														{
 															"_type": "LabelView",
@@ -1664,7 +1664,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFmF6wXEzWeEnk="
 									},
-									"name": "Visitor",
+									"name": ": VisitorEnemigoKamikaze",
 									"represent": {
 										"$ref": "AAAAAAFmF7e0ojaryM4="
 									},
@@ -1709,7 +1709,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFmF6wXEzWd2Gw="
 							},
-							"name": "Role2"
+							"name": "Role2",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1717,7 +1718,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFmF6wXEzWd2Gw="
 							},
-							"name": "Role3"
+							"name": "Role3",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1734,8 +1736,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFmF6wXEzWd2Gw="
 							},
-							"name": "Role5",
-							"type": "VisitorEnemigoKamikaze"
+							"name": "Role5"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1743,7 +1744,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFmF6wXEzWd2Gw="
 							},
-							"name": "Role6"
+							"name": "Role6",
+							"type": ""
 						}
 					]
 				}
