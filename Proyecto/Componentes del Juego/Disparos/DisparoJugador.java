@@ -25,7 +25,7 @@ public class DisparoJugador extends Disparo{
 	//-----VISITOR-----
 		
 	public void serVisitado(Visitor v) {
-		//cuerpo vacio ya que no tiene efecto que un disparo seaColisionado por alguien
+		//cuerpo vacio ya que no tiene efecto que un disparo seaVisitado por alguien
 	}
 		
 		

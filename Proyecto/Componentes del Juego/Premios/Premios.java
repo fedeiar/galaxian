@@ -18,7 +18,7 @@ public abstract class Premios extends Objeto {
 	//--------CONSTRUCTOR-------
 	
 	public Premios (int x,int y,int velCaida,Logica l) {
-		//parte logica de los premios
+		//---parte logica de los premios---
 		
 		super(l);
 		inteligencia = new InteligenciaPremio(this);

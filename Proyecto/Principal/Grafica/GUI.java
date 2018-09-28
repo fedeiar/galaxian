@@ -40,7 +40,7 @@ import javax.swing.SwingConstants.*;
 		log = new Logica(this);
 		
 		
-		//SE CREAN LOS COMPONENTES
+		//SE CREAN LOS COMPONENTES INICIALES
 		log.crearObjetos();
 		
 		//empieza el juego

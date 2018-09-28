@@ -88,6 +88,7 @@ public class Logica {
 		else
 			return true;
 	}
+	
 	public void getMapaSiguiente() {
 		mapa = mapa.getMapaSiguiente();
 		if(mapa!=null)
@@ -95,7 +96,7 @@ public class Logica {
 	}
 	
 	
-	//hacer un deleteAll() para borrar los objetos q hayan quedado colgados
+	
 	public void crearObjetos() {
 		resetearMapa();
 		listaObjetos = mapa.obtenerObjetosIniciales();
@@ -147,8 +148,7 @@ public class Logica {
 	}
 	
 	
-	//metodo agregado a probar 
-	
+	 
 	public void eliminarObjeto(Objeto o) {
 		try {
 			for(Position<Objeto> po : listaObjetos.positions()) {
@@ -168,7 +168,7 @@ public class Logica {
 		}
 	}
 	
-	//prototipo para detectar colisiones, funciona en O(n^2), dudoso
+	//prototipo para detectar colisiones
 	
 	public void detectarColisiones() {
 		Objeto objs[] = new Objeto[listaObjetos.size() + 1]; //necesito un arreglo de forma de tener un indice para recorrerlo 2 veces sin tener repetidos
