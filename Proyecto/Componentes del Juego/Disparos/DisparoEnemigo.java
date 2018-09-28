@@ -3,7 +3,7 @@ import Visitors.*;
 import Logica.*;
 import ObjetoGeneral.*;
 import Personajes.*;
-
+import Inteligencias.*;
 public class DisparoEnemigo extends Disparo {
 
     //atributos
@@ -12,14 +12,16 @@ public class DisparoEnemigo extends Disparo {
 	
 		public DisparoEnemigo(Logica l , int v , int f , int x , int y) {
 			super(l,v,f,x,y);
-			
+			inteligencia = new InteligenciaDisparoEnemigo(this);
 		}
 		
 	//metodos
 		            
 		
 		
-		public void serVisitado(Visitor v) {}
+	//----VISITOR----
+	
+	public void serVisitado(Visitor v) {}
 		
 		
 }

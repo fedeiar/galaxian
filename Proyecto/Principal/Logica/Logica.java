@@ -37,7 +37,7 @@ public class Logica {
 	    puntaje = 0;
 	    cantEnemigos = 0;
 	    
-	    mapa = new Mapa(this);
+	    mapa = new Mapa_1(this);
 	    gui = g;
 	    tiempoLog = new Tiempo(this);
 	    
@@ -82,34 +82,51 @@ public class Logica {
 		tiempoLog.start(); 
 	}
 	
+	public boolean hayMapaSiguiente() {
+		if(mapa==null)
+			return false;
+		else
+			return true;
+	}
+	public void getMapaSiguiente() {
+		mapa = mapa.getMapaSiguiente();
+		if(mapa!=null)
+			crearObjetos();
+	}
 	
+	
+	//hacer un deleteAll() para borrar los objetos q hayan quedado colgados
 	public void crearObjetos() {
+		resetearMapa();
 		listaObjetos = mapa.obtenerObjetosIniciales();
 		cantEnemigos = mapa.cantEnemigosVivos();
-		
+		gui.repintar();
 		for( Objeto o : listaObjetos) {
 			gui.add(o.getLabel());
 		}
 	}
 	
-	
-	public void lanzarPremio(int x,int y) { //aqui deberiamos implementar un prototype
-		Premios P;
-		
-		//por ahora dejarlo asi, despues tratar de cambiarlo.
-		P = new MejoraArma1(x,y,mapa.getLevelMapa() * 10 , this ,jugador.getVelocidadDisparo() * 2);
-		
-		listaObjetos.addLast(P);
-		gui.add(P.getLabel());
-		
+	private void resetearMapa() {
+		try {
+			while(!listaObjetos.isEmpty()) {
+				gui.remove(listaObjetos.first().element().getLabel());
+				listaObjetos.remove(listaObjetos.first());
+			}
+		}
+		catch(InvalidPositionException | EmptyListException e) {
+			e.printStackTrace();
+		}
+		gui.repintar();
 	}
 	
-	public void lanzarDisparoJugador() {
-		DisparoJugador disparoJ = new DisparoJugador(this,jugador.getVelocidadDisparo(),jugador.getFuerzaDisparo(),
-													 jugador.getX() + jugador.getAncho()/2 , jugador.getY() );
-		listaObjetos.addFirst(disparoJ);
-		gui.add(disparoJ.getLabel());
-		
+	public void agregarObjeto(Objeto o) {
+		listaObjetos.addFirst(o);
+		gui.add(o.getLabel());
+	}
+	
+	
+	public void lanzarDisparoJugador() { //metodo auxiliar que debera ser eliminado
+		jugador.disparar();
 	}
 	
 	public void moverJugador (int direccion) {
@@ -128,7 +145,6 @@ public class Logica {
 			throw new EmptyListException("se intento mover enemigos cuando no quedaba ninguno");
 		}
 	}
-	
 	
 	
 	//metodo agregado a probar 

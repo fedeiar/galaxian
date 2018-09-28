@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 
 import Logica.*;
 import Mapas.Mapa;
-
+import Inteligencias.*;
 public abstract class Premios extends Objeto {
 
 	//------ATRIBUTOS------
@@ -21,6 +21,7 @@ public abstract class Premios extends Objeto {
 		//parte logica de los premios
 		
 		super(l);
+		inteligencia = new InteligenciaPremio(this);
 		velocidadDeCaida = velCaida;
 		
 		//---parte grafica de los premios---
@@ -29,17 +30,13 @@ public abstract class Premios extends Objeto {
 	
 	//------METODOS------
 	
-	//forma de caer comun a todos los premios
-	
-	public void accionar() {
-		if(this.getY() > Mapa.MAX_Y + LARGO) {
-			morir();
-		}
-		else
-			this.setY(this.getY() + velocidadDeCaida);
+	public int getVelocidadDeCaida() {
+		return velocidadDeCaida;
 	}
 	
+	
 	//forma de morir comun a todos los premios
+	
 	public void morir() {
 		log.eliminarObjeto(this);
 	}

@@ -1,22 +1,26 @@
 package Inteligencias;
 import Personajes.*;
 import EnemigosConcretos.*;
+import Mapas.Mapa;
+
 import java.util.Random;
 
-public abstract class Inteligencia {
+public abstract class Inteligencia { //debe extender a alguien?
+	
+	protected final static int AnchoMapa=Mapa.MAX_X; //preguntar de donde sacar el ancho
+	protected final static int AltoMapa=Mapa.MAX_Y;  //preguntar de donde sacar el ancho
 	
 	//atributos
 	
-	protected Enemigo ene;
+	
 	
 	//constructor
 	
-	public Inteligencia (Enemigo e) {
-		ene = e;
+	public Inteligencia () {
 		
 	}
 	
 	//metodos
 	
-	public abstract void mover(int anchoDelMapa);	
+	public abstract void accionar();	
 }

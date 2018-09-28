@@ -1,21 +1,20 @@
 package Mapas;
-import Grafica.*;
-import Logica.*;
-import ObjetoGeneral.*;
-import TDALista.*;
-import Personajes.*;
-import EnemigosConcretos.*;
 
-public class Mapa  {
+import Logica.Logica;
+import ObjetoGeneral.Objeto;
+import TDALista.PositionList;
 
-	 //atributos
+public abstract class Mapa {
+
+	//atributos
 	
 	 public final static int  MAX_X =900; //ancho del frame , ojo esta en publico, preguntar
 	 public final static int MAX_Y =600;  //alto del frame , ojo esta en publico, preguntar
 	 
-	 private Logica log;
-	 private int cantEnemigos;
-	 private int lvl_PowerUp;
+	 protected Logica log;
+	 protected int cantEnemigos;
+	 protected int lvl_PowerUp;
+	 protected Mapa mapa_siguiente;
 	 
 	 //constructor
 	 
@@ -35,20 +34,9 @@ public class Mapa  {
 		 return lvl_PowerUp;
 	 }
 	 
-	//metodo a probar, si queda bien. podrian hacerse mapa abstracto y distintos mapas que implementen este metodo.
-	 
-	 public PositionList<Objeto> obtenerObjetosIniciales(){
-		 PositionList<Objeto> L = new ListaDE<Objeto>();
-		 for(int i = 0 ; i<5 ; i++) {
-				EnemigoConArma ene = new EnemigoConArma( log, 200 + i*100 , 100  ,1);
-				L.addLast(ene);
-				cantEnemigos++;
-		}
-		 
-		 //aqui podrían agregarse los obstaculos.
-		 
-		 return L;
+	 public Mapa getMapaSiguiente() {
+		 return mapa_siguiente;
 	 }
 	 
-	
+	 public abstract PositionList<Objeto> obtenerObjetosIniciales();
 }

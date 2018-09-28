@@ -23,6 +23,9 @@ public class Tiempo extends Thread{
 				
 				log.accionarObjetos();
 				log.detectarColisiones();
+				if(!log.hayEnemigos() && log.hayMapaSiguiente()) {
+					log.getMapaSiguiente();
+				}
 				
 				Thread.sleep(100);
 				

@@ -10,7 +10,6 @@ public abstract class Enemigo extends Personajes {
 	//atributos
 	
 	
-	protected Inteligencia inteligencia;
 	protected NivelEnemigo_1 miNivel; // redefine el atributo de personaje
 	
 	//constructor
@@ -39,10 +38,6 @@ public abstract class Enemigo extends Personajes {
 	//metodos
 	
 	
-	public Inteligencia getInteligencia() {
-		return inteligencia;
-	}
-	
 	public int getPuntaje() {
 		return miNivel.getPuntaje();
 	}
@@ -60,9 +55,7 @@ public abstract class Enemigo extends Personajes {
 	}
 	
 	
-	public void setInteligencia(Inteligencia i) {
-		inteligencia = i;
-	}
+	
 
 	public void quitarHP(int n) {
 		if( HP - n > 0)
@@ -74,12 +67,6 @@ public abstract class Enemigo extends Personajes {
 	}
 	
 	
-	//----movimiento comun a todos los enemigos----
-	
-	public void accionar() {
-		inteligencia.mover(AnchoMapa);
-	}
-	
 	//----forma de morir comun a todos los enemigos----
 	
 	public void morir() {
@@ -88,9 +75,12 @@ public abstract class Enemigo extends Personajes {
 		log.setCantEnemigos(log.cantEnemigos() - 1);
 		log.eliminarObjeto(this);
 		
-		//al morir un enemigo dropea un powerup, ¿que powerup? esto puede verse con PROTOYPE
+		//al morir un enemigo dropea un powerup, ¿que powerup? esto puede verse con PROTOYPE, lo de abajo es TEMPORAL
 		
-		log.lanzarPremio(this.getX(), this.getY());
+		Premios P;
+		P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimiento() ,log , miNivel.getVelocidadDisparo()); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
+		log.agregarObjeto(P);
+	
 	}
 	
 	

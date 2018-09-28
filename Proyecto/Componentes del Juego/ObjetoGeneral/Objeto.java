@@ -1,5 +1,5 @@
 package ObjetoGeneral;
-
+import Inteligencias.*;
 import Visitors.*;
 import java.awt.Rectangle;
 import Mapas.*;
@@ -18,7 +18,7 @@ public abstract class Objeto {
 	protected final static int AnchoMapa=Mapa.MAX_X;
 	protected final static int AltoMapa=Mapa.MAX_Y;
 	
-	
+	protected Inteligencia inteligencia;
 	protected Logica log;
 	protected Visitor vis;
 	
@@ -60,7 +60,6 @@ public abstract class Objeto {
 		etiqueta.setBounds(rec);
 	}
 	
-	
 	public JLabel getLabel() {
 		return etiqueta;
 	}
@@ -69,18 +68,28 @@ public abstract class Objeto {
 		return imagen;
 	}
 	
-	
-	/**
-	 * método que será redefinido acorde al comportamiento de la clase que lo implemente
-	 */
-	public abstract void accionar() ;
-	
 	/**
 	 * método que sera redefinido por cada clase depende como reacciona al ser eliminado
 	 */
 	public abstract void morir();
+	
+	
+	//----INTELIGENCIA----
+	
+	public void setInteligencia(Inteligencia i) {
+		inteligencia = i;
+	}
+	
+	/**
+	 * todos los objetos recurren a su inteligencia para ACCIONAR
+	 */
+	public  void accionar() {
+		inteligencia.accionar();
+	}
+	
+	
 		
-	//---prototipo colisionar (patron visitor implícito)---
+	//---VISITOR---
 	
 	
 	public void chocar(Objeto o) {

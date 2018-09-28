@@ -36,9 +36,8 @@ public class MejoraArma1 extends ObjetosPreciosos {
 	
 	
 	
-	
-	
 	//---VISITOR---
+	
 	public void serVisitado(Visitor v) {
 		
 	}

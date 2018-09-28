@@ -1,5 +1,6 @@
 package Disparos;
 import Visitors.*;
+import Inteligencias.*;
 import EnemigosConcretos.EnemigoConArma;
 import Logica.*;
 import ObjetoGeneral.*;
@@ -14,13 +15,18 @@ public class DisparoJugador extends Disparo{
 		public DisparoJugador(Logica l , int v , int f , int x , int y) {
 			super(l,v,f,x,y);
 			vis = new VisitorDisparoJugador(this); //esto lo diferencia con un disparo enemigo
+			inteligencia = new InteligenciaDisparoJugador(this);
 		}
 		
 	//metodos
 	
-		public void serVisitado(Visitor v) {
-			//cuerpo vacio ya que no tiene efecto que un disparo seaColisionado por alguien
-		}
+		
+		
+	//-----VISITOR-----
+		
+	public void serVisitado(Visitor v) {
+		//cuerpo vacio ya que no tiene efecto que un disparo seaColisionado por alguien
+	}
 		
 		
 		

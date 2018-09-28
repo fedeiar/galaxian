@@ -29,7 +29,7 @@ public abstract class Disparo extends Objeto {
 		rec = new Rectangle(x,y,ANCHO,LARGO);
 		
 		etiqueta = new JLabel();
-		//hacerle un seticon si hace falta
+		//hacer un seticon si hace falta
 		etiqueta.setBounds(rec);
 		etiqueta.setOpaque(true);
 		etiqueta.setBackground(Color.RED);
@@ -46,15 +46,7 @@ public abstract class Disparo extends Objeto {
 		return fuerzaDeImpacto;
 	}
 	
-	//movimiento
 	
-	public void accionar() {
-		if(this.getY() < 0)
-			morir();
-		else
-			this.setY(this.getY() - velocidadMovimiento); 
-		
-	}
 	
 	//---forma de morir---
 	

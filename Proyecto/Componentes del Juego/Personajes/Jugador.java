@@ -7,6 +7,8 @@ import ObjetoGeneral.Objeto;
 import java.awt.Color;
 
 import javax.swing.*;
+
+import Disparos.DisparoJugador;
 public class Jugador extends Personajes {
 	
 	//--------------ATRIBUTOS----------------
@@ -92,6 +94,14 @@ public class Jugador extends Personajes {
 		velocidadMovimiento = n;
 	}
 	
+	//DISPARO
+	
+	public void disparar() {
+		DisparoJugador disparoJ = new DisparoJugador(log, velocidadDisparo , fuerzaDisparo ,
+				 getX() + this.ANCHO / 2 , getY() );
+		log.agregarObjeto(disparoJ);
+	}
+	
 	//Vidas y HP
 	
 	public int getHP() {
@@ -116,9 +126,7 @@ public class Jugador extends Personajes {
 	}
 	
 	//-----MOVIMIENTO------
-	
-	public void accionar() {}
-	
+		
 	
 	public void mover(int n) {
 		if(n==0) {
@@ -148,7 +156,7 @@ public class Jugador extends Personajes {
 			setX(0);
 	}
 	
-	//colision
+	//----VISITOR----
 	
 	public void serVisitado(Visitor v) {
 		v.afectarJugador(this);

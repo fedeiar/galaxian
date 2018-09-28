@@ -9,23 +9,28 @@ import java.util.Random;
 
 public class InteligenciaEnemigoConArma extends Inteligencia{
 	
+	//atributos
 	
+	protected EnemigoConArma ene;
+	
+	//constructor
 	
 	public InteligenciaEnemigoConArma(EnemigoConArma e) {
-		super(e);  
+		ene = e;
 		
 	}
 	
+	//metodos
 	
-	public void mover(int anchoDelMapa) {
+	public void accionar() {
 		Random ran = new Random();
 		int mov = ran.nextInt(2);
 		if(mov==0) {
-			moverIzquierda(anchoDelMapa);
+			moverIzquierda(AnchoMapa);
 		}
 		else
 			if(mov==1)
-				moverDerecha(anchoDelMapa);
+				moverDerecha(AnchoMapa);
 	}
 	
 	private void moverIzquierda(int ancho) {
