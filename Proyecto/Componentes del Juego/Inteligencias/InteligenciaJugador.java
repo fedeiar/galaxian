@@ -1,22 +1,33 @@
 package Inteligencias;
 import Personajes.*;
+import Disparos.DisparoJugador;
+import Logica.*;
 public class InteligenciaJugador extends Inteligencia{
 
 
 	//atributos
 	
-	int direccion;
-	Jugador jug;
+	
+	protected Jugador jug;
+	protected Logica log;
+	
+	protected int puedo_shoot;
+	protected int quiero_shoot; //sería si el jugador desea disparar
+	protected int direccion;
 	
 	//constructor
-	public InteligenciaJugador(Jugador j) {
+	public InteligenciaJugador(Jugador j , Logica l) {
 		jug = j;
 		direccion = 0;
+		quiero_shoot = 0;
+		puedo_shoot=0;
+		log = l;
 	}
 	
 	//metodos
 	
 	public void accionar() {
+		//---CON RESPECTO AL MOVIMIENTO---
 		
 		if(direccion==1) {
 			moverIzquierda();
@@ -27,6 +38,22 @@ public class InteligenciaJugador extends Inteligencia{
 		
 		direccion = 0; //para que no se siga moviendo y se quede quieto si no se le ordeno nada.
 		
+		
+		//---CON RESPECTO AL DISPARO---
+		
+		if(!puedo_shoot()) { //de esta forma controlo que no se me vaya, y cuando el disparo se haya cargado deje de incrementar.
+			puedo_shoot++;       //de esta forma "carga" el disparo
+			quiero_shoot = 0;    //el jugador debera volver a presionar la tecla
+		}
+		
+		if (puedo_shoot() && quiero_shoot==1) { 
+			DisparoJugador disparoJ = new DisparoJugador(log, jug.getVelocidadDisparo() , jug.getFuerzaDisparo() ,
+					 jug.getX() + jug.getAncho() / 2 , jug.getY() );
+			log.agregarObjeto(disparoJ);
+			
+			puedo_shoot=0;
+			quiero_shoot=0;
+		}
 	}
 	
 	private void moverIzquierda() {
@@ -48,8 +75,17 @@ public class InteligenciaJugador extends Inteligencia{
 			jug.setX(0);
 	}
 	
+	//metodos especiales para la inteligencia del jugador
+	
 	public void setDireccion(int dir) {
 		direccion = dir;
 	}
-
+	
+	public void setShoot(int sho) {
+		quiero_shoot = sho;
+	}
+	
+	private boolean puedo_shoot() {
+		return puedo_shoot==2;
+	}
 }

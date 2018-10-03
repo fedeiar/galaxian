@@ -50,6 +50,10 @@ public abstract class Enemigo extends Personajes {
 		return miNivel.getVelocidadDisparo();
 	}
 	
+	public int getFuerzaDisparo() {
+		return miNivel.getFuerzaDisparo();
+	}
+	
 	public int getHP() {
 		return miNivel.getHP();
 	}

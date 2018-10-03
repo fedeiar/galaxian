@@ -30,6 +30,7 @@ public abstract class Objeto {
 	
 	//metodos
 	
+	
 	public Rectangle getRectangulo() {
 		return rec;
 	}

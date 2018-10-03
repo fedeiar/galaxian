@@ -139,7 +139,7 @@ import javax.swing.SwingConstants.*;
 				}
 				else {
 					if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-						log.lanzarDisparoJugador();
+						log.lanzarDisparoJugador(1);
 					}
 					
 				}

@@ -176,8 +176,8 @@ public class Logica {
 	}
 	
 	
-	public void lanzarDisparoJugador() { 
-		jugador.disparar();
+	public void lanzarDisparoJugador(int disp) { 
+		jugador.disparar(disp);
 	}
 	
 	//movimiento de los objetos
@@ -204,7 +204,8 @@ public class Logica {
 	//prototipo para detectar colisiones
 	
 	public void detectarColisiones() {
-		Objeto objs[] = new Objeto[lista_objetos.size()]; //necesito un arreglo de forma de tener un indice para recorrerlo 2 veces sin tener repetidos
+		Objeto objs[] = new Objeto[lista_objetos.size()]; //necesito un arreglo asi tengo un indice para
+														  //recorrerlo 2 veces sin tener repetidos
 		int i=0;
 		
 		for(Position<Objeto> po : lista_objetos.positions()) {

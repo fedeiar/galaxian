@@ -6,7 +6,7 @@ public abstract class Visitor {
 
 	//atributos
 	
-	 //preguntar, no respeta el patron al 100% pero hace falta para eliminar por ejemplo el disparo.
+	
 	
 	//constructor
 	

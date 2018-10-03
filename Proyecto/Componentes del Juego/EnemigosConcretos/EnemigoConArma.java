@@ -15,7 +15,7 @@ public class EnemigoConArma extends Enemigo {
 	
 	public EnemigoConArma(Logica l, int x, int y , int nivel) {
 		super(l,x,y,nivel);
-		inteligencia = new InteligenciaEnemigoConArma(this);
+		inteligencia = new InteligenciaEnemigoConArma(this , log);
 		
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);

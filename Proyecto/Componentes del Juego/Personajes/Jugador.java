@@ -33,7 +33,7 @@ public class Jugador extends Personajes {
 		super(l,x,y);
 		//vis = new VisitorJugador(l);
 		miNivel = new NivelJugador_1();
-		inteligencia = new InteligenciaJugador(this);
+		inteligencia = new InteligenciaJugador(this , log);
 		
 		
 		HP = miNivel.getHP();
@@ -95,13 +95,7 @@ public class Jugador extends Personajes {
 		velocidadMovimiento = n;
 	}
 	
-	//DISPARO
 	
-	public void disparar() {
-		DisparoJugador disparoJ = new DisparoJugador(log, velocidadDisparo , fuerzaDisparo ,
-				 getX() + this.ANCHO / 2 , getY() );
-		log.agregarObjeto(disparoJ);
-	}
 	
 	//Vidas y HP
 	
@@ -133,7 +127,13 @@ public class Jugador extends Personajes {
 		inteligencia.setDireccion(dir);
 	}
 	
-	//----VISITOR----
+	//------DISPARO------
+	
+	public void disparar(int disp) {
+		inteligencia.setShoot(disp);
+	}
+	
+	//-----VISITOR-----
 	
 	public void serVisitado(Visitor v) {
 		v.afectarJugador(this);

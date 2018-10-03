@@ -1,6 +1,7 @@
 package Inteligencias;
 import Personajes.*;
 import EnemigosConcretos.*;
+import Logica.Logica;
 import Mapas.Mapa;
 
 import java.util.Random;
@@ -12,7 +13,7 @@ public abstract class Inteligencia { //debe extender a alguien?
 	
 	//atributos
 	
-	
+	protected Logica log;
 	
 	//constructor
 	
@@ -26,6 +27,13 @@ public abstract class Inteligencia { //debe extender a alguien?
 	
 	
 	public void setDireccion(int n) { 
+		/*
+		metodo hecho exclusivamente para inteligenciaJugador,
+		donde ademas será redefinido.
+		*/
+	}
+	
+	public void setShoot(int n) {
 		/*
 		metodo hecho exclusivamente para inteligenciaJugador,
 		donde ademas será redefinido.

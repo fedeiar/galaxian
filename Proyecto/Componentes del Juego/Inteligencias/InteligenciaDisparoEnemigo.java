@@ -1,11 +1,12 @@
 package Inteligencias;
 import Disparos.*;
+import Mapas.Mapa;
 
 public class InteligenciaDisparoEnemigo extends Inteligencia {
 
 	//atributos
 	
-	DisparoEnemigo dispE;
+	protected DisparoEnemigo dispE;
 	
 	//constructor
 	
@@ -14,4 +15,11 @@ public class InteligenciaDisparoEnemigo extends Inteligencia {
 	}
 	
 	//metodos
+	
+	public void accionar() {
+		if(dispE.getY() > Mapa.MAX_Y)
+			dispE.morir();
+		else
+			dispE.setY(dispE.getY() + dispE.getVelocidad());
+	}
 }
