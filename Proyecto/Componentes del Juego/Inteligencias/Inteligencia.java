@@ -13,7 +13,6 @@ public abstract class Inteligencia { //debe extender a alguien?
 	
 	//atributos
 	
-	protected Logica log;
 	
 	//constructor
 	

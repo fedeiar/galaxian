@@ -2,11 +2,7 @@ package Personajes;
 import Visitors.*;
 import Inteligencias.*;
 import Logica.*;
-import NivelPersonajes.*;
 import ObjetoGeneral.Objeto;
-
-import java.awt.Color;
-
 import javax.swing.*;
 
 import Disparos.DisparoJugador;
@@ -21,8 +17,7 @@ public class Jugador extends Personajes {
 	protected int velocidadDisparo;
 	protected int fuerzaDisparo;
 	
-	protected NivelJugador_1 miNivel; //redefine el atributo miNivel de Personajes
-	
+	protected final static int maxHP = 10;
 	
 	
 	//--------------CONSTRUCTOR--------------
@@ -31,15 +26,14 @@ public class Jugador extends Personajes {
 		
 		//---parte logica del jugador---
 		super(l,x,y);
-		//vis = new VisitorJugador(l);
-		miNivel = new NivelJugador_1();
-		inteligencia = new InteligenciaJugador(this , log);
+		vis = new VisitorJugador();
+		inteligencia = new InteligenciaJugador(this);
 		
 		
-		HP = miNivel.getHP();
-		velocidadMovimiento = miNivel.getVelocidadMovimiento();
-		velocidadDisparo = miNivel.getVelocidadDisparo();
-		fuerzaDisparo = miNivel.getFuerzaDisparo();
+		HP = maxHP;
+		velocidadMovimiento = 20;
+		velocidadDisparo = 20;
+		fuerzaDisparo = 1;
 		vidas = 3;
 		
 		//---parte grafica del jugador---
@@ -53,26 +47,11 @@ public class Jugador extends Personajes {
 	
 	//----------------METODOS----------------
 	
-	//NIVELES
-	
-	public NivelPersonaje getNivel() {
-		return miNivel;
-	}
-	
-	public void setNivel(int n) {
-		if(n==1)
-			miNivel = new NivelJugador_1();
-		else {
-			//mas adelante agregar proximos niveles
-		}
-		
-		etiqueta.setIcon(miNivel.getImagen());
-	}
 	
 	//VELOCIDAD de movimiento y disparo
 	
 	public int getFuerzaDisparo() {
-		return miNivel.getFuerzaDisparo();
+		return fuerzaDisparo;
 	}
 	
 	public int getVelocidadDisparo() {
@@ -112,7 +91,7 @@ public class Jugador extends Personajes {
 			HP -= n;
 		else {
 			vidas--;
-			HP = miNivel.getHP();
+			HP = maxHP;
 		}
 		if(vidas<0) {
 			morir();
@@ -131,6 +110,12 @@ public class Jugador extends Personajes {
 	
 	public void disparar(int disp) {
 		inteligencia.setShoot(disp);
+	}
+	
+	public void crearDisparo() {
+		DisparoJugador disparoJ = new DisparoJugador(log, getVelocidadDisparo() , getFuerzaDisparo() ,
+				 getX() + getAncho() / 2 , getY() );
+		log.agregarObjeto(disparoJ);
 	}
 	
 	//-----VISITOR-----

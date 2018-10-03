@@ -2,6 +2,8 @@ package EnemigosConcretos;
 import java.awt.Color;
 
 import javax.swing.*;
+
+import Disparos.DisparoEnemigo;
 import Personajes.Enemigo;
 import Inteligencias.*;
 import Logica.*;
@@ -15,7 +17,7 @@ public class EnemigoConArma extends Enemigo {
 	
 	public EnemigoConArma(Logica l, int x, int y , int nivel) {
 		super(l,x,y,nivel);
-		inteligencia = new InteligenciaEnemigoConArma(this , log);
+		inteligencia = new InteligenciaEnemigoConArma(this);
 		
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
@@ -26,6 +28,14 @@ public class EnemigoConArma extends Enemigo {
 
 	}
 	
+	//metodos
 	
+	//---DISPARO---
+	
+	public void crearDisparo() {
+		DisparoEnemigo disparoE = new DisparoEnemigo(log,getVelocidadDisparo(),getFuerzaDisparo()
+				  , getX() + getAncho() / 2 , getY() + getAlto() );
+		log.agregarObjeto(disparoE);	
+	}
 	
 }

@@ -1,26 +1,26 @@
-package NivelPersonajes;
+package NivelEnemigos;
 import java.awt.*;
 
 import javax.swing.ImageIcon;
 /**
- * Esta clase solo se encargara de inicializar los atributos del personaje(enemigo o jugador) acorde al nivel que posee.
+ * Esta clase solo se encargara de inicializar los atributos del enemigo acorde al nivel que posee.
  * @author Fede iar
  *
  */
-public abstract class NivelPersonaje {
+public abstract class NivelEnemigo {
 	
 	//atributos
 	
-	protected NivelPersonaje siguiente;
+	protected NivelEnemigo siguiente;
 	protected int velocidadMovimiento;
 	protected int HP;
 	protected int velocidadDisparo;
 	protected int fuerzaDisparo;
-	protected ImageIcon foto;
+	protected int puntosQueDa;
 	
 	//constructor
 	
-	public NivelPersonaje() {
+	public NivelEnemigo() {
 		
 	}
 	
@@ -30,6 +30,10 @@ public abstract class NivelPersonaje {
 		return fuerzaDisparo;
 	}
 	
+	public int getVelocidadDisparo() {
+		return velocidadDisparo;
+	}
+	
 	public int getVelocidadMovimiento() {
 		return velocidadMovimiento;
 	}
@@ -37,19 +41,16 @@ public abstract class NivelPersonaje {
 	public int getHP() {
 		return HP;
 	}
-	
-	public int getVelocidadDisparo() {
-		return velocidadDisparo;
+
+	public int getPuntaje() {
+		return puntosQueDa;
 	}
 	
-	
-	public NivelPersonaje getSiguiente() {
+	public NivelEnemigo getSiguiente() {
 		return siguiente;
 	}
 	
-	public ImageIcon getImagen() {
-		return foto;
-	}
+	
 	
 	
 }

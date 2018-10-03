@@ -1,10 +1,10 @@
-package NivelPersonajes;
+package NivelEnemigos;
 
-public class NivelEnemigo_1 extends NivelPersonaje {
+public class NivelEnemigo_1 extends NivelEnemigo {
 
 	//atributos
 	
-	protected int puntosQueDa;
+	
 	
 	//constructor
 	
@@ -16,11 +16,8 @@ public class NivelEnemigo_1 extends NivelPersonaje {
 		fuerzaDisparo = 2;
 		
 		puntosQueDa = 50;
-		//los enemigos no tendran icono desde miNivel, ya que el icono cambia dependiendo del tipo de enemigo.
+		
 	}
 	
-	public int getPuntaje() {
-		return puntosQueDa;
-	}
 	
 }

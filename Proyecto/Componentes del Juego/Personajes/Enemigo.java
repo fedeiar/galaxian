@@ -2,7 +2,7 @@ package Personajes;
 import Visitors.*;
 import Inteligencias.*;
 import Logica.*;
-import NivelPersonajes.NivelEnemigo_1;
+import NivelEnemigos.*;
 import ObjetoGeneral.Objeto;
 import Premios.*;
 public abstract class Enemigo extends Personajes {
@@ -10,7 +10,7 @@ public abstract class Enemigo extends Personajes {
 	//atributos
 	
 	
-	protected NivelEnemigo_1 miNivel; // redefine el atributo de personaje
+	protected NivelEnemigo miNivel; 
 	
 	//constructor
 	
@@ -19,11 +19,6 @@ public abstract class Enemigo extends Personajes {
 		vis = new VisitorEnemigo();
 		setNivel(nivel);
 		
-		/*
-			no inicializamos los demas atributos porque estan en miNivel.
-			y como los enemigos no agarran powerups, van a permanecer constantes.
-			el nivel de un enemigo determina la dificultad del nivel.
-		*/
 	}
 	
 	
@@ -66,7 +61,7 @@ public abstract class Enemigo extends Personajes {
 			HP -= n;
 		else {
 			
-			morir(); //probar y preguntar, morir esta dentro de este metodo
+			morir(); 
 		}
 	}
 	

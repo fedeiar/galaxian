@@ -1,7 +1,7 @@
 package Inteligencias;
 import Personajes.*;
 import Disparos.DisparoJugador;
-import Logica.*;
+
 public class InteligenciaJugador extends Inteligencia{
 
 
@@ -9,19 +9,17 @@ public class InteligenciaJugador extends Inteligencia{
 	
 	
 	protected Jugador jug;
-	protected Logica log;
 	
 	protected int puedo_shoot;
 	protected int quiero_shoot; //sería si el jugador desea disparar
 	protected int direccion;
 	
 	//constructor
-	public InteligenciaJugador(Jugador j , Logica l) {
+	public InteligenciaJugador(Jugador j) {
 		jug = j;
 		direccion = 0;
 		quiero_shoot = 0;
 		puedo_shoot=0;
-		log = l;
 	}
 	
 	//metodos
@@ -47,9 +45,7 @@ public class InteligenciaJugador extends Inteligencia{
 		}
 		
 		if (puedo_shoot() && quiero_shoot==1) { 
-			DisparoJugador disparoJ = new DisparoJugador(log, jug.getVelocidadDisparo() , jug.getFuerzaDisparo() ,
-					 jug.getX() + jug.getAncho() / 2 , jug.getY() );
-			log.agregarObjeto(disparoJ);
+			jug.crearDisparo();
 			
 			puedo_shoot=0;
 			quiero_shoot=0;
