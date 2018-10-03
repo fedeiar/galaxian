@@ -30,6 +30,8 @@ public class Mapa_1 extends Mapa {
 				cantEnemigos++;
 		}
 		 
+		
+		 
 		 //aqui podrían agregarse los obstaculos.
 		 
 		 return L;

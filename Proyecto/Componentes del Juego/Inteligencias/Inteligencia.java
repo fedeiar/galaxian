@@ -23,4 +23,12 @@ public abstract class Inteligencia { //debe extender a alguien?
 	//metodos
 	
 	public abstract void accionar();	
+	
+	
+	public void setDireccion(int n) { 
+		/*
+		metodo hecho exclusivamente para inteligenciaJugador,
+		donde ademas será redefinido.
+		*/
+	}
 }

@@ -10,7 +10,7 @@ public abstract class Disparo extends Objeto {
 
 	//atributos
 	protected final static int ANCHO = 4;
-	protected final static int LARGO = 5;
+	protected final static int LARGO = 20;
 	
 	protected int velocidadMovimiento;
 	protected int fuerzaDeImpacto;

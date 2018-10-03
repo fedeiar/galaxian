@@ -41,7 +41,7 @@ import javax.swing.SwingConstants.*;
 		
 		
 		//SE CREAN LOS COMPONENTES INICIALES
-		log.crearObjetos();
+		log.crearObjetosIniciales();
 		
 		//empieza el juego
 		log.empezarJuego();
@@ -129,12 +129,12 @@ import javax.swing.SwingConstants.*;
 		
 		public void keyPressed(KeyEvent e) {
 			if (e.getKeyCode() == KeyEvent.VK_LEFT){
-				log.moverJugador(0);
+				log.moverJugador(1);
 				
 			}
 			else {
 				if (e.getKeyCode() == KeyEvent.VK_RIGHT){
-					log.moverJugador(1);
+					log.moverJugador(2);
 					
 				}
 				else {

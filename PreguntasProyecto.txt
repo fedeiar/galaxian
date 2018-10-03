@@ -11,4 +11,6 @@
 - De que me sirve distinguir entre objetos preciosos y magia temporal?
 
 
-- Como podrúa usar protoype para instanciar(clonar) los distintos tipos de premios?
+- Como podría usar el prototype para los premios? es Decir, tengo un atributo
+  de tipo Premio en la clase enemigo y debería clonar una instancia para 
+  inicializarlo y tirar eso en el mapa.

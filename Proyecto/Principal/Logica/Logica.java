@@ -17,8 +17,9 @@ public class Logica {
 
 	//atributos
 	
-	
-	protected PositionList<Objeto>  listaObjetos;
+	protected PositionList<Objeto> lista_agregar;
+	protected PositionList<Objeto> lista_eliminar;
+	protected PositionList<Objeto> lista_objetos;
 	
 	protected Mapa mapa;
 	protected GUI gui;
@@ -33,7 +34,11 @@ public class Logica {
 	
 	public Logica( GUI g) {
 		
-		listaObjetos = new ListaDE<Objeto>();
+		lista_objetos = new ListaDE<Objeto>();
+		lista_agregar = new ListaDE<Objeto>();
+		lista_eliminar = new ListaDE<Objeto>();
+		
+		
 	    puntaje = 0;
 	    cantEnemigos = 0;
 	    
@@ -44,6 +49,8 @@ public class Logica {
 	    jugador = new Jugador(this, Mapa.MAX_X/2 , Mapa.MAX_Y - 70 ); // ver alto y ancho ¿porque si pongo -49 queda al borde?
 	    vidasJugador = jugador.getVidas();
 	    gui.add(jugador.getLabel());
+	    
+	   
 	}
 	
 	//metodos
@@ -54,6 +61,8 @@ public class Logica {
 	public int getVidasJugador() {
 		return jugador.getVidas();
 	}
+
+	
 	public int getPuntaje() {
 		return puntaje;
 	}
@@ -75,15 +84,17 @@ public class Logica {
 	}
 	
 	public boolean hayObjetos() {
-		return !listaObjetos.isEmpty();
+		return !lista_objetos.isEmpty();
 	}
 	
 	public void empezarJuego() {
 		tiempoLog.start(); 
 	}
 	
+	//inicializacion de los distintos objetos y cambio de mapas
+	
 	public boolean hayMapaSiguiente() {
-		if(mapa==null)
+		if(mapa.getMapaSiguiente()==null)
 			return false;
 		else
 			return true;
@@ -91,27 +102,27 @@ public class Logica {
 	
 	public void getMapaSiguiente() {
 		mapa = mapa.getMapaSiguiente();
-		if(mapa!=null)
-			crearObjetos();
+		if(mapa!=null) //si bien siempre da true, esta por las dudas.
+			crearObjetosIniciales();
 	}
 	
-	
-	
-	public void crearObjetos() {
+	public void crearObjetosIniciales() { //se ejecuta cada vez que empieza un mapa nuevo.
 		resetearMapa();
-		listaObjetos = mapa.obtenerObjetosIniciales();
+		lista_agregar = mapa.obtenerObjetosIniciales();
 		cantEnemigos = mapa.cantEnemigosVivos();
-		gui.repintar();
-		for( Objeto o : listaObjetos) {
-			gui.add(o.getLabel());
-		}
+		
+		lista_agregar.addLast(jugador); //necesito agregarlo manualmente cada vez que empieza un nuevo mapa ya que
+										//fue removido de la lista de objetos cuando se reseteo el mapa.
+		
 	}
 	
 	private void resetearMapa() {
 		try {
-			while(!listaObjetos.isEmpty()) {
-				gui.remove(listaObjetos.first().element().getLabel());
-				listaObjetos.remove(listaObjetos.first());
+			while(!lista_objetos.isEmpty()) {
+				Position<Objeto> po = lista_objetos.first();
+				
+				gui.remove(po.element().getLabel());
+				lista_objetos.remove(po);
 			}
 		}
 		catch(InvalidPositionException | EmptyListException e) {
@@ -121,43 +132,39 @@ public class Logica {
 	}
 	
 	public void agregarObjeto(Objeto o) {
-		listaObjetos.addFirst(o);
-		gui.add(o.getLabel());
+		lista_agregar.addFirst(o);
 	}
 	
-	
-	public void lanzarDisparoJugador() { //metodo auxiliar que debera ser eliminado
-		jugador.disparar();
-	}
-	
-	public void moverJugador (int direccion) {
-		jugador.mover(direccion);
-	}
-	
-	public void accionarObjetos() throws EmptyListException{
-		if(!listaObjetos.isEmpty()) {
-			
-			for(Objeto o : listaObjetos) {
-				o.accionar();
-			}
-			gui.repintar();
-		}
-		else {
-			throw new EmptyListException("se intento mover enemigos cuando no quedaba ninguno");
-		}
-	}
-	
-	
-	 
 	public void eliminarObjeto(Objeto o) {
+		lista_eliminar.addLast(o);
+	}
+	
+	public void actualizarObjetos() {
+		
+		for(Position<Objeto> po : lista_agregar.positions()) {
+			lista_objetos.addLast(po.element());
+			gui.add(po.element().getLabel());
+		}
+		
+		lista_agregar = new ListaDE<Objeto>(); //ya agregamos lo que teniamos que agregar, reiniciamos la lista
+		
+		
+		for(Position<Objeto> po : lista_eliminar.positions()) {
+			this.eliminar(po.element());
+		}
+		
+		lista_eliminar = new ListaDE<Objeto>(); //ya eliminamos lo que habia que eliminar, reiniciamos la lista
+		
+		gui.repintar();
+	}	
+	
+	private void eliminar(Objeto o) {
 		try {
-			for(Position<Objeto> po : listaObjetos.positions()) {
+			for(Position<Objeto> po : lista_objetos.positions()) {
 				if(po.element() == o) {
 					
 					gui.remove(po.element().getLabel());
-					
-					
-					listaObjetos.remove(po);
+					lista_objetos.remove(po);
 					break;
 				}
 			}
@@ -168,22 +175,46 @@ public class Logica {
 		}
 	}
 	
+	
+	public void lanzarDisparoJugador() { 
+		jugador.disparar();
+	}
+	
+	//movimiento de los objetos
+	
+	public void moverJugador (int direccion) { 
+		jugador.mover(direccion);
+	 }
+	
+	public void accionarObjetos() throws EmptyListException{
+		if(!lista_objetos.isEmpty()) {
+			
+			for(Objeto o : lista_objetos) {
+				o.accionar();
+			}
+			gui.repintar();
+		}
+		else {
+			throw new EmptyListException("se intento mover enemigos cuando no quedaba ninguno");
+		}
+	}
+	
+	
+	
 	//prototipo para detectar colisiones
 	
 	public void detectarColisiones() {
-		Objeto objs[] = new Objeto[listaObjetos.size() + 1]; //necesito un arreglo de forma de tener un indice para recorrerlo 2 veces sin tener repetidos
+		Objeto objs[] = new Objeto[lista_objetos.size()]; //necesito un arreglo de forma de tener un indice para recorrerlo 2 veces sin tener repetidos
 		int i=0;
 		
-		for(Position<Objeto> po : listaObjetos.positions()) {
+		for(Position<Objeto> po : lista_objetos.positions()) {
 			objs[i] = po.element();
 			i++;
 		}
-		objs[i] = jugador ; //guardo al jugador en la ultima posicion ya que jugador no pertenece a la lista de objetos
 		
 		for(i=0; i<objs.length ; i++) {
 			for(int j=i+1 ; j<objs.length ; j++) {
 				if(objs[i].getRectangulo().intersects(objs[j].getRectangulo())) { // si true quiere decir que colisionaron
-					System.out.println("hubo colision entre 2 objetos");
 					
 					objs[i].chocar(objs[j]); 
 					objs[j].chocar(objs[i]);

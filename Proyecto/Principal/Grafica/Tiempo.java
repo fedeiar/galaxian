@@ -18,24 +18,35 @@ public class Tiempo extends Thread{
 	
 	
 	public void run() {
-		while(log.hayObjetos()) {
+		while(true) {
 			try {
-				
-				log.accionarObjetos();
-				log.detectarColisiones();
 				if(!log.hayEnemigos() && log.hayMapaSiguiente()) {
 					log.getMapaSiguiente();
 				}
 				
-				Thread.sleep(100);
+				
+				if(log.hayObjetos())
+					log.accionarObjetos();
+				
+				log.detectarColisiones();
 				
 				
+				log.actualizarObjetos();
+				
+				
+				Thread.sleep(50);
+				
+				//MUY IMPORTANTE RESPETAR EL ORDEN EN EL QUE SE REALIZAN ESTAS ACCIONES! de lo contrario aumenta 
+				//significantemente el delay
+				//de todas formas, dependiendo de la forma en la que esten ordenados se produce el error en ejecucion raro.
 			}
 			catch (InterruptedException | EmptyListException e) {
 				e.printStackTrace();
 				
-			}
+			}	
 			
 		}
 	}
+	
+	
 }

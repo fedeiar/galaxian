@@ -1,5 +1,6 @@
 package Personajes;
 import Visitors.*;
+import Inteligencias.*;
 import Logica.*;
 import NivelPersonajes.*;
 import ObjetoGeneral.Objeto;
@@ -32,7 +33,7 @@ public class Jugador extends Personajes {
 		super(l,x,y);
 		//vis = new VisitorJugador(l);
 		miNivel = new NivelJugador_1();
-		
+		inteligencia = new InteligenciaJugador(this);
 		
 		
 		HP = miNivel.getHP();
@@ -128,32 +129,8 @@ public class Jugador extends Personajes {
 	//-----MOVIMIENTO------
 		
 	
-	public void mover(int n) {
-		if(n==0) {
-			moverIzquierda();
-		}
-		else
-			if(n==1)
-				moverDerecha();
-	}
-	
-	private void moverIzquierda() {
-		if(rec.x - velocidadMovimiento > 0) { 
-			setX(rec.x - velocidadMovimiento); //  y aca *
-		}
-		else {
-			long aux = Math.round(rec.getWidth());
-			setX(AnchoMapa - (int)aux); //si bien un long es un int pero mas largo, hace falta casting
-			
-		}
-	}
-	
-	private void moverDerecha() {
-		if(rec.x + velocidadMovimiento < AnchoMapa - rec.getWidth()) { //ver rec.getWidth() para ver si entra bien
-			setX(rec.x + velocidadMovimiento); // aca *
-		}
-		else
-			setX(0);
+	public void mover (int dir) {
+		inteligencia.setDireccion(dir);
 	}
 	
 	//----VISITOR----
