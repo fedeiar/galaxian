@@ -14,9 +14,8 @@ public abstract class NivelEnemigo {
 	protected NivelEnemigo siguiente;
 	protected int velocidadMovimiento;
 	protected int HP;
-	protected int velocidadDisparo;
-	protected int fuerzaDisparo;
 	protected int puntosQueDa;
+	protected int fuerzaImpacto;
 	
 	//constructor
 	
@@ -26,12 +25,9 @@ public abstract class NivelEnemigo {
 	
 	//metodos
 	
-	public int getFuerzaDisparo() {
-		return fuerzaDisparo;
-	}
 	
-	public int getVelocidadDisparo() {
-		return velocidadDisparo;
+	public int getFuerzaImpacto() {
+		return fuerzaImpacto;
 	}
 	
 	public int getVelocidadMovimiento() {

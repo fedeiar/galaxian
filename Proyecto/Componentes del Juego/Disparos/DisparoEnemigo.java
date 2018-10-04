@@ -4,7 +4,7 @@ import Logica.*;
 import ObjetoGeneral.*;
 import Personajes.*;
 import Inteligencias.*;
-public class DisparoEnemigo extends Disparo {
+public abstract class DisparoEnemigo extends Disparo {
 
     //atributos
 	

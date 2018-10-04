@@ -19,7 +19,7 @@ public class VisitorDisparoJugador extends Visitor {
 
 	public void afectarEnemigo(Enemigo e) { //seria el visitarEnemigo(this)
 		e.quitarHP(dis.getFuerzaImpacto());
-		dis.morir(); //por esto es necesario la logica
+		dis.morir(); 
 		
 	}
 }

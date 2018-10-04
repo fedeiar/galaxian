@@ -3,7 +3,7 @@ package Visitors;
 import Logica.Logica;
 import Personajes.Jugador;
 import Premios.*;
-
+import Armas.*;
 public class VisitorMejoraArma1 extends Visitor{
 
 	//atributos
@@ -21,7 +21,9 @@ public class VisitorMejoraArma1 extends Visitor{
 	//metodos
 	
 	public void afectarJugador(Jugador j) {
-		j.setVelocidadDisparo(j.getVelocidadDisparo() + MJ.getModificadorVelocidadDisparo());
+		Arma a = j.getArma();
+		
+		a.setVelocidadDisparo(a.getVelocidadDisparo() + 10);
 		MJ.morir();
 	}
 

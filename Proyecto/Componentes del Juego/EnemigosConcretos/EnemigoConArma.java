@@ -1,5 +1,6 @@
 package EnemigosConcretos;
 import java.awt.Color;
+import Armas.*;
 
 import javax.swing.*;
 
@@ -25,17 +26,20 @@ public class EnemigoConArma extends Enemigo {
 		etiqueta.setOpaque(true);
 		etiqueta.setBackground(Color.blue);
 		
-
+		miArma = new ArmaClasicaEnemigo(log , 15 , 2 ); //los 2 parametros enteros son la velocidad y fuerza del ARMA
 	}
 	
 	//metodos
 	
 	//---DISPARO---
 	
+
+	
 	public void crearDisparo() {
-		DisparoEnemigo disparoE = new DisparoEnemigo(log,getVelocidadDisparo(),getFuerzaDisparo()
-				  , getX() + getAncho() / 2 , getY() + getAlto() );
-		log.agregarObjeto(disparoE);	
+		int x = getX() + getAncho() / 2;
+		int y = getY() + getAlto();
+	
+		miArma.disparar(x, y);
 	}
 	
 }

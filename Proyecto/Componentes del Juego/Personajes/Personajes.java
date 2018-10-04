@@ -23,12 +23,11 @@ public abstract class Personajes extends Objeto {
 	public Personajes(Logica l ,int x , int y) {
 		super(l);
 		rec = new Rectangle(x,y,ANCHO,ALTO);
-		//log = l;
+		
 		
 	}
 	//metodos
 	
-	public abstract int getVelocidadDisparo();
 	
 	public abstract int getVelocidadMovimiento();
 	

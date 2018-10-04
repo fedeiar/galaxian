@@ -1,10 +1,12 @@
 package Personajes;
 import Visitors.*;
+import Armas.*;
 import Inteligencias.*;
 import Logica.*;
 import ObjetoGeneral.Objeto;
 import javax.swing.*;
 
+import Disparos.DisparoComunJugador;
 import Disparos.DisparoJugador;
 public class Jugador extends Personajes {
 	
@@ -12,13 +14,11 @@ public class Jugador extends Personajes {
 	
 	protected int vidas; //al perder toda su HP, el jugador pierde una vida
 	
-	//jugador tiene como atributos estos datos ya que ademas de los provistos por nivel, pueden ser incrementados por algun powerup
 	protected int velocidadMovimiento;
-	protected int velocidadDisparo;
-	protected int fuerzaDisparo;
 	
 	protected final static int maxHP = 10;
 	
+	protected Arma miArma;
 	
 	//--------------CONSTRUCTOR--------------
 	
@@ -28,12 +28,10 @@ public class Jugador extends Personajes {
 		super(l,x,y);
 		vis = new VisitorJugador();
 		inteligencia = new InteligenciaJugador(this);
-		
+		miArma = new ArmaClasicaJugador(log , 20 , 1); //los 2 parametros enteros son la velocidad y fuerza del ARMA
 		
 		HP = maxHP;
 		velocidadMovimiento = 20;
-		velocidadDisparo = 20;
-		fuerzaDisparo = 1;
 		vidas = 3;
 		
 		//---parte grafica del jugador---
@@ -48,33 +46,26 @@ public class Jugador extends Personajes {
 	//----------------METODOS----------------
 	
 	
-	//VELOCIDAD de movimiento y disparo
-	
-	public int getFuerzaDisparo() {
-		return fuerzaDisparo;
-	}
-	
-	public int getVelocidadDisparo() {
-		return velocidadDisparo;
-	}
+	//VELOCIDAD de movimiento
 	
 	public int getVelocidadMovimiento() {
 		return velocidadMovimiento;
 	}
 	
-	public void setFuerzaDisparo(int n) {
-		fuerzaDisparo = n;
-	}
-	
-	public void setVelocidadDisparo(int n) {
-		velocidadDisparo = n;
-	}
 	
 	public void setVelocidadMovimiento(int n) {
 		velocidadMovimiento = n;
 	}
 	
+	//ARMA
 	
+	public Arma getArma() {
+		return miArma;
+	}
+	
+	public void setArma(Arma a) {
+		miArma = a;
+	}
 	
 	//Vidas y HP
 	
@@ -113,9 +104,10 @@ public class Jugador extends Personajes {
 	}
 	
 	public void crearDisparo() {
-		DisparoJugador disparoJ = new DisparoJugador(log, getVelocidadDisparo() , getFuerzaDisparo() ,
-				 getX() + getAncho() / 2 , getY() );
-		log.agregarObjeto(disparoJ);
+		int x = getX() + getAncho() / 2;
+		int y = getY();
+		
+		miArma.disparar(x, y);
 	}
 	
 	//-----VISITOR-----

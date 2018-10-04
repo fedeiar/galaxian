@@ -11,7 +11,7 @@ public class InteligenciaJugador extends Inteligencia{
 	protected Jugador jug;
 	
 	protected int puedo_shoot;
-	protected int quiero_shoot; //sería si el jugador desea disparar
+	protected int quiero_shoot; //sería si el jugador apreta para disparar
 	protected int direccion;
 	
 	//constructor

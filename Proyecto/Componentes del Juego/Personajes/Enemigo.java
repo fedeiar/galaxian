@@ -1,5 +1,9 @@
 package Personajes;
 import Visitors.*;
+
+import java.util.Random;
+
+import Armas.*;
 import Inteligencias.*;
 import Logica.*;
 import NivelEnemigos.*;
@@ -11,12 +15,13 @@ public abstract class Enemigo extends Personajes {
 	
 	
 	protected NivelEnemigo miNivel; 
+	protected Arma miArma;
 	
 	//constructor
 	
 	public Enemigo(Logica l,int x, int y,  int nivel) { 
 		super(l,x,y);
-		vis = new VisitorEnemigo();
+		vis = new VisitorEnemigo(this);
 		setNivel(nivel);
 		
 	}
@@ -41,12 +46,9 @@ public abstract class Enemigo extends Personajes {
 		return miNivel.getVelocidadMovimiento();
 	}
 	
-	public int getVelocidadDisparo() {
-		return miNivel.getVelocidadDisparo();
-	}
 	
-	public int getFuerzaDisparo() {
-		return miNivel.getFuerzaDisparo();
+	public int getFuerzaImpacto() {
+		return miNivel.getFuerzaImpacto();
 	}
 	
 	public int getHP() {
@@ -75,9 +77,17 @@ public abstract class Enemigo extends Personajes {
 		log.eliminarObjeto(this);
 		
 		//al morir un enemigo dropea un powerup, ¿que powerup? esto puede verse con PROTOYPE, lo de abajo es TEMPORAL
+		//demasiado hardcodeado NO SEGUIR CON ESTO
 		
-		Premios P;
-		P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimiento() ,log , miNivel.getVelocidadDisparo()); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
+		Premios P=null;
+		Random ran = new Random();
+		int r  = ran.nextInt(2);
+		
+		if(r==0)
+			P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimiento() ,log , 5); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
+		else
+			P = new MejoraArma2(getX(),getY(), miNivel.getVelocidadMovimiento() ,log);
+		
 		log.agregarObjeto(P);
 	
 	}
