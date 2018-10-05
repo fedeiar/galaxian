@@ -25,6 +25,8 @@ public abstract class Enemigo extends Personajes {
 		vis = new VisitorEnemigo(this);
 		setNivel(nivel);
 		
+		HP = miNivel.getHP();
+		
 	}
 	
 	
@@ -52,13 +54,7 @@ public abstract class Enemigo extends Personajes {
 		return miNivel.getFuerzaImpacto();
 	}
 	
-	public int getHP() {
-		return miNivel.getHP();
-	}
 	
-	
-	
-
 	public void quitarHP(int n) {
 		if( HP - n > 0)
 			HP -= n;
@@ -98,7 +94,6 @@ public abstract class Enemigo extends Personajes {
 	
 	public void serVisitado(Visitor v) { // sería el "aceptar(Visitor v)"
 		v.afectarEnemigo(this);
-		
 	}
 	
 	

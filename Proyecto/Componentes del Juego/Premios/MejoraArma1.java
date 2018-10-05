@@ -17,9 +17,11 @@ public class MejoraArma1 extends ObjetosPreciosos {
 	public MejoraArma1(int x,int y,int velCaida,Logica l , int modifVelDisp) {
 		
 		//----parte logica de la mejora----
+		
 		super(x,y,velCaida,l);
 		modifVelocidadDisparo = modifVelDisp;
 		vis = new VisitorMejoraArma1(this);
+		
 		
 		//----parte grafica de la mejora----
 		

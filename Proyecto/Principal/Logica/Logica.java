@@ -168,7 +168,6 @@ public class Logica {
 					break;
 				}
 			}
-			gui.repintar();
 		}
 		catch(InvalidPositionException e) {
 			e.printStackTrace();
@@ -224,9 +223,7 @@ public class Logica {
 					*/
 				}
 			}
-		}
-		gui.repintar();
-					
+		}			
 	}
 	
 }

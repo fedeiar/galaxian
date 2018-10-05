@@ -17,8 +17,14 @@ public class EnemigoConArma extends Enemigo {
 	//constructor
 	
 	public EnemigoConArma(Logica l, int x, int y , int nivel) {
+		
+		//----parte logica del EnemigoConArma---
 		super(l,x,y,nivel);
 		inteligencia = new InteligenciaEnemigoConArma(this);
+		miArma = new ArmaClasicaEnemigo(log , 15 , 2 ); //los 2 parametros enteros son la vel. y fuerza del disparo del ARMA
+		
+		
+		//----parte grafica del EnemigoConArma----
 		
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
@@ -26,7 +32,6 @@ public class EnemigoConArma extends Enemigo {
 		etiqueta.setOpaque(true);
 		etiqueta.setBackground(Color.blue);
 		
-		miArma = new ArmaClasicaEnemigo(log , 15 , 2 ); //los 2 parametros enteros son la vel. y fuerza del disparo del ARMA
 	}
 	
 	//metodos

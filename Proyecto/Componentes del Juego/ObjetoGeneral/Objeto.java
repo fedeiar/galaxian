@@ -65,9 +65,6 @@ public abstract class Objeto {
 		return etiqueta;
 	}
 	
-	public ImageIcon getImagen() {
-		return imagen;
-	}
 	
 	/**
 	 * método que sera redefinido por cada clase depende como reacciona al ser eliminado

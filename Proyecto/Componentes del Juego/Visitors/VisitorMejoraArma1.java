@@ -21,7 +21,7 @@ public class VisitorMejoraArma1 extends Visitor{
 	//metodos
 	
 	public void afectarJugador(Jugador j) {
-		Arma a = j.getArma();
+		ArmaJugador a = j.getArma();
 		
 		a.setVelocidadDisparo(a.getVelocidadDisparo() + 10);
 		MJ.morir();

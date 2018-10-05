@@ -51,7 +51,7 @@ public class InteligenciaEnemigoConArma extends Inteligencia{
 	}
 	
 	private void moverDerecha(int ancho) {
-		if(ene.getX() + ene.getVelocidadMovimiento() < ancho - ene.getRectangulo().getWidth()) { //ver rec.getWidth() para ver si entra bien
+		if(ene.getX() + ene.getVelocidadMovimiento() < ancho - ene.getAncho()) { //ver rec.getWidth() para ver si entra bien
 			ene.setX(ene.getX() + ene.getVelocidadMovimiento()); // aca *
 		}
 	}

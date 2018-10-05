@@ -18,9 +18,9 @@ public class MejoraArma2 extends ObjetosPreciosos{
 	public MejoraArma2 (int x, int y, int velCaida,Logica l) {
 		
 		//----parte logica de la mejora----
+		
 		super(x,y,velCaida,l);
 		vis = new VisitorMejoraArma2(this);
-		
 		premioArma = new ArmaDobleJugador(log,0,0); //la vel. y fuerza seran seteados despues.
 		
 		//----parte grafica de la mejora----
@@ -33,6 +33,10 @@ public class MejoraArma2 extends ObjetosPreciosos{
 	
 	//metodos
 	
+	public ArmaJugador getArma() {
+		return premioArma;
+	}
+	
 	
 	//----VISITOR----
 	
@@ -40,7 +44,5 @@ public class MejoraArma2 extends ObjetosPreciosos{
 		
 	}
 	
-	public ArmaJugador getArma() {
-		return premioArma;
-	}
+	
 }
