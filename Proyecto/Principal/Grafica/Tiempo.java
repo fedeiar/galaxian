@@ -6,7 +6,7 @@ public class Tiempo extends Thread{
 	//atributos
 	
 	private Logica log;
-	
+	public final static int SLEEP_TIME = 50;
 	//constructor
 	
 	public Tiempo(Logica l) {
@@ -34,7 +34,7 @@ public class Tiempo extends Thread{
 				log.actualizarObjetos();
 				
 				
-				Thread.sleep(50);
+				Thread.sleep(SLEEP_TIME);
 				
 				//MUY IMPORTANTE RESPETAR EL ORDEN EN EL QUE SE REALIZAN ESTAS ACCIONES! de lo contrario aumenta 
 				//significantemente el delay

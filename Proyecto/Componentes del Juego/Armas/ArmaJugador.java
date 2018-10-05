@@ -5,6 +5,7 @@ import Logica.Logica;
 public abstract class ArmaJugador extends Arma{
 
 	//atributos
+	
 	private boolean dispare;
 	
 	//constructor
