@@ -10,13 +10,12 @@ public class InteligenciaEnemigoConArma extends Inteligencia{
 	//atributos
 	
 	protected EnemigoConArma ene;
-	int puedo_shoot;
+	
 	
 	//constructor
 	
 	public InteligenciaEnemigoConArma(EnemigoConArma e) {
 		ene = e;
-		puedo_shoot=0;
 	}
 	
 	//metodos
@@ -36,15 +35,12 @@ public class InteligenciaEnemigoConArma extends Inteligencia{
 		
 		//con respecto al disparo
 		
-		puedo_shoot++;
-		if(puedo_shoot==10) {
+		
+		if(ene.puedo_shoot()) {
 			int rshoot = ran.nextInt(3);
 			if(rshoot<2) { //0.66 chances
 				ene.crearDisparo();
-						
 			}
-			
-			puedo_shoot=0;
 		}
 	}
 	

@@ -3,7 +3,7 @@ import Logica.*;
 import Disparos.*;
 
 
-public class ArmaClasicaEnemigo extends Arma{
+public class ArmaClasicaEnemigo extends ArmaEnemigo{
 
 	//atributos
 	
@@ -12,6 +12,7 @@ public class ArmaClasicaEnemigo extends Arma{
 	public ArmaClasicaEnemigo(Logica l , int velDisp , int fuerzaDisp) {
 		super(l,velDisp,fuerzaDisp);
 		
+		cadencia = 5;
 	}
 	
 	//metodos

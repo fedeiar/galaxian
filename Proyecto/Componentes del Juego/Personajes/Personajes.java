@@ -5,7 +5,7 @@ import Logica.*;
 import ObjetoGeneral.Objeto;
 
 import java.awt.Rectangle;
-
+import Armas.*;
 public abstract class Personajes extends Objeto {
 	
 	//atributos
@@ -17,6 +17,7 @@ public abstract class Personajes extends Objeto {
 	
 	protected int HP; // puntos de vida
 	
+
 	
 	//constructor
 	
@@ -26,6 +27,7 @@ public abstract class Personajes extends Objeto {
 		
 		
 	}
+	
 	//metodos
 	
 	
@@ -35,7 +37,6 @@ public abstract class Personajes extends Objeto {
 	
 	public abstract void quitarHP(int n); 
 		
-	
 	
 	
 }

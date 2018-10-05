@@ -17,8 +17,8 @@ public class VisitorMejoraArma2 extends Visitor{
 	//atributos
 	
 	public void afectarJugador(Jugador j) {
-		Arma old = j.getArma();
-		Arma nueva = MJ.getArma();
+		ArmaJugador old = j.getArma();
+		ArmaJugador nueva = MJ.getArma();
 		
 		nueva.setVelocidadDisparo(old.getVelocidadDisparo());
 		nueva.setFuerzaDisparo(old.getFuerzaDisparo());

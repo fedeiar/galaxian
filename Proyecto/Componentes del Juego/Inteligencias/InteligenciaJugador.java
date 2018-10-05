@@ -10,7 +10,7 @@ public class InteligenciaJugador extends Inteligencia{
 	
 	protected Jugador jug;
 	
-	protected int puedo_shoot;
+	
 	protected int quiero_shoot; //sería si el jugador apreta para disparar
 	protected int direccion;
 	
@@ -19,7 +19,7 @@ public class InteligenciaJugador extends Inteligencia{
 		jug = j;
 		direccion = 0;
 		quiero_shoot = 0;
-		puedo_shoot=0;
+		
 	}
 	
 	//metodos
@@ -39,17 +39,14 @@ public class InteligenciaJugador extends Inteligencia{
 		
 		//---CON RESPECTO AL DISPARO---
 		
-		if(!puedo_shoot()) { //de esta forma controlo que no se me vaya, y cuando el disparo se haya cargado deje de incrementar.
-			puedo_shoot++;       //de esta forma "carga" el disparo
-			quiero_shoot = 0;    //el jugador debera volver a presionar la tecla
+		
+		if (jug.puedo_shoot() && quiero_shoot==1) { 
+			jug.crearDisparo();
+			jug.ya_dispare();
 		}
 		
-		if (puedo_shoot() && quiero_shoot==1) { 
-			jug.crearDisparo();
-			
-			puedo_shoot=0;
-			quiero_shoot=0;
-		}
+		quiero_shoot=0;
+		
 	}
 	
 	private void moverIzquierda() {
@@ -81,7 +78,5 @@ public class InteligenciaJugador extends Inteligencia{
 		quiero_shoot = sho;
 	}
 	
-	private boolean puedo_shoot() {
-		return puedo_shoot==2;
-	}
+	
 }

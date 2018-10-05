@@ -18,7 +18,7 @@ public class Jugador extends Personajes {
 	
 	protected final static int maxHP = 10;
 	
-	protected Arma miArma;
+	protected ArmaJugador miArma;
 	
 	//--------------CONSTRUCTOR--------------
 	
@@ -59,11 +59,11 @@ public class Jugador extends Personajes {
 	
 	//ARMA
 	
-	public Arma getArma() {
+	public ArmaJugador getArma() {
 		return miArma;
 	}
 	
-	public void setArma(Arma a) {
+	public void setArma(ArmaJugador a) {
 		miArma = a;
 	}
 	
@@ -98,6 +98,14 @@ public class Jugador extends Personajes {
 	}
 	
 	//------DISPARO------
+	
+	public boolean puedo_shoot() { 
+		return miArma.puedo_shoot();
+	}
+	
+	public void ya_dispare() {
+		miArma.ya_dispare();
+	}
 	
 	public void disparar(int disp) {
 		inteligencia.setShoot(disp);

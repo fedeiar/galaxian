@@ -4,7 +4,7 @@ import Disparos.DisparoComunJugador;
 import Disparos.DisparoJugador;
 import Logica.Logica;
 
-public class ArmaClasicaJugador extends Arma{
+public class ArmaClasicaJugador extends ArmaJugador{
 	
 	//atributos
 	
@@ -12,6 +12,8 @@ public class ArmaClasicaJugador extends Arma{
 	
 	public ArmaClasicaJugador(Logica l , int velDisp , int fuerzaDisp) {
 		super(l , velDisp , fuerzaDisp);
+		
+		cadencia = 5;
 	}
 	
 	

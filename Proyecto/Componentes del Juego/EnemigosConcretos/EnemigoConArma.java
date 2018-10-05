@@ -26,14 +26,16 @@ public class EnemigoConArma extends Enemigo {
 		etiqueta.setOpaque(true);
 		etiqueta.setBackground(Color.blue);
 		
-		miArma = new ArmaClasicaEnemigo(log , 15 , 2 ); //los 2 parametros enteros son la velocidad y fuerza del ARMA
+		miArma = new ArmaClasicaEnemigo(log , 15 , 2 ); //los 2 parametros enteros son la vel. y fuerza del disparo del ARMA
 	}
 	
 	//metodos
 	
 	//---DISPARO---
 	
-
+	public boolean puedo_shoot() {
+		return miArma.puedo_shoot();
+	}
 	
 	public void crearDisparo() {
 		int x = getX() + getAncho() / 2;

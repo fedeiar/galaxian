@@ -11,7 +11,7 @@ public class MejoraArma2 extends ObjetosPreciosos{
 
 	//atributos
 	
-	Arma premioArma;
+	ArmaJugador premioArma;
 	
 	//constructor
 	
@@ -40,7 +40,7 @@ public class MejoraArma2 extends ObjetosPreciosos{
 		
 	}
 	
-	public Arma getArma() {
+	public ArmaJugador getArma() {
 		return premioArma;
 	}
 }

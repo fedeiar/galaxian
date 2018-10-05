@@ -15,7 +15,8 @@ public abstract class Enemigo extends Personajes {
 	
 	
 	protected NivelEnemigo miNivel; 
-	protected Arma miArma;
+
+	protected ArmaEnemigo miArma;
 	
 	//constructor
 	
