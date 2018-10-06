@@ -29,7 +29,7 @@ public abstract class Disparo extends Objeto {
 		rec = new Rectangle(x,y,ANCHO,LARGO);
 		
 		etiqueta = new JLabel();
-		//hacer un seticon si hace falta
+		
 		etiqueta.setBounds(rec);
 		etiqueta.setOpaque(true);
 		etiqueta.setBackground(Color.RED);

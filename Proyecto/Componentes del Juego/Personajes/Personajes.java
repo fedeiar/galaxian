@@ -10,11 +10,6 @@ public abstract class Personajes extends Objeto {
 	
 	//atributos
 	
-	protected final static int ANCHO = 30;
-	protected final static int ALTO = 30;
-	
-	
-	
 	protected int HP; // puntos de vida
 	
 
@@ -23,9 +18,6 @@ public abstract class Personajes extends Objeto {
 	
 	public Personajes(Logica l ,int x , int y) {
 		super(l);
-		rec = new Rectangle(x,y,ANCHO,ALTO);
-		
-		
 	}
 	
 	//metodos

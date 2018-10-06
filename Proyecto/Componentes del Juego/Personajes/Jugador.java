@@ -4,6 +4,9 @@ import Armas.*;
 import Inteligencias.*;
 import Logica.*;
 import ObjetoGeneral.Objeto;
+
+import java.awt.Rectangle;
+
 import javax.swing.*;
 
 import Disparos.DisparoComunJugador;
@@ -11,6 +14,9 @@ import Disparos.DisparoJugador;
 public class Jugador extends Personajes {
 	
 	//--------------ATRIBUTOS----------------
+	protected final static int ANCHO = 30;
+	protected final static int ALTO = 30;
+	
 	
 	protected int vidas; //al perder toda su HP, el jugador pierde una vida
 	
@@ -34,7 +40,9 @@ public class Jugador extends Personajes {
 		velocidadMovimiento = 20;
 		vidas = 3;
 		
+		
 		//---parte grafica del jugador---
+		rec = new Rectangle(x,y,ANCHO,ALTO);
 		imagen = new ImageIcon("Sprites/Frisk.png");
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);

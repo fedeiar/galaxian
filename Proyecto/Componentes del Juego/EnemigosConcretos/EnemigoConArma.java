@@ -19,18 +19,21 @@ public class EnemigoConArma extends Enemigo {
 	public EnemigoConArma(Logica l, int x, int y , int nivel) {
 		
 		//----parte logica del EnemigoConArma---
+		
 		super(l,x,y,nivel);
 		inteligencia = new InteligenciaEnemigoConArma(this);
 		miArma = new ArmaClasicaEnemigo(log , 15 , 2 ); //los 2 parametros enteros son la vel. y fuerza del disparo del ARMA
 		
 		
+		
 		//----parte grafica del EnemigoConArma----
 		
+		imagen = new ImageIcon("Sprites/Enemy_2.png");
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
-		etiqueta.setIcon(null); // cuando tengamos la imagen, cambiamos null por la direccion del .gif
-		etiqueta.setOpaque(true);
-		etiqueta.setBackground(Color.blue);
+		etiqueta.setIcon(imagen); // cuando tengamos la imagen, cambiamos null por la direccion del .gif
+		//etiqueta.setOpaque(true);
+		//etiqueta.setBackground(Color.blue);
 		
 	}
 	

@@ -1,6 +1,7 @@
 package Personajes;
 import Visitors.*;
 
+import java.awt.Rectangle;
 import java.util.Random;
 
 import Armas.*;
@@ -12,6 +13,8 @@ import Premios.*;
 public abstract class Enemigo extends Personajes {
 
 	//atributos
+	protected final static int ANCHO = 30;
+	protected final static int ALTO = 30;
 	
 	
 	protected NivelEnemigo miNivel; 
@@ -27,6 +30,10 @@ public abstract class Enemigo extends Personajes {
 		
 		HP = miNivel.getHP();
 		
+		
+		//---parte grafica del enemigo
+		
+		rec = new Rectangle(x,y,ANCHO,ALTO);
 	}
 	
 	

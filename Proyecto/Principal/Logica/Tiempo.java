@@ -1,5 +1,5 @@
-package Grafica;
-import Logica.*;
+package Logica;
+
 import TDALista.*;
 public class Tiempo extends Thread{
 	

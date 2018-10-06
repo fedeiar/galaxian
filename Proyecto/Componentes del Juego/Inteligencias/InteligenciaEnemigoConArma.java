@@ -27,11 +27,11 @@ public class InteligenciaEnemigoConArma extends Inteligencia{
 		Random ran = new Random();
 		int rmov = ran.nextInt(2);
 		if(rmov==0) {
-			moverIzquierda(AnchoMapa);
+			moverIzquierda();
 		}
 		else
 			if(rmov==1)
-				moverDerecha(AnchoMapa);
+				moverDerecha();
 		
 		//con respecto al disparo
 		
@@ -44,14 +44,14 @@ public class InteligenciaEnemigoConArma extends Inteligencia{
 		}
 	}
 	
-	private void moverIzquierda(int ancho) {
+	private void moverIzquierda() {
 		if(ene.getX() - ene.getVelocidadMovimiento() > 0) { 
 			ene.setX(ene.getX() - ene.getVelocidadMovimiento()); //  y aca *
 		}
 	}
 	
-	private void moverDerecha(int ancho) {
-		if(ene.getX() + ene.getVelocidadMovimiento() < ancho - ene.getAncho()) { //ver rec.getWidth() para ver si entra bien
+	private void moverDerecha() {
+		if(ene.getX() + ene.getVelocidadMovimiento() < AnchoMapa - ene.getAncho()) { //ver rec.getWidth() para ver si entra bien
 			ene.setX(ene.getX() + ene.getVelocidadMovimiento()); // aca *
 		}
 	}
