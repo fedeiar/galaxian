@@ -55,14 +55,10 @@ public abstract class Enemigo extends Personajes {
 		return miNivel.getPuntaje();
 	}
 	
-	public int getVelocidadMovimientoHorizontal() {
-		return miNivel.getVelocidadMovimientoHorizontal();
+	public int getVelocidadMovimiento() {
+		return miNivel.getVelocidadMovimiento();
 	}
-	
-	public int getVelocidadMovimientoVertical() {
-		return miNivel.getVelocidadMovimientoVertical();
-	}
-	
+
 	
 	public int getFuerzaImpacto() {
 		return miNivel.getFuerzaImpacto();
@@ -95,9 +91,9 @@ public abstract class Enemigo extends Personajes {
 		int r  = ran.nextInt(2);
 		
 		if(r==0)
-			P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimientoVertical() ,log , 5); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
+			P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log , 5); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
 		else
-			P = new MejoraArma2(getX(),getY(), miNivel.getVelocidadMovimientoVertical() ,log);
+			P = new MejoraArma2(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log);
 		
 		log.agregarObjeto(P);
 	

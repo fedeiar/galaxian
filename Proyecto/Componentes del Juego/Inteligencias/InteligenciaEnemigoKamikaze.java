@@ -70,7 +70,7 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 	}
 	
 	private void bajar() {
-		ene.setY(ene.getY() + ene.getVelocidadMovimientoVertical());
+		ene.setY(ene.getY() + (ene.getVelocidadMovimiento() * 3) );
 		
 		
 	}

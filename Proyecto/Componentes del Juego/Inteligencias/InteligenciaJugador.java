@@ -51,8 +51,8 @@ public class InteligenciaJugador extends Inteligencia{
 	}
 	
 	private void moverIzquierda() {
-		if(jug.getX() - jug.getVelocidadMovimientoHorizontal() > 0) { 
-			jug.setX(jug.getX() - jug.getVelocidadMovimientoHorizontal()); //  y aca *
+		if(jug.getX() - jug.getVelocidadMovimiento() > 0) { 
+			jug.setX(jug.getX() - jug.getVelocidadMovimiento()); //  y aca *
 		}
 		else {
 			long aux = Math.round(jug.getAncho());
@@ -62,8 +62,8 @@ public class InteligenciaJugador extends Inteligencia{
 	}
 	
 	private void moverDerecha() {
-		if(jug.getX() + jug.getVelocidadMovimientoHorizontal() < ANCHO_MAPA - jug.getAncho()) { //ver rec.getWidth() para ver si entra bien
-			jug.setX(jug.getX() + jug.getVelocidadMovimientoHorizontal()); // aca *
+		if(jug.getX() + jug.getVelocidadMovimiento() < ANCHO_MAPA - jug.getAncho()) { //ver rec.getWidth() para ver si entra bien
+			jug.setX(jug.getX() + jug.getVelocidadMovimiento()); // aca *
 		}
 		else
 			jug.setX(0);

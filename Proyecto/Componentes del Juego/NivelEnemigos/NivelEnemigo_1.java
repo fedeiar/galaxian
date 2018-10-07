@@ -11,8 +11,7 @@ public class NivelEnemigo_1 extends NivelEnemigo {
 	public NivelEnemigo_1() {
 		siguiente = null ;
 		HP = 1;
-		velocidad_movimiento_horizontal = 5;
-		velocidad_movimiento_vertical = 15;
+		velocidad_movimiento = 5;
 		fuerzaImpacto = 5;
 		puntosQueDa = 50;
 		

@@ -29,14 +29,14 @@ public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta
 	}
 	
 	private void moverIzquierda(Enemigo ene) {
-		if(ene.getX() - ene.getVelocidadMovimientoHorizontal() > 0) { 
-			ene.setX(ene.getX() - ene.getVelocidadMovimientoHorizontal()); //  y aca *
+		if(ene.getX() - ene.getVelocidadMovimiento() > 0) { 
+			ene.setX(ene.getX() - ene.getVelocidadMovimiento()); //  y aca *
 		}
 	}
 	
 	private void moverDerecha(Enemigo ene) {
-		if(ene.getX() + ene.getVelocidadMovimientoHorizontal() < ANCHO_MAPA - ene.getAncho()) { //ver rec.getWidth() para ver si entra bien
-			ene.setX(ene.getX() + ene.getVelocidadMovimientoHorizontal()); // aca *
+		if(ene.getX() + ene.getVelocidadMovimiento() < ANCHO_MAPA - ene.getAncho()) { //ver rec.getWidth() para ver si entra bien
+			ene.setX(ene.getX() + ene.getVelocidadMovimiento()); // aca *
 		}
 	}
 	

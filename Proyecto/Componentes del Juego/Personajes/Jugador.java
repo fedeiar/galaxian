@@ -20,7 +20,7 @@ public class Jugador extends Personajes {
 	
 	protected int vidas; //al perder toda su HP, el jugador pierde una vida
 	
-	protected int velocidadMovimiento;
+	protected int velocidad_movimiento;
 	
 	protected final static int maxHP = 10;
 	
@@ -37,7 +37,7 @@ public class Jugador extends Personajes {
 		miArma = new ArmaClasicaJugador(log , 20 , 1); //los 2 parametros enteros son la velocidad y fuerza del ARMA
 		
 		HP = maxHP;
-		velocidadMovimiento = 20;
+		velocidad_movimiento = 20;
 		vidas = 3;
 		
 		
@@ -56,13 +56,13 @@ public class Jugador extends Personajes {
 	
 	//VELOCIDAD de movimiento
 	
-	public int getVelocidadMovimientoHorizontal() {
-		return velocidadMovimiento;
+	public int getVelocidadMovimiento() {
+		return velocidad_movimiento;
 	}
 	
 	
 	public void setVelocidadMovimiento(int n) {
-		velocidadMovimiento = n;
+		velocidad_movimiento = n;
 	}
 	
 	//ARMA
