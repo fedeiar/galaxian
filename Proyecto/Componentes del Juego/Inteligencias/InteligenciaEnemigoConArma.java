@@ -5,7 +5,7 @@ import java.util.Random;
 
 
 
-public class InteligenciaEnemigoConArma extends Inteligencia{
+public class InteligenciaEnemigoConArma extends InteligenciaEnemigo{
 	
 	//atributos
 	
@@ -24,19 +24,13 @@ public class InteligenciaEnemigoConArma extends Inteligencia{
 		
 		//con respecto al movimiento
 		
-		Random ran = new Random();
-		int rmov = ran.nextInt(2);
-		if(rmov==0) {
-			moverIzquierda();
-		}
-		else
-			if(rmov==1)
-				moverDerecha();
+		movimiento_estandar(ene);
 		
 		//con respecto al disparo
 		
 		
 		if(ene.puedo_shoot()) {
+			Random ran = new Random();
 			int rshoot = ran.nextInt(3);
 			if(rshoot<2) { //0.66 chances
 				ene.crearDisparo();
@@ -44,17 +38,7 @@ public class InteligenciaEnemigoConArma extends Inteligencia{
 		}
 	}
 	
-	private void moverIzquierda() {
-		if(ene.getX() - ene.getVelocidadMovimiento() > 0) { 
-			ene.setX(ene.getX() - ene.getVelocidadMovimiento()); //  y aca *
-		}
-	}
 	
-	private void moverDerecha() {
-		if(ene.getX() + ene.getVelocidadMovimiento() < AnchoMapa - ene.getAncho()) { //ver rec.getWidth() para ver si entra bien
-			ene.setX(ene.getX() + ene.getVelocidadMovimiento()); // aca *
-		}
-	}
 
 	
 	

@@ -31,10 +31,7 @@ public class EnemigoConArma extends Enemigo {
 		imagen = new ImageIcon("Sprites/Enemy_2.png");
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
-		etiqueta.setIcon(imagen); // cuando tengamos la imagen, cambiamos null por la direccion del .gif
-		//etiqueta.setOpaque(true);
-		//etiqueta.setBackground(Color.blue);
-		
+		etiqueta.setIcon(imagen); 
 	}
 	
 	//metodos

@@ -31,7 +31,7 @@ public class Jugador extends Personajes {
 	public Jugador (Logica l,int x , int y ) { 
 		
 		//---parte logica del jugador---
-		super(l,x,y);
+		super(l);
 		vis = new VisitorJugador();
 		inteligencia = new InteligenciaJugador(this);
 		miArma = new ArmaClasicaJugador(log , 20 , 1); //los 2 parametros enteros son la velocidad y fuerza del ARMA
@@ -56,7 +56,7 @@ public class Jugador extends Personajes {
 	
 	//VELOCIDAD de movimiento
 	
-	public int getVelocidadMovimiento() {
+	public int getVelocidadMovimientoHorizontal() {
 		return velocidadMovimiento;
 	}
 	

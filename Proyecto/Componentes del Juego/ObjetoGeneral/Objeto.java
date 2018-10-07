@@ -11,12 +11,10 @@ import Logica.*;
 public abstract class Objeto {
 	
 	//atributos
-	
+		
 	protected Rectangle rec;
 	protected JLabel etiqueta;
 	protected ImageIcon imagen;
-	protected final static int AnchoMapa=Mapa.MAX_X;
-	protected final static int AltoMapa=Mapa.MAX_Y;
 	
 	protected Inteligencia inteligencia;
 	protected Logica log;

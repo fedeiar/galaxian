@@ -17,7 +17,7 @@ public class InteligenciaDisparoEnemigo extends Inteligencia {
 	//metodos
 	
 	public void accionar() {
-		if(dispE.getY() > AltoMapa)
+		if(dispE.getY() > ALTO_MAPA)
 			dispE.morir();
 		else
 			dispE.setY(dispE.getY() + dispE.getVelocidad());

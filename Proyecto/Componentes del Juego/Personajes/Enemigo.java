@@ -24,14 +24,17 @@ public abstract class Enemigo extends Personajes {
 	//constructor
 	
 	public Enemigo(Logica l,int x, int y,  int nivel) { 
-		super(l,x,y);
+		
+		//----parte logica del enemigo----
+		
+		super(l);
 		vis = new VisitorEnemigo(this);
 		setNivel(nivel);
 		
 		HP = miNivel.getHP();
 		
 		
-		//---parte grafica del enemigo
+		//----parte grafica del enemigo----
 		
 		rec = new Rectangle(x,y,ANCHO,ALTO);
 	}
@@ -52,8 +55,12 @@ public abstract class Enemigo extends Personajes {
 		return miNivel.getPuntaje();
 	}
 	
-	public int getVelocidadMovimiento() {
-		return miNivel.getVelocidadMovimiento();
+	public int getVelocidadMovimientoHorizontal() {
+		return miNivel.getVelocidadMovimientoHorizontal();
+	}
+	
+	public int getVelocidadMovimientoVertical() {
+		return miNivel.getVelocidadMovimientoVertical();
 	}
 	
 	
@@ -88,9 +95,9 @@ public abstract class Enemigo extends Personajes {
 		int r  = ran.nextInt(2);
 		
 		if(r==0)
-			P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimiento() ,log , 5); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
+			P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimientoVertical() ,log , 5); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
 		else
-			P = new MejoraArma2(getX(),getY(), miNivel.getVelocidadMovimiento() ,log);
+			P = new MejoraArma2(getX(),getY(), miNivel.getVelocidadMovimientoVertical() ,log);
 		
 		log.agregarObjeto(P);
 	

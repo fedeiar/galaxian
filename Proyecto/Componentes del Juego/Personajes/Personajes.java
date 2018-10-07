@@ -16,14 +16,14 @@ public abstract class Personajes extends Objeto {
 	
 	//constructor
 	
-	public Personajes(Logica l ,int x , int y) {
+	public Personajes(Logica l) {
 		super(l);
 	}
 	
 	//metodos
 	
 	
-	public abstract int getVelocidadMovimiento();
+	public abstract int getVelocidadMovimientoHorizontal();
 	
 	public abstract void quitarHP(int n); 
 		

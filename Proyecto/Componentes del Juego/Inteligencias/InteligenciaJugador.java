@@ -51,19 +51,19 @@ public class InteligenciaJugador extends Inteligencia{
 	}
 	
 	private void moverIzquierda() {
-		if(jug.getX() - jug.getVelocidadMovimiento() > 0) { 
-			jug.setX(jug.getX() - jug.getVelocidadMovimiento()); //  y aca *
+		if(jug.getX() - jug.getVelocidadMovimientoHorizontal() > 0) { 
+			jug.setX(jug.getX() - jug.getVelocidadMovimientoHorizontal()); //  y aca *
 		}
 		else {
 			long aux = Math.round(jug.getAncho());
-			jug.setX(AnchoMapa - (int)aux); //si bien un long es un int pero mas largo, hace falta casting
+			jug.setX(ANCHO_MAPA - (int)aux); //si bien un long es un int pero mas largo, hace falta casting
 			
 		}
 	}
 	
 	private void moverDerecha() {
-		if(jug.getX() + jug.getVelocidadMovimiento() < AnchoMapa - jug.getAncho()) { //ver rec.getWidth() para ver si entra bien
-			jug.setX(jug.getX() + jug.getVelocidadMovimiento()); // aca *
+		if(jug.getX() + jug.getVelocidadMovimientoHorizontal() < ANCHO_MAPA - jug.getAncho()) { //ver rec.getWidth() para ver si entra bien
+			jug.setX(jug.getX() + jug.getVelocidadMovimientoHorizontal()); // aca *
 		}
 		else
 			jug.setX(0);

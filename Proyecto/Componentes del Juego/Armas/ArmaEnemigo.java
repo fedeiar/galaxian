@@ -2,7 +2,7 @@ package Armas;
 
 import Logica.Logica;
 
-public abstract class ArmaEnemigo extends Arma {
+public abstract class ArmaEnemigo extends Arma { //esta bien esta interfaz intermedia?
 
 	//atributos
 	

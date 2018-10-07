@@ -32,7 +32,7 @@ public class Mapa_2 extends Mapa {
 			 }
 		}
 		 
-		 //aqui podrían agregarse los obstaculos.
+		
 		 
 		 return L;
 	 }

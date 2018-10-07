@@ -29,7 +29,12 @@ public class Mapa_1 extends Mapa {
 				L.addLast(ene);
 				cantEnemigos++;
 		}
-		 
+		
+		 for(int i = 0 ; i<5 ; i++) {
+			 EnemigoKamikaze ene = new EnemigoKamikaze(log , 200 + i*100 , 200 , 1);
+			 L.addLast(ene);
+			 cantEnemigos++;
+		 }
 		
 		 
 		 //aqui podrían agregarse los obstaculos.

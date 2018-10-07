@@ -18,7 +18,7 @@ public class InteligenciaPremio extends Inteligencia {
 	//metodos
 	
 	public void accionar() {
-		if(Pr.getY() > AltoMapa + Pr.getAlto()) {
+		if(Pr.getY() > ALTO_MAPA + Pr.getAlto()) {
 			Pr.morir();
 		}
 		else
