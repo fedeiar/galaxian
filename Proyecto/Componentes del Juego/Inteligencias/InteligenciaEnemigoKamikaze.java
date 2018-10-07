@@ -1,12 +1,15 @@
 package Inteligencias;
+import java.util.Random;
+
 import EnemigosConcretos.*;
 public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 
 	//atributos
 	protected final static int ESPERA_CUMPLIDA = 50;
-	protected final int pos_inicial;
+	protected final int POS_INICIAL;
 	
 	protected boolean me_pase;
+	protected boolean me_tiro;
 	
 	EnemigoKamikaze ene;
 	protected int esperar_antes_de_tirarse;
@@ -17,25 +20,39 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 		ene = e;
 		esperar_antes_de_tirarse = 0;
 		
-		pos_inicial = e.getY();
+		POS_INICIAL = e.getY();
 		me_pase = false;
+		me_tiro = false;
 	}
 	
 	//metodos
 	
 	public void accionar() {
-		if(esperar_antes_de_tirarse < ESPERA_CUMPLIDA)
-		esperar_antes_de_tirarse++;
 		
-		if(esperar_antes_de_tirarse == ESPERA_CUMPLIDA) { 
+		if(esperar_antes_de_tirarse == ESPERA_CUMPLIDA) {
+			
+			if(!me_tiro) {
+				Random ran = new Random();
+				int r = ran.nextInt(3);
+				if(r>=0 && r<2)
+					me_tiro=true;
+				else
+					esperar_antes_de_tirarse = 0;
+			}
 			
 			if(ene.getY() + ene.getAlto() < ALTO_MAPA) {
 				
-				bajar();
+				if(me_tiro) {
+					
+					bajar();
 				
-				if(me_pase && ( ene.getY() > pos_inicial) ){
-					me_pase = false;
-					esperar_antes_de_tirarse = 0;	
+					if(me_pase && ( ene.getY() > POS_INICIAL) ){
+						ene.setY(POS_INICIAL);
+						me_pase = false;
+						me_tiro = false;
+						esperar_antes_de_tirarse = 0;	
+					}
+					
 				}
 				
 			}
@@ -46,6 +63,7 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 			
 		}
 		else {
+			esperar_antes_de_tirarse++;
 			movimiento_estandar(ene);
 		}
 		
@@ -53,6 +71,8 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 	
 	private void bajar() {
 		ene.setY(ene.getY() + ene.getVelocidadMovimientoVertical());
+		
+		
 	}
 	
 	
