@@ -6,7 +6,7 @@ public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta
 
 	//atributos
 	
-
+	
 	
 	//constructor
 	
