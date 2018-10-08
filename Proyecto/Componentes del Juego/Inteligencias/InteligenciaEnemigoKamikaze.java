@@ -72,11 +72,27 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 	private void bajar() {
 		ene.setY(ene.getY() + (ene.getVelocidadMovimiento() * 3) );
 		
-		if(ene.getX() + ene.getAncho() < ANCHO_MAPA) {
-			ene.setX(ene.getX() + ene.getVelocidadMovimiento());
+		Random ran = new Random();
+		int r = ran.nextInt(2);
+		if(r==0) {
+			
+			if(ene.getX() + ene.getAncho() < ANCHO_MAPA) {
+				ene.setX(ene.getX() + ene.getVelocidadMovimiento());
+			}
+			else {
+				ene.setX(0);
+			}
+			
 		}
 		else {
-			ene.setX(0);
+			
+			if(ene.getX() > 0) {
+				ene.setX(ene.getX() - ene.getVelocidadMovimiento());
+			}
+			else {
+				ene.setX(ANCHO_MAPA - ene.getAncho());
+			}
+			
 		}
 	}
 	
