@@ -11,15 +11,20 @@ public class InteligenciaDisparoEnemigo extends Inteligencia {
 	//constructor
 	
 	public InteligenciaDisparoEnemigo(DisparoEnemigo DE) {
+		super();
 		dispE = DE;
 	}
 	
 	//metodos
 	
 	public void accionar() {
+			
 		if(dispE.getY() > ALTO_MAPA)
 			dispE.morir();
 		else
 			dispE.setY(dispE.getY() + dispE.getVelocidad());
+			
 	}
+
+	
 }

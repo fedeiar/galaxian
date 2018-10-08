@@ -1,6 +1,7 @@
 package Inteligencias;
 import java.util.Random;
 
+import Logica.Tiempo;
 import Personajes.*;
 public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta interfaz intermedia?
 
@@ -11,7 +12,7 @@ public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta
 	//constructor
 	
 	protected InteligenciaEnemigo() {
-		
+		super();
 	}
 	
 	//metodos
@@ -26,6 +27,8 @@ public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta
 		else
 			if(rmov==1)
 				moverDerecha(ene);
+		
+		
 	}
 	
 	private void moverIzquierda(Enemigo ene) {
@@ -37,6 +40,17 @@ public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta
 	private void moverDerecha(Enemigo ene) {
 		if(ene.getX() + ene.getVelocidadMovimiento() < ANCHO_MAPA - ene.getAncho()) { //ver rec.getWidth() para ver si entra bien
 			ene.setX(ene.getX() + ene.getVelocidadMovimiento()); // aca *
+		}
+	}
+	
+	//---CONTADOR---
+	
+	protected void contar() {
+		contador++;
+		int segundos = 4000/Tiempo.SLEEP_TIME; //2 segundos, para 3 segundos cambiar 2000 por 3000 por ejemplo.
+		if(contador == segundos) {
+			contador=0;	
+			puedo_accionar = true;
 		}
 	}
 	

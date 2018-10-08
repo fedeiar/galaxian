@@ -175,8 +175,8 @@ public class Logica {
 	}
 	
 	
-	public void lanzarDisparoJugador(int disp) { 
-		jugador.disparar(disp);
+	public void lanzarDisparoJugador() { 
+		jugador.disparar();
 	}
 	
 	//movimiento de los objetos
@@ -198,7 +198,11 @@ public class Logica {
 		}
 	}
 	
-	
+	public void congelarObjetos(){
+		for(Objeto o : lista_objetos) {
+			o.congelar();
+		}
+	}
 	
 	//prototipo para detectar colisiones
 	

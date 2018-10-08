@@ -88,12 +88,15 @@ public abstract class Enemigo extends Personajes {
 		
 		Premios P=null;
 		Random ran = new Random();
-		int r  = ran.nextInt(2);
+		int r  = ran.nextInt(3);
 		
 		if(r==0)
 			P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log , 5); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
 		else
-			P = new MejoraArma2(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log);
+			if(r==1)
+				P = new CongelamientoTiempo(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 , log);
+			else
+				P = new MejoraArma2(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log);
 		
 		log.agregarObjeto(P);
 	

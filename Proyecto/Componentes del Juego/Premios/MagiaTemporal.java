@@ -8,8 +8,8 @@ public abstract class MagiaTemporal extends Premios{
 	
 	//constructor
 	
-	public MagiaTemporal(Logica l) {
-		super(l);
+	public MagiaTemporal(int x , int y , int velCaida, Logica l) {
+		super(x,y,velCaida,l);
 		
 	}
 	

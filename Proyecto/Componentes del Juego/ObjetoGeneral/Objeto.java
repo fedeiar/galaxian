@@ -83,6 +83,10 @@ public abstract class Objeto {
 		inteligencia.accionar();
 	}
 	
+	public void congelar() {
+		inteligencia.congelar();
+	}
+	
 	
 		
 	//---VISITOR---

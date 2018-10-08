@@ -15,27 +15,33 @@ public class InteligenciaEnemigoConArma extends InteligenciaEnemigo{
 	//constructor
 	
 	public InteligenciaEnemigoConArma(EnemigoConArma e) {
+		super();
 		ene = e;
 	}
 	
 	//metodos
 	
 	public void accionar() {
+		if(puedo_accionar) {
+			
+			//con respecto al movimiento
 		
-		//con respecto al movimiento
+			movimiento_estandar(ene);
 		
-		movimiento_estandar(ene);
-		
-		//con respecto al disparo
+			//con respecto al disparo
 		
 		
-		if(ene.puedo_shoot()) {
-			Random ran = new Random();
-			int rshoot = ran.nextInt(3);
-			if(rshoot<2) { //0.66 chances
-				ene.crearDisparo();
+			if(ene.puedo_shoot()) {
+				Random ran = new Random();
+				int rshoot = ran.nextInt(3);
+				if(rshoot<2) { //0.66 chances
+					ene.crearDisparo();
+				}
 			}
+			
 		}
+		else
+			contar();
 	}
 	
 	

@@ -1,6 +1,7 @@
 package Inteligencias;
 import Personajes.*;
 import Disparos.DisparoJugador;
+import Logica.Tiempo;
 
 public class InteligenciaJugador extends Inteligencia{
 
@@ -13,6 +14,8 @@ public class InteligenciaJugador extends Inteligencia{
 	
 	protected int quiero_shoot; //sería si el jugador apreta para disparar
 	protected int direccion;
+	protected boolean activar_escudo;
+	
 	
 	//constructor
 	public InteligenciaJugador(Jugador j) {
@@ -20,6 +23,7 @@ public class InteligenciaJugador extends Inteligencia{
 		direccion = 0;
 		quiero_shoot = 0;
 		
+		activar_escudo = false;
 	}
 	
 	//metodos
@@ -48,6 +52,16 @@ public class InteligenciaJugador extends Inteligencia{
 		
 		quiero_shoot=0;
 		
+		
+		//---CON RESPECTO AL ESCUDO---
+		
+		if(activar_escudo) {
+			jug.setEstadoEscudo(true);
+			activar_escudo = false;
+		}
+		
+		if(jug.getEstadoEscudo())
+			contar();
 	}
 	
 	private void moverIzquierda() {
@@ -69,15 +83,29 @@ public class InteligenciaJugador extends Inteligencia{
 			jug.setX(0);
 	}
 	
-	//metodos especiales para la inteligencia del jugador
+	//---metodos especiales para la inteligencia del jugador---
 	
 	public void setDireccion(int dir) {
 		direccion = dir;
 	}
 	
-	public void setShoot(int sho) {
-		quiero_shoot = sho;
+	public void setShoot() {
+		quiero_shoot = 1;
 	}
 	
+	//---CONTADOR DEL ESCUDO---
 	
+	protected void contar() {
+		contador++;
+		int segundos = 3000/Tiempo.SLEEP_TIME; //3 segundos
+		if(contador == segundos) {
+			contador=0;	
+			jug.setEstadoEscudo(false);
+		}
+	}
+	
+	public void activarEscudo() {
+		activar_escudo = true;
+		
+	}
 }

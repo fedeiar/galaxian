@@ -24,6 +24,7 @@ public class Jugador extends Personajes {
 	
 	protected final static int maxHP = 10;
 	
+	protected boolean escudo;
 	protected ArmaJugador miArma;
 	
 	//--------------CONSTRUCTOR--------------
@@ -39,7 +40,7 @@ public class Jugador extends Personajes {
 		HP = maxHP;
 		velocidad_movimiento = 20;
 		vidas = 3;
-		
+		escudo = false;
 		
 		//---parte grafica del jugador---
 		rec = new Rectangle(x,y,ANCHO,ALTO);
@@ -75,7 +76,19 @@ public class Jugador extends Personajes {
 		miArma = a;
 	}
 	
-	//Vidas y HP
+	//Vidas , HP y escudo
+	
+	public void activarEscudo() {
+		inteligencia.activarEscudo();
+	}
+	
+	public void setEstadoEscudo(boolean estado) {
+		escudo = estado;
+	}
+	
+	public boolean getEstadoEscudo() {
+		return escudo;
+	}
 	
 	public int getHP() {
 		return HP;
@@ -86,16 +99,17 @@ public class Jugador extends Personajes {
 	}
 		
 	public void quitarHP(int n) {
-		if ( HP - n > 0)
-			HP -= n;
-		else {
-			vidas--;
-			HP = maxHP;
+		if(!escudo) {
+			if ( HP - n > 0)
+				HP -= n;
+			else {
+				vidas--;
+				HP = maxHP;
+			}
+			if(vidas<0) {
+				morir();
+			}
 		}
-		if(vidas<0) {
-			morir();
-		}
-		
 	}
 	
 	//-----MOVIMIENTO------
@@ -115,8 +129,8 @@ public class Jugador extends Personajes {
 		miArma.ya_dispare();
 	}
 	
-	public void disparar(int disp) {
-		inteligencia.setShoot(disp);
+	public void disparar() {
+		inteligencia.setShoot();
 	}
 	
 	public void crearDisparo() {
@@ -124,6 +138,12 @@ public class Jugador extends Personajes {
 		int y = getY();
 		
 		miArma.disparar(x, y);
+	}
+	
+	//----PODERES----
+	
+	public void congelarTiempo() {
+		log.congelarObjetos();
 	}
 	
 	//-----VISITOR-----
