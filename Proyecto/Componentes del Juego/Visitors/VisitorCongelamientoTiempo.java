@@ -17,5 +17,6 @@ public class VisitorCongelamientoTiempo extends Visitor{
 	
 	public void afectarJugador(Jugador j) {
 		j.congelarTiempo();
+		CT.morir();
 	}
 }

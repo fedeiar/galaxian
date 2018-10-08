@@ -80,7 +80,7 @@ public class Logica {
 	}
 	
 	public boolean hayEnemigos() {
-		return cantEnemigos != 0;
+		return cantEnemigos > 0;
 	}
 	
 	public boolean hayObjetos() {
@@ -150,7 +150,7 @@ public class Logica {
 		
 		
 		for(Position<Objeto> po : lista_eliminar.positions()) {
-			this.eliminar(po.element());
+			eliminar(po.element());
 		}
 		
 		lista_eliminar = new ListaDE<Objeto>(); //ya eliminamos lo que habia que eliminar, reiniciamos la lista

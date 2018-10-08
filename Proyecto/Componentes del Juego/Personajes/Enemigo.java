@@ -21,6 +21,7 @@ public abstract class Enemigo extends Personajes {
 
 	protected ArmaEnemigo miArma;
 	
+	boolean ya_mori;
 	//constructor
 	
 	public Enemigo(Logica l,int x, int y,  int nivel) { 
@@ -32,6 +33,8 @@ public abstract class Enemigo extends Personajes {
 		setNivel(nivel);
 		
 		HP = miNivel.getHP();
+		
+		ya_mori = false;
 		
 		
 		//----parte grafica del enemigo----
@@ -69,8 +72,11 @@ public abstract class Enemigo extends Personajes {
 		if( HP - n > 0)
 			HP -= n;
 		else {
+			if(!ya_mori) { //este chequeo se hace porque cuando impacta un disparo del arma doble lo "mata" 2 veces
+				morir();   //es decir, se ejecuta morir() 2 veces.
+				ya_mori = true; 
+			}
 			
-			morir(); 
 		}
 	}
 	
@@ -82,7 +88,7 @@ public abstract class Enemigo extends Personajes {
 		log.setPuntaje(log.getPuntaje() + puntaje);
 		log.setCantEnemigos(log.cantEnemigos() - 1);
 		log.eliminarObjeto(this);
-		
+		System.out.println(log.cantEnemigos());
 		//al morir un enemigo dropea un powerup, ¿que powerup? esto puede verse con PROTOYPE, lo de abajo es TEMPORAL
 		//demasiado hardcodeado NO SEGUIR CON ESTO
 		

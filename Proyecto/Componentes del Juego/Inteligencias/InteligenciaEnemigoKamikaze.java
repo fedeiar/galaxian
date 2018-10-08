@@ -76,7 +76,7 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 	
 	private void bajar() {
 		ene.setY(ene.getY() + (ene.getVelocidadMovimiento() * 3) );
-		
+		/*
 		Random ran = new Random();
 		int r = ran.nextInt(2);
 		if(r==0) {
@@ -99,6 +99,7 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 			}
 			
 		}
+		*/
 	}
 	
 	
