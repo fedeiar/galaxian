@@ -1,8 +1,9 @@
 package Premios;
 
 import Logica.Logica;
+import Visitors.VisitorPremio;
 
-public abstract class MagiaTemporal extends Premios{
+public abstract class MagiaTemporal extends Premio{
 
 	//atributos
 	

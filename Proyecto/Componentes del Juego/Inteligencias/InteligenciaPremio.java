@@ -7,11 +7,11 @@ public class InteligenciaPremio extends Inteligencia {
 
 	//atributos
 	
-	Premios Pr;
+	Premio Pr;
 	
 	//constructor
 	
-	public InteligenciaPremio(Premios P) {
+	public InteligenciaPremio(Premio P) {
 		Pr = P;
 	}
 	

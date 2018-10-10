@@ -1,5 +1,6 @@
 package Premios;
 import Logica.*;
+import Personajes.Jugador;
 import Visitors.*;
 
 import java.awt.Color;
@@ -20,7 +21,6 @@ public class MejoraArma2 extends ObjetosPreciosos{
 		//----parte logica de la mejora----
 		
 		super(x,y,velCaida,l);
-		vis = new VisitorMejoraArma2(this);
 		premioArma = new ArmaDobleJugador(log,0,0); //la vel. y fuerza seran seteados despues.
 		
 		//----parte grafica de la mejora----
@@ -44,5 +44,15 @@ public class MejoraArma2 extends ObjetosPreciosos{
 		
 	}
 	
-	
+	public void activarPremio(Jugador j) {
+		ArmaJugador old = j.getArma();
+		ArmaJugador nueva = getArma();
+		
+		nueva.setVelocidadDisparo(old.getVelocidadDisparo());
+		nueva.setFuerzaDisparo(old.getFuerzaDisparo());
+		
+		j.setArma(nueva);
+		
+		morir();
+	}
 }

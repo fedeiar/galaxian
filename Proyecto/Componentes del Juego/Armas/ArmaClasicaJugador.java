@@ -8,20 +8,26 @@ public class ArmaClasicaJugador extends ArmaJugador{
 	
 	//atributos
 	
+	
 	//constructor
 	
 	public ArmaClasicaJugador(Logica l , int velDisp , int fuerzaDisp) {
 		super(l , velDisp , fuerzaDisp);
 		
-		cadencia = 5;
+		cadencia = 400;
 	}
 	
 	
 	//metodos
 	
 	public void disparar(int x , int y) {
-		DisparoComunJugador disparoJ = new DisparoComunJugador(log,velocidadDisparo,fuerzaDisparo, x , y);
-		log.agregarObjeto(disparoJ);
+		long elapsed_time = System.currentTimeMillis() - time;
+		if(elapsed_time > cadencia) {
+			DisparoComunJugador disparoJ = new DisparoComunJugador(log,velocidadDisparo,fuerzaDisparo, x , y);
+			log.agregarObjeto(disparoJ);
+			
+			time = System.currentTimeMillis(); // renuevo el tiempo para que haya que volver a esperar
+		}
 	}
 
 }

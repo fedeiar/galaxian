@@ -121,13 +121,6 @@ public class Jugador extends Personajes {
 	
 	//------DISPARO------
 	
-	public boolean puedo_shoot() { 
-		return miArma.puedo_shoot();
-	}
-	
-	public void ya_dispare() {
-		miArma.ya_dispare();
-	}
 	
 	public void disparar() {
 		inteligencia.setShoot();

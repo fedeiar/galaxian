@@ -92,12 +92,12 @@ public abstract class Enemigo extends Personajes {
 		//al morir un enemigo dropea un powerup, ¿que powerup? esto puede verse con PROTOYPE, lo de abajo es TEMPORAL
 		//demasiado hardcodeado NO SEGUIR CON ESTO
 		
-		Premios P=null;
+		Premio P=null;
 		Random ran = new Random();
 		int r  = ran.nextInt(3);
 		
 		if(r==0)
-			P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log , 5); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
+			P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
 		else
 			if(r==1)
 				P = new CongelamientoTiempo(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 , log);

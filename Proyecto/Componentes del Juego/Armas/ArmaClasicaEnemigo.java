@@ -12,14 +12,19 @@ public class ArmaClasicaEnemigo extends ArmaEnemigo{
 	public ArmaClasicaEnemigo(Logica l , int velDisp , int fuerzaDisp) {
 		super(l,velDisp,fuerzaDisp);
 		
-		cadencia = 5;
+		cadencia = 500;
 	}
 	
 	//metodos
 	
 	public void disparar(int x , int y) {
-		DisparoComunEnemigo dispE = new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,x,y);
-		log.agregarObjeto(dispE);
+		long elapsed_time = System.currentTimeMillis() - time;
+		if(elapsed_time > cadencia) {
+			DisparoComunEnemigo dispE = new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,x,y);
+			log.agregarObjeto(dispE);
+			
+			time = System.currentTimeMillis();
+		}
 	}
 	
 	

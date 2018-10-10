@@ -38,10 +38,6 @@ public class EnemigoConArma extends Enemigo {
 	
 	//---DISPARO---
 	
-	public boolean puedo_shoot() {
-		return miArma.puedo_shoot();
-	}
-	
 	public void crearDisparo() {
 		int x = getX() + getAncho() / 2;
 		int y = getY() + getAlto();

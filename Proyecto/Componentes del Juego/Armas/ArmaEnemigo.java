@@ -15,15 +15,4 @@ public abstract class ArmaEnemigo extends Arma { //esta bien esta interfaz inter
 	//metodos
 
 	
-	public boolean puedo_shoot() {
-		if(shoot_count<cadencia) {
-			shoot_count++;
-			return false;
-		}
-		else {
-			shoot_count = 0;
-			return true;
-		}
-				
-	}
 }

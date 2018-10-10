@@ -44,10 +44,8 @@ public class InteligenciaJugador extends Inteligencia{
 		//---CON RESPECTO AL DISPARO---
 		
 		
-		if (jug.puedo_shoot() && quiero_shoot==1) { 
-			
+		if (quiero_shoot==1) { 
 			jug.crearDisparo();
-			jug.ya_dispare(); //de esta forma "descargo" el disparo
 		}
 		
 		quiero_shoot=0;

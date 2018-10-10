@@ -12,15 +12,16 @@ public abstract class Arma {
 	protected int velocidadDisparo;
 	protected int fuerzaDisparo;
 	
-	protected int cadencia;
-	protected int shoot_count;
+	protected int cadencia; //cadencia de cada arma, medida en milisegundos
+	
+	protected long time;
 	//constructor
 	
 	protected Arma(Logica l , int velDisp , int fuerzaDisp) {
 		log = l;
 		velocidadDisparo = velDisp;
 		fuerzaDisparo = fuerzaDisp;
-		shoot_count = 0;
+		time = System.currentTimeMillis();
 	}
 	
 	//metodos
@@ -46,8 +47,5 @@ public abstract class Arma {
 	//metodos especiales
 	
 
-	
-	public abstract boolean puedo_shoot();
-	
 	public abstract void disparar(int x , int y);
 }

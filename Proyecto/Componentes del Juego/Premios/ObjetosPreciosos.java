@@ -2,7 +2,8 @@ package Premios;
 
 import Logica.Logica;
 
-public abstract class ObjetosPreciosos extends Premios{
+
+public abstract class ObjetosPreciosos extends Premio{
 
 	//atributos
 	
