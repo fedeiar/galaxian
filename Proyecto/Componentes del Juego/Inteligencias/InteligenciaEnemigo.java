@@ -7,12 +7,13 @@ public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta
 
 	//atributos
 	
-	
+	protected boolean puedo_accionar;
 	
 	//constructor
 	
 	protected InteligenciaEnemigo() {
 		super();
+		puedo_accionar = true;
 	}
 	
 	//metodos
@@ -43,7 +44,12 @@ public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta
 		}
 	}
 	
-	//---CONTADOR---
+	//---CONTADOR Y SER CONGELADO---
+	
+	public void congelar() {
+		puedo_accionar = false;
+		contador = 0;
+	}
 	
 	protected void contar() {
 		contador++;

@@ -24,11 +24,11 @@ public class InteligenciaEnemigoConArma extends InteligenciaEnemigo{
 	public void accionar() {
 		if(puedo_accionar) {
 			
-			//con respecto al movimiento
+			//CON RESPECTO AL MOVIMIENTO
 		
 			movimiento_estandar(ene);
 		
-			//con respecto al disparo
+			//CON RESPECTO AL DISPARO
 		
 		
 			if(ene.puedo_shoot()) {
