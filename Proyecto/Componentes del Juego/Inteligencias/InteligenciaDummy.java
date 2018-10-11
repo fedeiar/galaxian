@@ -29,7 +29,11 @@ public class InteligenciaDummy extends Inteligencia {
 		
 		if(elapsed_time > tiempo_freeze) {
 			ene.setInteligencia(vieja_inteligencia);
+			
+			//no vuelvo a setear el tiempo ya que despues de esto esta inteligencia se destruira
 		}
+		
+		
 	}
 	
 }

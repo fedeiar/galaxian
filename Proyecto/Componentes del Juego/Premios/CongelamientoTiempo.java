@@ -14,7 +14,7 @@ public class CongelamientoTiempo extends MagiaTemporal{
 
 	//atributos
 	
-	
+	Visitor vis_2;
 	//constructor
 	
 	public CongelamientoTiempo(int x, int y, int velCaida, Logica l) {
@@ -23,6 +23,7 @@ public class CongelamientoTiempo extends MagiaTemporal{
 		
 		super(x, y, velCaida, l);
 		
+		vis_2 = new VisitorCongelador();
 		
 		//---parte grafica de CongelamientoTiempo---
 		
@@ -43,9 +44,9 @@ public class CongelamientoTiempo extends MagiaTemporal{
 	
 	public void activarPremio(Jugador j) {
 		PositionList<Objeto> lista_objetos = log.getListaObjetos();
-		Visitor visitor = new VisitorCongelador();
+		
 		for(Objeto o : lista_objetos) {
-			o.serVisitado(visitor);
+			o.serVisitado(vis_2);
 		}
 		
 		morir();

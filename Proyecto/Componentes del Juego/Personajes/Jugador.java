@@ -76,17 +76,6 @@ public class Jugador extends Personajes {
 	
 	//Vidas , HP y escudo
 	
-	public void activarEscudo() {
-		inteligencia.activarEscudo();
-	}
-	
-	public void setEstadoEscudo(boolean estado) {
-		escudo = estado;
-	}
-	
-	public boolean getEstadoEscudo() {
-		return escudo;
-	}
 	
 	public int getHP() {
 		return HP;

@@ -18,4 +18,5 @@ public class VisitorCongelador extends Visitor{
 		Inteligencia inte = new InteligenciaDummy(e);
 		e.setInteligencia(inte);
 	}
+	
 }

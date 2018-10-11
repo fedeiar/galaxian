@@ -186,7 +186,7 @@ public class Logica {
 	
 	public void moverJugador (int direccion) { 
 		jugador.mover(direccion);
-	 }
+	}
 	
 	public void accionarObjetos() throws EmptyListException{
 		if(!lista_objetos.isEmpty()) {
@@ -224,7 +224,7 @@ public class Logica {
 					*/
 				}
 			}
-		}			
+		}
 	}
 	
 }

@@ -14,8 +14,8 @@ public class InteligenciaJugador extends Inteligencia{
 	
 	protected int quiero_shoot; //sería si el jugador apreta para disparar
 	protected int direccion;
-	protected boolean activar_escudo;
 	
+	protected boolean activar_escudo;
 	protected int contador;
 	
 	//constructor
@@ -53,15 +53,7 @@ public class InteligenciaJugador extends Inteligencia{
 		quiero_shoot=0;
 		
 		
-		//---CON RESPECTO AL ESCUDO---
 		
-		if(activar_escudo) {
-			jug.setEstadoEscudo(true);
-			activar_escudo = false;
-		}
-		
-		if(jug.getEstadoEscudo())
-			contar();
 	}
 	
 	private void moverIzquierda() {
@@ -93,19 +85,4 @@ public class InteligenciaJugador extends Inteligencia{
 		quiero_shoot = 1;
 	}
 	
-	//---CONTADOR DEL ESCUDO---
-	
-	protected void contar() {
-		contador++;
-		int segundos = 3000/Tiempo.SLEEP_TIME; //3 segundos
-		if(contador == segundos) {
-			contador=0;	
-			jug.setEstadoEscudo(false);
-		}
-	}
-	
-	public void activarEscudo() {
-		activar_escudo = true;
-		
-	}
 }

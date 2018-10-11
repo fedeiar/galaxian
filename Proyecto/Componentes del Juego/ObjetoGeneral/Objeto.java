@@ -71,6 +71,7 @@ public abstract class Objeto {
 	
 	
 	//----INTELIGENCIA----
+	
 	public Inteligencia getInteligencia() {
 		return inteligencia;
 	}

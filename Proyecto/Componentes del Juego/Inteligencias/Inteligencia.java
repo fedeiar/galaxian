@@ -24,9 +24,6 @@ public abstract class Inteligencia { //debe extender a alguien?
 	
 	public abstract void accionar();	
 	
-	protected  void contar() {
-		
-	}
 	
 	//  METODOS HECHOS EXCLUSIVAMENTE PARA InteligenciaJugador,
 	//	DONDE ADEMAS SERAN REDEFINIDOS.
@@ -38,8 +35,5 @@ public abstract class Inteligencia { //debe extender a alguien?
 	public void setShoot() {
 		
 	}
-	
-	public void activarEscudo() {
-		
-	}
+
 }
