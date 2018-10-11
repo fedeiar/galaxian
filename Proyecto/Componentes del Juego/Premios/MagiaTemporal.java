@@ -3,7 +3,7 @@ package Premios;
 import Logica.Logica;
 import Visitors.VisitorPremio;
 
-public abstract class MagiaTemporal extends Premio{
+public abstract class MagiaTemporal extends Premio implements Runnable{
 
 	//atributos
 	

@@ -8,12 +8,16 @@ import Logica.Logica;
 import Personajes.Jugador;
 import Visitors.Visitor;
 import Escudos.*;
+
 public class Invulnerabilidad extends MagiaTemporal{
 
 	//atributos
+	protected final int durabilidad = 6000;
 	
-	EscudoInvulnerable shield_i;
-	EscudoTemporal temp_shield;
+	protected EscudoInvulnerable escudo_invulnerable;
+	protected Escudo escudo_viejo;
+	protected Jugador jugador; //se inicializa cuando se active el premio
+	
 	//constructor
 	
 	
@@ -22,7 +26,7 @@ public class Invulnerabilidad extends MagiaTemporal{
 		//----parte logica del EscudoProtector----
 		
 		super(x, y, velCaida, l);
-		shield_i = new EscudoInvulnerable();
+		escudo_invulnerable = new EscudoInvulnerable();
 		
 		//----parte grafica del EscudoProtector----
 		
@@ -36,12 +40,26 @@ public class Invulnerabilidad extends MagiaTemporal{
 	
 	
 	public void activarPremio(Jugador j) {
-		temp_shield = new EscudoTemporal(j , shield_i , 7000);
-		Thread waiter = new Thread(temp_shield);
+		jugador = j;
+		escudo_viejo = j.getEscudo();
+		Thread waiter = new Thread(this);
 		waiter.start();
 		morir();
 	}
 
+	public void run() {
+		try {
+			jugador.setEscudo(escudo_invulnerable);
+			
+			Thread.sleep(durabilidad);
+			
+			jugador.setEscudo(escudo_viejo);
+			
+		}
+		catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public void serVisitado(Visitor v) {
 		
