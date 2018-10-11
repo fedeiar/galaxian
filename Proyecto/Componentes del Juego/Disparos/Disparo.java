@@ -50,9 +50,7 @@ public abstract class Disparo extends Objeto {
 	
 	//---forma de morir---
 	
-	public void morir() {
-		log.eliminarObjeto(this);
-	}
+	public abstract void morir(); //se lo deja abstracto para que cada disparo pueda hacer algo diferente al morir
 	
 	
 	

@@ -71,24 +71,21 @@ public abstract class Objeto {
 	
 	
 	//----INTELIGENCIA----
+	public Inteligencia getInteligencia() {
+		return inteligencia;
+	}
 	
 	public void setInteligencia(Inteligencia i) {
 		inteligencia = i;
 	}
 	
 	/**
-	 * todos los objetos recurren a su inteligencia para ACCIONAR
-	 */
+	* todos los objetos recurren a su inteligencia para ACCIONAR
+	*/
 	public  void accionar() {
 		inteligencia.accionar();
 	}
-	
-	public void congelar() {
-		inteligencia.congelar();
-	}
-	
-	
-		
+			
 	//---VISITOR---
 	
 	

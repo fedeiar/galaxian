@@ -16,6 +16,7 @@ public class InteligenciaJugador extends Inteligencia{
 	protected int direccion;
 	protected boolean activar_escudo;
 	
+	protected int contador;
 	
 	//constructor
 	public InteligenciaJugador(Jugador j) {
@@ -24,6 +25,7 @@ public class InteligenciaJugador extends Inteligencia{
 		quiero_shoot = 0;
 		
 		activar_escudo = false;
+		contador = 0;
 	}
 	
 	//metodos

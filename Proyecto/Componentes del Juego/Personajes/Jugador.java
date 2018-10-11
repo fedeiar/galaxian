@@ -16,13 +16,11 @@ public class Jugador extends Personajes {
 	//--------------ATRIBUTOS----------------
 	protected final static int ANCHO = 30;
 	protected final static int ALTO = 30;
-	
+	public final static int maxHP = 10;
 	
 	protected int vidas; //al perder toda su HP, el jugador pierde una vida
 	
 	protected int velocidad_movimiento;
-	
-	protected final static int maxHP = 10;
 	
 	protected boolean escudo;
 	protected ArmaJugador miArma;
@@ -133,11 +131,6 @@ public class Jugador extends Personajes {
 		miArma.disparar(x, y);
 	}
 	
-	//----PODERES----
-	
-	public void congelarTiempo() {
-		log.congelarObjetos();
-	}
 	
 	//-----VISITOR-----
 	

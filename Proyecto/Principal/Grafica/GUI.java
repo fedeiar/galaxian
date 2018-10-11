@@ -1,5 +1,6 @@
 package Grafica;
 import Mapas.*;
+import Personajes.Jugador;
 
 import java.awt.*;
 
@@ -83,9 +84,9 @@ import javax.swing.SwingConstants.*;
 		BarraVida.setForeground(Color.GREEN);
 		BarraVida.setBackground(Color.WHITE);
 		
-		BarraVida.setMaximum(10);
+		BarraVida.setMaximum(Jugador.maxHP);
 		BarraVida.setMinimum(0);
-		BarraVida.setValue(10);
+		BarraVida.setValue(Jugador.maxHP);
 		
 		BarraVida.setBounds(43, 11, 85, 14);
 		getContentPane().add(BarraVida);

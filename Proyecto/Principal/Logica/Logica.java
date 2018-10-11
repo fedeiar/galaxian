@@ -62,9 +62,12 @@ public class Logica {
 		return jugador.getVidas();
 	}
 
-	
 	public int getPuntaje() {
 		return puntaje;
+	}
+	
+	public PositionList<Objeto> getListaObjetos(){
+		return lista_objetos;
 	}
 	
 	public void setPuntaje(int p) {
@@ -195,12 +198,6 @@ public class Logica {
 		}
 		else {
 			throw new EmptyListException("se intento mover enemigos cuando no quedaba ninguno");
-		}
-	}
-	
-	public void congelarObjetos(){
-		for(Objeto o : lista_objetos) {
-			o.congelar();
 		}
 	}
 	

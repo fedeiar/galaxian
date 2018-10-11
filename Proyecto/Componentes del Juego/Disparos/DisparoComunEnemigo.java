@@ -12,5 +12,7 @@ public class DisparoComunEnemigo extends DisparoEnemigo {
 	
 	//metodos
 	
-	
+	public void morir() {
+		log.eliminarObjeto(this);
+	}
 }

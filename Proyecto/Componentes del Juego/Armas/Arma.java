@@ -15,6 +15,8 @@ public abstract class Arma {
 	protected int cadencia; //cadencia de cada arma, medida en milisegundos
 	
 	protected long time;
+	
+	
 	//constructor
 	
 	protected Arma(Logica l , int velDisp , int fuerzaDisp) {

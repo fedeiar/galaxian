@@ -14,12 +14,10 @@ public abstract class Inteligencia { //debe extender a alguien?
 	protected final static int ANCHO_MAPA=Mapa.MAX_X; //preguntar de donde sacar el ancho
 	protected final static int ALTO_MAPA=Mapa.MAX_Y;  //preguntar de donde sacar el ancho
 	
-	protected int contador;
 	
 	//constructor
 	
 	public Inteligencia () {
-		contador = 0;
 	}
 	
 	//metodos
@@ -27,12 +25,6 @@ public abstract class Inteligencia { //debe extender a alguien?
 	public abstract void accionar();	
 	
 	protected  void contar() {
-		
-	}
-	
-	//METODO HECHO EXCLUSIVAMENTE PARA LOS ENEMIGOS, QUE SERAN LOS CONGELADOS
-	
-	public void congelar() {
 		
 	}
 	

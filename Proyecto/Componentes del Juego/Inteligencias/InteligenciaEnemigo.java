@@ -7,13 +7,11 @@ public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta
 
 	//atributos
 	
-	protected boolean puedo_accionar;
 	
 	//constructor
 	
 	protected InteligenciaEnemigo() {
 		super();
-		puedo_accionar = true;
 	}
 	
 	//metodos
@@ -44,20 +42,5 @@ public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta
 		}
 	}
 	
-	//---CONTADOR Y SER CONGELADO---
-	
-	public void congelar() {
-		puedo_accionar = false;
-		contador = 0;
-	}
-	
-	protected void contar() {
-		contador++;
-		int segundos = 4000/Tiempo.SLEEP_TIME; //2 segundos, para 3 segundos cambiar 2000 por 3000 por ejemplo.
-		if(contador == segundos) {
-			contador=0;	
-			puedo_accionar = true;
-		}
-	}
 	
 }

@@ -11,4 +11,10 @@ public class DisparoComunJugador extends DisparoJugador{
 	public DisparoComunJugador(Logica l, int v , int f, int x , int y) {
 		super(l,v,f,x,y);
 	}
+	
+	//metodos
+	
+	public void morir() {
+		log.eliminarObjeto(this);
+	}
 }

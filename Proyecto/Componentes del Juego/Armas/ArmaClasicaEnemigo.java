@@ -19,11 +19,14 @@ public class ArmaClasicaEnemigo extends ArmaEnemigo{
 	
 	public void disparar(int x , int y) {
 		long elapsed_time = System.currentTimeMillis() - time;
+		
 		if(elapsed_time > cadencia) {
+			
 			DisparoComunEnemigo dispE = new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,x,y);
 			log.agregarObjeto(dispE);
 			
 			time = System.currentTimeMillis();
+			
 		}
 	}
 	

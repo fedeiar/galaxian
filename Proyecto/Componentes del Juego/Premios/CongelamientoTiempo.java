@@ -1,10 +1,12 @@
 package Premios;
 
 import java.awt.Color;
+import TDALista.*;
 
 import javax.swing.JLabel;
 
 import Logica.Logica;
+import ObjetoGeneral.Objeto;
 import Personajes.Jugador;
 import Visitors.*;
 
@@ -40,7 +42,12 @@ public class CongelamientoTiempo extends MagiaTemporal{
 	}
 	
 	public void activarPremio(Jugador j) {
-		j.congelarTiempo();
+		PositionList<Objeto> lista_objetos = log.getListaObjetos();
+		Visitor visitor = new VisitorCongelador();
+		for(Objeto o : lista_objetos) {
+			o.serVisitado(visitor);
+		}
+		
 		morir();
 	}
 
