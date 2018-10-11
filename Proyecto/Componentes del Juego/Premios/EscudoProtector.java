@@ -37,7 +37,8 @@ public class EscudoProtector extends ObjetosPreciosos{
 	
 	
 	public void activarPremio(Jugador j) {
-	
+		j.activarEscudo();
+		morir();
 	}
 
 	

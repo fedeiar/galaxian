@@ -76,6 +76,17 @@ public class Jugador extends Personajes {
 	
 	//Vidas , HP y escudo
 	
+	public void activarEscudo(){
+		try {
+			escudo = true;
+			Thread.sleep(6000); //cual thread?
+			escudo = false;
+		} 
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	public int getHP() {
 		return HP;

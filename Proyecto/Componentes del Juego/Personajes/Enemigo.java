@@ -102,7 +102,10 @@ public abstract class Enemigo extends Personajes {
 			if(r==1)
 				P = new CongelamientoTiempo(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 , log);
 			else
-				P = new MejoraArma2(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log);
+				if(r==2)
+					P = new MejoraArma2(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log);
+				else
+					P = new EscudoProtector(getX(),getY(), miNivel.getFuerzaImpacto() *2 , log);
 		
 		log.agregarObjeto(P);
 	
