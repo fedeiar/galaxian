@@ -63,7 +63,7 @@ import javax.swing.SwingConstants.*;
 	
 	private void crearFrame() {
 		this.setResizable(false);
-		this.getContentPane().setBackground(Color.LIGHT_GRAY);
+		this.getContentPane().setBackground(Color.BLACK);
 		this.getContentPane().setLayout(null);
 		this.setBounds(250, 50, Mapa.MAX_X, Mapa.MAX_Y);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -74,6 +74,7 @@ import javax.swing.SwingConstants.*;
 		//lbl HP:
 			
 		lblHp = new JLabel("HP:");
+		lblHp.setForeground(Color.WHITE);
 		lblHp.setFont(new Font("Sylfaen", Font.PLAIN, 16));
 		lblHp.setBounds(6, 11, 32, 14);
 		getContentPane().add(lblHp);
@@ -88,32 +89,36 @@ import javax.swing.SwingConstants.*;
 		BarraVida.setMinimum(0);
 		BarraVida.setValue(Jugador.maxHP);
 		
-		BarraVida.setBounds(43, 11, 85, 14);
+		BarraVida.setBounds(38, 10, 85, 14);
 		getContentPane().add(BarraVida);
 		
 		//arma el puntaje
 		
 		lblPuntaje = new JLabel("Puntaje:");
+		lblPuntaje.setForeground(Color.WHITE);
 		lblPuntaje.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblPuntaje.setBounds(264, 6, 65, 20);
+		lblPuntaje.setBounds(350, 6, 65, 20);
 		getContentPane().add(lblPuntaje);
 		
 		numPuntaje = new JLabel("0");
+		numPuntaje.setForeground(Color.WHITE);
 		numPuntaje.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		numPuntaje.setBounds(332, 9, 46, 14);
+		numPuntaje.setBounds(415, 9, 46, 14);
 		getContentPane().add(numPuntaje);
 		
 		
 		//arma las vidas
 		
 		lblVidas = new JLabel("Vidas:");
+		lblVidas.setForeground(Color.WHITE);
 		lblVidas.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblVidas.setBounds(758, 11, 46, 14);
+		lblVidas.setBounds(820, 9, 46, 14);
 		getContentPane().add(lblVidas);
 		
-		numVidas = new JLabel("3");
+		numVidas = new JLabel(""+Jugador.VidasIniciales);
+		numVidas.setForeground(Color.WHITE);
 		numVidas.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		numVidas.setBounds(818, 11, 46, 14);
+		numVidas.setBounds(865, 9, 46, 14);
 		getContentPane().add(numVidas);
 	}
 	
