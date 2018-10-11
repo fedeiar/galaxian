@@ -1,5 +1,6 @@
 package Personajes;
 import Visitors.*;
+import Escudos.*;
 import Armas.*;
 import Inteligencias.*;
 import Logica.*;
@@ -23,7 +24,7 @@ public class Jugador extends Personajes {
 	
 	protected int velocidad_movimiento;
 	
-	protected boolean escudo;
+	protected Escudo shield;
 	protected ArmaJugador miArma;
 	
 	//--------------CONSTRUCTOR--------------
@@ -39,7 +40,7 @@ public class Jugador extends Personajes {
 		HP = maxHP;
 		velocidad_movimiento = 20;
 		vidas = VidasIniciales;
-		escudo = false;
+		shield = new SinEscudo();
 		
 		//---parte grafica del jugador---
 		rec = new Rectangle(x,y,ANCHO,ALTO);
@@ -77,16 +78,12 @@ public class Jugador extends Personajes {
 	
 	//Vidas , HP y escudo
 	
-	public void activarEscudo(){
-		try {
-			escudo = true;
-			Thread.sleep(6000); //cual thread?
-			escudo = false;
-		} 
-		catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
+	public Escudo getEscudo() {
+		return shield;
+	}
+	
+	public void setEscudo(Escudo e){
+		shield = e;
 	}
 	
 	public int getHP() {
@@ -98,17 +95,18 @@ public class Jugador extends Personajes {
 	}
 		
 	public void quitarHP(int n) {
-		if(!escudo) {
-			if ( HP - n > 0)
-				HP -= n;
-			else {
-				vidas--;
-				HP = maxHP;
-			}
-			if(vidas<0) {
-				morir();
-			}
+		int daño = shield.getDaño(n);
+		
+		if ( HP - daño > 0)
+			HP -= daño;
+		else {
+			vidas--;
+			HP = maxHP;
 		}
+		if(vidas<0) {
+			morir();
+		}
+		
 	}
 	
 	//-----MOVIMIENTO------
@@ -138,5 +136,7 @@ public class Jugador extends Personajes {
 	public void serVisitado(Visitor v) {
 		v.afectarJugador(this);
 	}
+
+	
 	
 }

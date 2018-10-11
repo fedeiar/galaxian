@@ -7,22 +7,22 @@ import javax.swing.JLabel;
 import Logica.Logica;
 import Personajes.Jugador;
 import Visitors.Visitor;
-
-public class EscudoProtector extends ObjetosPreciosos{
+import Escudos.*;
+public class Invulnerabilidad extends MagiaTemporal{
 
 	//atributos
 	
-	
-	
+	EscudoInvulnerable shield_i;
+	EscudoTemporal temp_shield;
 	//constructor
 	
 	
-	public EscudoProtector(int x, int y, int velCaida, Logica l) {
+	public Invulnerabilidad(int x, int y, int velCaida, Logica l) {
 		
 		//----parte logica del EscudoProtector----
 		
 		super(x, y, velCaida, l);
-		
+		shield_i = new EscudoInvulnerable();
 		
 		//----parte grafica del EscudoProtector----
 		
@@ -32,12 +32,13 @@ public class EscudoProtector extends ObjetosPreciosos{
 		etiqueta.setBackground(Color.PINK);
 	}
 
-	
 	//metodos
 	
 	
 	public void activarPremio(Jugador j) {
-		j.activarEscudo();
+		temp_shield = new EscudoTemporal(j , shield_i , 7000);
+		Thread waiter = new Thread(temp_shield);
+		waiter.start();
 		morir();
 	}
 

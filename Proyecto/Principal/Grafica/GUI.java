@@ -144,7 +144,7 @@ import javax.swing.SwingConstants.*;
 					
 				}
 				else {
-					if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+					if(e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) {
 						log.lanzarDisparoJugador();
 					}
 					

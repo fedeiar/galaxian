@@ -1,12 +1,6 @@
 //preguntar
 
 
-- Como hacer con los visitor?
-
-- De Thread: ¿Que hacen sleep, start, run? ¿Por qué si usamos run no se abre la GUI?
-
-- Debo hacer un visitor por CADA clase concreta? ver ejemplo de MejoraArma1
-
 
 - De que me sirve distinguir entre objetos preciosos y magia temporal?
 

@@ -15,7 +15,7 @@ public class VisitorCongelador extends Visitor{
 	//metodos
 	
 	public void afectarEnemigo(Enemigo e) {
-		Inteligencia inte = new InteligenciaDummy(e);
+		Inteligencia inte = new InteligenciaDummyTemporal(e);
 		e.setInteligencia(inte);
 	}
 	
