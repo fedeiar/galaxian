@@ -32,7 +32,7 @@ public abstract class Disparo extends Objeto {
 		
 		etiqueta.setBounds(rec);
 		etiqueta.setOpaque(true);
-		etiqueta.setBackground(Color.RED);
+		etiqueta.setBackground(Color.WHITE);
 		
 	}
 	

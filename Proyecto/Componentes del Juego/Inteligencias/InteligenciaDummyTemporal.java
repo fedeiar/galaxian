@@ -2,7 +2,7 @@ package Inteligencias;
 
 import Personajes.Enemigo;
 
-public class InteligenciaDummy extends Inteligencia {
+public class InteligenciaDummyTemporal extends Inteligencia {
 
 	//atributos
 	
@@ -14,7 +14,7 @@ public class InteligenciaDummy extends Inteligencia {
 	
 	//constructor
 	
-	public InteligenciaDummy(Enemigo e) {
+	public InteligenciaDummyTemporal(Enemigo e) {
 		ene = e;
 		vieja_inteligencia = e.getInteligencia();
 		time = System.currentTimeMillis();

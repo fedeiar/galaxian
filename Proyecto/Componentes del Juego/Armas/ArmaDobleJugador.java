@@ -16,21 +16,14 @@ public class ArmaDobleJugador extends ArmaJugador{
 		cadencia = 200;
 	}
 	
-	public void disparar(int x , int y) {
-		long elapsed_time = System.currentTimeMillis() - time;
+	public void crear_disparo(int x , int y) {
 		
-		if(elapsed_time > cadencia) {
-			
-			DisparoComunJugador disparoJ = new DisparoComunJugador(log , velocidadDisparo,fuerzaDisparo, x-10 , y);
-			log.agregarObjeto(disparoJ);
+		DisparoComunJugador disparoJ = new DisparoComunJugador(log , velocidadDisparo,fuerzaDisparo, x-10 , y);
+		log.agregarObjeto(disparoJ);
 		
-			disparoJ = new DisparoComunJugador(log , velocidadDisparo , fuerzaDisparo , x+10 , y);
-			log.agregarObjeto(disparoJ);
+		disparoJ = new DisparoComunJugador(log , velocidadDisparo , fuerzaDisparo , x+10 , y);
+		log.agregarObjeto(disparoJ);
 			
-			
-			time = System.currentTimeMillis();
-		}
-		
 	}
 	
 }

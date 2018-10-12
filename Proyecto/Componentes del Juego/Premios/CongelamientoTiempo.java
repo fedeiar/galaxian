@@ -15,6 +15,7 @@ public class CongelamientoTiempo extends MagiaTemporal{
 	//atributos
 	
 	Visitor vis_2;
+	
 	//constructor
 	
 	public CongelamientoTiempo(int x, int y, int velCaida, Logica l) {

@@ -6,7 +6,7 @@ public class Tiempo extends Thread{
 	//atributos
 	
 	private Logica log;
-	public final static int SLEEP_TIME = 40;
+	public final static int SLEEP_TIME = 50;
 	//constructor
 	
 	public Tiempo(Logica l) {
@@ -24,6 +24,7 @@ public class Tiempo extends Thread{
 					log.getMapaSiguiente();
 				}
 				
+				log.actualizarObjetos();
 				
 				if(log.hayObjetos())
 					log.accionarObjetos();
@@ -31,7 +32,7 @@ public class Tiempo extends Thread{
 				log.detectarColisiones();
 				
 				
-				log.actualizarObjetos();
+				
 				
 				
 				Thread.sleep(SLEEP_TIME);

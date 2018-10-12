@@ -20,14 +20,11 @@ public class ArmaClasicaJugador extends ArmaJugador{
 	
 	//metodos
 	
-	public void disparar(int x , int y) {
-		long elapsed_time = System.currentTimeMillis() - time;
-		if(elapsed_time > cadencia) {
-			DisparoComunJugador disparoJ = new DisparoComunJugador(log,velocidadDisparo,fuerzaDisparo, x , y);
-			log.agregarObjeto(disparoJ);
+	public void crear_disparo(int x , int y) {
+		
+		DisparoComunJugador disparoJ = new DisparoComunJugador(log,velocidadDisparo,fuerzaDisparo, x , y);
+		log.agregarObjeto(disparoJ);
 			
-			time = System.currentTimeMillis(); // renuevo el tiempo para que haya que volver a esperar
-		}
 	}
 
 }
