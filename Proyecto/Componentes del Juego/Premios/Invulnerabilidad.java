@@ -49,7 +49,7 @@ public class Invulnerabilidad extends MagiaTemporal implements Runnable{
 	public void run() {
 		try {
 			
-			ShieldManager.setEscudo(jugador, escudo_invulnerable);
+			ShieldManager.setEscudo(jugador, escudo_invulnerable , durabilidad);
 			
 		}
 		catch(InterruptedException e) {

@@ -1,5 +1,9 @@
 package Escudos;
 
+import javax.swing.JLabel;
+
+import Logica.Logica;
+
 public class SinEscudo extends Escudo{
 
 	//atributos
@@ -8,6 +12,8 @@ public class SinEscudo extends Escudo{
 	
 	public SinEscudo() {
 		
+		
+		etiqueta = new JLabel();
 	}
 	
 	//metodos

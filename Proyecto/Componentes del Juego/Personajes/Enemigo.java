@@ -88,7 +88,6 @@ public abstract class Enemigo extends Personajes {
 		log.setPuntaje(log.getPuntaje() + puntaje);
 		log.setCantEnemigos(log.cantEnemigos() - 1);
 		log.eliminarObjeto(this);
-		System.out.println(log.cantEnemigos());
 		//al morir un enemigo dropea un powerup, ¿que powerup? esto puede verse con PROTOYPE, lo de abajo es TEMPORAL
 		//demasiado hardcodeado NO SEGUIR CON ESTO
 		
