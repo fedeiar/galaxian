@@ -17,17 +17,11 @@ public class ArmaClasicaEnemigo extends ArmaEnemigo{
 	
 	//metodos
 	
-	public void disparar(int x , int y) {
-		long elapsed_time = System.currentTimeMillis() - time;
+	public void crear_disparo(int x , int y) {
 		
-		if(elapsed_time > cadencia) {
-			
-			DisparoComunEnemigo dispE = new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,x,y);
-			log.agregarObjeto(dispE);
-			
-			time = System.currentTimeMillis();
-			
-		}
+		DisparoComunEnemigo dispE = new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,x,y);
+		log.agregarObjeto(dispE);
+	
 	}
 	
 	
