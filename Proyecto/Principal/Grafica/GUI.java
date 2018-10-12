@@ -7,6 +7,8 @@ import java.awt.*;
 import javax.net.ssl.ManagerFactoryParameters;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.Map;
+
 import javax.swing.border.*;
 
 import Logica.Logica;
@@ -147,6 +149,10 @@ import javax.swing.SwingConstants.*;
 					if(e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) {
 						log.lanzarDisparoJugador();
 					}
+					else
+						if(e.getKeyCode() == KeyEvent.VK_0) {
+							//hacer algo para probar
+						}
 					
 				}
 				

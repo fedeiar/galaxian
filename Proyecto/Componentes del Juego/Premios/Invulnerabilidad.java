@@ -41,7 +41,6 @@ public class Invulnerabilidad extends MagiaTemporal implements Runnable{
 	
 	public void activarPremio(Jugador j) {
 		jugador = j;
-		escudo_viejo = j.getEscudo();
 		Thread waiter = new Thread(this);
 		waiter.start();
 		morir();
@@ -49,11 +48,8 @@ public class Invulnerabilidad extends MagiaTemporal implements Runnable{
 
 	public void run() {
 		try {
-			jugador.setEscudo(escudo_invulnerable);
 			
-			Thread.sleep(durabilidad);
-			
-			jugador.setEscudo(escudo_viejo);
+			ShieldManager.setEscudo(jugador, escudo_invulnerable);
 			
 		}
 		catch(InterruptedException e) {
