@@ -15,7 +15,7 @@ public abstract class NivelEnemigo {
 	protected double velocidad_movimiento;
 	protected int HP;
 	protected int puntosQueDa;
-	protected int fuerzaImpacto;
+	protected int fuerza_impacto;
 	
 	//constructor
 	
@@ -27,7 +27,7 @@ public abstract class NivelEnemigo {
 	
 	
 	public int getFuerzaImpacto() {
-		return fuerzaImpacto;
+		return fuerza_impacto;
 	}
 	
 	public double getVelocidadMovimiento() {

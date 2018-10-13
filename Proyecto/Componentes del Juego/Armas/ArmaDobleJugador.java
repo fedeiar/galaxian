@@ -4,7 +4,7 @@ import Disparos.DisparoComunJugador;
 
 import Logica.*;
 
-public class ArmaDobleJugador extends ArmaJugador{
+public class ArmaDobleJugador extends Arma{
 
 	//atributos
 	

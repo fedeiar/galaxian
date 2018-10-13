@@ -5,14 +5,16 @@ public  class InteligenciaDisparo extends Inteligencia{
 	//atributos
 	
 	protected Disparo disp;
-	double direccion; 
+	double direccion; //direccion del disparo, medida en grados. (entre 0 y 360)
 	
 	//constructor
 
-	public InteligenciaDisparo(Disparo d , double direc) { //la direccion pasada por parametro es en grados.
+	public InteligenciaDisparo(Disparo d , double direc) {
 		disp = d;
 		direccion = Math.toRadians(direc);
 	}
+	
+	//metodos
 	
 	public void accionar() {
 		if(fueraDeLimite()) {

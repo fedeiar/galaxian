@@ -14,9 +14,9 @@ public abstract class Disparo extends Objeto {
 	public final static int ANCHO = 4;
 	public final static int ALTO = 20;
 	
-	protected double velocidadMovimiento;
-	protected double direccion; //direccion del disparo, medida en grados. (entre 0 y 360)
-	protected int fuerzaDeImpacto;
+	protected double velocidad_disparo;
+
+	protected int fuerza_impacto;
 	
 	
 	//constuctor
@@ -27,10 +27,10 @@ public abstract class Disparo extends Objeto {
 		
 		super(l);
 		
-		velocidadMovimiento = v;
-		fuerzaDeImpacto = f;
+		velocidad_disparo = v;
+		fuerza_impacto = f;
 		
-		inteligencia = new InteligenciaDisparo(this , direc);
+		inteligencia = new InteligenciaDisparo(this , direc); //direc = direccion del disparo, medida en grados. (entre 0 y 360)
 		
 		
 		//----PARTE GRAFICA DEL DISPARO----
@@ -48,11 +48,11 @@ public abstract class Disparo extends Objeto {
 	//metodos
 	
 	public double getVelocidad() {
-		return velocidadMovimiento;
+		return velocidad_disparo;
 	}
 	
 	public int getFuerzaImpacto() {
-		return fuerzaDeImpacto;
+		return fuerza_impacto;
 	}
 	
 	

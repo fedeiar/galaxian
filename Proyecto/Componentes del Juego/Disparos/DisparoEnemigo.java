@@ -12,7 +12,7 @@ public abstract class DisparoEnemigo extends Disparo {
 	
 		public DisparoEnemigo(Logica l , double v , int f , double x , double y,double direc) {
 			super(l,v,f,x,y,direc);
-			vis = new VisitorDisparoEnemigo(this);
+			vis = new VisitorDisparoEnemigo(this); //esto lo diferencia con un disparo jugador
 			
 		}
 		

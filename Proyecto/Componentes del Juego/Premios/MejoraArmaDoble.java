@@ -12,7 +12,7 @@ public class MejoraArmaDoble extends ObjetosPreciosos{
 
 	//atributos
 	
-	ArmaJugador nuevaArma;
+	Arma nuevaArma;
 	
 	//constructor
 	
@@ -36,7 +36,7 @@ public class MejoraArmaDoble extends ObjetosPreciosos{
 	
 	
 	public void activarPremio(Jugador j) {
-		ArmaJugador old = j.getArma();
+		Arma old = j.getArma();
 		
 		nuevaArma.setVelocidadDisparo(old.getVelocidadDisparo());
 		nuevaArma.setFuerzaDisparo(old.getFuerzaDisparo());

@@ -19,7 +19,7 @@ public abstract class Enemigo extends Personajes {
 	
 	protected NivelEnemigo miNivel; 
 
-	protected ArmaEnemigo miArma;
+	protected Arma miArma;
 	
 	boolean ya_mori;
 	//constructor

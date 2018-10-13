@@ -3,7 +3,7 @@ import Logica.*;
 import Disparos.*;
 
 
-public class ArmaClasicaEnemigo extends ArmaEnemigo{
+public class ArmaClasicaEnemigo extends Arma{
 
 	//atributos
 	

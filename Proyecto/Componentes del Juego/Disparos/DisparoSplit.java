@@ -18,10 +18,10 @@ public class DisparoSplit extends DisparoJugador {
 	//metodos
 	
 	public void morir() {
-		DisparoComunJugador disparoJ = new DisparoComunJugador(log,velocidadMovimiento, fuerzaDeImpacto , pos_x , pos_y , 135);
+		DisparoComunJugador disparoJ = new DisparoComunJugador(log,velocidad_disparo, fuerza_impacto , pos_x , pos_y , 135);
 		log.agregarObjeto(disparoJ);
 		
-		disparoJ = new DisparoComunJugador(log,velocidadMovimiento, fuerzaDeImpacto , pos_x , pos_y , 45);
+		disparoJ = new DisparoComunJugador(log,velocidad_disparo, fuerza_impacto , pos_x , pos_y , 45);
 		log.agregarObjeto(disparoJ);
 		
 		log.eliminarObjeto(this);

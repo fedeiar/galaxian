@@ -25,8 +25,8 @@ public class Jugador extends Personajes {
 	
 	protected int velocidad_movimiento;
 	
-	protected Escudo shield;
-	protected ArmaJugador miArma;
+	protected Escudo mi_escudo;
+	protected Arma mi_arma;
 	
 	//--------------CONSTRUCTOR--------------
 	
@@ -36,12 +36,13 @@ public class Jugador extends Personajes {
 		super(l);
 		vis = new VisitorJugador();
 		inteligencia = new InteligenciaJugador(this);
-		miArma = new ArmaClasicaJugador(log , 20 , 1); //los 2 parametros enteros son la velocidad y fuerza del ARMA
+		mi_arma = new ArmaClasicaJugador(log , 20 , 1); //los 2 parametros enteros son la velocidad y fuerza del ARMA
+		mi_escudo = new SinEscudo();
 		
 		HP = maxHP;
 		velocidad_movimiento = 20;
 		vidas = VidasIniciales;
-		shield = new SinEscudo();
+		
 		
 		//---parte grafica del jugador---
 		rec = crear_rectangulo(x,y,ANCHO,ALTO);
@@ -69,22 +70,22 @@ public class Jugador extends Personajes {
 	
 	//ARMA
 	
-	public ArmaJugador getArma() {
-		return miArma;
+	public Arma getArma() {
+		return mi_arma;
 	}
 	
-	public void setArma(ArmaJugador a) {
-		miArma = a;
+	public void setArma(Arma a) {
+		mi_arma = a;
 	}
 	
 	//Vidas , HP y escudo
 	
 	public Escudo getEscudo() {
-		return shield;
+		return mi_escudo;
 	}
 	
 	public void setEscudo(Escudo e){
-		shield = e;
+		mi_escudo = e;
 	}
 	
 	public int getHP() {
@@ -96,7 +97,7 @@ public class Jugador extends Personajes {
 	}
 		
 	public void quitarHP(int n) {
-		int daño = shield.getDaño(n);
+		int daño = mi_escudo.getDaño(n);
 		
 		if ( HP - daño > 0)
 			HP -= daño;
@@ -128,7 +129,7 @@ public class Jugador extends Personajes {
 		double x = getX() + getAncho() / 2;
 		double y = getY();
 		
-		miArma.disparar(x, y);
+		mi_arma.disparar(x, y);
 	}
 	
 	

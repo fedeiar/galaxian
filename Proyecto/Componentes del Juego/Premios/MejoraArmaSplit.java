@@ -14,14 +14,14 @@ public class MejoraArmaSplit extends ObjetosPreciosos{
 	
 	//atributos
 	
-	ArmaJugador nuevaArma;
+	Arma nuevaArma;
 	
 	//constructor
 	public MejoraArmaSplit(double x, double y, double velCaida, Logica l) {
 		
 		//---parte logica de la MejoraArmaSplit---
 		super(x, y, velCaida, l);
-		nuevaArma = new ArmaSplitJugador(log,0,0);
+		nuevaArma = new ArmaSplitJugador(log,0,0); //la vel. y fuerza seran seteados despues.
 		
 		
 		//---parte grafica de la MejoraArmaSplit---
@@ -37,7 +37,7 @@ public class MejoraArmaSplit extends ObjetosPreciosos{
 
 	
 	public void activarPremio(Jugador j) {
-		ArmaJugador old = j.getArma();
+		Arma old = j.getArma();
 		
 		nuevaArma.setVelocidadDisparo(old.getVelocidadDisparo());
 		nuevaArma.setFuerzaDisparo(old.getFuerzaDisparo());
@@ -45,11 +45,6 @@ public class MejoraArmaSplit extends ObjetosPreciosos{
 		j.setArma(nuevaArma);
 		
 		morir();
-	}
-
-	
-	public void serVisitado(Visitor v) {
-		
 	}
 
 }

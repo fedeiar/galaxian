@@ -3,7 +3,7 @@ import java.awt.Color;
 
 import javax.swing.*;
 
-import Armas.ArmaJugador;
+import Armas.*;
 import Logica.*;
 import Personajes.Jugador;
 import Visitors.*;
@@ -35,7 +35,7 @@ public class MejoraArma1 extends ObjetosPreciosos {
 
 	
 	public void activarPremio(Jugador j) {
-		ArmaJugador a = j.getArma();
+		Arma a = j.getArma();
 		
 		a.setVelocidadDisparo(a.getVelocidadDisparo() + VELOCIDAD_ADICIONAL);
 		morir();

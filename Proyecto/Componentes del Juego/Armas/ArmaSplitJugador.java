@@ -3,7 +3,7 @@ package Armas;
 import Disparos.DisparoSplit;
 import Logica.Logica;
 
-public class ArmaSplitJugador extends ArmaJugador {
+public class ArmaSplitJugador extends Arma{
 
 	//atributos
 	
