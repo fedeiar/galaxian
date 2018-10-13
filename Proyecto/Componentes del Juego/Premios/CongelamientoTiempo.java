@@ -39,10 +39,6 @@ public class CongelamientoTiempo extends MagiaTemporal{
 	//metodos
 	
 	
-	public void serVisitado(Visitor v) {
-		
-	}
-	
 	public void activarPremio(Jugador j) {
 		PositionList<Objeto> lista_objetos = log.getListaObjetos();
 		

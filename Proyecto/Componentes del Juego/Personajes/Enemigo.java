@@ -92,7 +92,7 @@ public abstract class Enemigo extends Personajes {
 		
 		Premio P=null;
 		Random ran = new Random();
-		int r  = ran.nextInt(4);
+		int r  = ran.nextInt(5);
 		
 		if(r==0)
 			P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
@@ -101,9 +101,12 @@ public abstract class Enemigo extends Personajes {
 				P = new CongelamientoTiempo(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 , log);
 			else
 				if(r==2)
-					P = new MejoraArma2(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log);
+					P = new MejoraArmaDoble(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log);
 				else
-					P = new Invulnerabilidad(getX(),getY(), miNivel.getFuerzaImpacto() *2 , log);
+					if(r==3)
+						P = new Invulnerabilidad(getX(),getY(), miNivel.getVelocidadMovimiento() *2 , log);
+					else
+						P = new MejoraArmaSplit(getX(),getY(),miNivel.getVelocidadMovimiento() * 2 , log);
 		
 		log.agregarObjeto(P);
 	

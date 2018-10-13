@@ -10,6 +10,7 @@ import java.awt.Rectangle;
 
 import javax.swing.*;
 
+import Disparos.Disparo;
 import Disparos.DisparoComunJugador;
 import Disparos.DisparoJugador;
 public class Jugador extends Personajes {

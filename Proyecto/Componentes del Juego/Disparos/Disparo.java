@@ -6,15 +6,16 @@ import javax.swing.*;
 
 import Inteligencias.InteligenciaDisparo;
 import ObjetoGeneral.Objeto;
+import Visitors.Visitor;
 
 public abstract class Disparo extends Objeto {
 
 	//atributos
-	protected final static int ANCHO = 4;
-	protected final static int ALTO = 20;
+	public final static int ANCHO = 4;
+	public final static int ALTO = 20;
 	
 	protected double velocidadMovimiento;
-	protected double direccion; //direccion del disparo, medida en grados.
+	protected double direccion; //direccion del disparo, medida en grados. (entre 0 y 360)
 	protected int fuerzaDeImpacto;
 	
 	
@@ -23,6 +24,7 @@ public abstract class Disparo extends Objeto {
 	public Disparo (Logica l,double v ,int f, double x , double y , double direc) {
 		
 		//----PARTE LOGICA DEL DISPARO----
+		
 		super(l);
 		
 		velocidadMovimiento = v;
@@ -30,7 +32,9 @@ public abstract class Disparo extends Objeto {
 		
 		inteligencia = new InteligenciaDisparo(this , direc);
 		
+		
 		//----PARTE GRAFICA DEL DISPARO----
+		
 		rec = crear_rectangulo(x, y, ANCHO, ALTO);
 		
 		etiqueta = new JLabel();
@@ -57,6 +61,10 @@ public abstract class Disparo extends Objeto {
 	
 	public abstract void morir(); //se lo deja abstracto para que cada disparo pueda hacer algo diferente al morir
 	
+	//----VISITOR----
 	
+	public void serVisitado(Visitor v) {
+		//cuerpo vacio ya que no tiene efecto que un disparo seaVisitado por alguien
+	}
 	
 }

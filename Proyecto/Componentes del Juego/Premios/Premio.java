@@ -1,6 +1,7 @@
 package Premios;
 import ObjetoGeneral.*;
 import Personajes.Jugador;
+import Visitors.Visitor;
 import Visitors.VisitorPremio;
 
 import java.awt.Rectangle;
@@ -48,5 +49,11 @@ public abstract class Premio extends Objeto {
 	
 	public abstract void activarPremio(Jugador j);
 	
+	
+	//----VISITOR----
+	
+	public void serVisitado(Visitor v) {
+		//cuerpo vacio ya que no tiene efecto que un Premio seaVisitado por alguien
+	}
 	
 }

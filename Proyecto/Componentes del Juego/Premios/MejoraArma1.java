@@ -12,6 +12,8 @@ public class MejoraArma1 extends ObjetosPreciosos {
 
 	//atributos
 	
+	protected static final int  VELOCIDAD_ADICIONAL = 10;
+	
 	//constructor
 	
 	public MejoraArma1(double x,double y,double velCaida,Logica l ) {
@@ -28,19 +30,14 @@ public class MejoraArma1 extends ObjetosPreciosos {
 		etiqueta.setOpaque(true);
 		etiqueta.setBackground(Color.ORANGE);
 	}
+	
 	//metodos
 
-	
-	//---VISITOR---
-	
-	public void serVisitado(Visitor v) {
-		
-	}
 	
 	public void activarPremio(Jugador j) {
 		ArmaJugador a = j.getArma();
 		
-		a.setVelocidadDisparo(a.getVelocidadDisparo() + 10);
+		a.setVelocidadDisparo(a.getVelocidadDisparo() + VELOCIDAD_ADICIONAL);
 		morir();
 	}
 	

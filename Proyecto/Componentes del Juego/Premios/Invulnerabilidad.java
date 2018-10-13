@@ -57,8 +57,5 @@ public class Invulnerabilidad extends MagiaTemporal implements Runnable{
 		}
 	}
 	
-	public void serVisitado(Visitor v) {
-		
-	}
 	
 }

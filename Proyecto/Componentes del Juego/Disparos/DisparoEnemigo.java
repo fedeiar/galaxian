@@ -20,11 +20,5 @@ public abstract class DisparoEnemigo extends Disparo {
 		            
 		
 		
-	//----VISITOR----
-	
-	public void serVisitado(Visitor v) {
-		//cuerpo vacio ya que no tiene efecto que un disparo seaVisitado por alguien
-	}
-		
 		
 }

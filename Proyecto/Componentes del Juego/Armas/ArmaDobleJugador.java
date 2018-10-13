@@ -1,7 +1,7 @@
 package Armas;
-import Disparos.Disparo;
+
 import Disparos.DisparoComunJugador;
-import Disparos.DisparoJugador;
+
 import Logica.*;
 
 public class ArmaDobleJugador extends ArmaJugador{
@@ -16,12 +16,14 @@ public class ArmaDobleJugador extends ArmaJugador{
 		cadencia = 200;
 	}
 	
+	//metodos
+	
 	public void crear_disparo(double x , double y) {
 		
-		DisparoComunJugador disparoJ = new DisparoComunJugador(log , velocidadDisparo,fuerzaDisparo, x-10 , y , 70);
+		DisparoComunJugador disparoJ = new DisparoComunJugador(log , velocidadDisparo,fuerzaDisparo, x-10 , y , 110);
 		log.agregarObjeto(disparoJ);
 		
-		disparoJ = new DisparoComunJugador(log , velocidadDisparo , fuerzaDisparo , x+10 , y , 110);
+		disparoJ = new DisparoComunJugador(log , velocidadDisparo , fuerzaDisparo , x+10 , y , 70);
 		log.agregarObjeto(disparoJ);
 			
 	}
