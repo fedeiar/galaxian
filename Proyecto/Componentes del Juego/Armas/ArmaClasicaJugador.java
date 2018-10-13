@@ -11,7 +11,7 @@ public class ArmaClasicaJugador extends ArmaJugador{
 	
 	//constructor
 	
-	public ArmaClasicaJugador(Logica l , int velDisp , int fuerzaDisp) {
+	public ArmaClasicaJugador(Logica l , double velDisp , int fuerzaDisp) {
 		super(l , velDisp , fuerzaDisp);
 		
 		cadencia = 400;

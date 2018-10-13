@@ -8,7 +8,7 @@ public abstract class ArmaEnemigo extends Arma { //esta bien esta interfaz inter
 	
 	//constructor
 	
-	protected ArmaEnemigo(Logica l, int velDisp, int fuerzaDisp) {
+	protected ArmaEnemigo(Logica l, double velDisp, int fuerzaDisp) {
 		super(l, velDisp, fuerzaDisp);
 	}
 	

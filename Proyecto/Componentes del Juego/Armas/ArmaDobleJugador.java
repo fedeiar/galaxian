@@ -10,7 +10,7 @@ public class ArmaDobleJugador extends ArmaJugador{
 	
 	//constructor
 	
-	public ArmaDobleJugador(Logica l , int velDisp , int fuerzaDisp) {
+	public ArmaDobleJugador(Logica l , double velDisp , int fuerzaDisp) {
 		super(l , velDisp, fuerzaDisp);
 		
 		cadencia = 200;

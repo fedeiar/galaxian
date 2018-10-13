@@ -9,7 +9,7 @@ public class ArmaClasicaEnemigo extends ArmaEnemigo{
 	
 	//constructor
 	
-	public ArmaClasicaEnemigo(Logica l , int velDisp , int fuerzaDisp) {
+	public ArmaClasicaEnemigo(Logica l , double velDisp , int fuerzaDisp) {
 		super(l,velDisp,fuerzaDisp);
 		
 		cadencia = 500;

@@ -9,7 +9,7 @@ public abstract class Arma {
 	
 	protected Logica log;
 	
-	protected int velocidadDisparo;
+	protected double velocidadDisparo;
 	protected int fuerzaDisparo;
 	
 	protected int cadencia; //cadencia de cada arma, medida en milisegundos
@@ -19,7 +19,7 @@ public abstract class Arma {
 	
 	//constructor
 	
-	protected Arma(Logica l , int velDisp , int fuerzaDisp) {
+	protected Arma(Logica l , double velDisp , int fuerzaDisp) {
 		log = l;
 		velocidadDisparo = velDisp;
 		fuerzaDisparo = fuerzaDisp;
@@ -34,11 +34,11 @@ public abstract class Arma {
 		return fuerzaDisparo;
 	}
 	
-	public int getVelocidadDisparo() {
+	public double getVelocidadDisparo() {
 		return velocidadDisparo;
 	}
 	
-	public void setVelocidadDisparo(int vel) {
+	public void setVelocidadDisparo(double vel) {
 		velocidadDisparo = vel;
 	}
 	

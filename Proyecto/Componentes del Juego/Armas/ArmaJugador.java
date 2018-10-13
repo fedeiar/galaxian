@@ -10,7 +10,7 @@ public abstract class ArmaJugador extends Arma{ //esta bien esta interfaz interm
 	
 	//constructor
 	
-	protected ArmaJugador(Logica l, int velDisp, int fuerzaDisp) {
+	protected ArmaJugador(Logica l, double velDisp, int fuerzaDisp) {
 		super(l, velDisp, fuerzaDisp);
 	}
 	

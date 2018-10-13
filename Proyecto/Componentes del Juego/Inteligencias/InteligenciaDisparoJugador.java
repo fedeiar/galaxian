@@ -16,6 +16,7 @@ public class InteligenciaDisparoJugador extends Inteligencia{
 	
 	
 	public void accionar() {
+		
 		if(disJ.getY() < 0)
 			disJ.morir();
 		else
