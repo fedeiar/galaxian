@@ -10,15 +10,15 @@ public abstract class Disparo extends Objeto {
 
 	//atributos
 	protected final static int ANCHO = 4;
-	protected final static int LARGO = 20;
+	protected final static int ALTO = 20;
 	
-	protected int velocidadMovimiento;
+	protected double velocidadMovimiento;
 	protected int fuerzaDeImpacto;
 	
 	
 	//constuctor
 	
-	public Disparo (Logica l,int v ,int f, int x , int y) {
+	public Disparo (Logica l,double v ,int f, double x , double y) {
 		super(l);
 		
 		velocidadMovimiento = v;
@@ -26,7 +26,7 @@ public abstract class Disparo extends Objeto {
 		
 		
 		//---parte grafica del disparo---
-		rec = new Rectangle(x,y,ANCHO,LARGO);
+		rec = this.crear_rectangulo(x, y, ANCHO, ALTO);
 		
 		etiqueta = new JLabel();
 		
@@ -38,7 +38,7 @@ public abstract class Disparo extends Objeto {
 	
 	//metodos
 	
-	public int getVelocidad() {
+	public double getVelocidad() {
 		return velocidadMovimiento;
 	}
 	

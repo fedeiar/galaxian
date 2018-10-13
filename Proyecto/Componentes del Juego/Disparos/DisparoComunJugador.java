@@ -8,7 +8,7 @@ public class DisparoComunJugador extends DisparoJugador{
 	
 	//constructor
 	
-	public DisparoComunJugador(Logica l, int v , int f, int x , int y) {
+	public DisparoComunJugador(Logica l, double v , int f, double x , double y) {
 		super(l,v,f,x,y);
 	}
 	

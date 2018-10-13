@@ -18,7 +18,7 @@ public class CongelamientoTiempo extends MagiaTemporal{
 	
 	//constructor
 	
-	public CongelamientoTiempo(int x, int y, int velCaida, Logica l) {
+	public CongelamientoTiempo(double x, double y, double velCaida, Logica l) {
 		
 		//---parte logica de CongelamientoTiempo---
 		

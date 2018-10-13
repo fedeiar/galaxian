@@ -29,7 +29,7 @@ public class Jugador extends Personajes {
 	
 	//--------------CONSTRUCTOR--------------
 	
-	public Jugador (Logica l,int x , int y ) { 
+	public Jugador (Logica l,double x , double y ) { 
 		
 		//---parte logica del jugador---
 		super(l);
@@ -43,7 +43,7 @@ public class Jugador extends Personajes {
 		shield = new SinEscudo();
 		
 		//---parte grafica del jugador---
-		rec = new Rectangle(x,y,ANCHO,ALTO);
+		rec = crear_rectangulo(x,y,ANCHO,ALTO);
 		imagen = new ImageIcon("Sprites/Frisk.png");
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
@@ -57,7 +57,7 @@ public class Jugador extends Personajes {
 	
 	//VELOCIDAD de movimiento
 	
-	public int getVelocidadMovimiento() {
+	public double getVelocidadMovimiento() {
 		return velocidad_movimiento;
 	}
 	
@@ -124,8 +124,8 @@ public class Jugador extends Personajes {
 	}
 	
 	public void crearDisparo() {
-		int x = getX() + getAncho() / 2;
-		int y = getY();
+		double x = getX() + getAncho() / 2;
+		double y = getY();
 		
 		miArma.disparar(x, y);
 	}

@@ -15,11 +15,11 @@ public abstract class Premio extends Objeto {
 	protected final static int ANCHO=10;
 	protected final static int LARGO=10;
 	
-	protected int velocidadDeCaida;
+	protected double velocidadDeCaida;
 	
 	//--------CONSTRUCTOR-------
 	
-	public Premio (int x,int y,int velCaida,Logica l) {
+	public Premio (double x,double y,double velCaida,Logica l) {
 		//---parte logica de los premios---
 		
 		super(l);
@@ -28,12 +28,12 @@ public abstract class Premio extends Objeto {
 		vis = new VisitorPremio(this);
 		
 		//---parte grafica de los premios---
-		rec = new Rectangle(x,y,ANCHO,LARGO);
+		rec = crear_rectangulo(x,y,ANCHO,LARGO);
 	}
 	
 	//------METODOS------
 	
-	public int getVelocidadDeCaida() {
+	public double getVelocidadDeCaida() {
 		return velocidadDeCaida;
 	}
 	

@@ -11,7 +11,7 @@ public abstract class ObjetosPreciosos extends Premio{
 	
 	//constructor
 	
-	public ObjetosPreciosos(int x,int y,int velCaida,Logica l) {
+	public ObjetosPreciosos(double x,double y,double velCaida,Logica l) {
 		super(x,y,velCaida,l);
 		
 	}

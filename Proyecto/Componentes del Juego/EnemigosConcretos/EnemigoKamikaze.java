@@ -15,7 +15,7 @@ public class EnemigoKamikaze extends Enemigo{
 	
 	//constructor
 	
-	public EnemigoKamikaze(Logica l , int x , int y , int nivel) {
+	public EnemigoKamikaze(Logica l , double x , double y , int nivel) {
 		
 		//----parte logica del EnemigoKamikaze----
 		super(l,x,y,nivel);

@@ -15,7 +15,7 @@ public class ArmaDummy extends Arma{
 
 	//metodos
 	
-	protected void crear_disparo(int x, int y) {
+	protected void crear_disparo(double x, double y) {
 		
 	}
 

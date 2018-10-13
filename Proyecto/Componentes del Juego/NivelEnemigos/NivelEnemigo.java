@@ -12,7 +12,7 @@ public abstract class NivelEnemigo {
 	//atributos
 	
 	protected NivelEnemigo siguiente;
-	protected int velocidad_movimiento;
+	protected double velocidad_movimiento;
 	protected int HP;
 	protected int puntosQueDa;
 	protected int fuerzaImpacto;
@@ -30,7 +30,7 @@ public abstract class NivelEnemigo {
 		return fuerzaImpacto;
 	}
 	
-	public int getVelocidadMovimiento() {
+	public double getVelocidadMovimiento() {
 		return velocidad_movimiento;
 	}
 	

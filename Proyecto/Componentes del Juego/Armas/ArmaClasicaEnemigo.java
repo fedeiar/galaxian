@@ -17,7 +17,7 @@ public class ArmaClasicaEnemigo extends ArmaEnemigo{
 	
 	//metodos
 	
-	public void crear_disparo(int x , int y) {
+	public void crear_disparo(double x , double y) {
 		
 		DisparoComunEnemigo dispE = new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,x,y);
 		log.agregarObjeto(dispE);

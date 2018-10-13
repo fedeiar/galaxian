@@ -16,7 +16,7 @@ public class EnemigoConArma extends Enemigo {
 	
 	//constructor
 	
-	public EnemigoConArma(Logica l, int x, int y , int nivel) {
+	public EnemigoConArma(Logica l, double x, double y , int nivel) {
 		
 		//----parte logica del EnemigoConArma---
 		
@@ -39,8 +39,8 @@ public class EnemigoConArma extends Enemigo {
 	//---DISPARO---
 	
 	public void crearDisparo() {
-		int x = getX() + getAncho() / 2;
-		int y = getY() + getAlto();
+		double x = getX() + getAncho() / 2;
+		double y = getY() + getAlto();
 	
 		miArma.disparar(x, y);
 	}

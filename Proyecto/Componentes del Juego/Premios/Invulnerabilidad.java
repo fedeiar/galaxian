@@ -21,7 +21,7 @@ public class Invulnerabilidad extends MagiaTemporal implements Runnable{
 	//constructor
 	
 	
-	public Invulnerabilidad(int x, int y, int velCaida, Logica l) {
+	public Invulnerabilidad(double x, double y, double velCaida, Logica l) {
 		
 		//----parte logica del EscudoProtector----
 		

@@ -16,6 +16,9 @@ public abstract class Objeto {
 	protected JLabel etiqueta;
 	protected ImageIcon imagen;
 	
+	protected double pos_x;
+	protected double pos_y;
+	
 	protected Inteligencia inteligencia;
 	protected Logica log;
 	protected Visitor vis;
@@ -33,12 +36,12 @@ public abstract class Objeto {
 		return rec;
 	}
 	
-	public int getX() {
-		return rec.x;
+	public double getX() {
+		return pos_x;
 	}
 	
-	public int getY() {
-		return rec.y;
+	public double getY() {
+		return pos_y;
 	}
 	
 	public int getAncho() {
@@ -49,18 +52,32 @@ public abstract class Objeto {
 		return rec.height;
 	}
 	
-	public void setX(int i) {
-		rec.x = i;
+	public void setX(double i) {
+		pos_x = i;
+		int rounded_x = (int) Math.round(pos_x);
+		rec.x = rounded_x;
 		etiqueta.setBounds(rec);
 	}
 	
-	public void setY (int i) {
-		rec.y = i;
+	public void setY (double i) {
+		pos_y = i;
+		int rounded_y = (int) Math.round(pos_y);
+		rec.y = rounded_y;
 		etiqueta.setBounds(rec);
 	}
 	
 	public JLabel getLabel() {
 		return etiqueta;
+	}
+	
+	public Rectangle crear_rectangulo(double x , double y , int ancho , int alto) {
+		pos_x = x;
+		pos_y = y;
+		int rounded_x = (int) Math.round(pos_x);
+		int rounded_y = (int) Math.round(pos_y);
+		Rectangle R = new Rectangle(rounded_x,rounded_y,ancho,alto);
+		
+		return R;
 	}
 	
 	

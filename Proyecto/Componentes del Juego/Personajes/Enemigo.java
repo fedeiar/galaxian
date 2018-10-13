@@ -24,7 +24,7 @@ public abstract class Enemigo extends Personajes {
 	boolean ya_mori;
 	//constructor
 	
-	public Enemigo(Logica l,int x, int y,  int nivel) { 
+	public Enemigo(Logica l,double x, double y,  int nivel) { 
 		
 		//----parte logica del enemigo----
 		
@@ -38,8 +38,7 @@ public abstract class Enemigo extends Personajes {
 		
 		
 		//----parte grafica del enemigo----
-		
-		rec = new Rectangle(x,y,ANCHO,ALTO);
+		rec = crear_rectangulo(x,y,ANCHO,ALTO);
 	}
 	
 	
@@ -58,7 +57,7 @@ public abstract class Enemigo extends Personajes {
 		return miNivel.getPuntaje();
 	}
 	
-	public int getVelocidadMovimiento() {
+	public double getVelocidadMovimiento() {
 		return miNivel.getVelocidadMovimiento();
 	}
 

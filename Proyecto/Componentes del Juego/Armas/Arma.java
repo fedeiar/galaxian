@@ -49,7 +49,7 @@ public abstract class Arma {
 	//metodos especiales
 	
 
-	public void disparar(int x , int y) {
+	public void disparar(double x , double y) {
 		long elapsed_time = System.currentTimeMillis() - time;
 		if(elapsed_time > cadencia) {
 			crear_disparo(x,y);
@@ -57,5 +57,5 @@ public abstract class Arma {
 		}
 	}
 	
-	protected abstract void crear_disparo(int x , int y);
+	protected abstract void crear_disparo(double x , double y);
 }

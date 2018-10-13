@@ -16,7 +16,7 @@ public class ArmaDobleJugador extends ArmaJugador{
 		cadencia = 200;
 	}
 	
-	public void crear_disparo(int x , int y) {
+	public void crear_disparo(double x , double y) {
 		
 		DisparoComunJugador disparoJ = new DisparoComunJugador(log , velocidadDisparo,fuerzaDisparo, x-10 , y);
 		log.agregarObjeto(disparoJ);

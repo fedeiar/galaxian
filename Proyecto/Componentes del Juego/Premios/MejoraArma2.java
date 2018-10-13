@@ -16,7 +16,7 @@ public class MejoraArma2 extends ObjetosPreciosos{
 	
 	//constructor
 	
-	public MejoraArma2 (int x, int y, int velCaida,Logica l) {
+	public MejoraArma2 (double x, double y, double velCaida,Logica l) {
 		
 		//----parte logica de la mejora----
 		

@@ -23,7 +23,7 @@ public abstract class Personajes extends Objeto {
 	//metodos
 	
 	
-	public abstract int getVelocidadMovimiento();
+	public abstract double getVelocidadMovimiento();
 	
 	public abstract void quitarHP(int n); 
 		

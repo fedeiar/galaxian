@@ -3,12 +3,9 @@ public class probar {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		long stime = System.currentTimeMillis();
-		Thread.sleep(4000);
-		long elapsedTime = System.currentTimeMillis() - stime;
-		
-		System.out.println(elapsedTime);
-
+		int a = (int)Math.round(5.8);
+		double b = 5.89;
+		System.out.println(b);
 	}
 
 }

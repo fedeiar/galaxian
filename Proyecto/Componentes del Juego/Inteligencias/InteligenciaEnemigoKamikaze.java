@@ -6,7 +6,7 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 
 	//atributos
 	protected final static int ESPERA_CUMPLIDA = 50;
-	protected final int POS_INICIAL;
+	protected final double POS_INICIAL;
 	
 	protected boolean me_pase;
 	protected boolean me_tiro;

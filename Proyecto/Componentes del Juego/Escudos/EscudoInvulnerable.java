@@ -21,7 +21,7 @@ public class EscudoInvulnerable extends Escudo{
 		
 		
 		//---parte grafica del EscudoInvulnerable---
-		rec = new Rectangle(POS_X , POS_Y , ANCHO , ALTO);
+		rec = crear_rectangulo(POS_X,POS_X,ANCHO,ALTO);
 		imagen = new ImageIcon("Sprites/Shield_inv.png");
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);

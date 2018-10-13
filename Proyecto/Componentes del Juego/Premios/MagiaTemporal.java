@@ -9,7 +9,7 @@ public abstract class MagiaTemporal extends Premio{
 	
 	//constructor
 	
-	public MagiaTemporal(int x , int y , int velCaida, Logica l) {
+	public MagiaTemporal(double x , double y , double velCaida, Logica l) {
 		super(x,y,velCaida,l);
 		
 	}

@@ -15,8 +15,6 @@ public class InteligenciaJugador extends Inteligencia{
 	protected int quiero_shoot; //sería si el jugador apreta para disparar
 	protected int direccion;
 	
-	protected boolean activar_escudo;
-	protected int contador;
 	
 	//constructor
 	public InteligenciaJugador(Jugador j) {
@@ -24,8 +22,6 @@ public class InteligenciaJugador extends Inteligencia{
 		direccion = 0;
 		quiero_shoot = 0;
 		
-		activar_escudo = false;
-		contador = 0;
 	}
 	
 	//metodos
@@ -52,8 +48,6 @@ public class InteligenciaJugador extends Inteligencia{
 		
 		quiero_shoot=0;
 		
-		
-		
 	}
 	
 	private void moverIzquierda() {
@@ -61,8 +55,7 @@ public class InteligenciaJugador extends Inteligencia{
 			jug.setX(jug.getX() - jug.getVelocidadMovimiento()); //  y aca *
 		}
 		else {
-			long aux = Math.round(jug.getAncho());
-			jug.setX(ANCHO_MAPA - (int)aux); //si bien un long es un int pero mas largo, hace falta casting
+			jug.setX(ANCHO_MAPA - jug.getAncho());
 			
 		}
 	}

@@ -10,7 +10,7 @@ public abstract class DisparoEnemigo extends Disparo {
 	
 	//constructor
 	
-		public DisparoEnemigo(Logica l , int v , int f , int x , int y) {
+		public DisparoEnemigo(Logica l , double v , int f , double x , double y) {
 			super(l,v,f,x,y);
 			vis = new VisitorDisparoEnemigo(this);
 			inteligencia = new InteligenciaDisparoEnemigo(this);

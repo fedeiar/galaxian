@@ -6,7 +6,7 @@ public class DisparoComunEnemigo extends DisparoEnemigo {
 	
 	//constructor
 	
-	public DisparoComunEnemigo(Logica l , int v , int f ,int x , int y) {
+	public DisparoComunEnemigo(Logica l , double v , int f ,double x , double y) {
 		super(l,v,f,x,y);
 	}
 	

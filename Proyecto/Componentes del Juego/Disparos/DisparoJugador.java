@@ -12,7 +12,7 @@ public abstract class DisparoJugador extends Disparo{
 	
 	//constructor
 	
-		protected DisparoJugador(Logica l , int v , int f , int x , int y) {
+		protected DisparoJugador(Logica l , double v , int f , double x , double y) {
 			super(l,v,f,x,y);
 			vis = new VisitorDisparoJugador(this); //esto lo diferencia con un disparo enemigo
 			inteligencia = new InteligenciaDisparoJugador(this);
