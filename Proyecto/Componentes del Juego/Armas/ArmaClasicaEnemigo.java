@@ -19,7 +19,7 @@ public class ArmaClasicaEnemigo extends ArmaEnemigo{
 	
 	public void crear_disparo(double x , double y) {
 		
-		DisparoComunEnemigo dispE = new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,x,y);
+		DisparoComunEnemigo dispE = new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,x,y,270);
 		log.agregarObjeto(dispE);
 	
 	}

@@ -22,7 +22,7 @@ public class ArmaClasicaJugador extends ArmaJugador{
 	
 	public void crear_disparo(double x , double y) {
 		
-		DisparoComunJugador disparoJ = new DisparoComunJugador(log,velocidadDisparo,fuerzaDisparo, x , y);
+		DisparoComunJugador disparoJ = new DisparoComunJugador(log,velocidadDisparo,fuerzaDisparo, x , y , 90);
 		log.agregarObjeto(disparoJ);
 			
 	}

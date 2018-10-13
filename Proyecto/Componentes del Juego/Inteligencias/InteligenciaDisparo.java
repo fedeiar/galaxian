@@ -1,6 +1,6 @@
 package Inteligencias;
 import Disparos.*;
-public abstract class InteligenciaDisparo extends Inteligencia{
+public  class InteligenciaDisparo extends Inteligencia{
 
 	//atributos
 	
@@ -15,17 +15,20 @@ public abstract class InteligenciaDisparo extends Inteligencia{
 	}
 	
 	public void accionar() {
-		if(fueraDeLimite(disp)) {
+		if(fueraDeLimite()) {
 			disp.morir();
 		}
 		else { 
 			disp.setX(disp.getX() + disp.getVelocidad() * Math.cos(direccion));
-			disp.setY(disp.getY() + disp.getVelocidad() * Math.sin(direccion));
+			disp.setY(disp.getY() + disp.getVelocidad() * ( - Math.sin(direccion))); //negativo ya que para subir hay que restar en Y
 		}
 	}
 	
-	private boolean fueraDeLimite(Disparo shoot) {
-		
+	private boolean fueraDeLimite() {
+		if( (disp.getX() < 0) || (disp.getX() > ANCHO_MAPA) || (disp.getY() < 0) || (disp.getY() > ALTO_MAPA))
+			return true;
+		else
+			return false;
 	}
 
 }

@@ -4,6 +4,7 @@ import java.awt.*;
 import Logica.*;
 import javax.swing.*;
 
+import Inteligencias.InteligenciaDisparo;
 import ObjetoGeneral.Objeto;
 
 public abstract class Disparo extends Objeto {
@@ -13,20 +14,24 @@ public abstract class Disparo extends Objeto {
 	protected final static int ALTO = 20;
 	
 	protected double velocidadMovimiento;
+	protected double direccion; //direccion del disparo, medida en grados.
 	protected int fuerzaDeImpacto;
 	
 	
 	//constuctor
 	
-	public Disparo (Logica l,double v ,int f, double x , double y) {
+	public Disparo (Logica l,double v ,int f, double x , double y , double direc) {
+		
+		//----PARTE LOGICA DEL DISPARO----
 		super(l);
 		
 		velocidadMovimiento = v;
 		fuerzaDeImpacto = f;
 		
+		inteligencia = new InteligenciaDisparo(this , direc);
 		
-		//---parte grafica del disparo---
-		rec = this.crear_rectangulo(x, y, ANCHO, ALTO);
+		//----PARTE GRAFICA DEL DISPARO----
+		rec = crear_rectangulo(x, y, ANCHO, ALTO);
 		
 		etiqueta = new JLabel();
 		
