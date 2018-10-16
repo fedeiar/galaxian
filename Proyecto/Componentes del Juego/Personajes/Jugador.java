@@ -36,7 +36,7 @@ public class Jugador extends Personajes {
 		super(l);
 		vis = new VisitorJugador();
 		inteligencia = new InteligenciaJugador(this);
-		mi_arma = new ArmaClasicaJugador(log , 20 , 1); //los 2 parametros enteros son la velocidad y fuerza del ARMA
+		mi_arma = new ArmaClasicaJugador(log); 
 		mi_escudo = new SinEscudo();
 		
 		HP = maxHP;
@@ -45,6 +45,7 @@ public class Jugador extends Personajes {
 		
 		
 		//---parte grafica del jugador---
+		
 		rec = crear_rectangulo(x,y,ANCHO,ALTO);
 		imagen = new ImageIcon("Sprites/Frisk.png");
 		etiqueta = new JLabel();

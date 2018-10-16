@@ -11,7 +11,7 @@ import Visitors.Visitor;
 public abstract class Disparo extends Objeto {
 
 	//atributos
-	public final static int ANCHO = 4;
+	public final static int ANCHO = 5;
 	public final static int ALTO = 20;
 	
 	protected double velocidad_disparo;

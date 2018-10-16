@@ -7,11 +7,13 @@ public class ArmaClasicaEnemigo extends Arma{
 
 	//atributos
 	
+	
 	//constructor
 	
 	public ArmaClasicaEnemigo(Logica l , double velDisp , int fuerzaDisp) {
-		super(l,velDisp,fuerzaDisp);
-		
+		super(l);
+		velocidadDisparo = 20;
+		fuerzaDisparo = 2;
 		cadencia = 500;
 	}
 	

@@ -19,10 +19,9 @@ public abstract class Arma {
 	
 	//constructor
 	
-	protected Arma(Logica l , double velDisp , int fuerzaDisp) {
+	protected Arma(Logica l) {
 		log = l;
-		velocidadDisparo = velDisp;
-		fuerzaDisparo = fuerzaDisp;
+		
 		time = System.currentTimeMillis();
 	}
 	

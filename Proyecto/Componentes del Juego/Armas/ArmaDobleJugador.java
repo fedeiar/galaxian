@@ -8,12 +8,16 @@ public class ArmaDobleJugador extends Arma{
 
 	//atributos
 	
+	
+	
 	//constructor
 	
-	public ArmaDobleJugador(Logica l , double velDisp , int fuerzaDisp) {
-		super(l , velDisp, fuerzaDisp);
+	public ArmaDobleJugador(Logica l) {
+		super(l);
+		velocidadDisparo = 20;
+		fuerzaDisparo = 3;
 		
-		cadencia = 200;
+		cadencia = 300;
 	}
 	
 	//metodos

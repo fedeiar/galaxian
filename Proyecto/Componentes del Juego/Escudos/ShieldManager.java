@@ -5,7 +5,7 @@ public class ShieldManager {
 	
 	public static synchronized void setEscudo(Jugador jug , Escudo nuevo_escudo ,int durabilidad) throws InterruptedException {
 		
-			System.out.println("entre a la operacion");
+			
 			
 			Escudo viejo_escudo = jug.getEscudo();
 			jug.setEscudo(nuevo_escudo);
@@ -14,7 +14,7 @@ public class ShieldManager {
 			
 			jug.setEscudo(viejo_escudo);
 			
-			System.out.println("sali de la operacion");
+			
 		
 	}
 	

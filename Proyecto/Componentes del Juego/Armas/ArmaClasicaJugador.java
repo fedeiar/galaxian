@@ -7,13 +7,13 @@ import Logica.Logica;
 public class ArmaClasicaJugador extends Arma{
 	
 	//atributos
-	
-	
+
 	//constructor
 	
-	public ArmaClasicaJugador(Logica l , double velDisp , int fuerzaDisp) {
-		super(l , velDisp , fuerzaDisp);
-		
+	public ArmaClasicaJugador(Logica l) {
+		super(l);
+		fuerzaDisparo = 2;
+		velocidadDisparo = 20;
 		cadencia = 400;
 	}
 	

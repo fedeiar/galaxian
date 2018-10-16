@@ -21,7 +21,7 @@ public class MejoraArmaDoble extends ObjetosPreciosos{
 		//----parte logica de la mejora----
 		
 		super(x,y,velCaida,l);
-		nuevaArma = new ArmaDobleJugador(log,0,0); //la vel. y fuerza seran seteados despues.
+		nuevaArma = new ArmaDobleJugador(log);
 		
 		//----parte grafica de la mejora----
 		
@@ -36,10 +36,7 @@ public class MejoraArmaDoble extends ObjetosPreciosos{
 	
 	
 	public void activarPremio(Jugador j) {
-		Arma old = j.getArma();
-		
-		nuevaArma.setVelocidadDisparo(old.getVelocidadDisparo());
-		nuevaArma.setFuerzaDisparo(old.getFuerzaDisparo());
+	
 		
 		j.setArma(nuevaArma);
 		

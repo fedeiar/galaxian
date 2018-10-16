@@ -8,8 +8,8 @@ public class ArmaDummy extends Arma{
 	
 	//constructor
 	
-	protected ArmaDummy(Logica l, double velDisp, int fuerzaDisp) {
-		super(l, velDisp, fuerzaDisp);
+	protected ArmaDummy(Logica l) {
+		super(l);
 	
 	}
 

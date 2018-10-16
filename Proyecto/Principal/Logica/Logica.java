@@ -37,7 +37,6 @@ public class Logica {
 		lista_agregar = new ListaDE<Objeto>();
 		lista_eliminar = new ListaDE<Objeto>();
 		
-	    mapa = new Mapa_1(this);
 	    gui = g;
 
 	}
@@ -88,8 +87,8 @@ public class Logica {
 		gui.add(jugador.getLabel());
 		vidasJugador = jugador.getVidas();
 		
-		
 		crearObjetosIniciales();
+		
 		tiempo = new Tiempo(this);
 		tiempo.start();
 		
@@ -107,11 +106,11 @@ public class Logica {
 	
 	public void getMapaSiguiente() {
 		mapa = mapa.getMapaSiguiente();
-		if(mapa!=null) //si bien siempre da true, esta por las dudas.
+		if(mapa!=null) 
 			crearObjetosIniciales();
 	}
 	
-	private void crearObjetosIniciales() { //se ejecuta cada vez que empieza un mapa nuevo.
+	private void crearObjetosIniciales() { 
 		resetearMapa();
 		lista_agregar = mapa.obtenerObjetosIniciales();
 		cantEnemigos = mapa.cantEnemigosVivos();

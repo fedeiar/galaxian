@@ -6,13 +6,13 @@ import Logica.Logica;
 public class ArmaSplitJugador extends Arma{
 
 	//atributos
-	
-	
+
 	//constructor
 	
-	public ArmaSplitJugador(Logica l, double velDisp, int fuerzaDisp) {
-		super(l, velDisp, fuerzaDisp);	
-		
+	public ArmaSplitJugador(Logica l) {
+		super(l);	
+		velocidadDisparo = 20;
+		fuerzaDisparo = 4;
 		cadencia = 350;
 	}
 	
