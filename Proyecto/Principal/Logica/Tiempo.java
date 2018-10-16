@@ -4,13 +4,15 @@ import TDALista.*;
 public class Tiempo extends Thread{
 	
 	//atributos
-	
+
 	private Logica log;
 	public final static int SLEEP_TIME = 50;
+	private TiempoEntreNiveles new_time;
 	//constructor
 	
 	public Tiempo(Logica l) {
 		log = l;
+		new_time = new TiempoEntreNiveles(log);
 	}
 	
 	//metodos
@@ -19,13 +21,17 @@ public class Tiempo extends Thread{
 	
 	public void run() {
 		while(log.hayMapa() && log.jugadorEstaVivo()) {
+			
 			try {
-				if(!log.hayEnemigos() && log.hayMapa()) {
-					log.getMapaSiguiente();
+				if(!log.hayEnemigos() && log.hayMapa() && !new_time.isAlive()) {
+					
+					new_time = new TiempoEntreNiveles(log);
+					new_time.start();
+					
 				}
 				
-				log.actualizarObjetos();
 				
+				log.actualizarObjetos();
 				
 				log.accionarObjetos();
 				

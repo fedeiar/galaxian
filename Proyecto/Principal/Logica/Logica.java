@@ -29,7 +29,6 @@ public class Logica {
 	
 	private Jugador jugador;
 	
-	private boolean jugador_vivo;
 	//constructor
 	
 	public Logica( GUI g) {
@@ -52,7 +51,7 @@ public class Logica {
 		return jugador.getVidas();
 	}
 	public boolean jugadorEstaVivo() {
-		return jugador_vivo;
+		return jugador!=null;
 	}
 
 	public int getPuntaje() {
@@ -88,7 +87,7 @@ public class Logica {
 		jugador = new Jugador (this, Mapa.MAX_X/2 , Mapa.MAX_Y - 70 );
 		gui.add(jugador.getLabel());
 		vidasJugador = jugador.getVidas();
-		jugador_vivo = true;
+		
 		
 		crearObjetosIniciales();
 		tiempo = new Tiempo(this);
@@ -234,7 +233,7 @@ public class Logica {
 	
 	public void perder() {
 		eliminarTodo();
-		jugador_vivo = false;
+		jugador = null;
 		gui.mostrarPanelDerrota();
 	}
 	

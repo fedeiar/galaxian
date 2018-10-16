@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 
 import Inteligencias.*;
 import Personajes.*;
+import Premios.Premio;
 
 public class EnemigoKamikaze extends Enemigo{
 
@@ -15,10 +16,10 @@ public class EnemigoKamikaze extends Enemigo{
 	
 	//constructor
 	
-	public EnemigoKamikaze(Logica l , double x , double y , int nivel) {
+	public EnemigoKamikaze(Logica l , double x , double y , int nivel , Premio P) {
 		
 		//----parte logica del EnemigoKamikaze----
-		super(l,x,y,nivel);
+		super(l,x,y,nivel,P);
 		inteligencia = new InteligenciaEnemigoKamikaze(this);
 		
 		

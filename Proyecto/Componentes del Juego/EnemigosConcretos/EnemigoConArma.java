@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import Disparos.DisparoEnemigo;
 import Personajes.Enemigo;
+import Premios.Premio;
 import Inteligencias.*;
 import Logica.*;
 public class EnemigoConArma extends Enemigo {
@@ -16,11 +17,11 @@ public class EnemigoConArma extends Enemigo {
 	
 	//constructor
 	
-	public EnemigoConArma(Logica l, double x, double y , int nivel) {
+	public EnemigoConArma(Logica l, double x, double y , int nivel , Premio P) {
 		
 		//----parte logica del EnemigoConArma---
 		
-		super(l,x,y,nivel);
+		super(l,x,y,nivel,P);
 		inteligencia = new InteligenciaEnemigoConArma(this);
 		miArma = new ArmaClasicaEnemigo(log , 15 , 2 ); //los 2 parametros enteros son la vel. y fuerza del disparo del ARMA
 		

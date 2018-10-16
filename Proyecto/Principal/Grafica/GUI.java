@@ -48,21 +48,17 @@ import javax.swing.SwingConstants.*;
 		
 		log.empezarJuego();
 		
-		agregarListeners();
 		
-		
-	}
-	
-	public void agregarListeners() {
-
 		OyenteTeclado OT = new OyenteTeclado();
 		this.addKeyListener(OT);
 	}
 	
 	public void repintar() {
-		numPuntaje.setText(""+log.getPuntaje());
-		BarraVida.setValue(log.getHPJugador());
-		numVidas.setText(""+log.getVidasJugador());
+		if(log.jugadorEstaVivo()) {
+			numPuntaje.setText(""+log.getPuntaje());
+			BarraVida.setValue(log.getHPJugador());
+			numVidas.setText(""+log.getVidasJugador());
+		}
 		repaint();
 	}
 	
@@ -153,14 +149,14 @@ import javax.swing.SwingConstants.*;
 		OyenteBoton OB = new OyenteBoton();
 		btnSi.addActionListener(OB);
 		
-		repaint();
+		repintar();
 	}
 	
 	private void eliminarPanelDerrota() {
 		this.remove(lblDerrota);
 		this.remove(lblTryAgain);
 		this.remove(btnSi);
-		repaint();
+		repintar();
 	}
 	
 	//-------------------------------------------
@@ -176,7 +172,6 @@ import javax.swing.SwingConstants.*;
 		
 		public void keyPressed(KeyEvent e) {
 			if (e.getKeyCode() == KeyEvent.VK_LEFT){
-				System.out.println("entre");
 				log.moverJugador(1);
 				
 			}

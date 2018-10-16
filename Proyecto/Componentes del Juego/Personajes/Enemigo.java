@@ -18,13 +18,13 @@ public abstract class Enemigo extends Personajes {
 	
 	
 	protected NivelEnemigo miNivel; 
-
+	protected Premio power_up;
 	protected Arma miArma;
 	
 	boolean ya_mori;
 	//constructor
 	
-	public Enemigo(Logica l,double x, double y,  int nivel) { 
+	public Enemigo(Logica l,double x, double y,  int nivel , Premio P) { 
 		
 		//----parte logica del enemigo----
 		
@@ -33,6 +33,7 @@ public abstract class Enemigo extends Personajes {
 		setNivel(nivel);
 		
 		HP = miNivel.getHP();
+		power_up = P;
 		
 		ya_mori = false;
 		
@@ -87,28 +88,17 @@ public abstract class Enemigo extends Personajes {
 		log.setPuntaje(log.getPuntaje() + puntaje);
 		log.setCantEnemigos(log.cantEnemigos() - 1);
 		log.eliminarObjeto(this);
-		//al morir un enemigo dropea un powerup, ¿que powerup? esto puede verse con PROTOYPE, lo de abajo es TEMPORAL
-		//demasiado hardcodeado NO SEGUIR CON ESTO
 		
-		Premio P=null;
 		Random ran = new Random();
-		int r  = ran.nextInt(5);
+		int r  = ran.nextInt(10);
 		
-		if(r==0)
-			P = new MejoraArma1(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log); //ver los atributos de este powerup, si conviene inicializarlos o que sean constantes.
-		else
-			if(r==1)
-				P = new CongelamientoTiempo(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 , log);
-			else
-				if(r==2)
-					P = new MejoraArmaDoble(getX(),getY(), miNivel.getVelocidadMovimiento() * 2 ,log);
-				else
-					if(r==3)
-						P = new Invulnerabilidad(getX(),getY(), miNivel.getVelocidadMovimiento() *2 , log);
-					else
-						P = new MejoraArmaSplit(getX(),getY(),miNivel.getVelocidadMovimiento() * 2 , log);
+		if(r<6) {
+			power_up.setX( getX() );
+			power_up.setY( getY() );
+			power_up.setVelocidadCaida( getVelocidadMovimiento() * 2 );
+			log.agregarObjeto(power_up);
+		}
 		
-		log.agregarObjeto(P);
 	
 	}
 	

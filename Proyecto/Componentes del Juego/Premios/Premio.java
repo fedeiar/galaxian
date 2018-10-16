@@ -34,6 +34,10 @@ public abstract class Premio extends Objeto {
 	
 	//------METODOS------
 	
+	public void setVelocidadCaida(double vel) {
+		velocidadDeCaida = vel;
+	}
+	
 	public double getVelocidadDeCaida() {
 		return velocidadDeCaida;
 	}

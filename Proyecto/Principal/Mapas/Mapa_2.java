@@ -26,7 +26,7 @@ public class Mapa_2 extends Mapa {
 		 PositionList<Objeto> L = new ListaDE<Objeto>();
 		 for(int i=1 ; i<3 ; i++) {
 			 for(int j=0 ; j<5 ; j++) {
-				EnemigoConArma ene = new EnemigoConArma( log, 200 + j*100 , i*100  ,1);
+				EnemigoConArma ene = new EnemigoConArma( log, 200 + j*100 , i*100  ,1 , powerups[ i % CANT_MAX_PREMIOS]);
 				L.addLast(ene);
 				cantEnemigos++;
 			 }
