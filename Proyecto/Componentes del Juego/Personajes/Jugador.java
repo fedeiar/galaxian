@@ -19,7 +19,7 @@ public class Jugador extends Personajes {
 	protected final static int ANCHO = 30;
 	protected final static int ALTO = 30;
 	public final static int maxHP = 10;
-	public final static int VidasIniciales = 3;
+	public final static int VidasIniciales = 0;
 	
 	protected int vidas; //al perder toda su HP, el jugador pierde una vida
 	
@@ -106,6 +106,8 @@ public class Jugador extends Personajes {
 			HP = maxHP;
 		}
 		if(vidas<0) {
+			HP = 0;
+			vidas = 0;
 			morir();
 		}
 		
@@ -130,6 +132,12 @@ public class Jugador extends Personajes {
 		double y = getY();
 		
 		mi_arma.disparar(x, y);
+	}
+	
+	//---FORMA DE MORIR DEL JUGADOR---
+	
+	public void morir() {
+		log.perder();
 	}
 	
 	

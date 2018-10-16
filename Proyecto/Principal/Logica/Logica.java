@@ -17,19 +17,19 @@ public class Logica {
 
 	//atributos
 	
-	protected PositionList<Objeto> lista_agregar;
-	protected PositionList<Objeto> lista_eliminar;
-	protected PositionList<Objeto> lista_objetos;
+	private PositionList<Objeto> lista_agregar;
+	private PositionList<Objeto> lista_eliminar;
+	private PositionList<Objeto> lista_objetos;
 	
-	protected Mapa mapa;
-	protected GUI gui;
-	protected Tiempo tiempoLog;
+	private Mapa mapa;
+	private GUI gui;
+	private Tiempo tiempo;
 	
-	protected int puntaje  , vidasJugador , cantEnemigos; 
+	private int puntaje  , vidasJugador , cantEnemigos; 
 	
-	protected Jugador jugador;
+	private Jugador jugador;
 	
-	
+	private boolean jugador_vivo;
 	//constructor
 	
 	public Logica( GUI g) {
@@ -38,19 +38,9 @@ public class Logica {
 		lista_agregar = new ListaDE<Objeto>();
 		lista_eliminar = new ListaDE<Objeto>();
 		
-		
-	    puntaje = 0;
-	    cantEnemigos = 0;
-	    
 	    mapa = new Mapa_1(this);
 	    gui = g;
-	    tiempoLog = new Tiempo(this);
-	    
-	    jugador = new Jugador(this, Mapa.MAX_X/2 , Mapa.MAX_Y - 70 ); // ver alto y ancho ¿porque si pongo -49 queda al borde?
-	    vidasJugador = jugador.getVidas();
-	    gui.add(jugador.getLabel());
-	    
-	   
+
 	}
 	
 	//metodos
@@ -60,6 +50,9 @@ public class Logica {
 	}
 	public int getVidasJugador() {
 		return jugador.getVidas();
+	}
+	public boolean jugadorEstaVivo() {
+		return jugador_vivo;
 	}
 
 	public int getPuntaje() {
@@ -86,18 +79,28 @@ public class Logica {
 		return cantEnemigos > 0;
 	}
 	
-	public boolean hayObjetos() {
-		return !lista_objetos.isEmpty();
-	}
-	
 	public void empezarJuego() {
-		tiempoLog.start(); 
+		puntaje = 0;
+		cantEnemigos = 0;
+		
+		mapa = new Mapa_1(this);
+		
+		jugador = new Jugador (this, Mapa.MAX_X/2 , Mapa.MAX_Y - 70 );
+		gui.add(jugador.getLabel());
+		vidasJugador = jugador.getVidas();
+		jugador_vivo = true;
+		
+		crearObjetosIniciales();
+		tiempo = new Tiempo(this);
+		tiempo.start();
+		
+		gui.requestFocus();
 	}
 	
 	//inicializacion de los distintos objetos y cambio de mapas
 	
-	public boolean hayMapaSiguiente() {
-		if(mapa.getMapaSiguiente()==null)
+	public boolean hayMapa() {
+		if(mapa==null)
 			return false;
 		else
 			return true;
@@ -109,7 +112,7 @@ public class Logica {
 			crearObjetosIniciales();
 	}
 	
-	public void crearObjetosIniciales() { //se ejecuta cada vez que empieza un mapa nuevo.
+	private void crearObjetosIniciales() { //se ejecuta cada vez que empieza un mapa nuevo.
 		resetearMapa();
 		lista_agregar = mapa.obtenerObjetosIniciales();
 		cantEnemigos = mapa.cantEnemigosVivos();
@@ -133,6 +136,8 @@ public class Logica {
 		}
 		gui.repintar();
 	}
+	
+	//----AGREGACION Y ELIMINACION DE OBJETOS----
 	
 	public void agregarObjeto(Objeto o) {
 		lista_agregar.addFirst(o);
@@ -178,30 +183,28 @@ public class Logica {
 	}
 	
 	
+	
+	//----MOVIMIENTO DE LOS OBJETOS----
+	
+	
 	public void lanzarDisparoJugador() { 
 		jugador.disparar();
 	}
-	
-	//movimiento de los objetos
 	
 	public void moverJugador (int direccion) { 
 		jugador.mover(direccion);
 	}
 	
-	public void accionarObjetos() throws EmptyListException{
-		if(!lista_objetos.isEmpty()) {
+	public void accionarObjetos() {
 			
-			for(Objeto o : lista_objetos) {
-				o.accionar();
-			}
-			gui.repintar();
+		for(Objeto o : lista_objetos) {
+			o.accionar();
 		}
-		else {
-			throw new EmptyListException("se intento mover enemigos cuando no quedaba ninguno");
-		}
+		gui.repintar();
+		
 	}
 	
-	//prototipo para detectar colisiones
+	//----DETECCION DE COLISIONES----
 	
 	public void detectarColisiones() {
 		Objeto objs[] = new Objeto[lista_objetos.size()]; //necesito un arreglo asi tengo un indice para
@@ -225,6 +228,20 @@ public class Logica {
 				}
 			}
 		}
+	}
+	
+	//----VICTORIA Y DERROTA----
+	
+	public void perder() {
+		eliminarTodo();
+		jugador_vivo = false;
+		gui.mostrarPanelDerrota();
+	}
+	
+	private void eliminarTodo() {
+		resetearMapa();
+		lista_agregar = new ListaDE<Objeto>();
+		lista_eliminar = new ListaDE<Objeto>();
 	}
 	
 }

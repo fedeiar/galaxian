@@ -19,7 +19,8 @@ import javax.swing.SwingConstants.*;
  	
  	//ATRIBUTOS
 	 
-	 private JLabel lblHp , lblPuntaje , lblVidas , numVidas , numPuntaje;
+	 private JLabel lblHp , lblPuntaje , lblVidas , numVidas , numPuntaje , lblDerrota , lblTryAgain;
+	 private JButton btnSi;
 	 private JProgressBar BarraVida;
 	 
 	 
@@ -43,17 +44,19 @@ import javax.swing.SwingConstants.*;
 		log = new Logica(this);
 		
 		
-		//SE CREAN LOS COMPONENTES INICIALES
-		log.crearObjetosIniciales();
+		//EMPIEZA EL JUEGO
 		
-		//empieza el juego
 		log.empezarJuego();
 		
+		agregarListeners();
 		
+		
+	}
+	
+	public void agregarListeners() {
+
 		OyenteTeclado OT = new OyenteTeclado();
 		this.addKeyListener(OT);
-		
-		
 	}
 	
 	public void repintar() {
@@ -122,6 +125,42 @@ import javax.swing.SwingConstants.*;
 		numVidas.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		numVidas.setBounds(865, 9, 46, 14);
 		getContentPane().add(numVidas);
+		
+		
+	}
+	
+	public void mostrarPanelDerrota() {
+		
+		lblDerrota = new JLabel("DERROTA");
+		lblDerrota.setFont(new Font("Tahoma", Font.PLAIN, 64));
+		lblDerrota.setForeground(Color.RED);
+		lblDerrota.setBounds(312, 126, 291, 171);
+		getContentPane().add(lblDerrota);
+		
+		lblTryAgain = new JLabel("Intentar de nuevo?");
+		lblTryAgain.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblTryAgain.setForeground(Color.WHITE);
+		lblTryAgain.setBounds(350, 334, 239, 54);
+		getContentPane().add(lblTryAgain);
+		
+		btnSi = new JButton("Si");
+		btnSi.setBackground(Color.RED);
+		btnSi.setForeground(Color.BLACK);
+		btnSi.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnSi.setBounds(407, 451, 89, 23);
+		getContentPane().add(btnSi);
+		
+		OyenteBoton OB = new OyenteBoton();
+		btnSi.addActionListener(OB);
+		
+		repaint();
+	}
+	
+	private void eliminarPanelDerrota() {
+		this.remove(lblDerrota);
+		this.remove(lblTryAgain);
+		this.remove(btnSi);
+		repaint();
 	}
 	
 	//-------------------------------------------
@@ -137,6 +176,7 @@ import javax.swing.SwingConstants.*;
 		
 		public void keyPressed(KeyEvent e) {
 			if (e.getKeyCode() == KeyEvent.VK_LEFT){
+				System.out.println("entre");
 				log.moverJugador(1);
 				
 			}
@@ -163,11 +203,18 @@ import javax.swing.SwingConstants.*;
 			
 		}
 		
-		
-		
 
 	}
 	
-	
-	
+	class OyenteBoton implements ActionListener{
+
+		
+		public void actionPerformed(ActionEvent e) {
+			eliminarPanelDerrota();
+			log.empezarJuego();
+			
+			
+		}
+		
+	}
 }
