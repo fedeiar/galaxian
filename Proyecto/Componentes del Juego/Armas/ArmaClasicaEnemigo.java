@@ -10,9 +10,9 @@ public class ArmaClasicaEnemigo extends Arma{
 	
 	//constructor
 	
-	public ArmaClasicaEnemigo(Logica l , double velDisp , int fuerzaDisp) {
+	public ArmaClasicaEnemigo(Logica l) {
 		super(l);
-		velocidadDisparo = 20;
+		velocidadDisparo = 15;
 		fuerzaDisparo = 2;
 		cadencia = 500;
 	}

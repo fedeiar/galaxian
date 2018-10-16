@@ -23,7 +23,7 @@ public class EnemigoConArma extends Enemigo {
 		
 		super(l,x,y,nivel,P);
 		inteligencia = new InteligenciaEnemigoConArma(this);
-		miArma = new ArmaClasicaEnemigo(log , 15 , 2 ); //los 2 parametros enteros son la vel. y fuerza del disparo del ARMA
+		miArma = new ArmaClasicaEnemigo(log); 
 		
 		
 		

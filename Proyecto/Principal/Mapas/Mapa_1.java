@@ -25,13 +25,13 @@ public class Mapa_1 extends Mapa {
 	public PositionList<Objeto> obtenerObjetosIniciales(){
 		 PositionList<Objeto> L = new ListaDE<Objeto>();
 		 for(int i = 0 ; i<5 ; i++) {
-				EnemigoConArma ene = new EnemigoConArma( log, 200 + i*100 , 100  ,1 , powerups[ i % CANT_MAX_PREMIOS]);
+				EnemigoKamikazeDirigido ene = new EnemigoKamikazeDirigido( log, 300 + i*100 , 100  ,1 , powerups[ i % CANT_MAX_PREMIOS]);
 				L.addLast(ene);
 				cantEnemigos++;
 		}
 		
 		 for(int i = 0 ; i<5 ; i++) {
-			 EnemigoKamikaze ene = new EnemigoKamikaze(log , 200 + i*100 , 200 , 1 , powerups[ i % CANT_MAX_PREMIOS]);
+			 EnemigoKamikaze ene = new EnemigoKamikaze(log , 300 + i*100 , 200 , 1 , powerups[ i % CANT_MAX_PREMIOS]);
 			 L.addLast(ene);
 			 cantEnemigos++;
 		 }

@@ -43,6 +43,9 @@ public class Logica {
 	
 	//metodos
 	
+	public Jugador getJugador() {
+		return jugador;
+	}
 	public int getHPJugador() {
 		return jugador.getHP();
 	}
@@ -52,6 +55,7 @@ public class Logica {
 	public boolean jugadorEstaVivo() {
 		return jugador!=null;
 	}
+	
 
 	public int getPuntaje() {
 		return puntaje;
@@ -186,11 +190,13 @@ public class Logica {
 	
 	
 	public void lanzarDisparoJugador() { 
-		jugador.disparar();
+		if(jugador!=null)
+			jugador.disparar();
 	}
 	
 	public void moverJugador (int direccion) { 
-		jugador.mover(direccion);
+		if(jugador!=null)
+			jugador.mover(direccion);
 	}
 	
 	public void accionarObjetos() {

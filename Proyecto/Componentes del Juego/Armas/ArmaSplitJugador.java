@@ -11,7 +11,7 @@ public class ArmaSplitJugador extends Arma{
 	
 	public ArmaSplitJugador(Logica l) {
 		super(l);	
-		velocidadDisparo = 20;
+		velocidadDisparo = 17;
 		fuerzaDisparo = 4;
 		cadencia = 350;
 	}

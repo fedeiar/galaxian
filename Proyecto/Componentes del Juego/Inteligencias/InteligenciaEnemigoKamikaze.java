@@ -1,6 +1,6 @@
 package Inteligencias;
 import java.util.Random;
-
+import Personajes.*;
 import EnemigosConcretos.*;
 public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 
@@ -11,12 +11,12 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 	protected boolean me_pase;
 	protected boolean me_tiro;
 	
-	EnemigoKamikaze ene;
+	protected Enemigo ene;
 	protected int esperar_antes_de_tirarse;
 		
 	//constructor
 	
-	public InteligenciaEnemigoKamikaze(EnemigoKamikaze e) {
+	public InteligenciaEnemigoKamikaze(Enemigo e) {
 		super();
 		ene = e;
 		esperar_antes_de_tirarse = 0;
@@ -44,16 +44,13 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 			if(ene.getY() + ene.getAlto() < ALTO_MAPA) {
 				
 				if(me_tiro) {
-					
 					bajar();
-				
 					if(me_pase && ( ene.getY() > POS_INICIAL) ){
 						ene.setY(POS_INICIAL);
 						me_pase = false;
 						me_tiro = false;
 						esperar_antes_de_tirarse = 0;	
 					}
-					
 				}
 				
 			}
