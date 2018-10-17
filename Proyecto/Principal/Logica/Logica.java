@@ -81,6 +81,9 @@ public class Logica {
 		return cantEnemigos > 0;
 	}
 	
+	
+	//----COMIENZO DEL JUEGO----
+	
 	public void empezarJuego() {
 		puntaje = 0;
 		cantEnemigos = 0;
@@ -99,7 +102,7 @@ public class Logica {
 		gui.requestFocus();
 	}
 	
-	//inicializacion de los distintos objetos y cambio de mapas
+	//----CAMBIO DE MAPAS----
 	
 	public boolean hayMapa() {
 		if(mapa==null)
@@ -248,4 +251,9 @@ public class Logica {
 		lista_eliminar = new ListaDE<Objeto>();
 	}
 	
+	public void ganar() {
+		eliminarTodo();
+		jugador = null;
+		gui.mostrarPanelVictoria();
+	}
 }

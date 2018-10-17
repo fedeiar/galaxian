@@ -38,6 +38,9 @@ public class Invulnerabilidad extends MagiaTemporal implements Runnable{
 
 	//metodos
 	
+	public Premio clone() {
+		return new Invulnerabilidad(this.getX() , this.getY() , this.velocidadDeCaida , log);
+	}
 	
 	public void activarPremio(Jugador j) {
 		jugador = j;

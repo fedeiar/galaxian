@@ -35,6 +35,9 @@ public class MejoraArmaSplit extends ObjetosPreciosos{
 	
 	//metodos
 
+	public Premio clone() {
+		return new MejoraArmaSplit( this.getX() , this.getY() , this.velocidadDeCaida , log);
+	}
 	
 	public void activarPremio(Jugador j) {
 		

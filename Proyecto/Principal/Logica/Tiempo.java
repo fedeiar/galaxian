@@ -49,7 +49,10 @@ public class Tiempo extends Thread{
 				e.printStackTrace();
 				
 			}	
-			
+		}
+		
+		if(!log.hayMapa()) {
+			log.ganar();
 		}
 	}
 	

@@ -53,6 +53,7 @@ public abstract class Premio extends Objeto {
 	
 	public abstract void activarPremio(Jugador j);
 	
+	public abstract Premio clone() ;
 	
 	//----VISITOR----
 	

@@ -19,7 +19,7 @@ import javax.swing.SwingConstants.*;
  	
  	//ATRIBUTOS
 	 
-	 private JLabel lblHp , lblPuntaje , lblVidas , numVidas , numPuntaje , lblDerrota , lblTryAgain;
+	 private JLabel lblHp , lblPuntaje , lblVidas , numVidas , numPuntaje , lblDerrota , lblTryAgain , lblVictoria;
 	 private JButton btnSi;
 	 private JProgressBar BarraVida;
 	 
@@ -123,6 +123,8 @@ import javax.swing.SwingConstants.*;
 		getContentPane().add(numVidas);
 		
 		
+		
+		
 	}
 	
 	public void mostrarPanelDerrota() {
@@ -156,6 +158,15 @@ import javax.swing.SwingConstants.*;
 		this.remove(lblDerrota);
 		this.remove(lblTryAgain);
 		this.remove(btnSi);
+		repintar();
+	}
+	
+	public void mostrarPanelVictoria() {
+		lblVictoria = new JLabel("\u00A1VICTORIA!");
+		lblVictoria.setFont(new Font("Tahoma", Font.PLAIN, 66));
+		lblVictoria.setForeground(Color.GREEN);
+		lblVictoria.setBounds(227, 181, 355, 98);
+		getContentPane().add(lblVictoria);
 		repintar();
 	}
 	

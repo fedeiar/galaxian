@@ -37,7 +37,9 @@ public class CongelamientoTiempo extends MagiaTemporal{
 	
 	
 	//metodos
-	
+	public Premio clone() {
+		return new CongelamientoTiempo(this.getX() , this.getY() , this.velocidadDeCaida , log);
+	}
 	
 	public void activarPremio(Jugador j) {
 		PositionList<Objeto> lista_objetos = log.getListaObjetos();

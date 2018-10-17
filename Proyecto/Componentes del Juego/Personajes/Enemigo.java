@@ -98,7 +98,7 @@ public abstract class Enemigo extends Personajes {
 		if(r<6) {
 			power_up.setX( getX() );
 			power_up.setY( getY() );
-			power_up.setVelocidadCaida( getVelocidadMovimiento() * 2 );
+			power_up.setVelocidadCaida( this.getVelocidadMovimiento() * 2 );
 			log.agregarObjeto(power_up);
 		}
 		

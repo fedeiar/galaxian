@@ -33,7 +33,9 @@ public class MejoraArmaDoble extends ObjetosPreciosos{
 	
 	//metodos
 	
-	
+	public Premio clone() {
+		return new MejoraArmaDoble( this.getX() , this.getY() , this.velocidadDeCaida , log);
+	}
 	
 	public void activarPremio(Jugador j) {
 	
