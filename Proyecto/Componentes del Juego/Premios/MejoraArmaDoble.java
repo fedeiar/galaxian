@@ -12,7 +12,7 @@ public class MejoraArmaDoble extends ObjetosPreciosos{
 
 	//atributos
 	
-	Arma nuevaArma;
+	protected Arma nuevaArma;
 	
 	//constructor
 	

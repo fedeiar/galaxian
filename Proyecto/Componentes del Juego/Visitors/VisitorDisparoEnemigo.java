@@ -7,7 +7,7 @@ public class VisitorDisparoEnemigo extends Visitor {
 
 	//atributos
 	
-	DisparoEnemigo DE;
+	protected DisparoEnemigo DE;
 	
 	//constructor
 	

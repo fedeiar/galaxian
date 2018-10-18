@@ -14,7 +14,7 @@ public class MejoraArmaSplit extends ObjetosPreciosos{
 	
 	//atributos
 	
-	Arma nuevaArma;
+	protected Arma nuevaArma;
 	
 	//constructor
 	public MejoraArmaSplit(double x, double y, double velCaida, Logica l) {

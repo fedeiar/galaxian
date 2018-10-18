@@ -36,7 +36,7 @@ public class InteligenciaJugador extends Inteligencia{
 			if(direccion==2)
 				moverDerecha();
 		
-		direccion = 0; //para que no se siga moviendo y se quede quieto si no se le ordeno nada.
+		
 		
 		
 		//---CON RESPECTO AL DISPARO---

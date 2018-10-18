@@ -5,7 +5,7 @@ public class VisitorPremio extends Visitor{
 	
 	//atributos
 	
-	Premio reward;
+	protected Premio reward;
 	
 	//constructor
 	

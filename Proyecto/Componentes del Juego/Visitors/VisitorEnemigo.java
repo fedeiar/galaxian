@@ -7,7 +7,7 @@ public class VisitorEnemigo extends Visitor {
 
 	//atributos
 	
-	Enemigo ene;
+	protected Enemigo ene;
 	
 	//constructor
 	public VisitorEnemigo(Enemigo e) {

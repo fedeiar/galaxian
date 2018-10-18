@@ -72,8 +72,8 @@ public class InteligenciaEnemigoKamikazeDirigido extends InteligenciaEnemigo{
 	}
 	
 	private void bajarEnLineaRecta() {
-		if(ene.getY() > POS_INICIAL)
-			ene.setY(ene.getY() + ene.getVelocidadMovimiento());
+		if(ene.getY() < POS_INICIAL)
+			ene.setY(ene.getY() + ene.getVelocidadMovimiento()*2);
 		else {
 			ene.setY(POS_INICIAL);
 			me_pase = false;
