@@ -175,52 +175,53 @@ import javax.swing.SwingConstants.*;
 	//-------------------------------------------
 	
 	class OyenteTeclado implements KeyListener{
-
+	
+		int n = 0;
 		public void keyTyped(KeyEvent e) {
 			
 		}
-
 		
 		public void keyPressed(KeyEvent e) {
-			if (e.getKeyCode() == KeyEvent.VK_LEFT){
-				log.moverJugador(1);
-				
-			}
-			else {
-				if (e.getKeyCode() == KeyEvent.VK_RIGHT){
-					log.moverJugador(2);
-					
-				}
-				else {
-					if(e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) {
+			System.out.println("press");
+			if (e.getKeyCode() == KeyEvent.VK_LEFT)
+				n = 1;
+			else 
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT) 
+					n = 2;
+				else 
+					if(e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) 
 						log.lanzarDisparoJugador();
-					}
-					else
-						if(e.getKeyCode() == KeyEvent.VK_0) {
-							//hacer algo para probar
-						}
 					
-				}
-				
-			}
+			log.moverJugador(n);
 		}
 		
 		public void keyReleased(KeyEvent e) {
 			
+			System.out.println("release");
+			if (e.getKeyCode() == KeyEvent.VK_LEFT && n==1) {
+				n=0;
+			}
+			else 
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT && n==2) 
+					n=0;
+				else 
+					if(e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) 
+						log.lanzarDisparoJugador();
+					
+			log.moverJugador(n);
 		}
 		
 
 	}
 	
-	class OyenteBoton implements ActionListener{
-
+	class OyenteBoton implements ActionListener {
 		
 		public void actionPerformed(ActionEvent e) {
 			eliminarPanelDerrota();
 			log.empezarJuego();
-			
-			
 		}
-		
 	}
+	
+	
+	
 }
