@@ -7,14 +7,11 @@ import javax.swing.JLabel;
 import Logica.Logica;
 import Personajes.Jugador;
 import Visitors.Visitor;
-import Visitors.VisitorDummy;
 import Escudos.*;
-import Inteligencias.InteligenciaEscudoTemporal;
 
-public class Invulnerabilidad extends MagiaTemporal{
+public class Invulnerabilidad extends MagiaTemporal implements Runnable{
 
 	//atributos
-	
 	protected final int durabilidad = 6000;
 	
 	protected EscudoInvulnerable escudo_invulnerable;
@@ -46,9 +43,22 @@ public class Invulnerabilidad extends MagiaTemporal{
 	}
 	
 	public void activarPremio(Jugador j) {
-		vis = new VisitorDummy();
-		inteligencia = new InteligenciaEscudoTemporal(this , escudo_invulnerable , j , 7000);
-		
+		jugador = j;
+		Thread waiter = new Thread(this);
+		waiter.start();
+		morir();
 	}
+
+	public void run() {
+		try {
+			
+			ShieldManager.setEscudo(jugador, escudo_invulnerable , durabilidad);
+			
+		}
+		catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	
 }
