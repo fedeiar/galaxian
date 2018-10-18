@@ -1,4 +1,6 @@
 package Inteligencias;
+import TDALista.*;
+
 import Escudos.*;
 import Personajes.*;
 import Premios.Premio;
@@ -6,8 +8,7 @@ public class InteligenciaEscudoTemporal extends Inteligencia {
 
 	//atributos
 	
-	private Escudo nuevo_escudo;
-	private Escudo viejo_escudo;
+	
 	private Jugador jugador;
 	private Premio premio;
 	private long time;
@@ -21,10 +22,7 @@ public class InteligenciaEscudoTemporal extends Inteligencia {
 		time = System.currentTimeMillis();
 		durabilidad = dur;
 		
-		nuevo_escudo = e;
-		viejo_escudo = jugador.getEscudo();
 		
-		jugador.setEscudo(e);
 		
 		System.out.println("empezo el escudo");
 	}
@@ -37,7 +35,7 @@ public class InteligenciaEscudoTemporal extends Inteligencia {
 		
 		long elapsed_time = System.currentTimeMillis() - time;
 		if(elapsed_time > durabilidad) {
-			jugador.setEscudo(viejo_escudo);
+			jugador.eliminarEscudoTemporal();
 			premio.morir();
 			System.out.println("termino el escudo");
 		}

@@ -1,18 +1,13 @@
 package Personajes;
 import Visitors.*;
+import TDALista.*;
 import Escudos.*;
 import Armas.*;
 import Inteligencias.*;
 import Logica.*;
-import ObjetoGeneral.Objeto;
-
-import java.awt.Rectangle;
 
 import javax.swing.*;
 
-import Disparos.Disparo;
-import Disparos.DisparoComunJugador;
-import Disparos.DisparoJugador;
 public class Jugador extends Personajes {
 	
 	//--------------ATRIBUTOS----------------
@@ -25,7 +20,9 @@ public class Jugador extends Personajes {
 	
 	protected int velocidad_movimiento;
 	
-	protected Escudo mi_escudo;
+	protected PositionList<Escudo> mi_escudo_temporal;
+	protected Escudo mi_escudo_permanente;
+	
 	protected Arma mi_arma;
 	
 	//--------------CONSTRUCTOR--------------
@@ -36,8 +33,10 @@ public class Jugador extends Personajes {
 		super(l);
 		vis = new VisitorJugador();
 		inteligencia = new InteligenciaJugador(this);
-		mi_arma = new ArmaClasicaJugador(log); 
-		mi_escudo = new SinEscudo();
+		mi_arma = new ArmaClasicaJugador(log);
+		
+		mi_escudo_permanente = new SinEscudo();
+		mi_escudo_temporal = new ListaDE<Escudo>();
 		
 		HP = maxHP;
 		velocidad_movimiento = 20;
@@ -81,12 +80,21 @@ public class Jugador extends Personajes {
 	
 	//Vidas , HP y escudo
 	
-	public Escudo getEscudo() {
-		return mi_escudo;
+	public void setEscudoTemporal(Escudo e) {
+		mi_escudo_temporal.addLast(e);	
 	}
 	
-	public void setEscudo(Escudo e){
-		mi_escudo = e;
+	public void eliminarEscudoTemporal() {
+		try {
+			mi_escudo_temporal.remove(mi_escudo_temporal.first());
+		}
+		catch(InvalidPositionException | EmptyListException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void setEscudoPermanente(Escudo e){
+		mi_escudo_permanente = e;
 	}
 	
 	public int getHP() {
@@ -98,20 +106,30 @@ public class Jugador extends Personajes {
 	}
 		
 	public void quitarHP(int n) {
-		int daño = mi_escudo.getDaño(n);
+		try {
 		
-		if ( HP - daño > 0)
-			HP -= daño;
-		else {
-			vidas--;
-			HP = maxHP;
-		}
-		if(vidas<0) {
-			HP = 0;
-			vidas = 0;
-			morir();
-		}
+			int daño;
+			if(!mi_escudo_temporal.isEmpty())
+				daño = mi_escudo_temporal.last().element().getDaño(n);
+			else
+				daño = mi_escudo_permanente.getDaño(n);
 		
+			if ( HP - daño > 0)
+				HP -= daño;
+			else {
+				vidas--;
+				HP = maxHP;
+			}
+			if(vidas<0) {
+				HP = 0;
+				vidas = 0;
+				morir();
+			}
+		
+		}
+		catch(EmptyListException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//-----MOVIMIENTO------
