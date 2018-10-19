@@ -29,8 +29,6 @@ public class InteligenciaEnemigoConArma extends InteligenciaEnemigo{
 		movimiento_estandar(ene);
 		
 		//CON RESPECTO AL DISPARO
-		
-		
 			
 		Random ran = new Random();
 		int rshoot = ran.nextInt(3);

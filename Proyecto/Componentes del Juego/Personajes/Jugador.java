@@ -28,6 +28,7 @@ public class Jugador extends Personajes {
 	protected Escudo mi_escudo;
 	protected Arma mi_arma;
 	
+	boolean ya_mori;
 	//--------------CONSTRUCTOR--------------
 	
 	public Jugador (Logica l,double x , double y ) { 
@@ -43,6 +44,7 @@ public class Jugador extends Personajes {
 		velocidad_movimiento = 20;
 		vidas = VidasIniciales;
 		
+		ya_mori = false;
 		
 		//---parte grafica del jugador---
 		
@@ -106,10 +108,11 @@ public class Jugador extends Personajes {
 			vidas--;
 			HP = maxHP;
 		}
-		if(vidas<0) {
-			HP = 0;
+		if(vidas<0 && !ya_mori) { //este chequeo hace falta porque en ocasiones se buguea y se ejecuta morir 2 veces
+			HP = 0;				  //por ejemplo cuando me impactan 2 enemigoskamikazes, y ya me habia matado el primero.
 			vidas = 0;
 			morir();
+			ya_mori = true; 
 		}
 		
 	}

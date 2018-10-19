@@ -1,6 +1,6 @@
 package Armas;
 
-import Disparos.DisparoSplit;
+import Disparos.DisparoSplitJugador;
 import Logica.Logica;
 
 public class ArmaSplitJugador extends Arma{
@@ -21,7 +21,7 @@ public class ArmaSplitJugador extends Arma{
 
 	
 	protected void crear_disparo(double x, double y) {
-		DisparoSplit disparoS  = new DisparoSplit(log,velocidadDisparo,fuerzaDisparo,x,y,90);
+		DisparoSplitJugador disparoS  = new DisparoSplitJugador(log,velocidadDisparo,fuerzaDisparo,x,y,90);
 		log.agregarObjeto(disparoS);
 	}
 

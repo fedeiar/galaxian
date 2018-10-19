@@ -176,39 +176,40 @@ import javax.swing.SwingConstants.*;
 	
 	class OyenteTeclado implements KeyListener{
 	
-		int n = 0;
+		int direccion = 0; //1 es izquierda, 2 es derecha
 		public void keyTyped(KeyEvent e) {
 			
 		}
 		
 		public void keyPressed(KeyEvent e) {
-			System.out.println("press");
-			if (e.getKeyCode() == KeyEvent.VK_LEFT)
-				n = 1;
+			
+			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+				direccion = 1;
+			}
 			else 
-				if (e.getKeyCode() == KeyEvent.VK_RIGHT) 
-					n = 2;
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+					direccion = 2;
+				}
 				else 
 					if(e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) 
 						log.lanzarDisparoJugador();
 					
-			log.moverJugador(n);
+			log.moverJugador(direccion);
 		}
 		
 		public void keyReleased(KeyEvent e) {
 			
-			System.out.println("release");
-			if (e.getKeyCode() == KeyEvent.VK_LEFT && n==1) {
-				n=0;
+			
+			if (e.getKeyCode() == KeyEvent.VK_LEFT && direccion==1) {
+				direccion=0;
 			}
 			else 
-				if (e.getKeyCode() == KeyEvent.VK_RIGHT && n==2) 
-					n=0;
-				else 
-					if(e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) 
-						log.lanzarDisparoJugador();
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT && direccion==2) {
+					direccion=0;
+				}
+				
 					
-			log.moverJugador(n);
+			log.moverJugador(direccion);
 		}
 		
 

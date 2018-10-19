@@ -3,14 +3,14 @@ package Disparos;
 import Logica.Logica;
 import Visitors.Visitor;
 
-public class DisparoSplit extends DisparoJugador {
+public class DisparoSplitJugador extends DisparoJugador {
 
 
 	//atributos
 	
 	//constructor
 	
-	public DisparoSplit(Logica l, double v, int f, double x, double y, double direc) {
+	public DisparoSplitJugador(Logica l, double v, int f, double x, double y, double direc) {
 		super(l, v, f, x, y, direc);
 	}
 	
