@@ -27,10 +27,11 @@ public class ArmaSans extends Arma{
 	protected void crear_disparo(double x, double y) {
 		
 		Random ran = new Random();
-		int r_disp = ran.nextInt(100);
-			
-		for(int i=1 ; i<8 ; i++) {
-			DisparoSansEnemigo dispE = new DisparoSansEnemigo(log,velocidadDisparo,fuerzaDisparo,r_disp * i,y ,270);
+		int r_disp = ran.nextInt(50);
+		r_disp += 150;	
+		
+		for(int i=1 ; i<10 ; i++) {
+			DisparoComunEnemigo dispE = new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,r_disp * i % Mapa.MAX_X,y ,270);
 			log.agregarObjeto(dispE);
 		}
 	

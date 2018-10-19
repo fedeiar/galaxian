@@ -7,8 +7,10 @@ import javax.swing.JLabel;
 
 import Armas.ArmaSans;
 import Disparos.DisparoSansEnemigo;
+import Inteligencias.InteligenciaSans;
 import Logica.Logica;
 import Mapas.Mapa;
+import NivelEnemigos.NivelSans;
 import Personajes.Enemigo;
 import Premios.Premio;
 
@@ -28,8 +30,13 @@ public class SANS extends Enemigo{
 		//----PARTE LOGICA DE SANS----
 		
 		super(l, x, y, nivel, P);
-		miArma = new ArmaSans(log);
 		
+		miArma = new ArmaSans(log);
+		inteligencia = new InteligenciaSans(this);
+		
+	
+		
+		System.out.println(HP);
 		//----PARTE GRAFICA DE SANS----
 		
 		rec = this.crear_rectangulo(x, y, ANCHO, ALTO);
@@ -53,6 +60,9 @@ public class SANS extends Enemigo{
 	public void lanzar_poder() {
 		Random ran = new Random();
 		int r_ataque = ran.nextInt(3);
+		
+		shootFromBelow();
+		/*
 		switch(r_ataque) {
 		case 0 : shootFromBelow();
 				 break;
@@ -60,15 +70,18 @@ public class SANS extends Enemigo{
 				 break;
 		case 2 : multipleShots();
 				 break;
+				
 		}
+		*/
 	}
 	
 	public void shootFromBelow() {
 		Random ran = new Random();
-		int r_disp = ran.nextInt(120);
-			
-		for(int i=1 ; i<9 ; i++) {
-			DisparoSansEnemigo dispE = new DisparoSansEnemigo(log, 15 , 5 ,(r_disp * i) % Mapa.MAX_X, Mapa.MAX_Y / 2 ,90);
+		int r_disp = ran.nextInt(50);
+		r_disp += 150;
+		
+		for(int i=1 ; i<11 ; i++) {
+			DisparoSansEnemigo dispE = new DisparoSansEnemigo(log, 15 , 5 ,(r_disp * i) % Mapa.MAX_X , Mapa.MAX_Y / 2 ,80);
 			log.agregarObjeto(dispE);
 		}
 		

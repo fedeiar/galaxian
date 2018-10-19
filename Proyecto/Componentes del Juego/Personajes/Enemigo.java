@@ -45,12 +45,14 @@ public abstract class Enemigo extends Personajes {
 	
 	private void setNivel(int n) {
 		switch(n) {
-		case 1 : miNivel = new NivelEnemigo_1();
-				 break;
-		case 2 : miNivel = new NivelEnemigo_2();
-				 break;
-		default : miNivel = new NivelEnemigo_1();
-				 break;
+		case -1 : miNivel = new NivelSans();
+				   break;
+		case 1 :   miNivel = new NivelEnemigo_1();
+				   break;
+		case 2 :   miNivel = new NivelEnemigo_2();
+				   break;
+		default :  miNivel = new NivelEnemigo_1();
+				   break;
 		}
 	}
 	

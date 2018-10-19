@@ -14,18 +14,21 @@ public  class InteligenciaDisparoSans extends Inteligencia{
 	public InteligenciaDisparoSans(Disparo d , double direc) {
 		disp = d;
 		direccion = Math.toRadians(direc);
+		time = System.currentTimeMillis();
 		tiempo_de_vida = 15000;
+		
 	}
 	
 	//metodos
 	
 	public void accionar() {
 		
-		long elapsed_time = System.currentTimeMillis() - tiempo_de_vida;
+		long elapsed_time = System.currentTimeMillis() - time;
 		
-		if(elapsed_time > tiempo_de_vida)
+		if(elapsed_time > tiempo_de_vida) {
+			System.out.println("entre");
 			disp.morir();
-		
+		}
 		
 		if(!fueraDeLimite()) {
 			disp.setX(disp.getX() + disp.getVelocidad() * Math.cos(direccion));
