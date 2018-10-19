@@ -8,14 +8,14 @@ public class ArmaDummy extends Arma{
 	
 	//constructor
 	
-	protected ArmaDummy(Logica l) {
+	public ArmaDummy(Logica l) {
 		super(l);
 	
 	}
 
 	//metodos
 	
-	protected void crear_disparo(double x, double y) {
+	public void crear_disparo(double x, double y) {
 		
 	}
 

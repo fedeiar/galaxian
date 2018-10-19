@@ -1,6 +1,6 @@
 package Inteligencias;
 
-import EnemigosConcretos.*;
+import Personajes.*;
 import java.util.Random;
 
 
@@ -9,12 +9,12 @@ public class InteligenciaEnemigoConArma extends InteligenciaEnemigo{
 	
 	//atributos
 	
-	protected EnemigoConArma ene;
+	protected Enemigo ene;
 	
 	
 	//constructor
 	
-	public InteligenciaEnemigoConArma(EnemigoConArma e) {
+	public InteligenciaEnemigoConArma(Enemigo e) {
 		super();
 		ene = e;
 	}

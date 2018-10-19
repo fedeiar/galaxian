@@ -1,15 +1,15 @@
 package EnemigosConcretos;
-
+import java.awt.Color;
 import Armas.*;
 
 import javax.swing.*;
 
-
-import Personajes.*;
+import Disparos.DisparoEnemigo;
+import Personajes.Enemigo;
 import Premios.Premio;
 import Inteligencias.*;
 import Logica.*;
-public class EnemigoConArma extends Enemigo {
+public class EnemigoADesarmar extends Enemigo {
 
 	//atributos
 	
@@ -17,19 +17,19 @@ public class EnemigoConArma extends Enemigo {
 	
 	//constructor
 	
-	public EnemigoConArma(Logica l, double x, double y , int nivel , Premio P) {
+	public EnemigoADesarmar(Logica l, double x, double y , int nivel , Premio P) {
 		
 		//----parte logica del EnemigoConArma---
 		
 		super(l,x,y,nivel,P);
 		inteligencia = new InteligenciaEnemigoConArma(this);
-		miArma = new ArmaClasicaEnemigo(log); 
+		miArma = new ArmaDobleEnemigo(log); 
 		
 		
 		
 		//----parte grafica del EnemigoConArma----
 		
-		imagen = new ImageIcon("Sprites/Enemy_2.png");
+		imagen = new ImageIcon("Sprites/Enemy_5.png");
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
 		etiqueta.setIcon(imagen); 
@@ -37,7 +37,10 @@ public class EnemigoConArma extends Enemigo {
 	
 	//metodos
 	
-	
-	
+	public void quitarHP(int n) {
+		super.quitarHP(n);
+		if(HP <= miNivel.getHP() / 2)
+			miArma = new ArmaDummy(log);
+	}
 	
 }

@@ -19,7 +19,7 @@ public abstract class Enemigo extends Personajes {
 	
 	protected NivelEnemigo miNivel; 
 	protected Premio power_up;
-	protected Arma miArma;
+	
 	
 	boolean ya_mori;
 	//constructor
@@ -107,12 +107,24 @@ public abstract class Enemigo extends Personajes {
 	
 	}
 	
+	//--------DISPARO---------
+	
+	public void crearDisparo() {
+		double x = getX() + getAncho() / 2;
+		double y = getY() + getAlto() / 2;
+		System.out.println("y = "+getY());
+		System.out.println("Alto = "+getAlto());
+	
+		miArma.disparar(x, y);
+	}
+	
 	
 	//------------COLISION-------------
 	
 	public void serVisitado(Visitor v) { // sería el "aceptar(Visitor v)"
 		v.afectarEnemigo(this);
 	}
+	
 	
 	
 	

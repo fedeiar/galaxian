@@ -5,21 +5,22 @@ import EnemigosConcretos.*;
 public class InteligenciaEnemigoKamikazeAleatorio extends InteligenciaEnemigo {
 
 	//atributos
-	protected final static int ESPERA_CUMPLIDA = 50;
+	protected final static int TIEMPO_ESPERA = 4000;
+
 	protected final double POS_INICIAL;
 	
 	protected boolean me_pase;
 	protected boolean me_tiro;
 	
 	protected Enemigo ene;
-	protected int esperar_antes_de_tirarse;
+	protected long time;
 		
 	//constructor
 	
 	public InteligenciaEnemigoKamikazeAleatorio(Enemigo e) {
 		super();
 		ene = e;
-		esperar_antes_de_tirarse = 0;
+		time = System.currentTimeMillis();
 		
 		POS_INICIAL = e.getY();
 		me_pase = false;
@@ -29,8 +30,8 @@ public class InteligenciaEnemigoKamikazeAleatorio extends InteligenciaEnemigo {
 	//metodos
 	
 	public void accionar() {
-		
-		if(esperar_antes_de_tirarse == ESPERA_CUMPLIDA) {
+		long elapsed_time = System.currentTimeMillis() - time;
+		if(elapsed_time > TIEMPO_ESPERA) {
 			
 			if(!me_tiro) {
 				Random ran = new Random();
@@ -38,61 +39,67 @@ public class InteligenciaEnemigoKamikazeAleatorio extends InteligenciaEnemigo {
 				if(r>=0 && r<2)
 					me_tiro=true;
 				else
-					esperar_antes_de_tirarse = 0;
+					time = System.currentTimeMillis(); //vuelvo a esperar
 			}
 			
-			if(ene.getY() + ene.getAlto() < ALTO_MAPA) {
-				
-				if(me_tiro) {
+			if(me_tiro) {
+				if(!me_pase)
 					bajar();
-					if(me_pase && ( ene.getY() > POS_INICIAL) ){
-						ene.setY(POS_INICIAL);
-						me_pase = false;
-						me_tiro = false;
-						esperar_antes_de_tirarse = 0;	
-					}
+				else {
+					bajarEnLineaRecta();
 				}
-				
-			}
-			else {
-				ene.setY(0);
-				me_pase = true;
 			}
 			
 		}
-		else {
-			esperar_antes_de_tirarse++;
-			movimiento_estandar(ene);
-		}
+		else
+			this.movimiento_estandar(ene);
 			
 	}
 	
+	private void bajarEnLineaRecta() {
+		if(ene.getY() < POS_INICIAL)
+			ene.setY(ene.getY() + ene.getVelocidadMovimiento() * 2 );
+		else {
+			ene.setY(POS_INICIAL);
+			me_pase = false;
+			me_tiro = false;
+			time = System.currentTimeMillis();
+		}
+	}
+	
 	private void bajar() {
-		ene.setY(ene.getY() + (ene.getVelocidadMovimiento() * 3) );
-		
-		Random ran = new Random();
-		int r = ran.nextInt(2);
-		if(r==0) {
+		if(ene.getY() + ene.getAlto() < ALTO_MAPA) {
 			
-			if(ene.getX() + ene.getAncho() < ANCHO_MAPA) {
-				ene.setX(ene.getX() + ene.getVelocidadMovimiento());
+			ene.setY(ene.getY() + (ene.getVelocidadMovimiento() * 3) );
+				
+			Random ran = new Random();
+			int r = ran.nextInt(2);
+			if(r==0) {
+			
+				if(ene.getX() + ene.getAncho() < ANCHO_MAPA) {
+					ene.setX(ene.getX() + ene.getVelocidadMovimiento());
+				}
+				else {
+					ene.setX(0);
+				}
+			
 			}
 			else {
-				ene.setX(0);
-			}
 			
+				if(ene.getX() > 0) {
+					ene.setX(ene.getX() - ene.getVelocidadMovimiento());
+				}
+				else {
+					ene.setX(ANCHO_MAPA - ene.getAncho());
+				}
+			
+			}
+		
 		}
 		else {
-			
-			if(ene.getX() > 0) {
-				ene.setX(ene.getX() - ene.getVelocidadMovimiento());
-			}
-			else {
-				ene.setX(ANCHO_MAPA - ene.getAncho());
-			}
-			
+			ene.setY(0);
+			me_pase=true;
 		}
-		
 	}
 	
 	

@@ -61,9 +61,9 @@ public class InteligenciaEnemigoKamikazeDirigido extends InteligenciaEnemigo{
 			ene.setY(ene.getY() + ene.getVelocidadMovimiento() * 2);
 			
 			if(jugador.getX() > ene.getX()) //es decir, si esta a la derecha del enemigo entonces
-				ene.setX(ene.getX() + 4);   //lo muevo a la derecha, sino
+				ene.setX(ene.getX() + 6);   //lo muevo a la derecha, sino
 			else
-				ene.setX(ene.getX() - 4);  //a la izquierda.
+				ene.setX(ene.getX() - 6);  //a la izquierda.
 		}
 		else {
 			ene.setY(0);

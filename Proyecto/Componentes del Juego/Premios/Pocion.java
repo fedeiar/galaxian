@@ -34,6 +34,7 @@ public class Pocion extends Premio{
 	
 	public void activarPremio(Jugador j) {
 		j.quitarHP( - (vida_que_cura) );
+		this.morir();
 	}
 
 

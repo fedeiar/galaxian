@@ -26,7 +26,7 @@ public class Jugador extends Personajes {
 	protected int velocidad_movimiento;
 	
 	protected Escudo mi_escudo;
-	protected Arma mi_arma;
+	
 	
 	boolean ya_mori;
 	//--------------CONSTRUCTOR--------------
@@ -37,7 +37,7 @@ public class Jugador extends Personajes {
 		super(l);
 		visitor = new VisitorJugador();
 		inteligencia = new InteligenciaJugador(this);
-		mi_arma = new ArmaClasicaJugador(log); 
+		miArma = new ArmaClasicaJugador(log); 
 		mi_escudo = new SinEscudo();
 		
 		HP = maxHP;
@@ -74,11 +74,11 @@ public class Jugador extends Personajes {
 	//ARMA
 	
 	public Arma getArma() {
-		return mi_arma;
+		return miArma;
 	}
 	
 	public void setArma(Arma a) {
-		mi_arma = a;
+		miArma = a;
 	}
 	
 	//Vidas , HP y escudo
@@ -135,7 +135,7 @@ public class Jugador extends Personajes {
 		double x = getX() + getAncho() / 2;
 		double y = getY();
 		
-		mi_arma.disparar(x, y);
+		miArma.disparar(x, y);
 	}
 	
 	//---FORMA DE MORIR DEL JUGADOR---

@@ -12,12 +12,13 @@ public abstract class Personajes extends Objeto {
 	
 	protected int HP; // puntos de vida
 	
-
+	protected Arma miArma;
 	
 	//constructor
 	
 	public Personajes(Logica l) {
 		super(l);
+		miArma = new ArmaDummy(l);
 	}
 	
 	//metodos
