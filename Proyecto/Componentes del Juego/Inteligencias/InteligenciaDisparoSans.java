@@ -7,20 +7,31 @@ public  class InteligenciaDisparoSans extends Inteligencia{
 	protected Disparo disp;
 	double direccion; //direccion del disparo, medida en grados. (entre 0 y 360)
 	
+	protected long time;
+	protected long tiempo_de_vida;
 	//constructor
 
 	public InteligenciaDisparoSans(Disparo d , double direc) {
 		disp = d;
 		direccion = Math.toRadians(direc);
+		tiempo_de_vida = 15000;
 	}
 	
 	//metodos
 	
 	public void accionar() {
+		
+		long elapsed_time = System.currentTimeMillis() - tiempo_de_vida;
+		
+		if(elapsed_time > tiempo_de_vida)
+			disp.morir();
+		
+		
 		if(!fueraDeLimite()) {
 			disp.setX(disp.getX() + disp.getVelocidad() * Math.cos(direccion));
 			disp.setY(disp.getY() + disp.getVelocidad() * ( - Math.sin(direccion))); //negativo ya que para subir hay que restar en Y
 		}
+		
 	}
 	
 	private boolean fueraDeLimite() {

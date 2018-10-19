@@ -1,22 +1,42 @@
 package Armas;
 
+import java.util.Random;
+
+import Disparos.DisparoComunEnemigo;
+import Disparos.DisparoSansEnemigo;
 import Logica.Logica;
+import Mapas.Mapa;
 
 public class ArmaSans extends Arma{
 
 	//atributos
-	
+	 
 	
 	//constructor
 	
-	protected ArmaSans(Logica l) {
+	public ArmaSans(Logica l) {
 		super(l);
+		velocidadDisparo = 15;
+		fuerzaDisparo = 3;
+		cadencia = 400;
 		
 	}
 
 	//metodos
 	
 	protected void crear_disparo(double x, double y) {
+		
+		Random ran = new Random();
+		int r_disp = ran.nextInt(100);
+			
+		for(int i=1 ; i<8 ; i++) {
+			DisparoSansEnemigo dispE = new DisparoSansEnemigo(log,velocidadDisparo,fuerzaDisparo,r_disp * i,y ,270);
+			log.agregarObjeto(dispE);
+		}
+	
+	}
+	
+	public void shootFromBelow() {
 		
 	}
 

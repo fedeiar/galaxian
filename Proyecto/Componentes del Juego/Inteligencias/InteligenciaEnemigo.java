@@ -6,16 +6,20 @@ import Personajes.*;
 public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta interfaz intermedia?
 
 	//atributos
-	protected final static int cambio_direccion = 4000;
+	
+	protected int cambio_direccion;
 	
 	protected boolean direccion;
 	protected long time;
+	
+	
 	//constructor
 	
 	protected InteligenciaEnemigo() {
 		super();
 		time = System.currentTimeMillis();
 		direccion = true;
+		cambio_direccion = 4000;
 	}
 	
 	//metodos
