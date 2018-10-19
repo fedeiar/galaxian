@@ -8,7 +8,7 @@ import Inteligencias.*;
 import Personajes.*;
 import Premios.Premio;
 
-public class EnemigoKamikaze extends Enemigo{
+public class EnemigoKamikazeAleatorio extends Enemigo{
 
 	//atributos
 	
@@ -16,7 +16,7 @@ public class EnemigoKamikaze extends Enemigo{
 	
 	//constructor
 	
-	public EnemigoKamikaze(Logica l , double x , double y , int nivel , Premio P) {
+	public EnemigoKamikazeAleatorio(Logica l , double x , double y , int nivel , Premio P) {
 		
 		//----parte logica del EnemigoKamikaze----
 		super(l,x,y,nivel,P);

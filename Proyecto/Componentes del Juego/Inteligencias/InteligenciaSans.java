@@ -25,7 +25,7 @@ public class InteligenciaSans extends InteligenciaEnemigo{
 		
 		
 		cadencia_ataqueEspecial = 30000;
-		duracion_ataqueEspecial = 15000;
+		duracion_ataqueEspecial = SANS.DURACION_ATAQUE;
 		
 		ataqueEspecialEnProceso = false;
 	}

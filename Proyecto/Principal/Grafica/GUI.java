@@ -19,7 +19,7 @@ import javax.swing.SwingConstants.*;
  	
  	//ATRIBUTOS
 	 
-	 private JLabel lblHp , lblPuntaje , lblVidas , numVidas , numPuntaje , lblDerrota , lblTryAgain , lblVictoria;
+	 private JLabel lblHp , lblPuntaje , lblVidas , numVidas , numPuntaje , lblDerrota , lblTryAgain , lblSansDerrota, lblVictoria;
 	 private JButton btnSi;
 	 private JProgressBar BarraVida;
 	 
@@ -132,20 +132,25 @@ import javax.swing.SwingConstants.*;
 		lblDerrota = new JLabel("DERROTA");
 		lblDerrota.setFont(new Font("Tahoma", Font.PLAIN, 64));
 		lblDerrota.setForeground(Color.RED);
-		lblDerrota.setBounds(312, 126, 291, 171);
+		lblDerrota.setBounds(312, 10, 291, 171);
 		getContentPane().add(lblDerrota);
+		
+		lblSansDerrota = new JLabel();
+		lblSansDerrota.setBounds(200, 150 , 418 , 189);
+		lblSansDerrota.setIcon(new ImageIcon("Sprites/Sans_Defeat.png"));
+		getContentPane().add(lblSansDerrota);
 		
 		lblTryAgain = new JLabel("Intentar de nuevo?");
 		lblTryAgain.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblTryAgain.setForeground(Color.WHITE);
-		lblTryAgain.setBounds(350, 334, 239, 54);
+		lblTryAgain.setBounds(350, 380, 239, 54);
 		getContentPane().add(lblTryAgain);
 		
 		btnSi = new JButton("Si");
 		btnSi.setBackground(Color.RED);
 		btnSi.setForeground(Color.BLACK);
 		btnSi.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnSi.setBounds(407, 451, 89, 23);
+		btnSi.setBounds(407, 500, 89, 23);
 		getContentPane().add(btnSi);
 		
 		OyenteBoton OB = new OyenteBoton();
@@ -156,6 +161,7 @@ import javax.swing.SwingConstants.*;
 	
 	private void eliminarPanelDerrota() {
 		this.remove(lblDerrota);
+		this.remove(lblSansDerrota);
 		this.remove(lblTryAgain);
 		this.remove(btnSi);
 		repintar();

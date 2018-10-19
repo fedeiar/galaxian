@@ -18,9 +18,9 @@ public class SANS extends Enemigo{
 
 	//atributos
 	
-	protected final static int ANCHO = 100;
-	protected final static int ALTO = 100;
-	
+	protected final static int ANCHO = 120;
+	protected final static int ALTO = 160;
+	public final static long DURACION_ATAQUE = 15000;
 	
 	
 	//constructor
@@ -36,11 +36,10 @@ public class SANS extends Enemigo{
 		
 	
 		
-		System.out.println(HP);
 		//----PARTE GRAFICA DE SANS----
 		
 		rec = this.crear_rectangulo(x, y, ANCHO, ALTO);
-		imagen = new ImageIcon("Sprites/Sans.png");
+		imagen = new ImageIcon("Sprites/Sans_stand.gif");
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
 		etiqueta.setIcon(imagen);

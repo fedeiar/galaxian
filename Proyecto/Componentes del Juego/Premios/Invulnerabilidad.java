@@ -9,7 +9,7 @@ import Personajes.Jugador;
 import Visitors.Visitor;
 import Escudos.*;
 
-public class Invulnerabilidad extends MagiaTemporal implements Runnable{
+public class Invulnerabilidad extends Premio implements Runnable{
 
 	//atributos
 	protected final int durabilidad = 6000;

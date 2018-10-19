@@ -1,6 +1,7 @@
 package Visitors;
 
 import Disparos.*;
+import Obstaculos.DestruidosPorTodos;
 import Personajes.Jugador;
 
 public class VisitorDisparoEnemigo extends Visitor {
@@ -22,7 +23,8 @@ public class VisitorDisparoEnemigo extends Visitor {
 		DE.morir();
 	}
 	
-	public void afectarObstaculo (Obstaculo o) {
-		
+	public void afectarDestruidosPT(DestruidosPorTodos b) {
+		b.quitarHP(DE.getFuerzaImpacto());
+		DE.morir();
 	}
 }

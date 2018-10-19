@@ -1,6 +1,8 @@
 package Visitors;
 import Disparos.*;
 import Logica.Logica;
+import Obstaculos.BarricadaParaEnemigos;
+import Obstaculos.DestruidosPorTodos;
 import Personajes.*;
 
 public class VisitorDisparoJugador extends Visitor {
@@ -9,7 +11,9 @@ public class VisitorDisparoJugador extends Visitor {
 	
 	protected DisparoJugador dis;
 	protected boolean disparo_inhabilitado; //es necesario ya que si un disparo toca a 2 enemigos a la vez, mata a los 2
+	
 	//constructor
+	
 	public VisitorDisparoJugador(DisparoJugador d) {
 		dis = d;
 		disparo_inhabilitado = false;
@@ -24,5 +28,15 @@ public class VisitorDisparoJugador extends Visitor {
 		}
 		disparo_inhabilitado = true;
 		
+	}
+	
+	public void afectarDestruidosPT(DestruidosPorTodos b) {
+		b.quitarHP(dis.getFuerzaImpacto());
+		dis.morir();
+	}
+	
+	public void afectarBarricadaPE(BarricadaParaEnemigos b) {
+		b.quitarHP(dis.getFuerzaImpacto());
+		dis.morir();
 	}
 }

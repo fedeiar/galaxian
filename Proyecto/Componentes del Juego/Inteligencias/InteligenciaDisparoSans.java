@@ -1,5 +1,6 @@
 package Inteligencias;
 import Disparos.*;
+import EnemigosConcretos.SANS;
 public  class InteligenciaDisparoSans extends Inteligencia{
 
 	//atributos
@@ -15,7 +16,7 @@ public  class InteligenciaDisparoSans extends Inteligencia{
 		disp = d;
 		direccion = Math.toRadians(direc);
 		time = System.currentTimeMillis();
-		tiempo_de_vida = 15000;
+		tiempo_de_vida = SANS.DURACION_ATAQUE;
 		
 	}
 	

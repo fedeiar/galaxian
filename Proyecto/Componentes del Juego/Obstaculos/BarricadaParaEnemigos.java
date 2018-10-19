@@ -7,34 +7,34 @@ import javax.swing.JLabel;
 import Logica.Logica;
 import Visitors.Visitor;
 
-public class DestruidosPorTodos extends Obstaculo{
+public class BarricadaParaEnemigos extends Obstaculo{
 
 	//atributos
 	
 	
 	//constructor
 	
-	public DestruidosPorTodos(Logica l, double x, double y) {
+	public BarricadaParaEnemigos(Logica l, double x, double y) {
 		
-		//----PARTE LOGICA DE DestruidosPorTodos----
+		//----PARTE LOGICA DE BarricadaParaEnemigos----
 		
 		super(l, x, y);
 		
 		
-		//----PARTE GRAFICA DE DestruidosPorTodos----
+		//----PARTE GRAFICA DE BarricadaParaEnemigo----
 		
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
 		etiqueta.setOpaque(true);
-		etiqueta.setBackground(Color.MAGENTA);
-		
+		etiqueta.setBackground(Color.CYAN);
 	}
-	
+
 	
 	//metodos
 	
+	
 	public void serVisitado(Visitor v) {
-		v.afectarDestruidosPT(this);
+		v.afectarBarricadaPE(this);
 	}
 
 }

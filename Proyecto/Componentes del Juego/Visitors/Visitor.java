@@ -1,7 +1,7 @@
 package Visitors;
 
 import Logica.Logica;
-import Obstaculos.Obstaculo;
+import Obstaculos.*;
 import Personajes.*;
 public abstract class Visitor {
 
@@ -21,7 +21,7 @@ public abstract class Visitor {
 	
 	public void afectarJugador(Jugador j) {}
 	
-	public void afectarObstaculo (Obstaculo o) {}
+	public void afectarDestruidosPT (DestruidosPorTodos o) {}
 	
-	
+	public void afectarBarricadaPE (BarricadaParaEnemigos b) {}
 }

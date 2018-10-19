@@ -11,7 +11,7 @@ public abstract class Mapa {
 	
 	 public final static int  MAX_X =900; //ancho del frame , ojo esta en publico, preguntar
 	 public final static int MAX_Y =600;  //alto del frame , ojo esta en publico, preguntar
-	 protected final static int CANT_MAX_PREMIOS  = 4;
+	 protected final static int CANT_MAX_PREMIOS  = 5;
 	 
 	 protected Logica log;
 	 protected int cantEnemigos;
@@ -31,6 +31,7 @@ public abstract class Mapa {
 		 powerups[1] = new Invulnerabilidad(0,0,0,l);
 		 powerups[2] = new MejoraArmaDoble(0,0,0,l);
 		 powerups[3] = new MejoraArmaSplit(0,0,0,l);
+		 powerups[4] = new Pocion(0,0,0,l);
 		 
 	 }
 	 

@@ -10,7 +10,7 @@ import ObjetoGeneral.Objeto;
 import Personajes.Jugador;
 import Visitors.*;
 
-public class CongelamientoTiempo extends MagiaTemporal{
+public class CongelamientoTiempo extends Premio{
 
 	//atributos
 	
@@ -31,7 +31,7 @@ public class CongelamientoTiempo extends MagiaTemporal{
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
 		etiqueta.setOpaque(true);
-		etiqueta.setBackground(Color.GREEN);
+		etiqueta.setBackground(Color.CYAN);
 	}
 
 	

@@ -8,7 +8,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 
 import Armas.*;
-public class MejoraArmaDoble extends ObjetosPreciosos{
+public class MejoraArmaDoble extends Premio{
 
 	//atributos
 	
