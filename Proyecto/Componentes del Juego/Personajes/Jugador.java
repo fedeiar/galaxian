@@ -35,7 +35,7 @@ public class Jugador extends Personajes {
 		
 		//---parte logica del jugador---
 		super(l);
-		vis = new VisitorJugador();
+		visitor = new VisitorJugador();
 		inteligencia = new InteligenciaJugador(this);
 		mi_arma = new ArmaClasicaJugador(log); 
 		mi_escudo = new SinEscudo();

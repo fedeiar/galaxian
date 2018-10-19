@@ -26,7 +26,7 @@ public abstract class Premio extends Objeto {
 		super(l);
 		inteligencia = new InteligenciaPremio(this);
 		velocidadDeCaida = velCaida;
-		vis = new VisitorPremio(this);
+		visitor = new VisitorPremio(this);
 		
 		//---parte grafica de los premios---
 		rec = crear_rectangulo(x,y,ANCHO,LARGO);

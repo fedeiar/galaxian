@@ -21,4 +21,8 @@ public class VisitorDisparoEnemigo extends Visitor {
 		j.quitarHP(DE.getFuerzaImpacto());
 		DE.morir();
 	}
+	
+	public void afectarObstaculo (Obstaculo o) {
+		
+	}
 }

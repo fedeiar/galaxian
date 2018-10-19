@@ -29,7 +29,7 @@ public abstract class Enemigo extends Personajes {
 		//----parte logica del enemigo----
 		
 		super(l);
-		vis = new VisitorEnemigo(this);
+		visitor = new VisitorEnemigo(this);
 		setNivel(nivel);
 		
 		HP = miNivel.getHP();

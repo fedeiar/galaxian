@@ -1,5 +1,5 @@
 package Obstaculos;
 
-public class DestruidosPorTodos extends Obstaculos{
+public class DestruidosPorTodos extends Obstaculo{
 
 }

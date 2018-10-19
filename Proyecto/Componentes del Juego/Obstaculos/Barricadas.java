@@ -1,5 +1,5 @@
 package Obstaculos;
 
-public class Barricadas extends Obstaculos{
+public class Barricadas extends Obstaculo{
 
 }

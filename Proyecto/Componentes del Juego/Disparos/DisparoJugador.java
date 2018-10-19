@@ -14,7 +14,7 @@ public abstract class DisparoJugador extends Disparo{
 	
 		protected DisparoJugador(Logica l , double v , int f , double x , double y , double direc) {
 			super(l,v,f,x,y,direc);
-			vis = new VisitorDisparoJugador(this); //esto lo diferencia con un disparo enemigo
+			visitor = new VisitorDisparoJugador(this); //esto lo diferencia con un disparo enemigo
 			
 		}
 		

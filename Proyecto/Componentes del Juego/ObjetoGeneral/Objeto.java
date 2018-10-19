@@ -21,7 +21,7 @@ public abstract class Objeto {
 	
 	protected Inteligencia inteligencia;
 	protected Logica log;
-	protected Visitor vis;
+	protected Visitor visitor;
 	
 	//constructor
 	
@@ -108,7 +108,7 @@ public abstract class Objeto {
 	
 	
 	public void chocar(Objeto o) {
-		o.serVisitado(this.vis);  // sería el "aceptar(Visitor v)"
+		o.serVisitado(this.visitor);  // sería el "aceptar(Visitor v)"
 	}
 	
 	public abstract void serVisitado(Visitor v);
