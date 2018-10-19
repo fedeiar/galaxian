@@ -2,7 +2,7 @@ package Inteligencias;
 import java.util.Random;
 import Personajes.*;
 import EnemigosConcretos.*;
-public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
+public class InteligenciaEnemigoKamikazeAleatorio extends InteligenciaEnemigo {
 
 	//atributos
 	protected final static int ESPERA_CUMPLIDA = 50;
@@ -16,7 +16,7 @@ public class InteligenciaEnemigoKamikaze extends InteligenciaEnemigo {
 		
 	//constructor
 	
-	public InteligenciaEnemigoKamikaze(Enemigo e) {
+	public InteligenciaEnemigoKamikazeAleatorio(Enemigo e) {
 		super();
 		ene = e;
 		esperar_antes_de_tirarse = 0;

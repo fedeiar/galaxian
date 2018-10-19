@@ -20,7 +20,7 @@ public class EnemigoKamikazeAleatorio extends Enemigo{
 		
 		//----parte logica del EnemigoKamikaze----
 		super(l,x,y,nivel,P);
-		inteligencia = new InteligenciaEnemigoKamikaze(this);
+		inteligencia = new InteligenciaEnemigoKamikazeAleatorio(this);
 		
 		
 		//----parte grafica del EnemigoKamikaze----
