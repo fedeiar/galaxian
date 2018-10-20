@@ -1,6 +1,6 @@
 package Logica;
 
-import TDALista.*;
+
 public class Tiempo extends Thread{
 	
 	//atributos
@@ -29,6 +29,7 @@ public class Tiempo extends Thread{
 					new_time.start();
 					
 				}
+				
 				
 				
 				log.actualizarObjetos();

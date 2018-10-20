@@ -24,7 +24,7 @@ public class InteligenciaSans extends InteligenciaEnemigo{
 		time = System.currentTimeMillis();
 		
 		
-		cadencia_ataqueEspecial = 30000;
+		cadencia_ataqueEspecial = 16000;
 		duracion_ataqueEspecial = SANS.DURACION_ATAQUE;
 		
 		ataqueEspecialEnProceso = false;
@@ -42,14 +42,16 @@ public class InteligenciaSans extends InteligenciaEnemigo{
 			sans.crear_disparos();
 		else {
 			long elapsed_time = System.currentTimeMillis() - time;
-			if (elapsed_time > duracion_ataqueEspecial) 
+			if (elapsed_time > duracion_ataqueEspecial) {
 				ataqueEspecialEnProceso = false;
+				time = System.currentTimeMillis();
+			}
 		}
 		
 		//CON RESPECTO A LOS PODERES
 		
 		long elapsed_time = System.currentTimeMillis() - time;
-		if(elapsed_time > cadencia_ataqueEspecial) {
+		if(elapsed_time > cadencia_ataqueEspecial && !ataqueEspecialEnProceso) {
 			ataqueEspecialEnProceso = true;
 			time = System.currentTimeMillis();
 			

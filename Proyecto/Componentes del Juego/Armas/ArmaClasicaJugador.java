@@ -12,8 +12,8 @@ public class ArmaClasicaJugador extends Arma{
 	
 	public ArmaClasicaJugador(Logica l) {
 		super(l);
-		fuerzaDisparo = 2;
 		velocidadDisparo = 20;
+		fuerzaDisparo = 2;
 		cadencia = 400;
 	}
 	
@@ -23,6 +23,7 @@ public class ArmaClasicaJugador extends Arma{
 	public void crear_disparo(double x , double y) {
 		
 		DisparoComunJugador disparoJ = new DisparoComunJugador(log,velocidadDisparo,fuerzaDisparo, x , y , 90);
+		
 		log.agregarObjeto(disparoJ);
 			
 	}

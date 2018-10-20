@@ -19,7 +19,7 @@ public class EnemigoADesarmar extends Enemigo {
 	
 	public EnemigoADesarmar(Logica l, double x, double y , int nivel , Premio P) {
 		
-		//----parte logica del EnemigoConArma---
+		//----PARTE LOGICA DEL EnemigoConArma---
 		
 		super(l,x,y,nivel,P);
 		inteligencia = new InteligenciaEnemigoConArma(this);
@@ -27,7 +27,7 @@ public class EnemigoADesarmar extends Enemigo {
 		
 		
 		
-		//----parte grafica del EnemigoConArma----
+		//----PARTE GRAFICA DEL EnemigoConArma----
 		
 		imagen = new ImageIcon("Sprites/Enemy_5.png");
 		etiqueta = new JLabel();

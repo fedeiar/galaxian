@@ -7,9 +7,8 @@ public class NivelSans extends NivelEnemigo{
 	//constructor
 	
 	public NivelSans() {
-		siguiente = null;
-		HP = 1000;
-		velocidad_movimiento = 8;
+		HP = 500;
+		velocidad_movimiento = 7;
 		fuerza_impacto = 20;
 		puntosQueDa = 5000;
 	}

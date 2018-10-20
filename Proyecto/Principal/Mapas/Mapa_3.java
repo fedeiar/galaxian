@@ -1,13 +1,15 @@
 package Mapas;
 
+import EnemigosConcretos.EnemigoADesarmar;
 import EnemigosConcretos.EnemigoConArma;
+import EnemigosConcretos.EnemigoKamikazeAleatorio;
 import EnemigosConcretos.EnemigoKamikazeDirigido;
 import Logica.Logica;
 import ObjetoGeneral.Objeto;
 import TDALista.ListaDE;
 import TDALista.PositionList;
 
-public class Mapa_2 extends Mapa {
+public class Mapa_3 extends Mapa {
 
 	//atributos
 	
@@ -15,9 +17,9 @@ public class Mapa_2 extends Mapa {
 	 
 	//constructor
 		 
-	 public Mapa_2(Logica l) {
+	 public Mapa_3(Logica l) {
 		super(l);
-		mapa_siguiente = new Mapa_3(log);
+		mapa_siguiente = null;
 	 }
 		 
 	 //metodos
@@ -34,11 +36,17 @@ public class Mapa_2 extends Mapa {
 		}
 		
 		for(int i=0 ; i<5 ; i++) {
-			EnemigoKamikazeDirigido ene = new EnemigoKamikazeDirigido( log, 300 + i*100 , 200  , 1 , powerups[ i % CANT_MAX_PREMIOS].clone());
+			EnemigoADesarmar ene = new EnemigoADesarmar( log, 300 + i*100 , 160  , 2 , powerups[ i % CANT_MAX_PREMIOS].clone());
 			L.addLast(ene);
 			cantEnemigos++;
 		}
-		 
+		
+		for(int i=0 ; i<5 ; i++) {
+			EnemigoKamikazeAleatorio ene = new EnemigoKamikazeAleatorio( log, 300 + i*100 , 220  , 2 , powerups[ i % CANT_MAX_PREMIOS].clone());
+			L.addLast(ene);
+			cantEnemigos++;
+		}
+		
 		return L;
 	 }
 		 

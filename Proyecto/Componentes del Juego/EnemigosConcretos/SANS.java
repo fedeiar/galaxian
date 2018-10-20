@@ -51,7 +51,7 @@ public class SANS extends Enemigo{
 	
 	public void crear_disparos() {
 		double x = 0; //ya que el arma de sans se encarga de crearlos en X
-		double y = this.getY() + this.getAncho();
+		double y = getY() + this.getAlto() - miArma.getVelocidadDisparo();
 		
 		miArma.disparar(x, y);
 	}

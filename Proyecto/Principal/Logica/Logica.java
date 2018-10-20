@@ -1,14 +1,11 @@
 package Logica;
-import Premios.*;
+
 import TDALista.*;
 import Personajes.*;
 
 import Mapas.*;
 import ObjetoGeneral.*;
-import Disparos.*;
-import EnemigosConcretos.EnemigoConArma;
 
-import java.util.Random;
 
 
 import Grafica.*;
@@ -25,7 +22,7 @@ public class Logica {
 	private GUI gui;
 	private Tiempo tiempo;
 	
-	private int puntaje  , vidasJugador , cantEnemigos; 
+	private int puntaje  ,  cantEnemigos; 
 	
 	private Jugador jugador;
 	
@@ -92,7 +89,7 @@ public class Logica {
 		
 		jugador = new Jugador (this, Mapa.MAX_X/2 , Mapa.MAX_Y - 70 );
 		gui.add(jugador.getLabel());
-		vidasJugador = jugador.getVidas();
+		
 		
 		crearObjetosIniciales();
 		

@@ -27,7 +27,6 @@ public  class InteligenciaDisparoSans extends Inteligencia{
 		long elapsed_time = System.currentTimeMillis() - time;
 		
 		if(elapsed_time > tiempo_de_vida) {
-			System.out.println("entre");
 			disp.morir();
 		}
 		

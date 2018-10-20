@@ -1,14 +1,13 @@
 package Personajes;
 import Visitors.*;
 
-import java.awt.Rectangle;
+
 import java.util.Random;
 
-import Armas.*;
-import Inteligencias.*;
+
 import Logica.*;
 import NivelEnemigos.*;
-import ObjetoGeneral.Objeto;
+
 import Premios.*;
 public abstract class Enemigo extends Personajes {
 
@@ -26,7 +25,7 @@ public abstract class Enemigo extends Personajes {
 	
 	public Enemigo(Logica l,double x, double y,  int nivel , Premio P) { 
 		
-		//----parte logica del enemigo----
+		//----PARTE LOGICA DE Enemigo----
 		
 		super(l);
 		visitor = new VisitorEnemigo(this);
@@ -38,18 +37,22 @@ public abstract class Enemigo extends Personajes {
 		ya_mori = false;
 		
 		
-		//----parte grafica del enemigo----
+		//----PARTE GRAFICA DE Enemigo----
+		
 		rec = crear_rectangulo(x,y,ANCHO,ALTO);
 	}
 	
+	//NIVELES
 	
 	private void setNivel(int n) {
 		switch(n) {
-		case -1 : miNivel = new NivelSans();
+		case -1 :  miNivel = new NivelSans();
 				   break;
 		case 1 :   miNivel = new NivelEnemigo_1();
 				   break;
 		case 2 :   miNivel = new NivelEnemigo_2();
+				   break;
+		case 3 :   miNivel = new NivelEnemigo_3();
 				   break;
 		default :  miNivel = new NivelEnemigo_1();
 				   break;
@@ -67,7 +70,6 @@ public abstract class Enemigo extends Personajes {
 		return miNivel.getVelocidadMovimiento();
 	}
 
-	
 	public int getFuerzaImpacto() {
 		return miNivel.getFuerzaImpacto();
 	}
@@ -76,13 +78,11 @@ public abstract class Enemigo extends Personajes {
 	public void quitarHP(int n) {
 		if( HP - n > 0)
 			HP -= n;
-		else {
+		else 
 			if(!ya_mori) { //este chequeo se hace porque cuando impacta un disparo del arma doble lo "mata" 2 veces
 				morir();   //es decir, se ejecuta morir() 2 veces.
 				ya_mori = true; 
 			}
-			
-		}
 	}
 	
 	
@@ -111,10 +111,7 @@ public abstract class Enemigo extends Personajes {
 	
 	public void crearDisparo() {
 		double x = getX() + getAncho() / 2;
-		double y = getY() + getAlto() / 2;
-		System.out.println("y = "+getY());
-		System.out.println("Alto = "+getAlto());
-	
+		double y = getY() + getAlto() - miArma.getVelocidadDisparo();
 		miArma.disparar(x, y);
 	}
 	

@@ -23,7 +23,7 @@ public class InteligenciaEnemigoConArma extends InteligenciaEnemigo{
 	
 	public void accionar() {
 		
-			
+
 		//CON RESPECTO AL MOVIMIENTO
 		
 		movimiento_estandar(ene);

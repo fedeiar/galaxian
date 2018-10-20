@@ -11,7 +11,7 @@ public abstract class NivelEnemigo {
 	
 	//atributos
 	
-	protected NivelEnemigo siguiente;
+	
 	protected double velocidad_movimiento;
 	protected int HP;
 	protected int puntosQueDa;
@@ -42,9 +42,7 @@ public abstract class NivelEnemigo {
 		return puntosQueDa;
 	}
 	
-	public NivelEnemigo getSiguiente() {
-		return siguiente;
-	}
+	
 	
 	
 	
