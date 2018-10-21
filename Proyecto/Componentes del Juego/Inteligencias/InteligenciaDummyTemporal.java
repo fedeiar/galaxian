@@ -6,11 +6,11 @@ public class InteligenciaDummyTemporal extends Inteligencia {
 
 	//atributos
 	
-	protected final int tiempo_freeze = 4000;
+	private final int tiempo_freeze = 4000;
 	
-	protected Enemigo ene;
-	protected long time;
-	protected Inteligencia vieja_inteligencia;
+	private Enemigo ene;
+	private long time;
+	private Inteligencia vieja_inteligencia;
 	
 	//constructor
 	

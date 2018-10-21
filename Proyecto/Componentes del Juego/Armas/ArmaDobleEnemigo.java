@@ -18,7 +18,7 @@ public class ArmaDobleEnemigo extends Arma{
 		velocidadDisparo = 15;
 		fuerzaDisparo = 2;
 		
-		cadencia = 400;
+		cadencia = 700;
 	}
 	
 	//metodos

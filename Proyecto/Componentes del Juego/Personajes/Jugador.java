@@ -41,7 +41,7 @@ public class Jugador extends Personajes {
 		mi_escudo = new SinEscudo();
 		
 		HP = maxHP;
-		velocidad_movimiento = 17;
+		velocidad_movimiento = 14;
 		vidas = VidasIniciales;
 		
 		ya_mori = false;

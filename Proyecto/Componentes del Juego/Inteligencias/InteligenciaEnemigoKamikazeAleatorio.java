@@ -1,19 +1,18 @@
 package Inteligencias;
 import java.util.Random;
 import Personajes.*;
-import EnemigosConcretos.*;
+
 public class InteligenciaEnemigoKamikazeAleatorio extends InteligenciaEnemigo {
 
 	//atributos
-	protected final static int TIEMPO_ESPERA = 4000;
-
-	protected final double POS_INICIAL;
+	private final static int TIEMPO_ESPERA = 4000;
+	private final double POS_INICIAL;
 	
-	protected boolean me_pase;
-	protected boolean me_tiro;
+	private boolean me_pase;
+	private boolean me_tiro;
 	
 	protected Enemigo ene;
-	protected long time;
+	private long time;
 		
 	//constructor
 	

@@ -5,15 +5,17 @@ import Personajes.*;
 public class InteligenciaEnemigoKamikazeDirigido extends InteligenciaEnemigo{
 
 	//atributos
-	protected final static int TIEMPO_ESPERA = 4000;
-	protected final double POS_INICIAL;
+	private final static int TIEMPO_ESPERA = 4000;
+	private final double POS_INICIAL;
 	
-	protected Jugador jugador;
-	protected Enemigo ene;
-	protected long time;
+	private boolean me_tiro;
+	private boolean me_pase;
 	
-	protected boolean me_tiro;
-	protected boolean me_pase;
+	private Jugador jugador;
+	private Enemigo ene;
+	private long time;
+	
+	
 	//constructor
 	
 	public InteligenciaEnemigoKamikazeDirigido(Enemigo e, Jugador j) {

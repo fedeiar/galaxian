@@ -32,7 +32,7 @@ public class InteligenciaEnemigoConArma extends InteligenciaEnemigo{
 			
 		Random ran = new Random();
 		int rshoot = ran.nextInt(3);
-		if(rshoot<2) { //0.66 chances
+		if(rshoot<2) { 
 			ene.crearDisparo();
 		}
 			

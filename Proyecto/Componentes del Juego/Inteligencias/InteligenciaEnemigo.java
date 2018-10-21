@@ -9,8 +9,8 @@ public abstract class InteligenciaEnemigo extends Inteligencia{ //esta bien esta
 	
 	protected int cambio_direccion;
 	
-	protected boolean direccion;
-	protected long time;
+	private boolean direccion;
+	private long time;
 	
 	
 	//constructor

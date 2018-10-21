@@ -6,14 +6,14 @@ public class InteligenciaSans extends InteligenciaEnemigo{
 
 	//atributos
 	
-	protected SANS sans;
+	private SANS sans;
 	
-	protected long time;
+	private long time;
 	
-	protected long cadencia_ataqueEspecial;
-	protected long duracion_ataqueEspecial;
+	private long cadencia_ataqueEspecial;
+	private long duracion_ataqueEspecial;
 	
-	protected boolean ataqueEspecialEnProceso;
+	private boolean ataqueEspecialEnProceso;
 	
 	//constructor
 	
