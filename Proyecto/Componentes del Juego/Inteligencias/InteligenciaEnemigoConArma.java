@@ -30,11 +30,9 @@ public class InteligenciaEnemigoConArma extends InteligenciaEnemigo{
 		
 		//CON RESPECTO AL DISPARO
 			
-		Random ran = new Random();
-		int rshoot = ran.nextInt(3);
-		if(rshoot<2) { 
-			ene.crearDisparo();
-		}
+	
+		ene.crearDisparo();
+		
 			
 	}
 	

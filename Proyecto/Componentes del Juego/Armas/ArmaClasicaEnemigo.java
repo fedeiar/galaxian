@@ -15,6 +15,7 @@ public class ArmaClasicaEnemigo extends Arma{
 		velocidadDisparo = 15;
 		fuerzaDisparo = 2;
 		cadencia = 500;
+		chances = 2;
 	}
 	
 	//metodos
