@@ -26,7 +26,7 @@ public class DestruidosPorTodos extends Obstaculo{
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
 		etiqueta.setOpaque(true);
-		etiqueta.setBackground(Color.MAGENTA);
+		etiqueta.setBackground(Color.lightGray);
 		
 	}
 	

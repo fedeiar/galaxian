@@ -24,14 +24,14 @@ public class Mapa_1 extends Mapa {
 
 	public PositionList<Objeto> obtenerObjetosIniciales(){
 		 PositionList<Objeto> L = new ListaDE<Objeto>();
-		 /*
-		 SANS sans = new SANS(log , MAX_X / 2 + 150 , 50 , -1 , powerups[0]);
-		 L.addLast(sans);
-		 cantEnemigos++;
-		 */
-		 
-		 
 		
+		 
+		 BarricadaParaEnemigos bpe = new BarricadaParaEnemigos (log , 25 , MAX_Y / 2);
+		 L.addLast(bpe);
+		 
+		 DestruidosPorTodos dpt = new DestruidosPorTodos (log, 400 , MAX_Y /2);
+		 L.addLast(dpt);
+		 
 		 for(int i = 0 ; i<5 ; i++) {
 			 EnemigoConArma ene = new EnemigoConArma(log , 300 + i*100 , 100 , 1 , powerups[ i % CANT_MAX_PREMIOS].clone());
 			 L.addLast(ene);
@@ -43,7 +43,7 @@ public class Mapa_1 extends Mapa {
 			L.addLast(ene);
 			cantEnemigos++;
 		}
-		 
+		
 		 return L;
 	 }
 	 

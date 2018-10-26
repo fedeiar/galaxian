@@ -20,7 +20,7 @@ public class Mapa_3 extends Mapa {
 		 
 	 public Mapa_3(Logica l) {
 		super(l);
-		mapa_siguiente = null;
+		mapa_siguiente = new Mapa_Sans(log);
 	 }
 		 
 	 //metodos
@@ -29,7 +29,7 @@ public class Mapa_3 extends Mapa {
 	public PositionList<Objeto> obtenerObjetosIniciales(){
 		PositionList<Objeto> L = new ListaDE<Objeto>();
 		 
-		EnemigoTorreta enemy = new EnemigoTorreta (log , 20 , 70 , 2 , powerups[4]);
+		EnemigoTorreta enemy = new EnemigoTorreta (log , 15 , 70 , 2 , powerups[4]);
 		L.addLast(enemy);
 		cantEnemigos++;
 	

@@ -26,7 +26,7 @@ public class Jugador extends Personajes {
 	protected int velocidad_movimiento;
 	
 	protected Escudo mi_escudo;
-	
+	protected Arma miArma;
 	
 	boolean ya_mori;
 	//--------------CONSTRUCTOR--------------

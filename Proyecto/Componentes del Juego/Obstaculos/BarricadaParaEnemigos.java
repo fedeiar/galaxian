@@ -26,7 +26,7 @@ public class BarricadaParaEnemigos extends Obstaculo{
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
 		etiqueta.setOpaque(true);
-		etiqueta.setBackground(Color.CYAN);
+		etiqueta.setBackground(Color.DARK_GRAY);
 	}
 
 	

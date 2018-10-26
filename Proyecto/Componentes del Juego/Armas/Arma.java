@@ -26,7 +26,7 @@ public abstract class Arma {
 		log = l;
 		
 		time = System.currentTimeMillis();
-		chances = 1; //chances por defecto
+		chances = 1; //chance por defecto
 	}
 	
 	//metodos
