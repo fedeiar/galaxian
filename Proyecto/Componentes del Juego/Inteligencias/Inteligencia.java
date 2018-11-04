@@ -28,7 +28,7 @@ public abstract class Inteligencia {
 		
 	}
 	
-	public void setShoot() {
+	public void setShoot(int s) {
 		
 	}
 

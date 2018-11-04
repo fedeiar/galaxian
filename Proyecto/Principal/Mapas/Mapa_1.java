@@ -32,13 +32,13 @@ public class Mapa_1 extends Mapa {
 		 DestruidosPorTodos dpt = new DestruidosPorTodos (log, 400 , MAX_Y /2);
 		 L.addLast(dpt);
 		 
-		 for(int i = 0 ; i<5 ; i++) {
+		 for(int i = 0 ; i<6 ; i++) {
 			 EnemigoConArma ene = new EnemigoConArma(log , 300 + i*100 , 100 , 1 , powerups[ i % CANT_MAX_PREMIOS].clone());
 			 L.addLast(ene);
 			 cantEnemigos++;
 		 }
 		
-		 for(int i = 0 ; i<5 ; i++) {
+		 for(int i = 0 ; i<6 ; i++) {
 			EnemigoKamikazeAleatorio ene = new EnemigoKamikazeAleatorio( log, 300 + i*100 , 200  ,1 , powerups[ i % CANT_MAX_PREMIOS].clone());
 			L.addLast(ene);
 			cantEnemigos++;

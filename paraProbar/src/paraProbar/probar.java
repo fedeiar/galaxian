@@ -3,12 +3,11 @@ package paraProbar;
 public class probar {
 
 	public static void main(String[] args) {
-		boolean test = false;
+		A a = new A();
+		B bc = new C();
+		C c = new C();
 		
-		test = (!test);
-		test = (!test);
-		
-		System.out.println(test);
+		bc.ret(c);
 
 	}
 

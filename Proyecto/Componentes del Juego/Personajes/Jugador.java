@@ -127,8 +127,8 @@ public class Jugador extends Personajes {
 	//------DISPARO------
 	
 	
-	public void disparar() {
-		inteligencia.setShoot();
+	public void disparar(int s) {
+		inteligencia.setShoot(s);
 	}
 	
 	public void crearDisparo() {

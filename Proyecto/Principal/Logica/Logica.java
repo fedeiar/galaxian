@@ -189,9 +189,9 @@ public class Logica {
 	//----MOVIMIENTO DE LOS OBJETOS----
 	
 	
-	public void lanzarDisparoJugador() { 
+	public void lanzarDisparoJugador(int shoot) { 
 		if(jugador!=null)
-			jugador.disparar();
+			jugador.disparar(shoot);
 	}
 	
 	public void moverJugador (int direccion) { 

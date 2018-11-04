@@ -46,7 +46,7 @@ public class InteligenciaJugador extends Inteligencia{
 			jug.crearDisparo();
 		}
 		
-		quiero_shoot=0;
+		
 		
 	}
 	
@@ -74,8 +74,8 @@ public class InteligenciaJugador extends Inteligencia{
 		direccion = dir;
 	}
 	
-	public void setShoot() {
-		quiero_shoot = 1;
+	public void setShoot(int s) {
+		quiero_shoot = s;
 	}
 	
 }
