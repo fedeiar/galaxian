@@ -85,7 +85,7 @@ public class Logica {
 		puntaje = 0;
 		cantEnemigos = 0;
 		
-		mapa = new Mapa_Sans(this);
+		mapa = new Mapa_3(this);
 		
 		jugador = new Jugador (this, Mapa.MAX_X/2 , Mapa.MAX_Y - 70 );
 		gui.add(jugador.getLabel());
@@ -234,7 +234,7 @@ public class Logica {
 		}
 	}
 	
-	//----VICTORIA Y DERROTA----
+	//----VICTORIA , DERROTA Y DIALOGOS----
 	
 	public void perder() {
 		eliminarTodo();
@@ -252,5 +252,9 @@ public class Logica {
 		eliminarTodo();
 		jugador = null;
 		gui.mostrarPanelVictoria();
+	}
+	
+	public void mostrarDialogoSans() {
+		gui.mostrarDialogosSans();
 	}
 }

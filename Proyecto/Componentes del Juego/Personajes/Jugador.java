@@ -19,7 +19,7 @@ public class Jugador extends Personajes {
 	protected final static int ANCHO = 30;
 	protected final static int ALTO = 30;
 	public final static int maxHP = 10;
-	public final static int VidasIniciales = 0;
+	public final static int VidasIniciales = 2;
 	
 	protected int vidas; //al perder toda su HP, el jugador pierde una vida
 	

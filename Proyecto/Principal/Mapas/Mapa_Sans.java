@@ -23,6 +23,9 @@ public class Mapa_Sans extends Mapa {
 	
 
 	public PositionList<Objeto> obtenerObjetosIniciales(){
+		
+		log.mostrarDialogoSans();
+		
 		PositionList<Objeto> L = new ListaDE<Objeto>();
 		 
 		SANS sans = new SANS(log , MAX_X / 2 + 150 , 50 , -1 , powerups[0]);

@@ -19,7 +19,9 @@ import javax.swing.SwingConstants.*;
  	
  	//ATRIBUTOS
 	 
-	 private JLabel lblHp , lblPuntaje , lblVidas , numVidas , numPuntaje , lblDerrota , lblTryAgain , lblSansDerrota, lblVictoria;
+	 private JLabel lblHp , lblPuntaje , lblVidas , numVidas , numPuntaje ,
+	 			    lblDerrota , lblTryAgain , lblSansDerrota, lblVictoria , lblDialogoSans;
+	 
 	 private JButton btnSi;
 	 private JProgressBar BarraVida;
 	 
@@ -68,6 +70,7 @@ import javax.swing.SwingConstants.*;
 		this.getContentPane().setLayout(null);
 		this.setBounds(250, 50, Mapa.MAX_X, Mapa.MAX_Y);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 	}
 	
 	private void crearPanelSuperior() {
@@ -173,6 +176,37 @@ import javax.swing.SwingConstants.*;
 		lblVictoria.setForeground(Color.GREEN);
 		lblVictoria.setBounds(227, 181, 355, 98);
 		getContentPane().add(lblVictoria);
+		repintar();
+	}
+	
+	public void mostrarDialogosSans() {
+		try {
+			
+			
+			lblDialogoSans = new JLabel();
+			lblDialogoSans.setBounds(350, 25 , 407, 209);
+			lblDialogoSans.setIcon(new ImageIcon("Sprites/Sans_Dialog_1.png"));
+			getContentPane().add(lblDialogoSans);
+		
+			Thread.sleep(3500);
+			
+			
+			lblDialogoSans.setBounds(350, 25, 405, 185);
+			lblDialogoSans.setIcon(new ImageIcon("Sprites/Sans_Dialog_2.png"));
+			
+			Thread.sleep(3500);
+			
+			lblDialogoSans.setBounds(350, 175, 405, 193);
+			lblDialogoSans.setIcon(new ImageIcon("Sprites/Sans_Dialog_3.png"));
+			
+			Thread.sleep(2500);
+			
+			this.remove(lblDialogoSans);
+		}
+		catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		repintar();
 	}
 	

@@ -30,19 +30,19 @@ public class ArmaSans extends Arma{
 		
 		switch(switch_shoot) {
 		case 0 : for(int i=0 ; i<13 ; i++) {
-				 	log.agregarObjeto(new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,(30 + 80 * i) % (Mapa.MAX_X - 20) , y ,270));
+				 	log.agregarObjeto(new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,(30 + 75 * i) % (Mapa.MAX_X - 20) , y ,270));
 				 }
 			     break;
 		case 1 : for(int i=0 ; i<13 ; i++) {
-				 	log.agregarObjeto(new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,(60 + 80 * i) % (Mapa.MAX_X - 20) , y ,270));
+				 	log.agregarObjeto(new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,(60 + 75 * i) % (Mapa.MAX_X - 20) , y ,270));
 			     }
 				 break;
 		case 2 : for(int i=0 ; i<13 ; i++) {
-		 			log.agregarObjeto(new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,(90 + 80 * i) % (Mapa.MAX_X - 20) , y ,270));
+		 			log.agregarObjeto(new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,(90 + 75 * i) % (Mapa.MAX_X - 20) , y ,270));
 	     		 }
 		 		 break;
 		case 3 : for(int i=0 ; i<13 ; i++) {
- 				 	log.agregarObjeto(new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,(120 + 80 * i) % (Mapa.MAX_X - 20) , y ,270));
+ 				 	log.agregarObjeto(new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,(120 + 75 * i) % (Mapa.MAX_X - 20) , y ,270));
  		 		 }
  		 	     break;
 		}
