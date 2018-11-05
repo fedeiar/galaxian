@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 
 import Armas.ArmaSans;
 import Disparos.DisparoSansEnemigo;
+import Disparos.DisparoSansRicochetEnemigo;
 import Inteligencias.InteligenciaSans;
 import Logica.Logica;
 import Mapas.Mapa;
@@ -62,6 +63,7 @@ public class SANS extends Enemigo{
 	public void lanzar_poder() {
 		
 		
+		
 		switch(numero_ataque_especial) {
 		case 0 : shootFromBelow();
 				 break;
@@ -77,16 +79,9 @@ public class SANS extends Enemigo{
 	
 	public void shootFromBelow() {
 		
-		for(int i=1 ; i<11 ; i++) {
-			log.agregarObjeto(new DisparoSansEnemigo(log, 15 , 5 ,(30 + 105 * i) % (Mapa.MAX_X - 20) , Mapa.MAX_Y / 2 ,70));
+		for(int i=0 ; i<10 ; i++) {
+			log.agregarObjeto(new DisparoSansEnemigo(log, 15 , 5 ,(20 + 90 * i) % (Mapa.MAX_X - 20) , Mapa.MAX_Y / 1.25 ,70));
 		}
-		
-	}
-	
-	public void multipleShots() {
-		
-		for(int i=0 ; i < 8 ; i++)
-			log.agregarObjeto(new DisparoSansEnemigo(log, 13 , 5 , Mapa.MAX_X / 2 , Mapa.MAX_Y / 2 , 50 + i*50 ));
 		
 	}
 	
@@ -94,4 +89,16 @@ public class SANS extends Enemigo{
 		BlasterManager BM = new BlasterManager(log);
 		BM.start();
 	}
+	
+	public void multipleShots() {
+		
+		for(int i=0 ; i < 11 ; i++)
+			log.agregarObjeto(new DisparoSansRicochetEnemigo(log, 10 , 5 , Mapa.MAX_X / 3 , Mapa.MAX_Y / 2 , i*30 ));
+		
+		for(int i=0 ; i < 11 ; i++)
+			log.agregarObjeto(new DisparoSansRicochetEnemigo(log, 10 , 5 , Mapa.MAX_X / 3 * 2 , Mapa.MAX_Y / 2 , i*30 ));
+		
+	}
+	
+	
 }

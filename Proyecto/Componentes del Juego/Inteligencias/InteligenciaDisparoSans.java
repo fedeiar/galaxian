@@ -30,18 +30,18 @@ public  class InteligenciaDisparoSans extends Inteligencia{
 			disp.morir();
 		}
 		
-		if(!fueraDeLimite()) {
-			disp.setX(disp.getX() + disp.getVelocidad() * Math.cos(direccion));
-			disp.setY(disp.getY() + disp.getVelocidad() * ( - Math.sin(direccion))); //negativo ya que para subir hay que restar en Y
-		}
+		fueraDeLimite();
+		disp.setX(disp.getX() + disp.getVelocidad() * Math.cos(direccion));
+		disp.setY(disp.getY() + disp.getVelocidad() * ( - Math.sin(direccion))); //negativo ya que para subir hay que restar en Y
+		
 		
 	}
 	
-	private boolean fueraDeLimite() {
+	private void fueraDeLimite() {
 		if(disp.getX() < 0)
-			disp.setX(ANCHO_MAPA - disp.getAncho());
+			disp.setX(ANCHO_MAPA - disp.getAncho() - 10);
 		else
-			if ( disp.getX() > ANCHO_MAPA )
+			if ( disp.getX() > ANCHO_MAPA - 10 )
 				disp.setX(0);
 			else
 				if (disp.getY() < 0)
@@ -49,10 +49,7 @@ public  class InteligenciaDisparoSans extends Inteligencia{
 				else
 					if (disp.getY() > ALTO_MAPA)
 						disp.setY(0);
-					else
-						return false;
-		
-		return true;
+					
 	}
 
 }

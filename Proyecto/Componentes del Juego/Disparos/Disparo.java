@@ -21,7 +21,7 @@ public abstract class Disparo extends Objeto {
 	
 	//constuctor
 	
-	public Disparo (Logica l,double v ,int f, double x , double y , double direc) {
+	public Disparo (Logica l,double v ,int f, double x , double y , double angulo) {
 		
 		//----PARTE LOGICA DEL DISPARO----
 		
@@ -30,7 +30,7 @@ public abstract class Disparo extends Objeto {
 		velocidad_disparo = v;
 		fuerza_impacto = f;
 		
-		inteligencia = new InteligenciaDisparo(this , direc); //direc = direccion del disparo, medida en grados. (entre 0 y 360)
+		inteligencia = new InteligenciaDisparo(this , angulo); //direc = direccion del disparo, medida en grados. (entre 0 y 360)
 		
 		
 		//----PARTE GRAFICA DEL DISPARO----

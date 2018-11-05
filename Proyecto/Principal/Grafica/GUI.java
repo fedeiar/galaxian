@@ -71,6 +71,7 @@ import javax.swing.SwingConstants.*;
 		this.setBounds(250, 50, Mapa.MAX_X, Mapa.MAX_Y);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		
 	}
 	
 	private void crearPanelSuperior() {
@@ -174,7 +175,7 @@ import javax.swing.SwingConstants.*;
 		lblVictoria = new JLabel("\u00A1VICTORIA!");
 		lblVictoria.setFont(new Font("Tahoma", Font.PLAIN, 66));
 		lblVictoria.setForeground(Color.GREEN);
-		lblVictoria.setBounds(227, 181, 355, 98);
+		lblVictoria.setBounds(250, 181, 355, 98);
 		getContentPane().add(lblVictoria);
 		repintar();
 	}
@@ -182,22 +183,25 @@ import javax.swing.SwingConstants.*;
 	public void mostrarDialogosSans() {
 		try {
 			
-			
 			lblDialogoSans = new JLabel();
-			lblDialogoSans.setBounds(350, 25 , 407, 209);
+			lblDialogoSans.setBounds(325, 20 , 407, 209);
 			lblDialogoSans.setIcon(new ImageIcon("Sprites/Sans_Dialog_1.png"));
 			getContentPane().add(lblDialogoSans);
 		
 			Thread.sleep(3500);
 			
-			
-			lblDialogoSans.setBounds(350, 25, 405, 185);
 			lblDialogoSans.setIcon(new ImageIcon("Sprites/Sans_Dialog_2.png"));
+			lblDialogoSans.setBounds(325, 20, 405, 185);
 			
 			Thread.sleep(3500);
 			
-			lblDialogoSans.setBounds(350, 175, 405, 193);
+			this.remove(lblDialogoSans);
+			
+			Thread.sleep(300);
+			
 			lblDialogoSans.setIcon(new ImageIcon("Sprites/Sans_Dialog_3.png"));
+			lblDialogoSans.setBounds(320, 175, 405, 193);
+			getContentPane().add(lblDialogoSans);
 			
 			Thread.sleep(2500);
 			
@@ -218,6 +222,7 @@ import javax.swing.SwingConstants.*;
 	
 		int direccion = 0; //1 es izquierda, 2 es derecha
 		int shoot = 0; //0 no dispara, 1 dispara.
+		
 		public void keyTyped(KeyEvent e) {
 			
 		}
