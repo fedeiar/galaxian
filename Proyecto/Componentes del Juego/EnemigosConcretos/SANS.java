@@ -20,8 +20,8 @@ public class SANS extends Enemigo{
 	
 	protected final static int ANCHO = 120;
 	protected final static int ALTO = 160;
-	public final static long DURACION_ATAQUE = 15000;
-	
+	public final static long DURACION_ATAQUE_ESPECIAL = 15000;
+	private int numero_ataque_especial;
 	
 	//constructor
 	
@@ -31,14 +31,17 @@ public class SANS extends Enemigo{
 		
 		super(l, x, y, nivel, P);
 		
+		miNivel = new NivelSans();
+		HP = miNivel.getHP();
+		
 		miArma = new ArmaSans(log);
 		inteligencia = new InteligenciaSans(this);
-		
+		numero_ataque_especial = 0;
 	
 		
 		//----PARTE GRAFICA DE SANS----
 		
-		rec = this.crear_rectangulo(x, y, ANCHO, ALTO);
+		rec = this.crear_rectangulo(x, y, ANCHO, ALTO); //redefine el rectangulo de Enemigo
 		imagen = new ImageIcon("Sprites/Sans_stand.gif");
 		etiqueta = new JLabel();
 		etiqueta.setBounds(rec);
@@ -57,12 +60,9 @@ public class SANS extends Enemigo{
 	}
 	
 	public void lanzar_poder() {
-		Random ran = new Random();
-		int r_ataque = ran.nextInt(3);
 		
-		shootFromBelow();
-		/*
-		switch(r_ataque) {
+		
+		switch(numero_ataque_especial) {
 		case 0 : shootFromBelow();
 				 break;
 		case 1 : blasters();
@@ -71,14 +71,27 @@ public class SANS extends Enemigo{
 				 break;
 				
 		}
-		*/
+		numero_ataque_especial = (numero_ataque_especial + 1) % 3;
+		
 	}
 	
 	public void shootFromBelow() {
 		
-		for(int i=1 ; i<9 ; i++) {
+		for(int i=1 ; i<11 ; i++) {
 			log.agregarObjeto(new DisparoSansEnemigo(log, 15 , 5 ,(30 + 105 * i) % (Mapa.MAX_X - 20) , Mapa.MAX_Y / 2 ,80));
 		}
 		
+	}
+	
+	public void multipleShots() {
+		
+		for(int i=0 ; i < 8 ; i++)
+			log.agregarObjeto(new DisparoSansEnemigo(log, 13 , 5 , Mapa.MAX_X / 2 , Mapa.MAX_Y / 2 , 50 + i*50 ));
+		
+	}
+	
+	public void blasters() {
+		BlasterManager BM = new BlasterManager(log);
+		BM.start();
 	}
 }

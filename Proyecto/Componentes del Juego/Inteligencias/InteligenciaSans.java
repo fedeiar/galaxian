@@ -11,7 +11,7 @@ public class InteligenciaSans extends InteligenciaEnemigo{
 	private long time;
 	
 	private long cadencia_ataqueEspecial;
-	private long duracion_ataqueEspecial;
+
 	
 	private boolean ataqueEspecialEnProceso;
 	
@@ -25,7 +25,6 @@ public class InteligenciaSans extends InteligenciaEnemigo{
 		
 		
 		cadencia_ataqueEspecial = 16000;
-		duracion_ataqueEspecial = SANS.DURACION_ATAQUE;
 		
 		ataqueEspecialEnProceso = false;
 	}
@@ -42,7 +41,7 @@ public class InteligenciaSans extends InteligenciaEnemigo{
 			sans.crear_disparos();
 		else {
 			long elapsed_time = System.currentTimeMillis() - time;
-			if (elapsed_time > duracion_ataqueEspecial) {
+			if (elapsed_time > SANS.DURACION_ATAQUE_ESPECIAL) {
 				ataqueEspecialEnProceso = false;
 				time = System.currentTimeMillis();
 			}

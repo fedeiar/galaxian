@@ -16,7 +16,7 @@ public  class InteligenciaDisparoSans extends Inteligencia{
 		disp = d;
 		direccion = Math.toRadians(direc);
 		time = System.currentTimeMillis();
-		tiempo_de_vida = SANS.DURACION_ATAQUE;
+		tiempo_de_vida = SANS.DURACION_ATAQUE_ESPECIAL;
 		
 	}
 	
