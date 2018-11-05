@@ -85,7 +85,7 @@ public class Logica {
 		puntaje = 0;
 		cantEnemigos = 0;
 		
-		mapa = new Mapa_1(this);
+		mapa = new Mapa_Sans(this);
 		
 		jugador = new Jugador (this, Mapa.MAX_X/2 , Mapa.MAX_Y - 70 );
 		gui.add(jugador.getLabel());
