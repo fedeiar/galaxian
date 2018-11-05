@@ -16,17 +16,7 @@ public class EscudoInvulnerable extends Escudo{
 	//constructor
 	
 	public EscudoInvulnerable() {
-		//---parte logica del EscudoInvulnerable---
 		
-		
-		
-		//---parte grafica del EscudoInvulnerable---
-		
-		rec = crear_rectangulo(POS_X,POS_X,ANCHO,ALTO);
-		imagen = null;
-		etiqueta = new JLabel();
-		etiqueta.setBounds(rec);
-		//etiqueta.setIcon(imagen);
 	}
 	
 	//metodos

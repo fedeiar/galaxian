@@ -26,11 +26,10 @@ public class Mapa_1 extends Mapa {
 		 PositionList<Objeto> L = new ListaDE<Objeto>();
 		
 		 
-		 BarricadaParaEnemigos bpe = new BarricadaParaEnemigos (log , 25 , MAX_Y / 2);
-		 L.addLast(bpe);
 		 
-		 DestruidosPorTodos dpt = new DestruidosPorTodos (log, 400 , MAX_Y /2);
-		 L.addLast(dpt);
+		 L.addLast(new BarricadaParaEnemigos (log , 5 , MAX_Y / 2));
+		 
+		 L.addLast(new DestruidosPorTodos (log, MAX_X - Obstaculo.ANCHO - 10 , MAX_Y /2));
 		 
 		 for(int i = 0 ; i<6 ; i++) {
 			 EnemigoConArma ene = new EnemigoConArma(log , 300 + i*100 , 100 , 1 , powerups[ i % CANT_MAX_PREMIOS].clone());

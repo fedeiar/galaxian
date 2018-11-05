@@ -5,6 +5,9 @@ import EnemigosConcretos.EnemigoKamikazeDirigido;
 import EnemigosConcretos.EnemigoTorreta;
 import Logica.Logica;
 import ObjetoGeneral.Objeto;
+import Obstaculos.BarricadaParaEnemigos;
+import Obstaculos.DestruidosPorTodos;
+import Obstaculos.Obstaculo;
 import TDALista.ListaDE;
 import TDALista.PositionList;
 
@@ -46,6 +49,15 @@ public class Mapa_2 extends Mapa {
 			L.addLast(ene);
 			cantEnemigos++;
 		}
+		
+		 
+		 L.addLast(new BarricadaParaEnemigos (log , 50 , MAX_Y / 2));
+		 
+		 L.addLast(new DestruidosPorTodos (log, MAX_X - Obstaculo.ANCHO - 60 , MAX_Y /2));
+		
+		 L.addLast(new BarricadaParaEnemigos (log , 130 , MAX_Y / 2));
+		
+		 L.addLast(new DestruidosPorTodos (log, MAX_X - Obstaculo.ANCHO - 140 , MAX_Y /2));
 		 
 		return L;
 	 }

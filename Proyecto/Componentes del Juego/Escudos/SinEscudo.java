@@ -12,8 +12,6 @@ public class SinEscudo extends Escudo{
 	
 	public SinEscudo() {
 		
-		
-		etiqueta = new JLabel();
 	}
 	
 	//metodos

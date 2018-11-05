@@ -183,7 +183,7 @@ import javax.swing.SwingConstants.*;
 	class OyenteTeclado implements KeyListener{
 	
 		int direccion = 0; //1 es izquierda, 2 es derecha
-		int shoot = 0;
+		int shoot = 0; //0 no dispara, 1 dispara.
 		public void keyTyped(KeyEvent e) {
 			
 		}

@@ -8,9 +8,9 @@ import Visitors.VisitorDummy;
 public abstract class Obstaculo extends Objeto {
 
 	//atributos
-	protected final static int ANCHO  = 60;
-	protected final static int ALTO = 20;
-	protected final static int MAX_HP = 15;
+	public final static int ANCHO  = 60;
+	public final static int ALTO = 20;
+	protected final static int MAX_HP = 20;
 	
 	protected int HP;
 	protected boolean ya_mori;

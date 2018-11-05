@@ -74,8 +74,8 @@ public class InteligenciaJugador extends Inteligencia{
 		direccion = dir;
 	}
 	
-	public void setShoot(int s) {
-		quiero_shoot = s;
+	public void setShoot(int shoot) {
+		quiero_shoot = shoot;
 	}
 	
 }

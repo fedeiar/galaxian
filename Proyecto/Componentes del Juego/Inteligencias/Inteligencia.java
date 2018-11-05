@@ -24,11 +24,11 @@ public abstract class Inteligencia {
 	//  METODOS HECHOS EXCLUSIVAMENTE PARA InteligenciaJugador,
 	//	DONDE ADEMAS SERAN REDEFINIDOS.
 	
-	public void setDireccion(int n) { 
+	public void setDireccion(int dir) { 
 		
 	}
 	
-	public void setShoot(int s) {
+	public void setShoot(int shoot) {
 		
 	}
 

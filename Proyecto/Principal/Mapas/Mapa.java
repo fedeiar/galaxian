@@ -9,8 +9,8 @@ public abstract class Mapa {
 
 	//atributos
 	
-	 public final static int  MAX_X =900; //ancho del frame , ojo esta en publico, preguntar
-	 public final static int MAX_Y =600;  //alto del frame , ojo esta en publico, preguntar
+	 public final static int  MAX_X =950; //ancho del frame
+	 public final static int MAX_Y =600;  //alto del frame
 	 protected final static int CANT_MAX_PREMIOS  = 6;
 	 
 	 protected Logica log;

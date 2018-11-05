@@ -34,6 +34,8 @@ public class ArmaSans extends Arma{
 			DisparoComunEnemigo dispE = new DisparoComunEnemigo(log,velocidadDisparo,fuerzaDisparo,r_disp * i % Mapa.MAX_X,y ,270);
 			log.agregarObjeto(dispE);
 		}
+		
+		
 	
 	}
 	

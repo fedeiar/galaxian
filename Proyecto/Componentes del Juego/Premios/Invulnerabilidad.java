@@ -7,7 +7,9 @@ import javax.swing.JLabel;
 import Logica.Logica;
 import Personajes.Jugador;
 import Visitors.Visitor;
+import Visitors.VisitorDummy;
 import Escudos.*;
+import Inteligencias.InteligenciaEscudo;
 
 public class Invulnerabilidad extends Premio implements Runnable{
 
@@ -15,7 +17,6 @@ public class Invulnerabilidad extends Premio implements Runnable{
 	protected final int durabilidad = 6000;
 	
 	protected EscudoInvulnerable escudo_invulnerable;
-	protected Escudo escudo_viejo;
 	protected Jugador jugador; //se inicializa cuando se active el premio
 	
 	//constructor
@@ -46,7 +47,9 @@ public class Invulnerabilidad extends Premio implements Runnable{
 		jugador = j;
 		Thread waiter = new Thread(this);
 		waiter.start();
-		morir();
+		visitor = new VisitorDummy();
+		inteligencia = new InteligenciaEscudo(jugador , this , durabilidad);
+		
 	}
 
 	public void run() {
