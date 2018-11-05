@@ -78,7 +78,7 @@ public class SANS extends Enemigo{
 	public void shootFromBelow() {
 		
 		for(int i=1 ; i<11 ; i++) {
-			log.agregarObjeto(new DisparoSansEnemigo(log, 15 , 5 ,(30 + 105 * i) % (Mapa.MAX_X - 20) , Mapa.MAX_Y / 2 ,80));
+			log.agregarObjeto(new DisparoSansEnemigo(log, 15 , 5 ,(30 + 105 * i) % (Mapa.MAX_X - 20) , Mapa.MAX_Y / 2 ,70));
 		}
 		
 	}
