@@ -28,7 +28,9 @@ public abstract class DisparoJugador extends Disparo{
 		
 	//metodos
 	
-		
+		public void morir() {
+			
+		}
 		
 		
 		
