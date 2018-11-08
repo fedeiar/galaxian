@@ -6,7 +6,7 @@ import Personajes.*;
 import Mapas.*;
 import ObjetoGeneral.*;
 
-
+import javax.swing.JLabel;
 
 import Grafica.*;
 
@@ -88,7 +88,7 @@ public class Logica {
 		jugador = new Jugador (this, Mapa.MAX_X/2 , Mapa.MAX_Y - 70 );
 		gui.add(jugador.getLabel());
 		
-		mapa = new Mapa_1(this);
+		mapa = new Mapa_Sans(this);
 		
 		crearObjetosIniciales();
 		
@@ -252,8 +252,15 @@ public class Logica {
 		jugador = null;
 		gui.mostrarPanelVictoria();
 	}
+
 	
-	public void mostrarDialogoSans() {
-		gui.mostrarDialogosSans();
+	public void agregarLabel(JLabel l) {
+		gui.getContentPane().add(l);
+		gui.repintar();
+	}
+	
+	public void removerLabel(JLabel l) {
+		gui.remove(l);
+		gui.repintar();
 	}
 }
