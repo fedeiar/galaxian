@@ -38,16 +38,22 @@ public class Mapa_2 extends Mapa {
 		L.addLast(enemy);
 		cantEnemigos++;
 		
-		for(int i=0 ; i<5 ; i++) {
-			EnemigoConArma ene = new EnemigoConArma( log, 400 + i*100 , 100  , 2 , powerups[ i % CANT_MAX_PREMIOS].clone());
+		for(int i=0 ; i<10 ; i++) {
+			EnemigoConArma ene = new EnemigoConArma( log, 300 + i*67 , 50  , 2 , powerups[ i % CANT_MAX_PREMIOS].clone());
 			L.addLast(ene);
 			cantEnemigos++;
 		}
 		
-		for(int i=0 ; i<5 ; i++) {
-			EnemigoKamikazeDirigido ene = new EnemigoKamikazeDirigido( log, 300 + i*100 , 200  , 1 , powerups[ i % CANT_MAX_PREMIOS].clone());
+		for(int i=0 ; i<7 ; i++) {
+			EnemigoKamikazeDirigido ene = new EnemigoKamikazeDirigido( log, 300 + i*100 , 125  , 1 , powerups[ i % CANT_MAX_PREMIOS].clone());
 			L.addLast(ene);
 			cantEnemigos++;
+		}
+		
+		for(int i = 0 ; i<7 ; i++) {
+			EnemigoConArma ene = new EnemigoConArma(log , 200 + i*80 , 200 , 1 , powerups[ i % CANT_MAX_PREMIOS].clone());
+			 L.addLast(ene);
+			 cantEnemigos++;
 		}
 		
 		 

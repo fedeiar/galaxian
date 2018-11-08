@@ -28,7 +28,7 @@ public class Mapa_Sans extends Mapa {
 
 	public PositionList<Objeto> obtenerObjetosIniciales(){
 		
-		//mostrarDialogoSans(); //importante: si se usa este mapa como primer nivel, comentar esta instruccion para no tener
+		mostrarDialogoSans(); //importante: si se usa este mapa como primer nivel, comentar esta instruccion para no tener
 								  //			que esperar los sleeps que hay en GUI
 		
 		PositionList<Objeto> L = new ListaDE<Objeto>();

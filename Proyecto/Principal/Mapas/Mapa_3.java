@@ -37,20 +37,20 @@ public class Mapa_3 extends Mapa {
 		L.addLast(enemy);
 		cantEnemigos++;
 		
-		for(int i=0 ; i<5 ; i++) {
-			EnemigoConArma ene = new EnemigoConArma( log, 425 + i*100 , 100  , 2 , powerups[ i % CANT_MAX_PREMIOS].clone());
+		for(int i=0 ; i<8 ; i++) {
+			EnemigoConArma ene = new EnemigoConArma( log, 425 + i*70 , 50  , 4 , powerups[ i % CANT_MAX_PREMIOS].clone());
 			L.addLast(ene);
 			cantEnemigos++;
 		}
 		
-		for(int i=0 ; i<5 ; i++) {
-			EnemigoADesarmar ene = new EnemigoADesarmar( log, 425 + i*100 , 160  , 2 , powerups[ i % CANT_MAX_PREMIOS].clone());
+		for(int i=0 ; i<8 ; i++) {
+			EnemigoADesarmar ene = new EnemigoADesarmar( log, 425 + i*70 , 200  , 2 , powerups[ i % CANT_MAX_PREMIOS].clone());
 			L.addLast(ene);
 			cantEnemigos++;
 		}
 		
-		for(int i=0 ; i<5 ; i++) {
-			EnemigoKamikazeAleatorio ene = new EnemigoKamikazeAleatorio( log, 450 + i*100 , 220  , 2 , powerups[ i % CANT_MAX_PREMIOS].clone());
+		for(int i=0 ; i<8 ; i++) {
+			EnemigoKamikazeAleatorio ene = new EnemigoKamikazeAleatorio( log, 450 + i*70 , 125  , 2 , powerups[ i % CANT_MAX_PREMIOS].clone());
 			L.addLast(ene);
 			cantEnemigos++;
 		}

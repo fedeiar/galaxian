@@ -62,8 +62,8 @@ public class SANS extends Enemigo{
 	
 	public void lanzar_poder() {
 		
-		blasters();
-		/*
+		
+		
 		switch(numero_ataque_especial) {
 		case 0 : shootFromBelow();
 				 break;
@@ -74,7 +74,7 @@ public class SANS extends Enemigo{
 				
 		}
 		numero_ataque_especial = (numero_ataque_especial + 1) % 3;
-		*/
+		
 	}
 	
 	public void shootFromBelow() {
