@@ -19,10 +19,5 @@ public abstract class DisparoEnemigo extends Disparo {
 	//metodos
 		 
 		
-		public void morir() {
-			
-		}
-		
-		
 		
 }
