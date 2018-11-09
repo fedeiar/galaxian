@@ -175,7 +175,7 @@ import javax.swing.SwingConstants.*;
 		lblVictoria = new JLabel("\u00A1VICTORIA!");
 		lblVictoria.setFont(new Font("Tahoma", Font.PLAIN, 66));
 		lblVictoria.setForeground(Color.GREEN);
-		lblVictoria.setBounds(250, 181, 355, 98);
+		lblVictoria.setBounds(300, 120, 355, 98);
 		getContentPane().add(lblVictoria);
 		repintar();
 	}

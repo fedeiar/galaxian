@@ -6,7 +6,7 @@ public class Tiempo extends Thread{
 	//atributos
 
 	private Logica log;
-	public final static int SLEEP_TIME = 40;
+	public final static int SLEEP_TIME = 38;
 	private TiempoEntreNiveles new_time;
 	//constructor
 	

@@ -88,7 +88,7 @@ public class Logica {
 		jugador = new Jugador (this, Mapa.MAX_X/2 , Mapa.MAX_Y - 70 );
 		gui.add(jugador.getLabel());
 		
-		mapa = new Mapa_3(this);
+		mapa = new Mapa_1(this);
 		
 		crearObjetosIniciales();
 		

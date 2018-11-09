@@ -7,6 +7,9 @@ import EnemigosConcretos.EnemigoKamikazeDirigido;
 import EnemigosConcretos.EnemigoTorreta;
 import Logica.Logica;
 import ObjetoGeneral.Objeto;
+import Obstaculos.BarricadaParaEnemigos;
+import Obstaculos.DestruidosPorTodos;
+import Obstaculos.Obstaculo;
 import TDALista.ListaDE;
 import TDALista.PositionList;
 
@@ -28,7 +31,18 @@ public class Mapa_3 extends Mapa {
 
 	public PositionList<Objeto> obtenerObjetosIniciales(){
 		PositionList<Objeto> L = new ListaDE<Objeto>();
+		
+		L.addLast(new BarricadaParaEnemigos (log , 5 , MAX_Y / 2));
+		L.addLast(new BarricadaParaEnemigos (log , 250 , MAX_Y / 2));
+		L.addLast(new BarricadaParaEnemigos (log , 500 , MAX_Y / 2));
+		L.addLast(new BarricadaParaEnemigos (log , 750 , MAX_Y / 2));
 		 
+		 
+		L.addLast(new DestruidosPorTodos (log, 50 , MAX_Y /2 - 60));
+		L.addLast(new DestruidosPorTodos (log, 250 , MAX_Y /2 - 60));
+		L.addLast(new DestruidosPorTodos (log, 500 , MAX_Y /2 - 60));
+		L.addLast(new DestruidosPorTodos (log, 750 , MAX_Y /2 - 60));
+		
 		EnemigoTorreta enemy = new EnemigoTorreta (log , 15 , 70 , 2 , powerups[4]);
 		L.addLast(enemy);
 		cantEnemigos++;

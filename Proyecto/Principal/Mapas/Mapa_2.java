@@ -58,13 +58,15 @@ public class Mapa_2 extends Mapa {
 		
 		 
 		 L.addLast(new BarricadaParaEnemigos (log , 50 , MAX_Y / 2));
+		 L.addLast(new BarricadaParaEnemigos (log , 130 , MAX_Y / 2));
+		 L.addLast(new BarricadaParaEnemigos (log , 210 , MAX_Y / 2));
+		 L.addLast(new BarricadaParaEnemigos (log , 300 , MAX_Y / 2));
+		
 		 
 		 L.addLast(new DestruidosPorTodos (log, MAX_X - Obstaculo.ANCHO - 60 , MAX_Y /2));
-		
-		 L.addLast(new BarricadaParaEnemigos (log , 130 , MAX_Y / 2));
-		
 		 L.addLast(new DestruidosPorTodos (log, MAX_X - Obstaculo.ANCHO - 140 , MAX_Y /2));
-		 
+		 L.addLast(new DestruidosPorTodos (log, MAX_X - Obstaculo.ANCHO - 220 , MAX_Y /2));
+		 L.addLast(new DestruidosPorTodos (log, MAX_X - Obstaculo.ANCHO - 300 , MAX_Y /2));
 		return L;
 	 }
 		 

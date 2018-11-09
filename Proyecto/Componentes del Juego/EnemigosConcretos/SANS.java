@@ -101,4 +101,23 @@ public class SANS extends Enemigo{
 	}
 	
 	
+	//SE REDEFINE EL MORIR
+	
+	public void morir() {
+		try {
+			
+			rec = this.crear_rectangulo(rec.getX() - 100, rec.getY() - 50, 320 , 232 );
+			imagen = new ImageIcon("Sprites/Sans_dying.gif");
+			etiqueta.setBounds(rec);
+			etiqueta.setIcon(imagen);
+			Thread.sleep(2150);
+		} 
+		catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+		
+		super.morir();
+	}
+	
 }
