@@ -6,7 +6,7 @@ public class C extends B{
 		
 	}
 	
-	public B ret(B b) {
+	public C ret(B b) {
 		System.out.println("Estoy en C");
 		return new C();
 	}
